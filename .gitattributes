@@ -1,0 +1,3 @@
+# Preserve exact bytes. Snapshot manifests and append-only ledgers use hashes,
+# so automatic line-ending normalization would break reproducibility.
+* -text

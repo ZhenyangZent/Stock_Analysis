@@ -1,0 +1,81 @@
+{
+  "spec_version": "0.3.2",
+  "protocol_version": "1.3.0",
+  "run_schema_version": 2,
+  "system_role": "RESEARCH_ASSISTANCE_NOT_INVESTMENT_ADVICE",
+  "event_distance": {
+    "metric": "event_within_trading_sessions",
+    "same_session_value": 0,
+    "next_session_value": 1,
+    "calendar_day_fallback_allowed": false,
+    "date_only_information_policy": "FIRST_FULL_SESSION_STRICTLY_AFTER_LOCAL_END_OF_DAY",
+    "date_only_block_policy": "MOST_RECENT_SESSION_OPEN_AT_OR_BEFORE_LOCAL_START_OF_DAY",
+    "derivation_version": "EVENT_DISTANCE_1.2.1"
+  },
+  "market_calendar": {
+    "coverage_sessions_before": 5,
+    "coverage_sessions_after": 20,
+    "append_only_revisions": true,
+    "future_calendar_from_prices_only_allowed": false,
+    "run_hash_algorithm": "SHA-256",
+    "version_ledger": "01_共用資料/data_spine/calendar_versions.jsonl"
+  },
+  "observation_time": {
+    "availability_status": [
+      "POINT_IN_TIME_KNOWN",
+      "PUBLISHED_TIME_ONLY",
+      "BACKFILLED_UNKNOWN",
+      "LEGACY_UNKNOWN"
+    ],
+    "correction_mode": "APPEND_WITH_SUPERSEDES_OBSERVATION_ID",
+    "mops_general_fin_correction_timing": {
+      "policy_id": "G-S3-9b",
+      "availability_basis": "STATUTORY_DEADLINE_OR_CORRECTION_DATE_CONSERVATIVE",
+      "required_evidence_fields": [
+        "correction_date",
+        "correction_page_sha256",
+        "manifest_record_id"
+      ],
+      "available_at_formula": "max(statutory_deadline, official_correction_date) 23:59:59+08:00",
+      "allowed_metric_prefix": "FIN_",
+      "v1_existing_behavior_unchanged": true
+    }
+  },
+  "observation_supersede_semantics": {
+    "ledger": "01_共用資料/data_spine/observation_supersede_semantics.jsonl",
+    "append_only": true,
+    "edge_types": ["AVAILABILITY_CORRECTION", "VALUE_REVISION"],
+    "edge_retraction_record_type": "SUPERSEDE_EDGE_RETRACTION",
+    "ordinary_retraction_timing": "EFFECTIVE_AT_AVAILABLE_AT",
+    "restores_all_as_of_allowed_only_when": {
+      "original_supersede_type": "AVAILABILITY_CORRECTION",
+      "retraction_basis": "ERRONEOUS_REGISTRATION"
+    },
+    "duplicate_retraction_allowed": false,
+    "missing_target_relation_allowed": false
+  },
+  "portfolio": {
+    "path": "01_共用資料/portfolio.json",
+    "authority": "USER_OWNED_READ_ONLY_TO_AGENTS",
+    "ordinary_common_lock_grants_write": false,
+    "state_enum": ["NOT_PROVIDED", "PROVIDED_EMPTY", "PROVIDED_NONEMPTY"],
+    "schema2_limit_check": "NOT_IMPLEMENTED_SCHEMA2_EXPLICIT"
+  },
+  "fx": {
+    "pair_convention": "BASE/QUOTE",
+    "selection": "LATEST_FIXING_AT_OR_BEFORE_MARKET_CLOSE_AND_AVAILABLE_BY_RUN_CUTOFF",
+    "max_age_hours": 72
+  },
+  "universe": {
+    "mode": "FORWARD_ONLY_CURATED",
+    "seed_status": "CURATED_RETROSPECTIVE_SEED",
+    "historical_strategy_backtest_allowed": false,
+    "historical_risk_calibration_allowed": true
+  },
+  "modules": {
+    "news": "DISABLED",
+    "sentiment": "DISABLED",
+    "risk": "SHADOW",
+    "health": "SHADOW"
+  }
+}

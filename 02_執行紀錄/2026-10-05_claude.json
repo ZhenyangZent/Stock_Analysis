@@ -1,0 +1,296 @@
+{
+  "protocol_version": "1.0.0",
+  "run_date": "2026-10-05",
+  "info_cutoff": "2026-10-05T17:30+08:00",
+  "model": "claude",
+  "operator": "Zent",
+  "supersedes": null,
+  "notes": "第一份示範紀錄。只填這輪對話已查到的資料；沒有即時股價與估值工具，所以市場與估值多數欄位是未查，結論會是資料不足或待查證。這是預期中的結果。",
+  "market": {
+    "M1": {
+      "value": "升息",
+      "status": "已開原文",
+      "type": "實績",
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm",
+      "as_of": "2026-09-16",
+      "note": "9/16 升一碼至 3.75%–4.00%"
+    },
+    "M2": {
+      "value": null,
+      "status": "未查",
+      "type": "實績",
+      "source": "",
+      "as_of": "",
+      "note": "另一個 AI 引用盤中高點 5.34%，未查原始資料，也沒有 20 日變化"
+    },
+    "M3": {
+      "value": null,
+      "status": "未查",
+      "type": "實績",
+      "source": "",
+      "as_of": "",
+      "note": "只知道在 100 美元以上，沒有 20 日變化"
+    },
+    "M4": {
+      "value": 0.0,
+      "status": "已開原文",
+      "type": "實績",
+      "source": "https://www.bls.gov/news.release/empsit.htm",
+      "as_of": "2026-10-02",
+      "note": "9 月 4.2%；原文稱 3 月以來在 4.1%–4.3% 之間，變化以 0 計"
+    },
+    "M5": {
+      "value": null,
+      "status": "未查",
+      "type": "實績",
+      "source": "",
+      "as_of": "",
+      "note": "只知道 8 月 CPI 偏熱，沒有核心 CPI 的 3 個月變化數字"
+    },
+    "M6": {
+      "value": null,
+      "status": "未查",
+      "type": "實績",
+      "source": "",
+      "as_of": "",
+      "note": ""
+    },
+    "M7": {
+      "value": null,
+      "status": "未查",
+      "type": "實績",
+      "source": "",
+      "as_of": "",
+      "note": ""
+    }
+  },
+  "themes": {
+    "memory": {
+      "I1": {
+        "value": null,
+        "status": "未查",
+        "type": "實績",
+        "source": "",
+        "as_of": "",
+        "note": "南亞科、華邦電 8 月月增僅 2%，但年增率是否加速未計算"
+      },
+      "I2": {
+        "value": 1,
+        "status": "僅摘要",
+        "type": "財測",
+        "source": "https://news.cnyes.com/news/id/6619198",
+        "as_of": "2026-09-30",
+        "note": "美光上修；南亞科、華邦電無正式財測"
+      },
+      "I3": {
+        "value": "上漲",
+        "status": "已開原文",
+        "type": "第三方估計",
+        "source": "https://www.trendforce.com/presscenter/news/20260929-13255.html",
+        "as_of": "2026-09-29",
+        "note": "TrendForce 估 2027 年 HBM 均價年增 121%"
+      },
+      "I4": {
+        "value": null,
+        "status": "未查",
+        "type": "實績",
+        "source": "",
+        "as_of": "",
+        "note": "四大雲端業者 10 月底才公布"
+      }
+    },
+    "network_asic": {
+      "I1": {
+        "value": null,
+        "status": "未查",
+        "type": "實績",
+        "source": "",
+        "as_of": "",
+        "note": ""
+      },
+      "I2": {
+        "value": 2,
+        "status": "僅摘要",
+        "type": "財測",
+        "source": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+        "as_of": "2026-08-04",
+        "note": "Arista 第三次上修全年；Broadcom 上修 AI 營收"
+      },
+      "I3": {
+        "value": null,
+        "status": "未查",
+        "type": "實績",
+        "source": "",
+        "as_of": "",
+        "note": ""
+      },
+      "I4": {
+        "value": null,
+        "status": "未查",
+        "type": "實績",
+        "source": "",
+        "as_of": "",
+        "note": "四大雲端業者 10 月底才公布"
+      }
+    }
+  },
+  "companies": [
+    {
+      "ticker": "MU",
+      "name": "美光",
+      "theme": "memory",
+      "maturity_tier": 1,
+      "benchmark": "SOXX",
+      "event_within_days": null,
+      "fields": {
+        "C1": {
+          "value": 379,
+          "status": "僅摘要",
+          "type": "實績",
+          "source": "https://news.cnyes.com/news/id/6619198",
+          "as_of": "2026-09-03",
+          "note": "FY26 Q4 營收 542.3 億美元"
+        },
+        "C2": {
+          "value": null,
+          "status": "未查",
+          "type": "實績",
+          "source": "",
+          "as_of": "",
+          "note": "上一季年增 346% 為摘要數字，口徑待確認"
+        },
+        "C3": {
+          "value": 41.3,
+          "status": "僅摘要",
+          "type": "實績",
+          "source": "https://www.capitalfutures.com.tw/zh-tw/financial/globalarticle?contentid=c26100100247",
+          "as_of": "2026-09-03",
+          "note": "調整後毛利率 87% 對去年同期 45.7%，非 GAAP"
+        },
+        "C4": {
+          "value": "高於",
+          "status": "僅摘要",
+          "type": "財測",
+          "source": "https://news.cnyes.com/news/id/6619198",
+          "as_of": "2026-09-30",
+          "note": "財測 615 億對共識 567.7 億"
+        },
+        "C5": {
+          "value": "無",
+          "status": "僅摘要",
+          "type": "實績",
+          "source": "https://news.cnyes.com/news/id/6619198",
+          "as_of": "2026-09-03",
+          "note": ""
+        },
+        "C6": {
+          "value": null,
+          "status": "未查",
+          "type": "實績",
+          "source": "",
+          "as_of": "",
+          "note": "歸因等級未評"
+        }
+      },
+      "valuation": {
+        "V1": {
+          "value": null,
+          "status": "未查",
+          "type": "實績",
+          "source": "",
+          "as_of": "",
+          "note": "循環股應用股價淨值比，未查"
+        },
+        "V2": {
+          "value": null,
+          "status": "未查",
+          "type": "實績",
+          "source": "",
+          "as_of": "",
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom",
+      "theme": "network_asic",
+      "maturity_tier": 1,
+      "benchmark": "SOXX",
+      "event_within_days": null,
+      "fields": {
+        "C1": {
+          "value": 86,
+          "status": "已開原文",
+          "type": "實績",
+          "source": "https://investors.broadcom.com/static-files/96641754-401f-4090-a4ab-210728c83a28",
+          "as_of": "2026-08-02",
+          "note": "FY26 Q3 營收 296 億美元"
+        },
+        "C2": {
+          "value": null,
+          "status": "未查",
+          "type": "實績",
+          "source": "",
+          "as_of": "",
+          "note": "上一季年增率待查"
+        },
+        "C3": {
+          "value": null,
+          "status": "未查",
+          "type": "實績",
+          "source": "",
+          "as_of": "",
+          "note": ""
+        },
+        "C4": {
+          "value": null,
+          "status": "未查",
+          "type": "實績",
+          "source": "",
+          "as_of": "",
+          "note": "財測對共識未查"
+        },
+        "C5": {
+          "value": "無",
+          "status": "僅摘要",
+          "type": "實績",
+          "source": "https://investors.broadcom.com/static-files/96641754-401f-4090-a4ab-210728c83a28",
+          "as_of": "2026-08-02",
+          "note": ""
+        },
+        "C6": {
+          "value": "A",
+          "status": "已開原文",
+          "type": "實績",
+          "source": "https://investors.broadcom.com/static-files/96641754-401f-4090-a4ab-210728c83a28",
+          "as_of": "2026-08-02",
+          "note": "公司直接揭露 AI 半導體營收 167 億；前五大終端客戶佔 55%"
+        }
+      },
+      "valuation": {
+        "V1": {
+          "value": null,
+          "status": "未查",
+          "type": "實績",
+          "source": "",
+          "as_of": "",
+          "note": ""
+        },
+        "V2": {
+          "value": null,
+          "status": "未查",
+          "type": "實績",
+          "source": "",
+          "as_of": "",
+          "note": ""
+        }
+      }
+    }
+  ],
+  "portfolio": {
+    "ai_share": null,
+    "leverage": null,
+    "max_drawdown_tolerance": null
+  }
+}

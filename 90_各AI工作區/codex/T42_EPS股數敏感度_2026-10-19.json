@@ -1,0 +1,191 @@
+{
+  "findings": [
+    {
+      "current_latest_shares_eps": 25.01924788087301,
+      "eps_sensitivity_pct": 0.04803322850468783,
+      "four_quarter_shares": [
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "FIN_2ccd7f166a6137888aebec4fe88128acd3dcc06186550da1659119d61c7a55bb",
+          "period_end": "2025-09-30",
+          "shares": 3147557000.0
+        },
+        {
+          "basis": "Q4_SHARES_FY_PROXY",
+          "observation_id": "FIN_bfe61f292abb0e76632043b4fc63394a94fff8118cacfc8bd0af355996a81b89",
+          "period_end": "2025-12-31",
+          "shares": 3152366000.0
+        },
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "FIN_57821f3bad71600989caa86a726ca0f2443d645f0864a24cd72cdc42f9dca951",
+          "period_end": "2026-03-31",
+          "shares": 3224792000.0
+        },
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "FIN_5bfdefb83f92ff54393b02c659f7747fe7b33e6139d23d0d8c532eddbd3bb677",
+          "period_end": "2026-06-30",
+          "shares": 3553586000.0
+        }
+      ],
+      "issuer_id": "ISSUER_NANYA",
+      "market": "TW",
+      "quarter_specific_shares_eps": 26.22100313135041,
+      "share_count_range_pct": 0.12899814046258729,
+      "ticker": "2408",
+      "v1_classification_impact": "NOT_COMPUTED_NO_RULE_CHANGE_AUTHORITY",
+      "v1_raw_multiple_sensitivity_pct": -0.045831780136609455
+    },
+    {
+      "current_latest_shares_eps": 10.564377640239709,
+      "eps_sensitivity_pct": 0.05637901729304873,
+      "four_quarter_shares": [
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "FIN_3fff94755df7040951f3db084f323e65cc394665631a21c09a54a62bbbce9e39",
+          "period_end": "2025-09-30",
+          "shares": 92498000.0
+        },
+        {
+          "basis": "Q4_SHARES_FY_PROXY",
+          "observation_id": "FIN_c6a03f506117d07a84edf7151d285b7bbb46017a3cffb603740f5cf842d05239",
+          "period_end": "2025-12-31",
+          "shares": 92538000.0
+        },
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "FIN_5d181ade31b2a2c4ee504c4c7f4c033fd9d56a3b2f233d138ab71fbfddc68012",
+          "period_end": "2026-03-31",
+          "shares": 92563000.0
+        },
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "FIN_2a5417c7297e5c5e8404c1a8af8d3adb181561ca0b5037bccfb6b598d3e830b7",
+          "period_end": "2026-06-30",
+          "shares": 101790000.0
+        }
+      ],
+      "issuer_id": "ISSUER_LANDMARK",
+      "market": "TW",
+      "quarter_specific_shares_eps": 11.15998686990908,
+      "share_count_range_pct": 0.10045622608056393,
+      "ticker": "3081",
+      "v1_classification_impact": "NOT_COMPUTED_NO_RULE_CHANGE_AUTHORITY",
+      "v1_raw_multiple_sensitivity_pct": -0.05337006545010606
+    },
+    {
+      "current_latest_shares_eps": 4.120018220250068,
+      "eps_sensitivity_pct": 0.008235100147121033,
+      "four_quarter_shares": [
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "VER_b4c6133a1b5f2b36d6c1aecf580d96f594d6f3cb759b7ebf4f1c09a075f3c4c3",
+          "period_end": "2025-09-30",
+          "shares": 190684000.0
+        },
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "VER_4a53e9dc0a98aed78838c8d186662ec9a51ae4f3488f4b0fa11db899ab8edbae",
+          "period_end": "2025-12-31",
+          "shares": 192757000.0
+        },
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "VER_71830644e310e8d62ed063f2fef23373d3e54cb7c42ed5260d6fdf78a062e44e",
+          "period_end": "2026-03-31",
+          "shares": 196367000.0
+        },
+        {
+          "basis": "Q4_SHARES_FY_PROXY",
+          "observation_id": "VER_7337fa81c692143f751ce631d836bc4a94474ffb894b1685fea7908320513264",
+          "period_end": "2026-06-30",
+          "shares": 195387000.0
+        }
+      ],
+      "issuer_id": "ISSUER_COHERENT",
+      "market": "US",
+      "quarter_specific_shares_eps": 4.1539469829017905,
+      "share_count_range_pct": 0.02980323467097401,
+      "ticker": "COHR",
+      "v1_classification_impact": "NOT_COMPUTED_NO_RULE_CHANGE_AUTHORITY",
+      "v1_raw_multiple_sensitivity_pct": -0.008167837189877016
+    },
+    {
+      "current_latest_shares_eps": -92.96380697050938,
+      "eps_sensitivity_pct": 0.006392515468884863,
+      "four_quarter_shares": [
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "VER_4d2ae05e107872f15eba371d4b16e4f3efd0ba21c0ddc9b04c5abf0791b89d95",
+          "period_end": "2025-09-27",
+          "shares": 78300000.0
+        },
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "VER_98ecc5b91aa0df6b050f568190391ea65b82bc5edceda337c72ac6bb73aee2cd",
+          "period_end": "2025-12-27",
+          "shares": 87800000.0
+        },
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "VER_a806a37b8b1dc2dd2332e06615098afd53b59f3735dda6cc00e04b650064b0ad",
+          "period_end": "2026-03-28",
+          "shares": 96200000.0
+        },
+        {
+          "basis": "Q4_SHARES_FY_PROXY",
+          "observation_id": "VER_d7059115b7928b3d61e4f7b6bb272c78d2b8db0d5c4d5e5c1fe276c5bfe6a376",
+          "period_end": "2026-06-27",
+          "shares": 74600000.0
+        }
+      ],
+      "issuer_id": "ISSUER_LUMENTUM",
+      "market": "US",
+      "quarter_specific_shares_eps": -93.5580795446148,
+      "share_count_range_pct": 0.28954423592493295,
+      "ticker": "LITE",
+      "v1_classification_impact": "NOT_COMPUTED_NO_RULE_CHANGE_AUTHORITY",
+      "v1_raw_multiple_sensitivity_pct": -0.006351910780960595
+    },
+    {
+      "current_latest_shares_eps": 2.8657186278766824,
+      "eps_sensitivity_pct": 0.057240855469130825,
+      "four_quarter_shares": [
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "VER_8a0cde54a5a5194058ec3179d91c7201a7a3bd87e2fd3961708c8499fe6d54d9",
+          "period_end": "2025-11-01",
+          "shares": 863700000.0
+        },
+        {
+          "basis": "Q4_SHARES_FY_PROXY",
+          "observation_id": "VER_4c19f320aeb5a9b3ebbd6f83d05ef8c0c173fff99f98ef17b24621319c017c2d",
+          "period_end": "2026-01-31",
+          "shares": 869700000.0
+        },
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "VER_74edaa74657b143728076620278962de9dbc0cfd63b5b80e07d8647a52884420",
+          "period_end": "2026-05-02",
+          "shares": 893300000.0
+        },
+        {
+          "basis": "REPORTED_QUARTER",
+          "observation_id": "VER_fe4145c4c035053362581ba6587ef832866ef43301692cf9cd2e9773d385b84d",
+          "period_end": "2026-08-01",
+          "shares": 921200000.0
+        }
+      ],
+      "issuer_id": "ISSUER_MARVELL",
+      "market": "US",
+      "quarter_specific_shares_eps": 3.0297548136701677,
+      "share_count_range_pct": 0.06657404191270122,
+      "ticker": "MRVL",
+      "v1_classification_impact": "NOT_COMPUTED_NO_RULE_CHANGE_AUTHORITY",
+      "v1_raw_multiple_sensitivity_pct": -0.05414173617394994
+    }
+  ],
+  "threshold": 0.02,
+  "tracked_company_count": 16
+}

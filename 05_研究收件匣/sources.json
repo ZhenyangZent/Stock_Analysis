@@ -1,0 +1,32 @@
+{
+  "schema_version": "RESEARCH_INBOX_SOURCES_1",
+  "sources": [
+    {
+      "source_id": "example-youtube",
+      "name": "範例 YouTube 頻道",
+      "type": "youtube",
+      "url": "https://www.youtube.com/@example",
+      "language": "zh-Hant",
+      "member_only": false,
+      "enabled": false
+    },
+    {
+      "source_id": "example-podcast",
+      "name": "範例 Podcast RSS",
+      "type": "podcast",
+      "url": "https://example.com/feed.xml",
+      "language": "zh-Hant",
+      "member_only": false,
+      "enabled": false
+    },
+    {
+      "source_id": "example-article",
+      "name": "範例文章",
+      "type": "article",
+      "url": "https://example.com/article",
+      "language": "zh-Hant",
+      "member_only": false,
+      "enabled": false
+    }
+  ]
+}

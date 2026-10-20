@@ -1,0 +1,134 @@
+{
+  "mode": "SHADOW",
+  "not_investment_advice": true,
+  "min_n": 12,
+  "results": {
+    "M_TOTAL": {
+      "20": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      },
+      "60": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      }
+    },
+    "C1": {
+      "20": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      },
+      "60": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      }
+    },
+    "C2": {
+      "20": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      },
+      "60": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      }
+    },
+    "C3": {
+      "20": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      },
+      "60": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      }
+    },
+    "I1": {
+      "20": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      },
+      "60": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      }
+    },
+    "V1": {
+      "20": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      },
+      "60": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      }
+    },
+    "H_LIGHT": {
+      "20": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      },
+      "60": {
+        "sample_n": 0,
+        "conclusion": null,
+        "spearman": null,
+        "mean_relative_return": null,
+        "mean_mae": null,
+        "threshold_groups": {}
+      }
+    }
+  },
+  "samples": []
+}

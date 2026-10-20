@@ -1,0 +1,223 @@
+{
+  "gate": "PASS",
+  "ingested_at": "2026-10-20T01:15:32+08:00",
+  "tsm": {
+    "candidate_rows": 16,
+    "new_rows": 16,
+    "overlap_gate": "PASS",
+    "overlaps": [
+      {
+        "period_end": "2024-03-31",
+        "sec": 8.7,
+        "mops": 8.7,
+        "difference_pct": 0.0
+      },
+      {
+        "period_end": "2024-06-30",
+        "sec": 9.56,
+        "mops": 9.56,
+        "difference_pct": 0.0
+      },
+      {
+        "period_end": "2024-09-30",
+        "sec": 12.54,
+        "mops": 12.54,
+        "difference_pct": 0.0
+      }
+    ],
+    "evidence": [
+      {
+        "period_end": "2021-03-31",
+        "fiscal_period": "Q1",
+        "value": 5.39,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000156459021018896/tsm-ex991_6.htm",
+        "accession": "0001564590-21-018896",
+        "filed": "2021-04-15",
+        "accepted": "2021-04-15T14:44:04.000Z",
+        "raw_sha256": "9a9f12438b8cd3c4affcb35e22986dc7d85759ba73a3dad6994bbd85ea340f08",
+        "source_excerpt": "diluted earnings per share of NT$5.39 (US$0.96 per ADR unit) for the first quarter ended March 31, 2021"
+      },
+      {
+        "period_end": "2021-06-30",
+        "fiscal_period": "Q2",
+        "value": 5.18,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000156459021036625/tsm-ex991_6.htm",
+        "accession": "0001564590-21-036625",
+        "filed": "2021-07-15",
+        "accepted": "2021-07-15T14:02:54.000Z",
+        "raw_sha256": "0b71e1023337a9b7ff457feaf7929480380dd0669fae38e8476ff003c1af62ba",
+        "source_excerpt": "diluted earnings per share of NT$5.18 (US$0.93 per ADR unit) for the second quarter ended June 30, 2021"
+      },
+      {
+        "period_end": "2021-09-30",
+        "fiscal_period": "Q3",
+        "value": 6.03,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000156459021050767/tsm-ex991_29.htm",
+        "accession": "0001564590-21-050767",
+        "filed": "2021-10-14",
+        "accepted": "2021-10-14T14:26:39.000Z",
+        "raw_sha256": "d3827daa199c45b58b80e91028aa8c2d3107eb64da0faefa16212bf30ccb1144",
+        "source_excerpt": "diluted earnings per share of NT$6.03 (US$1.08 per ADR unit) for the third quarter ended September 30, 2021"
+      },
+      {
+        "period_end": "2021-12-31",
+        "fiscal_period": "Q4",
+        "value": 6.41,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000156459022001132/tsm-ex991_6.htm",
+        "accession": "0001564590-22-001132",
+        "filed": "2022-01-13",
+        "accepted": "2022-01-13T16:02:31.000Z",
+        "raw_sha256": "ccffe42be0d4cdc203acd438d4cfc20e0677f81c680ec78c3d3cfaaf0c201920",
+        "source_excerpt": "diluted earnings per share of NT$6.41 (US$1.15 per ADR unit) for the fourth quarter ended December 31, 2021"
+      },
+      {
+        "period_end": "2022-03-31",
+        "fiscal_period": "Q1",
+        "value": 7.82,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000156459022014381/tsm-ex991_6.htm",
+        "accession": "0001564590-22-014381",
+        "filed": "2022-04-14",
+        "accepted": "2022-04-14T14:02:33.000Z",
+        "raw_sha256": "9281d6bbe603d8b0f837a80b116989edebbe0b1747163683d0b91b862e880949",
+        "source_excerpt": "diluted earnings per share of NT$7.82 (US$1.40 per ADR unit) for the first quarter ended March 31, 2022"
+      },
+      {
+        "period_end": "2022-06-30",
+        "fiscal_period": "Q2",
+        "value": 9.14,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000156459022025726/tsm-ex991_6.htm",
+        "accession": "0001564590-22-025726",
+        "filed": "2022-07-14",
+        "accepted": "2022-07-14T14:01:55.000Z",
+        "raw_sha256": "54b8b3e6184d53620ba9005dc441da93aa8fbc738ee075eb07aae5e638851231",
+        "source_excerpt": "diluted earnings per share of NT$9.14 (US$1.55 per ADR unit) for the second quarter ended June 30, 2022"
+      },
+      {
+        "period_end": "2022-09-30",
+        "fiscal_period": "Q3",
+        "value": 10.83,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000156459022034145/tsm-ex991_104.htm",
+        "accession": "0001564590-22-034145",
+        "filed": "2022-10-13",
+        "accepted": "2022-10-13T15:25:25.000Z",
+        "raw_sha256": "5999347d10ebba3464ffe1f0edc41f736c79f1ebd1e79290d84ce1b29b856f6e",
+        "source_excerpt": "diluted earnings per share of NT$10.83 (US$1.79 per ADR unit) for the third quarter ended September 30, 2022"
+      },
+      {
+        "period_end": "2022-12-31",
+        "fiscal_period": "Q4",
+        "value": 11.41,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000156459023000363/tsm-ex991_38.htm",
+        "accession": "0001564590-23-000363",
+        "filed": "2023-01-12",
+        "accepted": "2023-01-12T16:37:24.000Z",
+        "raw_sha256": "cd61d507c81dda00973f8aaf3b10a04059b196c1b8947177885cab1abcedacec",
+        "source_excerpt": "diluted earnings per share of NT$11.41 (US$1.82 per ADR unit) for the fourth quarter ended December 31, 2022"
+      },
+      {
+        "period_end": "2023-03-31",
+        "fiscal_period": "Q1",
+        "value": 7.98,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828023012121/a1q23e_withguidancexfinal.htm",
+        "accession": "0001628280-23-012121",
+        "filed": "2023-04-20",
+        "accepted": "2023-04-20T14:11:05.000Z",
+        "raw_sha256": "c95cbbc7271f786d642f0bd32581bf1758dac1b0eeee7348f16c4163687fac7a",
+        "source_excerpt": "diluted earnings per share of NT$7.98 (US$1.31 per ADR unit) for the first quarter ended March 31, 2023"
+      },
+      {
+        "period_end": "2023-06-30",
+        "fiscal_period": "Q2",
+        "value": 7.01,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828023025146/a2q23e_withguidancexfinalx.htm",
+        "accession": "0001628280-23-025146",
+        "filed": "2023-07-20",
+        "accepted": "2023-07-20T14:06:25.000Z",
+        "raw_sha256": "98151ca1338bb295c7af9d607b2dd0a7829491e9380ad2a0e3e47e4048589f06",
+        "source_excerpt": "diluted earnings per share of NT$7.01 (US$1.14 per ADR unit) for the second quarter ended June 30, 2023"
+      },
+      {
+        "period_end": "2023-09-30",
+        "fiscal_period": "Q3",
+        "value": 8.14,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617923000014/a3q23e_withguidancexfinal.htm",
+        "accession": "0001046179-23-000014",
+        "filed": "2023-10-19",
+        "accepted": "2023-10-19T14:22:41.000Z",
+        "raw_sha256": "0a2e128f79d9afa5f78fcd21d2d528cb82a5479a9b3d14750e730a56950acba4",
+        "source_excerpt": "diluted earnings per share of NT$8.14 (US$1.29 per ADR unit) for the third quarter ended September 30, 2023"
+      },
+      {
+        "period_end": "2023-12-31",
+        "fiscal_period": "Q4",
+        "value": 9.21,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617924000005/a4q24e_withguidancexfinal.htm",
+        "accession": "0001046179-24-000005",
+        "filed": "2024-01-18",
+        "accepted": "2024-01-18T16:21:57.000Z",
+        "raw_sha256": "d832ca4299f54dac07c1e42d1ef14b5d1795a6f0a01f09da8cba999900fa7b5a",
+        "source_excerpt": "diluted earnings per share of NT$9.21 (US$1.44 per ADR unit) for the fourth quarter ended December 31, 2023"
+      },
+      {
+        "period_end": "2024-03-31",
+        "fiscal_period": "Q1",
+        "value": 8.7,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617924000046/a1q24e_withguidancexfinal.htm",
+        "accession": "0001046179-24-000046",
+        "filed": "2024-04-18",
+        "accepted": "2024-04-18T14:05:21.000Z",
+        "raw_sha256": "2d0d81dfa15db58c1c2e69755cb58411ea26610bd51286b5e544a830abf78251",
+        "source_excerpt": "diluted earnings per share of NT$8.70 (US$1.38 per ADR unit) for the first quarter ended March 31, 2024"
+      },
+      {
+        "period_end": "2024-06-30",
+        "fiscal_period": "Q2",
+        "value": 9.56,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617924000083/a2q24e_withguidancexfinal.htm",
+        "accession": "0001046179-24-000083",
+        "filed": "2024-07-18",
+        "accepted": "2024-07-18T14:19:06.000Z",
+        "raw_sha256": "d7a648aa76036d5dc64d72f604d927027dfaae5216ab2edcb869573746d2df59",
+        "source_excerpt": "diluted earnings per share of NT$9.56 (US$1.48 per ADR unit) for the second quarter ended June 30, 2024"
+      },
+      {
+        "period_end": "2024-09-30",
+        "fiscal_period": "Q3",
+        "value": 12.54,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617924000116/a3q24e_withguidancexfinal.htm",
+        "accession": "0001046179-24-000116",
+        "filed": "2024-10-17",
+        "accepted": "2024-10-17T14:13:36.000Z",
+        "raw_sha256": "39e91612b7ca6a1b9876eb9370c39243e12e535d0486b2108052b418c031de13",
+        "source_excerpt": "diluted earnings per share of NT$12.54 (US$1.94 per ADR unit) for the third quarter ended September 30, 2024"
+      },
+      {
+        "period_end": "2024-12-31",
+        "fiscal_period": "Q4",
+        "value": 14.45,
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000004/a4q24e_withguidancexfinal.htm",
+        "accession": "0001046179-25-000004",
+        "filed": "2025-01-16",
+        "accepted": "2025-01-16T16:13:35.000Z",
+        "raw_sha256": "fcb9aa23649ec9100f817a550499284fa42e72841d18c3ef43d8ce69c5771856",
+        "source_excerpt": "diluted earnings per share of NT$14.45 (US$2.24 per ADR unit) for the fourth quarter ended December 31, 2024"
+      }
+    ]
+  },
+  "mrvl": {
+    "ticker": "MRVL",
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835632.json",
+    "raw_sha256": "719be7d53dd45833f7c458b8da1fef2422e54677432e1922130c266d4cd1dbd8",
+    "candidate_rows": 22,
+    "new_rows": 22
+  },
+  "lite": {
+    "ticker": "LITE",
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001633978.json",
+    "raw_sha256": "7c9b5f8ddfb3590ac97a1b98cb1d776d72943b5d59936dd3d38f6d75cb419304",
+    "candidate_rows": 47,
+    "new_rows": 47
+  },
+  "total_new_rows": 85,
+  "write_batch_id": "OBSWRITE_e3df00fd4b5515139d9878e5d6f08907840d7d582bd88e155339fc36a48d9d07"
+}

@@ -1,0 +1,89 @@
+# S1A 確定性研究快照
+
+RUN_ID：`SNAP_20261013T080422Z_3a2fbcf8`
+STATUS：`SOURCE_STALE`
+資訊截止：`2026-10-13T08:04:22.691604+00:00`
+TW 價格 session：`2026-10-13`
+US 價格 session：`2026-10-12`
+
+本頁是研究參考，非投資建議；只整理凍結資料與影子模組結果，不含交易指令、價格目標或個人部位安排。
+
+## 資料健康
+
+差異原因：`NEW_DATA`
+
+限制：C4_CROSS_COMPANY_COMPARABILITY_NOT_IMPLEMENTED；D6_RETROSPECTIVE_UNIVERSE；D9_MRVL_DOUBLE_COUNT_FIX_NOT_IMPLEMENTED；D11_TW_ACTION_COVERAGE_UNVERIFIED
+
+## 市場環境
+
+燈號：`黃`；分數：`-1`；覆蓋：`6/7`
+
+| 指標 | 值 | 分數 | 資料日期 | 說明／proxy |
+|---|---:|---:|---|---|
+| M1 | 升息 | -1 | 2026-10-06 | 56 日利率上限變化；目標利率上限 3.75% → 4.00%（近 56 天） |
+| M2 | 53.0 | -1 | 2026-10-05 | 4.78% → 5.31% |
+| M3 | — | — | 2026-09-29 | 資料過期（最後一筆 2026-09-29） |
+| M4 | 0.0 | 0 | 2026-09-01 | 4.2% → 4.2% |
+| M5 | -0.2 | 0 | 2026-08-01 | 年增率 2.96% → 2.76% |
+| M6 | 17.7 | 1 | 2026-10-12 | SOXX 含息；以 SOXX（含息）代替費城半導體指數 |
+| M7 | 44.0 | 0 | 2026-10-05 | 2.68% → 3.12% |
+
+## 主線
+
+| 主線 | I1 | 覆蓋 | 加速 | 減速 | 缺漏 |
+|---|---:|---:|---|---|---|
+| foundry 晶圓代工與封裝 | 100.0 | 1/1 | TSM | — | — |
+| memory 記憶體 | 100.0 | 2/3 | 2408, 2344 | — | MU |
+| network_asic 網通與客製晶片 | 100.0 | 3/3 | AVGO, ANET, MRVL | — | — |
+| optical 光通訊 | 100.0 | 4/4 | LITE, COHR, MRVL, 3081 | — | — |
+| pcb 高速板材 | 100.0 | 1/1 | 6274 | — | — |
+| power_cooling 電力與散熱 | 50.0 | 4/5 | ETN, GEV | VRT, 3017 | 3324 |
+
+## 公司總表
+
+| 代號 | 市場 | 價格 session | C1 | C2 | C3 | 財務體質 | 觸發項 | 價格拆解 | 缺漏 |
+|---|---|---|---:|---:|---:|---|---|---|---|
+| 2344 | TW | 2026-10-13 | 184.7 | 93.4 | 43.6 | 留意 | H4 | 20日 -10.0%；主要是公司自身 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED, D11_TW_ACTION_COVERAGE_VERIFIED |
+| 2408 | TW | 2026-10-13 | 684.2 | 101.3 | 100.1 | 留意 | H7 | 20日 -5.2%；主要是公司自身 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED, D11_TW_ACTION_COVERAGE_VERIFIED |
+| 3017 | TW | 2026-10-13 | 66.0 | -44.2 | 8.2 | 穩健 | — | 20日 -5.2%；主要是公司自身 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED, D11_TW_ACTION_COVERAGE_VERIFIED |
+| 3081 | TW | 2026-10-13 | 120.8 | 21.8 | 14.1 | 穩健 | — | 20日 -3.7%；主要是同板塊 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED, D11_TW_ACTION_COVERAGE_VERIFIED |
+| 3324 | TW | 2026-10-13 | — | — | — | 資料不足 | — | 20日 2.4%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED, D11_TW_ACTION_COVERAGE_VERIFIED |
+| 6274 | TW | 2026-10-13 | 110.9 | 53.1 | 8.5 | 資料不足 | — | 20日 18.6%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED, D11_TW_ACTION_COVERAGE_VERIFIED |
+| ANET | US | 2026-10-12 | 37.7 | 2.6 | -2.3 | 穩健 | — | 20日 12.3%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED |
+| AVGO | US | 2026-10-12 | 85.5 | 37.6 | 2.0 | 資料不足 | — | 20日 3.1%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED |
+| COHR | US | 2026-10-12 | 33.7 | 13.2 | 2.8 | 資料不足 | H1, H7 | 20日 8.1%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED |
+| ETN | US | 2026-10-12 | 21.4 | 4.6 | -3.5 | 資料不足 | — | 20日 8.5%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED |
+| GEV | US | 2026-10-12 | 21.9 | 5.6 | 1.0 | 資料不足 | H6 | 20日 14.0%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED |
+| LITE | US | 2026-10-12 | 109.3 | 19.2 | 14.2 | 留意 | H7 | 20日 19.2%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED |
+| MRVL | US | 2026-10-12 | 36.5 | 9.0 | 2.8 | 留意 | H7 | 20日 21.5%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED, D9_MRVL_RULE_DECISION_IMPLEMENTED |
+| MU | US | 2026-10-12 | — | — | — | 資料不足 | — | 20日 7.0%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED |
+| TSM | US | 2026-10-12 | 36.0 | 0.9 | 9.1 | 穩健 | — | 20日 6.6%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED |
+| VRT | US | 2026-10-12 | 24.1 | -6.0 | 3.7 | 穩健 | — | 20日 0.8%；未下跌 | V1, EVENT_DISTANCE, C5, C6, I2, I3, I4, D6_C4_RULE_DECISION_IMPLEMENTED |
+
+## 財務體質重點
+
+### 2344 — 留意
+
+- **H4 留意**：1.1 倍；一年內到期有息負債／現金與短期投資；依查證聲明視為零：ZERO_2344_SHORT_TERM_INVESTMENTS_2026Q2
+
+### 2408 — 留意
+
+- **H7 留意**：14.7 %；單季稀釋後加權平均流通股數年增率
+
+### COHR — 資料不足
+
+- **H1 留意**：7.8 季；現金與短期投資可支應的平均季度流出
+- **H7 警示**：26.3 %；年度稀釋後加權平均流通股數年增率
+
+### GEV — 資料不足
+
+- **H6 留意**：0.8 倍；流動資產／流動負債
+
+### LITE — 留意
+
+- **H7 留意**：7.2 %；年度稀釋後加權平均流通股數年增率
+
+### MRVL — 留意
+
+- **H7 留意**：5.8 %；單季稀釋後加權平均流通股數年增率
+

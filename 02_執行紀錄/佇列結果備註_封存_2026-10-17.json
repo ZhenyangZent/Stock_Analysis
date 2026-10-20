@@ -1,0 +1,149 @@
+{
+  "T01": {
+    "source": "人工完成（非迴圈）",
+    "marked_by": "Claude Code",
+    "marked_at": "2026-10-15",
+    "evidence": "90_各AI工作區/codex/S3f_完成報告_2026-10-15.md",
+    "evidence_sha256": "c7cc2926817efd3c1082d6b471d1c1f7615988aec4dbd14f7a46055be701925c",
+    "note": "Codex S3f 完成報告 Part 1：G-S3-9 範圍更正，離線追加 51 列 STATUTORY_DEADLINE_CONSERVATIVE（3324 V1=1.1892、有效 55 月；6274 V1=2.8862、有效 55 月）"
+  },
+  "T02": {
+    "source": "人工完成（非迴圈）",
+    "marked_by": "Claude Code",
+    "marked_at": "2026-10-15",
+    "evidence": "90_各AI工作區/codex/S3f_完成報告_2026-10-15.md",
+    "evidence_sha256": "c7cc2926817efd3c1082d6b471d1c1f7615988aec4dbd14f7a46055be701925c",
+    "note": "Codex S3f 完成報告 Part 2：test_regression 最外層 suite 前後比對所有正式帳本與影子快照目錄；448/448 PASS"
+  },
+  "T03": {
+    "source": "人工完成（非迴圈）",
+    "marked_by": "Claude Code",
+    "marked_at": "2026-10-15",
+    "evidence": "90_各AI工作區/codex/S3f_完成報告_2026-10-15.md",
+    "evidence_sha256": "c7cc2926817efd3c1082d6b471d1c1f7615988aec4dbd14f7a46055be701925c",
+    "note": "Codex S3f 完成報告 Part 3：MOPS 手動下載清單 40 份，未對 MOPS 發出任何請求（NETWORK_REQUEST_COUNT=0）"
+  },
+  "T04": {
+    "source": "人工完成（非迴圈）：S4a 收尾對話執行 submit_extraction.py 與 finalize_values.py",
+    "marked_by": "Claude Code",
+    "marked_at": "2026-10-15",
+    "evidence": "01_共用資料/data_spine/ai_field_values.jsonl",
+    "evidence_sha256": "c10e0d5a9a5da4d39da2efdf6f432e34edfb6958ede9f4ee1c1e96d33cae139a",
+    "agreement": "4/4",
+    "agreement_rate_pct": 100.0,
+    "rubric_version": [
+      "C6_TABLE_V0.3.2"
+    ],
+    "values": {
+      "ISSUER_ARISTA": {
+        "value": "C",
+        "status": "AI_EXTRACTED_VERIFIED",
+        "value_id": "AIV_8c1181dad7961c0c9e5f"
+      },
+      "ISSUER_AURAS": {
+        "value": "C",
+        "status": "AI_EXTRACTED_VERIFIED",
+        "value_id": "AIV_ae446e702d3fc2142385"
+      },
+      "ISSUER_BROADCOM": {
+        "value": "A",
+        "status": "AI_EXTRACTED_VERIFIED",
+        "value_id": "AIV_93598f3336317b6cd1e0"
+      },
+      "ISSUER_MICRON": {
+        "value": "C",
+        "status": "AI_EXTRACTED_VERIFIED",
+        "value_id": "AIV_58ebee0af2484ea65463"
+      }
+    },
+    "note": "收尾對話沒有另存報告檔；以欄位值帳本的雜湊作為證據。"
+  },
+  "T11": {
+    "run_id": "RUN_20261016T144640",
+    "reviewed_by": "Claude（主對話，人工複查取代迴圈 Opus 複查）",
+    "note": "Codex 實作完成但沙箱內 TEMP 權限使其無法跑完整回歸而回報 BLOCKER；迴圈自身 regression/dry-run/帳本/規則等檢查全過。Claude 於使用者電腦重跑回歸 459/459 OK；T11_short_term_band_audit.py：不變比較 36/36 與人工判讀一致，可免判讀 40/45（88.9%），需判讀 5 項。",
+    "key_hashes": {
+      "health.py": "04a75ce6…",
+      "test_regression.py": "a8c88c34…"
+    },
+    "previous_status": "FAILED"
+  },
+  "T05": {
+    "executed_by": "Claude Code（Sonnet，手動）",
+    "reviewed_by": "Claude",
+    "note": "C5 程式＋15 測試；ΔRev 與 C1 三家同源（ANET、AVGO 一致至小數 9 位，3324 兩邊 null）；G-S4-1a 下界規則經 Claude 同意；主回歸 483 綠",
+    "key_hashes": {
+      "ai_fields.py": "130b0476…",
+      "test_ai_fields.py": "3ed42079…"
+    }
+  },
+  "T06": {
+    "executed_by": "Claude Code（Sonnet，手動）",
+    "reviewed_by": "Claude",
+    "note": "C5 第一次抽取 15 筆（美股 9 家「無」：VRT、GEV(43%最接近門檻)、MRVL、AVGO、ANET、MU、LITE、COHR、ETN(G-S4-2a 百分比換算)）；台股 6 家因 doc.twse.com.tw 與 mopsov robots 皆 Disallow:/ 改列 T17 手動下載；3324 C1 null；回歸 529 綠"
+  },
+  "T07": {
+    "run_id": "RUN_20261016T212044",
+    "note": "Codex 額度在執行中耗盡（重置 2026-10-17 01:30），未輸出報告、未釋放鎖（Claude 於 21:4x 代為釋放 codex_t07）。已寫入：C5 抽取 18 筆（9 筆初版＋9 筆 corrected supersede）、ai_field_values 18 筆（9 筆 scope 格式錯誤＋9 筆正確，皆「無」）。待 T07c 清理與驗證。 → T07c 清理後：9 家 C5 兩次抽取 9/9 一致（全部「無」），Claude 確認 active 欄位值 13 筆（C5 無×9、C6 A×1、C×3）"
+  },
+  "T08": {
+    "executed_by": "Codex App（手動）",
+    "reviewed_by": "Claude",
+    "note": "I2/I4 程式＋測試；25 份 SEC 文件；7 筆第一次抽取；I2 power_cooling=+3（VRT、ETN、GEV 上修）；I4 僅 Meta 可比（持平）→ null；回歸 532 綠"
+  },
+  "T09": {
+    "run_id": "RUN_20261017T224629",
+    "review": "FAIL",
+    "failed_gates": []
+  },
+  "T10": {
+    "executed_by": "Codex App（手動）",
+    "reviewed_by": "Claude",
+    "note": "ALFRED 初值 4/4 與官方一致（UNRATE 2024-01=3.7 於 2024-02-02 公布等）；macro_vintages append-only；金鑰掃描：32 字元樣式僅為 run_id；正式 M4/M5 未改"
+  },
+  "T13": {
+    "executed_by": "Codex App（手動，非迴圈）",
+    "reviewed_by": "Claude",
+    "note": "回歸 464 全綠（Claude 於使用者電腦重跑）；require_holder 錯誤持鎖者與缺名稱皆拒絕",
+    "queue_sha_before": "3f2876e6…"
+  },
+  "T14": {
+    "executed_by": "Codex App（手動）",
+    "reviewed_by": "Claude",
+    "note": "主回歸 483→525（+42 test_auto_loop）全綠；迴圈程式未改"
+  },
+  "T16": {
+    "executed_by": "Codex App（手動）",
+    "reviewed_by": "Claude",
+    "note": "COHR 2026-11-04、VRT 2026-10-28 官方引句；AVGO/ETN/MRVL/MU 維持 UNKNOWN；append-only；回歸 483 綠"
+  },
+  "T17": {
+    "run_id": "RUN_20261017T222704",
+    "reason": "stop_for_user"
+  },
+  "T07c": {
+    "executed_by": "Claude Code（Sonnet，手動）",
+    "reviewed_by": "Claude",
+    "note": "ai_field_value_voids.jsonl 作廢 9 筆 INVALID_SCOPE_ROW；scope 防呆；120 項重算檢查通過；回歸 539 綠"
+  },
+  "T08b": {
+    "executed_by": "Codex App（手動）",
+    "reviewed_by": "Claude",
+    "note": "robots 合規：僅 Microsoft、TSMC 可取得（4 份）；Alphabet/Arista 官方 IR 無；Amazon/Meta/Marvell/Micron/Broadcom 被擋未繞過；新增 Microsoft I4 抽取 1 筆（190→175，但為租賃分類變動）；TSMC I2 文字比較未計"
+  },
+  "T18": {
+    "executed_by": "Claude Code（Sonnet，手動）",
+    "reviewed_by": "Claude",
+    "note": "auto_gates 明列＋回歸防污染清單；回歸 539 綠"
+  },
+  "T19": {
+    "executed_by": "Claude Code（Sonnet，手動）",
+    "reviewed_by": "Claude",
+    "note": "G-S4-3a／5a 實作＋6 測試；回歸 545 綠；預覽：MSFT I4 需補 DEFINITION_CHANGE／可比文字引句，TSMC I2 需補抽"
+  },
+  "T19b": {
+    "executed_by": "Claude Code（Sonnet，程式）＋Codex（Sol，抽取）",
+    "reviewed_by": "Claude",
+    "note": "G-S4-3b/5b；回歸 550 綠；MSFT I4 第一次抽取 EXT_0b615200 程式判維持（Claude 重算一致）；TSMC I2 無合規修正句，未寫"
+  }
+}

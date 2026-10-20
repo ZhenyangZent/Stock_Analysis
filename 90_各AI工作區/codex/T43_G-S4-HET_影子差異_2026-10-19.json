@@ -1,0 +1,297 @@
+{
+  "gate": "G-S4-HET",
+  "candidate_version": "1.13.0",
+  "candidate_only": true,
+  "effective_period_from": "2026-09-30",
+  "legacy_rewrite_count": 0,
+  "rows": [
+    {
+      "ticker": "2344",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "2408",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "3017",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "3081",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "3324",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "6274",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "ANET",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "AVGO",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "COHR",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "ETN",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "GEV",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "LITE",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "MRVL",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "MU",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "TSM",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    },
+    {
+      "ticker": "VRT",
+      "before": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      },
+      "after_candidate": {
+        "extractor_model_families": [
+          "UNKNOWN",
+          "UNKNOWN"
+        ],
+        "warning": null,
+        "blocking": false
+      },
+      "deciding_factor": "Existing rows predate 2026Q3 and are not rewritten; next 2026Q3 C6 pair must use different families."
+    }
+  ]
+}

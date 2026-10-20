@@ -1,0 +1,20 @@
+{
+  "contract": "T45_RULES_1.13.1_FROZEN_COMPARISON",
+  "source_run_id": "SNAP_20261019T174908Z_275da2dd",
+  "source_snapshot_sha256": "988062b8c3a6e329034ff1c683f55227a88b1c1c871ad048cab95c450521a383",
+  "candidate_sha256": "e8b4d93d6049a00d1ca3d67d5adfaafcca3f259aecfc8303608de52b77660b27",
+  "new_null_fields": [],
+  "classification_changes": [],
+  "theme_changes": [],
+  "event_distance_changes": [],
+  "allowed_nonsemantic_changes": [
+    "protocol_version",
+    "computed_provenance.rules_version",
+    "computed_provenance.rules_sha256"
+  ],
+  "precommit_snapshot_sha256": {
+    "1.13.0": "24923dcd9fd197c5d8610c8d60217ba0532084a214d38247fd715fbd50ade66c",
+    "1.13.1": "24923dcd9fd197c5d8610c8d60217ba0532084a214d38247fd715fbd50ade66c"
+  },
+  "gate": "PASS"
+}

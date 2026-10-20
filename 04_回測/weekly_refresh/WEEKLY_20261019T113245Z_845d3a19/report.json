@@ -1,0 +1,460 @@
+{
+  "ended_at": "2026-10-19T11:34:48.775441+00:00",
+  "events": {
+    "checked_at": "2026-10-19T11:33:34.462501+00:00",
+    "companies": [
+      {
+        "date": "2026-11-03",
+        "reason": "ROBOTS_DISALLOW",
+        "robots_url": "https://investors.arista.com/robots.txt",
+        "status": "MANUAL_REQUIRED",
+        "ticker": "ANET",
+        "url": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-to-Announce-Q3-2026-Financial-Results-on-Tuesday-November-3-2026/default.aspx"
+      },
+      {
+        "date": null,
+        "reason": "NO_OFFICIAL_UPCOMING_EVENT_IN_LEDGER",
+        "status": "UNKNOWN",
+        "ticker": "AVGO"
+      },
+      {
+        "date": "2026-11-04",
+        "reason": "HTTP_403",
+        "robots_url": "https://ir.coherent.com/robots.txt",
+        "status": "MANUAL_REQUIRED",
+        "ticker": "COHR",
+        "url": "https://ir.coherent.com/news-releases/news-release-details/coherent-corp-announces-timing-fy2027-first-quarter-earnings"
+      },
+      {
+        "date": null,
+        "reason": "NO_OFFICIAL_UPCOMING_EVENT_IN_LEDGER",
+        "status": "UNKNOWN",
+        "ticker": "ETN"
+      },
+      {
+        "date": "2026-10-28",
+        "status": "RECONFIRMED",
+        "ticker": "GEV",
+        "url": "https://www.gevernova.com/news/taxonomy/term/9606"
+      },
+      {
+        "date": "2026-11-05",
+        "reason": "ROBOTS_DISALLOW",
+        "robots_url": "https://investor.lumentum.com/robots.txt",
+        "status": "MANUAL_REQUIRED",
+        "ticker": "LITE",
+        "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-Reporting-Date-for-Fiscal-First-Quarter-2027-Financial-Results/default.aspx"
+      },
+      {
+        "date": null,
+        "reason": "NO_OFFICIAL_UPCOMING_EVENT_IN_LEDGER",
+        "status": "UNKNOWN",
+        "ticker": "MRVL"
+      },
+      {
+        "date": null,
+        "reason": "NO_OFFICIAL_UPCOMING_EVENT_IN_LEDGER",
+        "status": "UNKNOWN",
+        "ticker": "MU"
+      },
+      {
+        "date": null,
+        "reason": "NO_OFFICIAL_UPCOMING_EVENT_IN_LEDGER",
+        "status": "UNKNOWN",
+        "ticker": "SOXX"
+      },
+      {
+        "date": null,
+        "reason": "NO_OFFICIAL_UPCOMING_EVENT_IN_LEDGER",
+        "status": "UNKNOWN",
+        "ticker": "TSM"
+      },
+      {
+        "date": "2026-10-28",
+        "reason": "ROBOTS_DISALLOW",
+        "robots_url": "https://investors.vertiv.com/robots.txt",
+        "status": "MANUAL_REQUIRED",
+        "ticker": "VRT",
+        "url": "https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Third-Quarter-2026-Earnings-Release-and-Conference-Call/default.aspx"
+      }
+    ],
+    "coverage_rows_added": 1
+  },
+  "fetches": [
+    {
+      "exit_code": 0,
+      "script": "fetch_prices.py",
+      "stderr": "",
+      "stdout": "美股金鑰來源：家目錄的 .ai_stock/.env\n抓 0050（台股，每個月一次請求，會比較慢）…\n抓 2344（台股，每個月一次請求，會比較慢）…\n抓 2408（台股，每個月一次請求，會比較慢）…\n抓 3017（台股，每個月一次請求，會比較慢）…\n抓 3081（台股，每個月一次請求，會比較慢）…\n抓 3324（台股，每個月一次請求，會比較慢）…\n抓 6274（台股，每個月一次請求，會比較慢）…\n抓 ANET（美股）…\n抓 AVGO（美股）…\n抓 COHR（美股）…\n抓 ETN（美股）…\n抓 GEV（美股）…\n抓 LITE（美股）…\n抓 MRVL（美股）…\n抓 MU（美股）…\n抓 SOXX（美股）…\n抓 TSM（美股）…\n抓 VRT（美股）…\n\n新增股價 7 筆、公司行動 0 筆。\n有 37 筆與既有資料數值不同，既有資料沒有被改寫，差異記在 01_共用資料/prices_差異.csv，請人工確認。\n完整性檢查　0050 缺 5 個交易日：2025-06-11、2025-06-12、2025-06-13、2025-06-16、2025-06-17\n以上日期同市場至少有兩個代號有交易。可能是停牌、暫停交易，或抓取時漏掉；重跑抓價程式會嘗試補齊。\n提醒　台股來源是未還原價。請把 0050、2344、2408、3017、3081、3324、6274 的除權息記在 01_共用資料/corporate_actions.csv，否則除息日會被算成下跌。\n"
+    },
+    {
+      "exit_code": 0,
+      "script": "fetch_fx.py",
+      "stderr": "",
+      "stdout": "DEXTAUS：取得 1444 筆，新增 0 筆，衝突 1444 筆。\n"
+    },
+    {
+      "exit_code": 0,
+      "script": "fetch_macro.py",
+      "stderr": "",
+      "stdout": "FRED 來源模式：FRED_API（金鑰來源：家目錄的 .ai_stock/.env）\nDGS10：取得 2197 筆，新增 0 筆\nDCOILBRENTEU：取得 2226 筆，新增 0 筆\nUNRATE：取得 104 筆，新增 0 筆\nCPILFESL：取得 104 筆，新增 0 筆\nBAMLH0A0HYM2：取得 786 筆，新增 0 筆\nUNRATE vintages：取得 173 個公布版本，新增 0 筆\nCPILFESL vintages：取得 460 個公布版本，新增 0 筆\n\n共新增 0 筆。\n"
+    }
+  ],
+  "formal_snapshot_created": false,
+  "mode": "LIVE",
+  "preview": {
+    "candidate_run_id": "SNAP_20261019T113337Z_f5d5f775",
+    "classification_changes": [],
+    "gaps": [
+      {
+        "gaps": [
+          {
+            "filled_by": "S4 前查證報價來源（D-08）",
+            "missing": "主線 I3"
+          }
+        ],
+        "market": "TW",
+        "ticker": "2344"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S4 前查證報價來源（D-08）",
+            "missing": "主線 I3"
+          }
+        ],
+        "market": "TW",
+        "ticker": "2408"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S3：V1 試行（point-in-time 估值資料）",
+            "missing": "V1：DATA_INSUFFICIENT_CANONICAL_OBSERVATIONS"
+          }
+        ],
+        "market": "TW",
+        "ticker": "3081"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S4：AI 判讀（併購／一次性項目）",
+            "missing": "C5"
+          }
+        ],
+        "market": "TW",
+        "ticker": "3324"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S4：AI 抽取財測數字＋程式判方向",
+            "missing": "主線 I2"
+          }
+        ],
+        "market": "TW",
+        "ticker": "6274"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S3：前瞻事件表與涵蓋紀錄",
+            "missing": "事件距離：EVENT_COVERAGE_INCOMPLETE"
+          }
+        ],
+        "market": "US",
+        "ticker": "AVGO"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S3：V1 試行（point-in-time 估值資料）",
+            "missing": "V1：DATA_INSUFFICIENT_CANONICAL_OBSERVATIONS"
+          }
+        ],
+        "market": "US",
+        "ticker": "COHR"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S3：前瞻事件表與涵蓋紀錄",
+            "missing": "事件距離：EVENT_COVERAGE_INCOMPLETE"
+          }
+        ],
+        "market": "US",
+        "ticker": "ETN"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S3：V1 試行（point-in-time 估值資料）",
+            "missing": "V1：DATA_INSUFFICIENT_CANONICAL_OBSERVATIONS"
+          }
+        ],
+        "market": "US",
+        "ticker": "GEV"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S3：V1 試行（point-in-time 估值資料）",
+            "missing": "V1：DATA_INSUFFICIENT_CANONICAL_OBSERVATIONS"
+          }
+        ],
+        "market": "US",
+        "ticker": "LITE"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S3：前瞻事件表與涵蓋紀錄",
+            "missing": "事件距離：EVENT_COVERAGE_INCOMPLETE"
+          },
+          {
+            "filled_by": "S3：V1 試行（point-in-time 估值資料）",
+            "missing": "V1：DATA_INSUFFICIENT_CANONICAL_OBSERVATIONS"
+          }
+        ],
+        "market": "US",
+        "ticker": "MRVL"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S3：前瞻事件表與涵蓋紀錄",
+            "missing": "事件距離：EVENT_COVERAGE_INCOMPLETE"
+          },
+          {
+            "filled_by": "S4 前查證報價來源（D-08）",
+            "missing": "主線 I3"
+          }
+        ],
+        "market": "US",
+        "ticker": "MU"
+      },
+      {
+        "gaps": [
+          {
+            "filled_by": "S3：前瞻事件表與涵蓋紀錄",
+            "missing": "事件距離：EVENT_COVERAGE_INCOMPLETE"
+          },
+          {
+            "filled_by": "S3：V1 試行（point-in-time 估值資料）",
+            "missing": "V1：DATA_INSUFFICIENT_CANONICAL_OBSERVATIONS"
+          }
+        ],
+        "market": "US",
+        "ticker": "TSM"
+      }
+    ],
+    "latest_formal_snapshot": "SNAP_20261019T090733Z_522a5100",
+    "tw_statutory_windows": [
+      {
+        "classification": "等待",
+        "event": {
+          "actual_available_at": null,
+          "classification": "BEFORE_WINDOW",
+          "coverage_record": {
+            "available_at": "2026-09-30T23:59:59+08:00",
+            "coverage_validity": "STATUTORY_RULE_NO_7_DAY_EXPIRY",
+            "evidence_method": "STATUTORY_CALENDAR",
+            "fiscal_period": "Q3",
+            "fiscal_year": 2026,
+            "issuer_id": "ISSUER_WINBOND",
+            "record_type": "COVERAGE",
+            "statutory_deadline": "2026-11-14",
+            "window_start": "2026-10-25"
+          },
+          "distance": 5,
+          "evidence_method": "STATUTORY_CALENDAR",
+          "fiscal_period": "Q3",
+          "fiscal_year": 2026,
+          "period_end": "2026-09-30",
+          "reason": null,
+          "status": "KNOWN_UPCOMING",
+          "statutory_deadline": "2026-11-14",
+          "window_end_exclusive_session_id": "TW_2026-11-16",
+          "window_start": "2026-10-25",
+          "window_start_session_id": "TW_2026-10-27"
+        },
+        "ticker": "2344"
+      },
+      {
+        "classification": "等待",
+        "event": {
+          "actual_available_at": null,
+          "classification": "BEFORE_WINDOW",
+          "coverage_record": {
+            "available_at": "2026-09-30T23:59:59+08:00",
+            "coverage_validity": "STATUTORY_RULE_NO_7_DAY_EXPIRY",
+            "evidence_method": "STATUTORY_CALENDAR",
+            "fiscal_period": "Q3",
+            "fiscal_year": 2026,
+            "issuer_id": "ISSUER_NANYA",
+            "record_type": "COVERAGE",
+            "statutory_deadline": "2026-11-14",
+            "window_start": "2026-10-25"
+          },
+          "distance": 5,
+          "evidence_method": "STATUTORY_CALENDAR",
+          "fiscal_period": "Q3",
+          "fiscal_year": 2026,
+          "period_end": "2026-09-30",
+          "reason": null,
+          "status": "KNOWN_UPCOMING",
+          "statutory_deadline": "2026-11-14",
+          "window_end_exclusive_session_id": "TW_2026-11-16",
+          "window_start": "2026-10-25",
+          "window_start_session_id": "TW_2026-10-27"
+        },
+        "ticker": "2408"
+      },
+      {
+        "classification": "等待",
+        "event": {
+          "actual_available_at": null,
+          "classification": "BEFORE_WINDOW",
+          "coverage_record": {
+            "available_at": "2026-09-30T23:59:59+08:00",
+            "coverage_validity": "STATUTORY_RULE_NO_7_DAY_EXPIRY",
+            "evidence_method": "STATUTORY_CALENDAR",
+            "fiscal_period": "Q3",
+            "fiscal_year": 2026,
+            "issuer_id": "ISSUER_AVC",
+            "record_type": "COVERAGE",
+            "statutory_deadline": "2026-11-14",
+            "window_start": "2026-10-25"
+          },
+          "distance": 5,
+          "evidence_method": "STATUTORY_CALENDAR",
+          "fiscal_period": "Q3",
+          "fiscal_year": 2026,
+          "period_end": "2026-09-30",
+          "reason": null,
+          "status": "KNOWN_UPCOMING",
+          "statutory_deadline": "2026-11-14",
+          "window_end_exclusive_session_id": "TW_2026-11-16",
+          "window_start": "2026-10-25",
+          "window_start_session_id": "TW_2026-10-27"
+        },
+        "ticker": "3017"
+      },
+      {
+        "classification": "資料不足",
+        "event": {
+          "actual_available_at": null,
+          "classification": "BEFORE_WINDOW",
+          "coverage_record": {
+            "available_at": "2026-09-30T23:59:59+08:00",
+            "coverage_validity": "STATUTORY_RULE_NO_7_DAY_EXPIRY",
+            "evidence_method": "STATUTORY_CALENDAR",
+            "fiscal_period": "Q3",
+            "fiscal_year": 2026,
+            "issuer_id": "ISSUER_LANDMARK",
+            "record_type": "COVERAGE",
+            "statutory_deadline": "2026-11-14",
+            "window_start": "2026-10-25"
+          },
+          "distance": 5,
+          "evidence_method": "STATUTORY_CALENDAR",
+          "fiscal_period": "Q3",
+          "fiscal_year": 2026,
+          "period_end": "2026-09-30",
+          "reason": null,
+          "status": "KNOWN_UPCOMING",
+          "statutory_deadline": "2026-11-14",
+          "window_end_exclusive_session_id": "TW_2026-11-16",
+          "window_start": "2026-10-25",
+          "window_start_session_id": "TW_2026-10-27"
+        },
+        "ticker": "3081"
+      },
+      {
+        "classification": "等待",
+        "event": {
+          "actual_available_at": null,
+          "classification": "BEFORE_WINDOW",
+          "coverage_record": {
+            "available_at": "2026-09-30T23:59:59+08:00",
+            "coverage_validity": "STATUTORY_RULE_NO_7_DAY_EXPIRY",
+            "evidence_method": "STATUTORY_CALENDAR",
+            "fiscal_period": "Q3",
+            "fiscal_year": 2026,
+            "issuer_id": "ISSUER_AURAS",
+            "record_type": "COVERAGE",
+            "statutory_deadline": "2026-11-14",
+            "window_start": "2026-10-25"
+          },
+          "distance": 5,
+          "evidence_method": "STATUTORY_CALENDAR",
+          "fiscal_period": "Q3",
+          "fiscal_year": 2026,
+          "period_end": "2026-09-30",
+          "reason": null,
+          "status": "KNOWN_UPCOMING",
+          "statutory_deadline": "2026-11-14",
+          "window_end_exclusive_session_id": "TW_2026-11-16",
+          "window_start": "2026-10-25",
+          "window_start_session_id": "TW_2026-10-27"
+        },
+        "ticker": "3324"
+      },
+      {
+        "classification": "等待",
+        "event": {
+          "actual_available_at": null,
+          "classification": "BEFORE_WINDOW",
+          "coverage_record": {
+            "available_at": "2026-09-30T23:59:59+08:00",
+            "coverage_validity": "STATUTORY_RULE_NO_7_DAY_EXPIRY",
+            "evidence_method": "STATUTORY_CALENDAR",
+            "fiscal_period": "Q3",
+            "fiscal_year": 2026,
+            "issuer_id": "ISSUER_TUC",
+            "record_type": "COVERAGE",
+            "statutory_deadline": "2026-11-14",
+            "window_start": "2026-10-25"
+          },
+          "distance": 5,
+          "evidence_method": "STATUTORY_CALENDAR",
+          "fiscal_period": "Q3",
+          "fiscal_year": 2026,
+          "period_end": "2026-09-30",
+          "reason": null,
+          "status": "KNOWN_UPCOMING",
+          "statutory_deadline": "2026-11-14",
+          "window_end_exclusive_session_id": "TW_2026-11-16",
+          "window_start": "2026-10-25",
+          "window_start_session_id": "TW_2026-10-27"
+        },
+        "ticker": "6274"
+      }
+    ]
+  },
+  "run_id": "WEEKLY_20261019T113245Z_845d3a19",
+  "started_at": "2026-10-19T11:32:45.334242+00:00",
+  "steps": [
+    {
+      "status": "PASS",
+      "step": 1
+    },
+    {
+      "status": "PASS",
+      "step": 2
+    },
+    {
+      "status": "PASS",
+      "step": 3
+    },
+    {
+      "status": "PASS",
+      "step": 4
+    },
+    {
+      "status": "PASS",
+      "step": 5
+    }
+  ]
+}

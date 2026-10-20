@@ -1,0 +1,50 @@
+{
+  "registry_version": "1.2.1",
+  "as_of": "2026-10-17",
+  "universe_status": "CURATED_RETROSPECTIVE_SEED",
+  "issuers": [
+    {"issuer_id": "ISSUER_MICRON", "issuer_name": "Micron Technology"},
+    {"issuer_id": "ISSUER_WINBOND", "issuer_name": "Winbond Electronics"},
+    {"issuer_id": "ISSUER_NANYA", "issuer_name": "Nanya Technology"},
+    {"issuer_id": "ISSUER_LUMENTUM", "issuer_name": "Lumentum Holdings"},
+    {"issuer_id": "ISSUER_COHERENT", "issuer_name": "Coherent Corp."},
+    {"issuer_id": "ISSUER_MARVELL", "issuer_name": "Marvell Technology"},
+    {"issuer_id": "ISSUER_BROADCOM", "issuer_name": "Broadcom"},
+    {"issuer_id": "ISSUER_ARISTA", "issuer_name": "Arista Networks"},
+    {"issuer_id": "ISSUER_VERTIV", "issuer_name": "Vertiv Holdings"},
+    {"issuer_id": "ISSUER_EATON", "issuer_name": "Eaton"},
+    {"issuer_id": "ISSUER_GEV", "issuer_name": "GE Vernova"},
+    {"issuer_id": "ISSUER_TSMC", "issuer_name": "Taiwan Semiconductor Manufacturing Company"},
+    {"issuer_id": "ISSUER_AVC", "issuer_name": "Asia Vital Components"},
+    {"issuer_id": "ISSUER_AURAS", "issuer_name": "Auras Technology"},
+    {"issuer_id": "ISSUER_LANDMARK", "issuer_name": "LandMark Optoelectronics"},
+    {"issuer_id": "ISSUER_TUC", "issuer_name": "Taiwan Union Technology"},
+    {"issuer_id": "ISSUER_TW50", "issuer_name": "Yuanta Taiwan Top 50 ETF"},
+    {"issuer_id": "ISSUER_SOXX", "issuer_name": "iShares Semiconductor ETF"}
+    ,{"issuer_id": "ISSUER_MICROSOFT", "issuer_name": "Microsoft Corporation", "scope_only": "I4_CLOUD_CAPEX_EVIDENCE"}
+    ,{"issuer_id": "ISSUER_ALPHABET", "issuer_name": "Alphabet Inc.", "scope_only": "I4_CLOUD_CAPEX_EVIDENCE"}
+    ,{"issuer_id": "ISSUER_AMAZON", "issuer_name": "Amazon.com, Inc.", "scope_only": "I4_CLOUD_CAPEX_EVIDENCE"}
+    ,{"issuer_id": "ISSUER_META", "issuer_name": "Meta Platforms, Inc.", "scope_only": "I4_CLOUD_CAPEX_EVIDENCE"}
+  ],
+  "securities": [
+    {"security_id":"SEC_MU_US","issuer_id":"ISSUER_MICRON","ticker":"MU","aliases":[],"exchange":"NASDAQ","market":"US","market_timezone":"America/New_York","security_type":"COMMON_STOCK","currency":"USD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_2408_TW","issuer_id":"ISSUER_NANYA","ticker":"2408","aliases":["2408.TW"],"exchange":"TWSE","market":"TW","market_timezone":"Asia/Taipei","security_type":"COMMON_STOCK","currency":"TWD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_2344_TW","issuer_id":"ISSUER_WINBOND","ticker":"2344","aliases":["2344.TW"],"exchange":"TWSE","market":"TW","market_timezone":"Asia/Taipei","security_type":"COMMON_STOCK","currency":"TWD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_LITE_US","issuer_id":"ISSUER_LUMENTUM","ticker":"LITE","aliases":[],"exchange":"NASDAQ","market":"US","market_timezone":"America/New_York","security_type":"COMMON_STOCK","currency":"USD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_COHR_US","issuer_id":"ISSUER_COHERENT","ticker":"COHR","aliases":[],"exchange":"NYSE","market":"US","market_timezone":"America/New_York","security_type":"COMMON_STOCK","currency":"USD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_MRVL_US","issuer_id":"ISSUER_MARVELL","ticker":"MRVL","aliases":[],"exchange":"NASDAQ","market":"US","market_timezone":"America/New_York","security_type":"COMMON_STOCK","currency":"USD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_AVGO_US","issuer_id":"ISSUER_BROADCOM","ticker":"AVGO","aliases":[],"exchange":"NASDAQ","market":"US","market_timezone":"America/New_York","security_type":"COMMON_STOCK","currency":"USD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_ANET_US","issuer_id":"ISSUER_ARISTA","ticker":"ANET","aliases":[],"exchange":"NYSE","market":"US","market_timezone":"America/New_York","security_type":"COMMON_STOCK","currency":"USD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_VRT_US","issuer_id":"ISSUER_VERTIV","ticker":"VRT","aliases":[],"exchange":"NYSE","market":"US","market_timezone":"America/New_York","security_type":"COMMON_STOCK","currency":"USD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_ETN_US","issuer_id":"ISSUER_EATON","ticker":"ETN","aliases":[],"exchange":"NYSE","market":"US","market_timezone":"America/New_York","security_type":"COMMON_STOCK","currency":"USD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_GEV_US","issuer_id":"ISSUER_GEV","ticker":"GEV","aliases":[],"exchange":"NYSE","market":"US","market_timezone":"America/New_York","security_type":"COMMON_STOCK","currency":"USD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_TSM_US","issuer_id":"ISSUER_TSMC","ticker":"TSM","aliases":[],"exchange":"NYSE","market":"US","market_timezone":"America/New_York","security_type":"ADR","currency":"USD","price_series_enabled":true,"valid_from":"1997-10-08","valid_to":null,"adr_underlying_security_id":"SEC_2330_TW","adr_ratio":5,"adr_ratio_valid_from":"1997-10-08","adr_ratio_valid_to":null,"reference_url":"https://investor.tsmc.com/english/faq"},
+    {"security_id":"SEC_2330_TW","issuer_id":"ISSUER_TSMC","ticker":"2330","aliases":["2330.TW"],"exchange":"TWSE","market":"TW","market_timezone":"Asia/Taipei","security_type":"COMMON_STOCK","currency":"TWD","price_series_enabled":false,"valid_from":"1994-09-05","valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null,"reference_url":"https://investor.tsmc.com/english/faq"},
+    {"security_id":"SEC_3017_TW","issuer_id":"ISSUER_AVC","ticker":"3017","aliases":["3017.TW"],"exchange":"TWSE","market":"TW","market_timezone":"Asia/Taipei","security_type":"COMMON_STOCK","currency":"TWD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_3324_TW","issuer_id":"ISSUER_AURAS","ticker":"3324","aliases":["3324.TWO","3324.TW"],"exchange":"TPEX","market":"TW","market_timezone":"Asia/Taipei","security_type":"COMMON_STOCK","currency":"TWD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_3081_TW","issuer_id":"ISSUER_LANDMARK","ticker":"3081","aliases":["3081.TWO","3081.TW"],"exchange":"TPEX","market":"TW","market_timezone":"Asia/Taipei","security_type":"COMMON_STOCK","currency":"TWD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_6274_TW","issuer_id":"ISSUER_TUC","ticker":"6274","aliases":["6274.TWO","6274.TW"],"exchange":"TPEX","market":"TW","market_timezone":"Asia/Taipei","security_type":"COMMON_STOCK","currency":"TWD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_0050_TW","issuer_id":"ISSUER_TW50","ticker":"0050","aliases":["0050.TW"],"exchange":"TWSE","market":"TW","market_timezone":"Asia/Taipei","security_type":"ETF","currency":"TWD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null},
+    {"security_id":"SEC_SOXX_US","issuer_id":"ISSUER_SOXX","ticker":"SOXX","aliases":[],"exchange":"NASDAQ","market":"US","market_timezone":"America/New_York","security_type":"ETF","currency":"USD","price_series_enabled":true,"valid_from":null,"valid_to":null,"adr_underlying_security_id":null,"adr_ratio":null,"adr_ratio_valid_from":null,"adr_ratio_valid_to":null}
+  ]
+}

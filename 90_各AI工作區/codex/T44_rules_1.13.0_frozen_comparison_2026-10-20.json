@@ -1,0 +1,71 @@
+{
+  "contract": "T44_D_RULES_1.13.0_FROZEN_COMPARISON",
+  "cutoff": "2026-10-19T09:07:33.374742+00:00",
+  "approved_t43_sha256": "a5e3cbfd844219aa7599d60c576922f7d4ec54fecedbc2e60c902160c6affd64",
+  "candidate_sha256": "31810daca648eafdfe83a6c7323cfda10910b152c3f0c8361b2429fbbe3deb17",
+  "classification_changes": [
+    {
+      "ticker": "3081",
+      "market": "TW",
+      "before": "資料不足",
+      "after": "等待",
+      "before_valuation_score": 0,
+      "after_valuation_score": -1,
+      "candidate_v1": {
+        "value": 2.3511550504945773,
+        "status": "PUBLIC_DATA_COMPUTED",
+        "type": "實績",
+        "source": "S1A 快照 SNAP_PRECOMMIT_T44_1_13_0_236fff3d1cd1（官方申報＋公開價格程式計算）",
+        "as_of": "2026-10-16",
+        "calculation_method": "V1_ALT_SHORT_HISTORY",
+        "score_cap": 0,
+        "provenance": {
+          "adapter": "S1A_ADAPTER_V1",
+          "snapshot_run_id": "SNAP_PRECOMMIT_T44_1_13_0_236fff3d1cd1",
+          "snapshot_sha256": "236fff3d1cd14adc0eb93f345d06b97753b1627d61a97a266378769de3bc29ac",
+          "field_path": "companies/SEC_3081_TW/valuation/V1",
+          "rules_version": "1.13.0",
+          "rules_sha256": "1fe97fb219dc3db08ac8281607db3ac9e6f2efb0555e13df304bb2fd2614688e"
+        }
+      }
+    },
+    {
+      "ticker": "COHR",
+      "market": "US",
+      "before": "資料不足",
+      "after": "可列入研究",
+      "before_valuation_score": 0,
+      "after_valuation_score": 0,
+      "candidate_v1": {
+        "value": 0.42462924396541285,
+        "status": "PUBLIC_DATA_COMPUTED",
+        "type": "實績",
+        "source": "S1A 快照 SNAP_PRECOMMIT_T44_1_13_0_236fff3d1cd1（官方申報＋公開價格程式計算）",
+        "as_of": "2026-10-16",
+        "calculation_method": "V1_ALT_SHORT_HISTORY",
+        "score_cap": 0,
+        "provenance": {
+          "adapter": "S1A_ADAPTER_V1",
+          "snapshot_run_id": "SNAP_PRECOMMIT_T44_1_13_0_236fff3d1cd1",
+          "snapshot_sha256": "236fff3d1cd14adc0eb93f345d06b97753b1627d61a97a266378769de3bc29ac",
+          "field_path": "companies/SEC_COHR_US/valuation/V1",
+          "rules_version": "1.13.0",
+          "rules_sha256": "1fe97fb219dc3db08ac8281607db3ac9e6f2efb0555e13df304bb2fd2614688e"
+        }
+      }
+    }
+  ],
+  "theme_changes": [],
+  "event_distance_changes": [],
+  "gate": "PASS",
+  "precommit": {
+    "1.12.1": {
+      "run_id": "SNAP_PRECOMMIT_T44_1_12_1_243df19dd99c",
+      "snapshot_sha256": "243df19dd99cd53031e0afaccef9a291dc1e3e335f2fc4eaba4a64b77ed495b9"
+    },
+    "1.13.0": {
+      "run_id": "SNAP_PRECOMMIT_T44_1_13_0_236fff3d1cd1",
+      "snapshot_sha256": "236fff3d1cd14adc0eb93f345d06b97753b1627d61a97a266378769de3bc29ac"
+    }
+  }
+}

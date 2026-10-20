@@ -1,0 +1,85 @@
+# Secrets and user-only inputs
+.env
+**/.env
+**/.ai_stock/
+**/portfolio.json
+*.pem
+*.key
+
+# Python and test caches
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+**/tmp/
+**/test_tmp/
+**/tmp_tests/
+**/tmp_tests_run_*/
+**/T*_test_tmp/
+**/T*_regression_tmp/
+**/S*_test_tmp/
+**/S*_regression_tmp/
+90_各AI工作區/_autoloop_tmp/
+
+# Runtime locks and local execution debris
+協作鎖定.lock
+協作鎖定_歷史/
+**/*.寫入中*
+**/*.write_journal*
+*.before
+*.stale.*
+~$*
+
+# Third-party/raw source documents are reproducible from their ledgers and URLs.
+# They are excluded for repository size and redistribution/copyright hygiene.
+01_共用資料/data_spine/raw/
+01_共用資料/手動下載_IR簡報/
+99_原始材料/
+05_意見來源/
+*.pdf
+*.htm
+*.html
+*.xhtml
+*.srt
+*.mp4
+*.zip
+
+# Content-addressed snapshot cache and local automation logs
+02_執行紀錄/影子快照/_cas/
+02_執行紀錄/影子快照/_staging/
+02_執行紀錄/影子快照/_中斷/
+02_執行紀錄/自動迴圈/
+
+# T46 incident: these current files are known contaminated and must not be
+# published as canonical until the separately authorized recovery is complete.
+01_共用資料/data_spine/docs_ledger.jsonl
+01_共用資料/data_spine/staging_write_audit_docs.jsonl
+01_共用資料/data_spine/docs_ledger.jsonl.*
+01_共用資料/data_spine/staging_write_audit_docs.jsonl.*
+02_執行紀錄/待抽取清單.json
+02_執行紀錄/待抽取清單.json.*
+
+# AI workspaces contain duplicated downloads and one-off test sandboxes.
+# Keep only the consolidated GPT handoff and the audited T46 recovery candidate.
+90_各AI工作區/*
+!90_各AI工作區/codex/
+90_各AI工作區/codex/*
+!90_各AI工作區/codex/給GPT_股票判斷系統完整交接_2026-10-20.md
+!90_各AI工作區/codex/T46_recover_first_scan.py
+!90_各AI工作區/codex/rules_1.12.0_candidate_blocked_2026-10-19.json
+!90_各AI工作區/codex/T42_EPS股數敏感度_2026-10-19.json
+!90_各AI工作區/codex/T43_rules_1.13.0_candidate.json
+!90_各AI工作區/codex/T43_G-C1-TWM_影子差異_2026-10-19.json
+!90_各AI工作區/codex/T43_G-S4-HET_影子差異_2026-10-19.json
+!90_各AI工作區/codex/T43_G-T-SELF_影子差異_2026-10-19.json
+!90_各AI工作區/codex/T43_G-V1-ALT_影子差異_2026-10-19.json
+!90_各AI工作區/codex/T44_rules_1.13.0_frozen_comparison_2026-10-20.json
+!90_各AI工作區/codex/T44_SEC資料補洞_2026-10-20.json
+!90_各AI工作區/codex/T44_V1資料補洞結果_2026-10-20.json
+!90_各AI工作區/codex/T45_rules_1.13.1_frozen_comparison_2026-10-20.json
+!90_各AI工作區/codex/T45b_EV-Sales正式路徑凍結比較_2026-10-20.json
+!90_各AI工作區/claude/
+90_各AI工作區/claude/*
+!90_各AI工作區/claude/台股財報原文抽查_2026-10-08.md
+

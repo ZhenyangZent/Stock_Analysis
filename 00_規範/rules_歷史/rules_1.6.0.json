@@ -1,0 +1,581 @@
+{
+  "protocol_version": "1.6.0",
+  "note": "門檻為初始設定，尚未經過回測驗證。修改需升版號並寫入規範變更紀錄。",
+  "market": {
+    "min_filled": 5,
+    "green_at": 2,
+    "red_at": -2,
+    "indicators": {
+      "M1": {
+        "name": "聯準會最近一次利率動作",
+        "source": "federalreserve.gov",
+        "rule": {
+          "type": "map",
+          "map": {
+            "降息": 1,
+            "不變": 0,
+            "升息": -1
+          }
+        },
+        "unit": "選項"
+      },
+      "M2": {
+        "name": "10 年期美債殖利率近 20 交易日變化（基點）",
+        "source": "FRED DGS10",
+        "rule": {
+          "type": "high_bad",
+          "bad_above": 25,
+          "good_below": -25
+        },
+        "unit": "基點"
+      },
+      "M3": {
+        "name": "布蘭特原油近 20 交易日變化（%）",
+        "source": "FRED DCOILBRENTEU",
+        "rule": {
+          "type": "high_bad",
+          "bad_above": 10,
+          "good_below": -10
+        },
+        "unit": "百分比"
+      },
+      "M4": {
+        "name": "失業率近 3 個月變化（百分點）",
+        "source": "bls.gov",
+        "rule": {
+          "type": "high_bad",
+          "bad_above": 0.3,
+          "good_below": -0.1
+        },
+        "unit": "百分點"
+      },
+      "M5": {
+        "name": "核心 CPI 年增率近 3 個月變化（百分點）",
+        "source": "bls.gov",
+        "rule": {
+          "type": "high_bad",
+          "bad_above": 0.2,
+          "good_below": -0.2
+        },
+        "unit": "百分點"
+      },
+      "M6": {
+        "name": "費城半導體指數相對 200 日均線（%）",
+        "source": "指數或交易所資料",
+        "rule": {
+          "type": "high_good",
+          "good_above": 0,
+          "bad_below": -5
+        },
+        "unit": "百分比"
+      },
+      "M7": {
+        "name": "高收益債信用利差近 20 交易日變化（基點）",
+        "source": "FRED BAMLH0A0HYM2",
+        "rule": {
+          "type": "high_bad",
+          "bad_above": 50,
+          "good_below": -25
+        },
+        "unit": "基點"
+      }
+    }
+  },
+  "theme": {
+    "min_filled": 3,
+    "indicators": {
+      "I1": {
+        "name": "追蹤名單中年增率加速的公司佔比（%）",
+        "rule": {
+          "type": "high_good",
+          "good_above": 60,
+          "bad_below": 30
+        },
+        "unit": "百分比"
+      },
+      "I2": {
+        "name": "上修財測家數減下修家數",
+        "rule": {
+          "type": "high_good",
+          "good_above": 0,
+          "bad_below": 0
+        },
+        "unit": "家數"
+      },
+      "I3": {
+        "name": "產品報價趨勢",
+        "rule": {
+          "type": "map",
+          "map": {
+            "上漲": 1,
+            "持平": 0,
+            "下跌": -1
+          }
+        },
+        "unit": "選項"
+      },
+      "I4": {
+        "name": "四大雲端業者合計資本支出預估方向",
+        "rule": {
+          "type": "map",
+          "map": {
+            "上修": 1,
+            "持平": 0,
+            "一家下修": 0,
+            "多家下修": -1
+          }
+        },
+        "unit": "選項"
+      }
+    }
+  },
+  "themes": {
+    "memory": {
+      "name": "記憶體",
+      "watchlist": [
+        "MU",
+        "2408",
+        "2344"
+      ]
+    },
+    "optical": {
+      "name": "光通訊",
+      "watchlist": [
+        "LITE",
+        "COHR",
+        "MRVL",
+        "3081"
+      ]
+    },
+    "network_asic": {
+      "name": "網通與客製晶片",
+      "watchlist": [
+        "AVGO",
+        "ANET",
+        "MRVL"
+      ]
+    },
+    "power_cooling": {
+      "name": "電力與散熱",
+      "watchlist": [
+        "VRT",
+        "ETN",
+        "GEV",
+        "3017",
+        "3324"
+      ]
+    },
+    "foundry": {
+      "name": "晶圓代工與封裝",
+      "watchlist": [
+        "TSM"
+      ]
+    },
+    "pcb": {
+      "name": "高速板材",
+      "watchlist": [
+        "6274"
+      ]
+    }
+  },
+  "company": {
+    "min_filled": 4,
+    "indicators": {
+      "C1": {
+        "name": "最近一期營收年增率（%）",
+        "rule": {
+          "type": "high_good",
+          "good_above": 20,
+          "bad_below": 0
+        },
+        "unit": "百分比"
+      },
+      "C2": {
+        "name": "年增率相對上一期變化（百分點）",
+        "rule": {
+          "type": "high_good",
+          "good_above": 0,
+          "bad_below": -10
+        },
+        "unit": "百分點"
+      },
+      "C3": {
+        "name": "毛利率年變化（百分點）",
+        "rule": {
+          "type": "high_good",
+          "good_above": 0,
+          "bad_below": -1
+        },
+        "unit": "百分點"
+      },
+      "C4": {
+        "name": "財測相對事前共識",
+        "rule": {
+          "type": "map",
+          "map": {
+            "高於": 1,
+            "符合": 0,
+            "低於": -1
+          }
+        },
+        "unit": "選項"
+      },
+      "C5": {
+        "name": "成長主要來自併購或一次性",
+        "rule": {
+          "type": "map",
+          "map": {
+            "無": 0,
+            "有": -1
+          }
+        },
+        "unit": "選項"
+      },
+      "C6": {
+        "name": "歸因等級",
+        "rule": {
+          "type": "map",
+          "map": {
+            "A": 1,
+            "B": 0,
+            "C": 0,
+            "D": -1
+          }
+        },
+        "unit": "選項"
+      }
+    }
+  },
+  "valuation": {
+    "min_filled": 1,
+    "indicators": {
+      "V1": {
+        "name": "本益比除以自身 5 年中位數（循環股用股價淨值比）",
+        "rule": {
+          "type": "high_bad",
+          "bad_above": 1.5,
+          "good_below": 1.0
+        },
+        "unit": "倍數"
+      },
+      "V2": {
+        "name": "近 3 個月股價漲幅減每股盈餘預估調幅（百分點）",
+        "rule": {
+          "type": "high_bad",
+          "bad_above": 20,
+          "good_below": 0
+        },
+        "unit": "百分點",
+        "status": "DISABLED_BY_USER_DECISION",
+        "disabled_note": "使用者 2026-10-06 決定停用：沒有可回溯的分析師預估資料。不計分、不算已填、不列缺漏；輸入裡有值會被忽略並提醒。"
+      }
+    },
+    "caveat": "估值層只用歷史本益比或股價淨值比，不含分析師預估。這個參考不準：循環股在獲利高峰時歷史本益比最低、看起來最便宜；獲利為負或剛轉正時數字沒有意義。只能當成提醒，不可單獨作為便宜或昂貴的依據。",
+    "v1_rules": {
+      "status": "IMPLEMENTED_CANONICAL_RECOMPUTE_DATA_PENDING",
+      "default_method": "歷史本益比 ÷ 自身五年中位數",
+      "cyclical_method": "股價淨值比 ÷ 自身五年中位數",
+      "default_method_code": "TRAILING_PE_RELATIVE_TO_5Y_MEDIAN",
+      "valuation_method_by_security": {
+        "SEC_MU_US": "TRAILING_PB_RELATIVE_TO_5Y_MEDIAN",
+        "SEC_2408_TW": "TRAILING_PB_RELATIVE_TO_5Y_MEDIAN",
+        "SEC_2344_TW": "TRAILING_PB_RELATIVE_TO_5Y_MEDIAN"
+      },
+      "cyclical_tickers": [
+        "MU",
+        "2408",
+        "2344"
+      ],
+      "positive_earnings_quarters_required": 4,
+      "history_months_required": 60,
+      "min_valid_month_ends": 48,
+      "insufficient_history": "留空（資料不足），不可用較短期間代替"
+    }
+  },
+  "verdict": {
+    "event_block_days": 3,
+    "company_score_min": 2,
+    "theme_score_min": 1,
+    "valuation_score_min": 0,
+    "stress_drop": 0.3,
+    "event_none_value": "無",
+    "event_none_meaning_days": 20
+  },
+  "benchmarks": {
+    "default_us": "SOXX",
+    "default_tw": "0050"
+  },
+  "unit_contract": "執行紀錄與 prices.csv 一律用「百分比數字」：379% 寫 379，不寫 3.79。試算表的百分比格式儲存格內部值是小數（3.79），搬到執行紀錄時要乘以 100。基點與百分點直接寫數字（25 個基點寫 25；0.3 個百分點寫 0.3）。",
+  "entities": {
+    "note": "別名只限同一檔證券的不同寫法（例如 2408.TW 與 2408）。不同證券不可互為別名。",
+    "aliases": {
+      "2408.TW": "2408",
+      "2344.TW": "2344",
+      "3081.TW": "3081",
+      "3017.TW": "3017",
+      "3324.TW": "3324",
+      "6274.TW": "6274",
+      "6274.TWO": "6274",
+      "3081.TWO": "3081",
+      "3324.TWO": "3324"
+    },
+    "distinct_securities": {
+      "2330": "TSM",
+      "2330.TW": "TSM"
+    },
+    "distinct_note": "2330 是台灣掛牌的普通股（台幣），TSM 是美國掛牌的存託憑證（美元），是兩檔不同的證券，價格不可混用。目前追蹤名單用的是 TSM。"
+  },
+  "prices": {
+    "note": "prices.csv 只存未還原收盤價；配息與分割存在 corporate_actions.csv；含息報酬由程式計算，避免還原價事後被改寫。",
+    "default_start": "2024-01-01",
+    "listing": {
+      "MU": "US",
+      "LITE": "US",
+      "COHR": "US",
+      "MRVL": "US",
+      "AVGO": "US",
+      "ANET": "US",
+      "VRT": "US",
+      "ETN": "US",
+      "GEV": "US",
+      "TSM": "US",
+      "SOXX": "US",
+      "2408": "TW",
+      "2344": "TW",
+      "3081": "TW",
+      "3017": "TW",
+      "3324": "TW",
+      "6274": "TW",
+      "0050": "TW"
+    },
+    "sources": {
+      "US": "Tiingo 日線 API（需使用者自己的金鑰）",
+      "TW": "臺灣證券交易所 STOCK_DAY；查無資料時改查櫃買中心"
+    },
+    "secrets": {
+      "note": "金鑰不可放在專案資料夾內。",
+      "lookup_order": [
+        "環境變數 TIINGO_API_KEY",
+        "環境變數 AI_STOCK_ENV_FILE 指向的檔案",
+        "使用者家目錄的 .ai_stock/.env"
+      ]
+    }
+  },
+  "risk": {
+    "status": "SHADOW",
+    "note": "影子模式：只記錄預測與實際結果，不影響 verdict.py 的結論，不可用來放寬任何部位限制。",
+    "min_history_days": 250,
+    "lookback_days": 750,
+    "horizons": [
+      1,
+      5,
+      20
+    ],
+    "ewma_lambda": 0.94,
+    "beta_window": 120,
+    "models": [
+      "HS",
+      "EWMA_HS"
+    ],
+    "benchmark_shocks": [
+      -0.1,
+      -0.2
+    ],
+    "tw_limit_move": 0.095,
+    "evaluate_min_n": {
+      "0.95": 100,
+      "0.99": 250
+    },
+    "not_implemented": [
+      "GARCH",
+      "匯率風險",
+      "流動性調整損失",
+      "停牌與漲跌停下的實際可成交價",
+      "隱含波動",
+      "實質利率、信用利差、資本支出下修等情境"
+    ],
+    "evaluate_note": "筆數以「不同日期數」計，不是「股票數 × 日期數」；同一天多檔一起超出只算一個日期的證據。",
+    "es_min_tail_events": 30,
+    "hac": {
+      "method": "Newey-West（Bartlett 權重）",
+      "lag_rule": "floor(4*(D/100)^(2/9))，D 是不同日期數",
+      "note": "落後期數規則在看結果之前就固定，不可事後調整。"
+    },
+    "es_label": "初步尾端校準（非正式檢定）"
+  },
+  "health": {
+    "status": "SHADOW",
+    "note": "公司財務體質影子模組：只依已申報財報亮警示，不影響 verdict.py，不是買賣指令。缺資料不得顯示為穩健。",
+    "spec": "90_各AI工作區/codex/財務體質模組規格_v0.2-final_2026-10-06.md",
+    "tag_map": "00_規範/financial_tag_map.json",
+    "canonical_write_status": "ENABLED_AFTER_INDEPENDENT_REVIEW",
+    "zero_assertions": "00_規範/financial_zero_assertions.json",
+    "zero_assertion_policy": "Only APPROVED_BY_INDEPENDENT_AI assertions may enter canonical observations; each assertion is valid for one exact filing period and expires at the next filing.",
+    "required_indicators": [
+      "H2",
+      "H3",
+      "H4",
+      "H5"
+    ],
+    "stale_after_days": 135,
+    "thresholds": {
+      "H1": {
+        "caution_below_quarters": 8,
+        "warning_below_quarters": 4
+      },
+      "H2": {
+        "caution_above": 3,
+        "warning_above": 4.5,
+        "negative_ebitda_positive_net_debt": "WARNING"
+      },
+      "H3": {
+        "caution_below": 3,
+        "warning_below": 1.5
+      },
+      "H4": {
+        "caution_above": 1,
+        "warning_above": 2
+      },
+      "H5": {
+        "caution_when_ttm_negative": true,
+        "warning_when_two_fy_negative_and_h1_below_quarters": 8
+      },
+      "H6": {
+        "caution_below": 1,
+        "standalone_warning": false
+      },
+      "H7": {
+        "caution_above_pct": 5,
+        "warning_above_pct": 15
+      }
+    },
+    "method": {
+      "H1": "When TTM FCF < 0: (cash + short-term investments) / (-TTM FCF / 4)",
+      "H2": "(current interest-bearing debt + noncurrent interest-bearing debt - cash - short-term investments) / (TTM operating income + TTM depreciation and amortization)",
+      "H3": "TTM operating income / TTM interest expense",
+      "H4": "current interest-bearing debt / (cash + short-term investments)",
+      "H5": "operating cash flow - capital expenditure",
+      "H6": "current assets / current liabilities",
+      "H7": "YoY growth of quarterly weighted-average diluted shares outstanding; when the latest fiscal-year filing is later than the latest reported quarter, compare fiscal-year weighted-average diluted shares year over year"
+    },
+    "missing_policy": "NO_GUESS_NO_ZERO_INFERENCE_EXCEPT_INDEPENDENTLY_APPROVED_PERIOD_SPECIFIC_ASSERTION",
+    "ttm_alignment_policy": "Each ratio uses the same four quarter-ends for numerator and denominator; no common four-quarter window means DATA_INSUFFICIENT.",
+    "freshness_policy": "Each indicator uses its own actual latest input period; any required H2-H5 indicator older than 135 days becomes DATA_INSUFFICIENT.",
+    "taiwan_source_status": "TWSE_OPENAPI_SUMMARY_VERIFIED_MOPS_XBRL_ADAPTER_PENDING",
+    "limitations": [
+      "門檻尚未用本系統的歷史資料驗證",
+      "不是投資建議，也不是買賣指令",
+      "資本支出密集公司可能因擴產使自由現金流轉負",
+      "循環股低谷時 H2、H3 的獲利分母會暫時惡化",
+      "不含表外負債、客戶集中與訂單取消風險"
+    ],
+    "debt_total_policy": "總負債＝一年內到期有息負債＋非流動有息負債。不接受單一「總負債」標籤，避免把只含非流動部分的標籤誤當總額。",
+    "stale_breach_policy": "非必要指標資料過期時，若最後一次可算的燈號是留意或警示，整體至少顯示留意並說明；不可顯示成穩健。",
+    "h7_fiscal_year_policy": "年度申報晚於最新單季時，以本年度對上年度的全年稀釋後加權平均股數計算；不把全年股數和單季股數混比。門檻仍為 5%／15%。",
+    "missing_data_resolution_status": "ANET_CAPEX_AND_H7_IMPLEMENTED; MRVL_ZERO_PENDING_REVIEW; AVGO_ETN_COHR_GEV_AND_TAIWAN_PARTIAL_OR_BLOCKED_WITH_EVIDENCE"
+  },
+  "user_decisions": "見 00_規範/使用者決定紀錄.md",
+  "data_spine": {
+    "phase": 1,
+    "run_schema_version": 2,
+    "config": "00_規範/data_spine_phase1.json",
+    "entity_registry": "01_共用資料/data_spine/entity_registry.json",
+    "events": "01_共用資料/data_spine/events.jsonl",
+    "observations": "01_共用資料/data_spine/observations.jsonl",
+    "market_sessions": "01_共用資料/data_spine/market_sessions.csv",
+    "calendar_versions": "01_共用資料/data_spine/calendar_versions.jsonl",
+    "fx_rates": "01_共用資料/data_spine/fx_rates.csv",
+    "portfolio": "01_共用資料/portfolio.json",
+    "portfolio_authority": "USER_OWNED_READ_ONLY_TO_AGENTS",
+    "news_module": "DISABLED",
+    "sentiment_module": "DISABLED",
+    "derivation_version": "EVENT_DISTANCE_1.2.1",
+    "schema2_portfolio_limit_check": "NOT_IMPLEMENTED_SCHEMA2_EXPLICIT"
+  },
+  "attribution": {
+    "status": "SHADOW",
+    "note": "下跌歸因影子模組：只拆解跌幅來源並提示該查哪一類原因，不影響 verdict.py，不是買賣建議。門檻未經驗證。",
+    "windows": [
+      1,
+      5,
+      20
+    ],
+    "min_drop": {
+      "1": -0.05,
+      "5": -0.1,
+      "20": -0.15
+    },
+    "sigma_trigger": 2.0,
+    "beta_window": 120,
+    "min_history_days": 120,
+    "min_peers": 2,
+    "dominant_share": 0.5,
+    "follow_up_days": [
+      20,
+      60
+    ],
+    "min_events_for_reading": 30,
+    "method": "對數報酬拆解後按比例換回一般報酬：大盤＝貝他×基準指數報酬（貝他用下跌區間前 120 個交易日）；同產業＝同主線同市場同業扣掉各自大盤部分後的平均；公司自身＝剩餘。",
+    "limitations": [
+      "只用股價，不含新聞與事件",
+      "同業家數少，同產業部分誤差大",
+      "貝他在市場劇烈變動時會失準",
+      "台股跌停時當日跌幅不是全部賣壓",
+      "回補統計受事後挑選名單與多頭期間影響，會高估跌後反彈"
+    ]
+  },
+  "market_env": {
+    "status": "SHADOW",
+    "note": "市場環境影子模組：由程式從公開數列與股價計算 M1 到 M7，沿用 market 區段的門檻與燈號規則。不影響 verdict.py；執行紀錄裡的 market 欄位目前仍由模型填寫。",
+    "series": [
+      "DFEDTARU",
+      "DGS10",
+      "DCOILBRENTEU",
+      "UNRATE",
+      "CPILFESL",
+      "BAMLH0A0HYM2"
+    ],
+    "series_names": {
+      "DFEDTARU": "聯邦資金利率目標上限",
+      "DGS10": "十年期美債殖利率",
+      "DCOILBRENTEU": "布蘭特原油",
+      "UNRATE": "失業率",
+      "CPILFESL": "核心 CPI 指數",
+      "BAMLH0A0HYM2": "高收益債信用利差"
+    },
+    "default_start": "2018-01-01",
+    "change_days": 20,
+    "fed_lookback_days": 56,
+    "daily_stale_days": 7,
+    "monthly_stale_days": 75,
+    "m6_proxy": "SOXX（含息）代替費城半導體指數",
+    "follow_up_days": [
+      20,
+      60
+    ],
+    "min_months_for_reading": 12,
+    "limitations": [
+      "指標與門檻未經驗證",
+      "月資料落後且會被修訂；FRED 提供的是修訂後的值",
+      "M6 是價格的函數，不是領先指標",
+      "M1 用目標利率在近 56 天內的變化判斷，不是逐次會議紀錄"
+    ]
+  },
+  "trend": {
+    "status": "SHADOW",
+    "note": "營收趨勢影子模組：由程式從已申報的單季營收與毛利計算公司層 C1、C2、C3 與主線層 I1，門檻沿用 company 與 theme 區段。不影響 verdict.py；執行紀錄裡的這些欄位目前仍由模型填寫。C4、C5、C6、I2、I3、I4 需要閱讀與判斷，不由程式計算。",
+    "stale_after_days": 135,
+    "flat_band_pt": 2.0,
+    "required_metrics": [
+      "FIN_REVENUE",
+      "FIN_GROSS_PROFIT"
+    ],
+    "label_rule": "年增率為負＝衰退；年增率較上一季高出 2 個百分點以上＝加速成長；低 2 個百分點以上＝成長但減速；其餘＝穩定成長",
+    "limitations": [
+      "看不出成長是否來自併購或一次性項目",
+      "各公司會計年度不同，最近一季不是同一段期間",
+      "門檻未經驗證",
+      "台股與台積電尚無財報資料來源"
+    ]
+  }
+}

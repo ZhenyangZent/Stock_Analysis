@@ -1,0 +1,2293 @@
+{
+  "mode": "DRY_RUN",
+  "filings": [
+    {
+      "ticker": "2330",
+      "issuer_id": "ISSUER_TSMC",
+      "period": "2024Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "9be8d57b462692580e572a5e0597a33879a096c086cccf6c02ffd2e9dd16152b",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2330",
+      "issuer_id": "ISSUER_TSMC",
+      "period": "2024Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "c89f1074e9a84ab40080c095dc5adc0295f4c4f6900ff80e7eefe8d5ecba0cdd",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2330",
+      "issuer_id": "ISSUER_TSMC",
+      "period": "2024Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "45a7f1e2008d4077320a3841a2ab5f2382e28a7af057144185ebbe33962ebfde",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2330",
+      "issuer_id": "ISSUER_TSMC",
+      "period": "2025Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "2ad79db101413fc06ea157da4841127c64af11f8f4e90929e952199ed5300147",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2330",
+      "issuer_id": "ISSUER_TSMC",
+      "period": "2025Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "97f9717b7baa264c71b2cf5b742b7a4e30ed9ea20ee87893f2b23f6c38e57850",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2330",
+      "issuer_id": "ISSUER_TSMC",
+      "period": "2025Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "bac57e1ef35e581488878f092504ef986faece86eedcb6868c585f0efad3903e",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2330",
+      "issuer_id": "ISSUER_TSMC",
+      "period": "2025Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "69aadbd1cb753401d3cf12a9551f6c8cbc40d91f1bac73065286d2e0f9d8327b",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2330",
+      "issuer_id": "ISSUER_TSMC",
+      "period": "2026Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "5aa8c0aad488b5708e04cb1a350d9f2cb98df83d6d06f72f7d0d438ec18c9b7e",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2330",
+      "issuer_id": "ISSUER_TSMC",
+      "period": "2026Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "351b4e59781a71504b30cec9d977e060ab4f978d31695e027252ecfe793d1e55",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2344",
+      "issuer_id": "ISSUER_WINBOND",
+      "period": "2024Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "f08355ebb5390526473b30ca72374dcc033dd92e825099bc60d3a88b5cded9de",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2344",
+      "issuer_id": "ISSUER_WINBOND",
+      "period": "2024Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "b2db7863f3949e6c212e5708e5d6cd269070b82cebbf8aba60c1cc83a86a9f5f",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2344",
+      "issuer_id": "ISSUER_WINBOND",
+      "period": "2024Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "46fea9342a60644037d876b4f5b83572753d31c740cbd6f93bea73b6571a009a",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2344",
+      "issuer_id": "ISSUER_WINBOND",
+      "period": "2025Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "2aa6c1f266cd0ee242c5a3743fae687c737b23b5e12ff3b4edd7ac4c3b611f1a",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2344",
+      "issuer_id": "ISSUER_WINBOND",
+      "period": "2025Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "d0ccb8fa40bde0d0d28dca1a93663ace6ae91a6d228d95f3c458988a173cf8ee",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2344",
+      "issuer_id": "ISSUER_WINBOND",
+      "period": "2025Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "d25782485849cc5eb5e42ea9ca846e8bed7aba77b6090fe75793bdf37a961236",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2344",
+      "issuer_id": "ISSUER_WINBOND",
+      "period": "2025Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "7ceae755460478afa013676c42557d208f9cdc51aeaf1130b8c07fa370201130",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2344",
+      "issuer_id": "ISSUER_WINBOND",
+      "period": "2026Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "414db8cc2b5563b1d5f6f4c58fe562f84493ccde14fde3c7ef1102d801cf5727",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2344",
+      "issuer_id": "ISSUER_WINBOND",
+      "period": "2026Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "2d31ff8ff1ea10f66b4c12504ab3ae9aa50b25d1c90a4042e5bd022cace6d93b",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2408",
+      "issuer_id": "ISSUER_NANYA",
+      "period": "2024Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "fb3108430ed92e4c2275fa4ff9d5c3e3805998b4cb8b6d80da06559ab5545c4f",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2408",
+      "issuer_id": "ISSUER_NANYA",
+      "period": "2024Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "8142b7a91c0026d4b14eb394a818e5c59e76fb1282b0f7d27ba1f8962e9ed8ad",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2408",
+      "issuer_id": "ISSUER_NANYA",
+      "period": "2024Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "612d219ebd0898d8271dfe88026bc2d7eb0dce5b9979bb34085dccf670918940",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2408",
+      "issuer_id": "ISSUER_NANYA",
+      "period": "2025Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "04fb9040aea852064ae33f32c370fe7dc38551a42f0602dad305ab71037b3c9f",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2408",
+      "issuer_id": "ISSUER_NANYA",
+      "period": "2025Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "a57aa707817865581219ece54de1d8d82faca70b8001944f4697e8f120596314",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2408",
+      "issuer_id": "ISSUER_NANYA",
+      "period": "2025Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "d02e8bb373ce985c1ced8726d894acbf4638f327ef2ceb0de86f326935df9cbf",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2408",
+      "issuer_id": "ISSUER_NANYA",
+      "period": "2025Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "f250fadbf8851f0d4882fd8bb822668076f7b55d3ebb6481bf7d0e49ead1cae4",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2408",
+      "issuer_id": "ISSUER_NANYA",
+      "period": "2026Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "520bec0096a38a1d80320d3574037becd982a77b6e073f0cc6bc614f643c85e1",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "2408",
+      "issuer_id": "ISSUER_NANYA",
+      "period": "2026Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "0f5d4b12380f9de4f003955c63fd27f16737da685aa9798c44f696722586eb00",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3017",
+      "issuer_id": "ISSUER_AVC",
+      "period": "2024Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "9262129a5d24facd53831e89179838c564e2f1f0a0c2a483ef06f9977463cad3",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3017",
+      "issuer_id": "ISSUER_AVC",
+      "period": "2024Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "5f5a8ee506f1d8609adabfcf2193ee3ee3ae3ed7b6fb240a23e1bc7b6af61eef",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3017",
+      "issuer_id": "ISSUER_AVC",
+      "period": "2024Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "9b8c24153e79c0dd376f1e482198246ee49a20a747a600d3086b926448a03280",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3017",
+      "issuer_id": "ISSUER_AVC",
+      "period": "2025Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "505418366872f11855066314c8b64949eeb16a380a88fcc380186c3843721065",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3017",
+      "issuer_id": "ISSUER_AVC",
+      "period": "2025Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "958f2d65922b18b7a4e730e327c05ba41f2883457da371c372ba8572754efae0",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3017",
+      "issuer_id": "ISSUER_AVC",
+      "period": "2025Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "e49069efc742e7084a3ae754f100cd763b91b580f6fd4dfe101e3b4ef646c07d",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3017",
+      "issuer_id": "ISSUER_AVC",
+      "period": "2025Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "4c825f82026f283fe39efd572aeee35704580f18292f5df7bd9224e939778190",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3017",
+      "issuer_id": "ISSUER_AVC",
+      "period": "2026Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "1a8f5b8464eb687aa3e126154658a51a43fc4f686ee543923cead64f4f8e51d8",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3017",
+      "issuer_id": "ISSUER_AVC",
+      "period": "2026Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "8a26dded074c7f49a00173ca7f0fd3983b6fe0858e6bbb2f2caf4ba9de295721",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_SHORT_TERM_INVESTMENTS"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_SHORT_TERM_INVESTMENTS": "尚無逐季完整候選清單與獨立 AI 複核；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3081",
+      "issuer_id": "ISSUER_LANDMARK",
+      "period": "2024Q2",
+      "report_scope": "INDIVIDUAL",
+      "raw_sha256": "90d8ce464584e871e3ad8091ff92c388896c608535901ccf7b8976168152064f",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DEBT_CURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DEBT_NONCURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3081",
+      "issuer_id": "ISSUER_LANDMARK",
+      "period": "2024Q3",
+      "report_scope": "INDIVIDUAL",
+      "raw_sha256": "244fdd5eabc2cbb7eeb8fea03bbdf969fe64160e325b32bea47486791ea0a871",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DEBT_CURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DEBT_NONCURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3081",
+      "issuer_id": "ISSUER_LANDMARK",
+      "period": "2024Q4",
+      "report_scope": "INDIVIDUAL",
+      "raw_sha256": "da39487b4c09180ba0950c68440040578da5c0ffe3dae3a8f4d6e2d6c46133fe",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DEBT_CURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DEBT_NONCURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3081",
+      "issuer_id": "ISSUER_LANDMARK",
+      "period": "2025Q1",
+      "report_scope": "INDIVIDUAL",
+      "raw_sha256": "66bc6cb484e2e44e9a9c2e3206747d232541e0c67fe571fcf28f020b5b71def5",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DEBT_CURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DEBT_NONCURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3081",
+      "issuer_id": "ISSUER_LANDMARK",
+      "period": "2025Q2",
+      "report_scope": "INDIVIDUAL",
+      "raw_sha256": "7e477005c772449a6c536f0e23797d0f1b51c61a421fa4e76bf068b4a63c9aa5",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DEBT_CURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DEBT_NONCURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3081",
+      "issuer_id": "ISSUER_LANDMARK",
+      "period": "2025Q3",
+      "report_scope": "INDIVIDUAL",
+      "raw_sha256": "9df88cfafbc66f58ea2f270a3c4f23dcd9bfd31634e54381f677214d675299ea",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DEBT_CURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DEBT_NONCURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3081",
+      "issuer_id": "ISSUER_LANDMARK",
+      "period": "2025Q4",
+      "report_scope": "INDIVIDUAL",
+      "raw_sha256": "208efc6c4568289aad4e4bdcc0599a784fd8171af2f03f64a3a90e484b76810b",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DEBT_CURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DEBT_NONCURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3081",
+      "issuer_id": "ISSUER_LANDMARK",
+      "period": "2026Q1",
+      "report_scope": "INDIVIDUAL",
+      "raw_sha256": "0cb48c6aeae96615d77d824e1a0c4a9dac8ab2a11c753be9b23608396b84b13f",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DEBT_CURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DEBT_NONCURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3081",
+      "issuer_id": "ISSUER_LANDMARK",
+      "period": "2026Q2",
+      "report_scope": "INDIVIDUAL",
+      "raw_sha256": "a23e6e5e3a22273bb54adf9a806b28a8e4aee7239f46ec433975af71a3850344",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DEBT_CURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DEBT_NONCURRENT": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零",
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3324",
+      "issuer_id": "ISSUER_AURAS",
+      "period": "2024Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "c0c235339b0d5eab904f614aed97e071d3fab6a872595dc176256e207c63f408",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_INTEREST_EXPENSE"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_INTEREST_EXPENSE": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3324",
+      "issuer_id": "ISSUER_AURAS",
+      "period": "2024Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "7f0d8c155f2e110e9a28d408f95e24ac83d8eca854c2641ee1616e7fc1248eca",
+      "availability_status": "BACKFILLED_UNKNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES",
+        "FIN_INTEREST_EXPENSE"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推",
+        "FIN_INTEREST_EXPENSE": "沒有符合精確 namespace、科目、期間與無維度 context 的事實；不得當零"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3324",
+      "issuer_id": "ISSUER_AURAS",
+      "period": "2024Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "202fd023b351719d240f4991f3ddd7ede13cbf58c002345c7d17434b33a62800",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3324",
+      "issuer_id": "ISSUER_AURAS",
+      "period": "2025Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "ebcdc146a33f5a7a880f65a7dc53857efcb5509766ca036182e265494bf7049e",
+      "availability_status": "BACKFILLED_UNKNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3324",
+      "issuer_id": "ISSUER_AURAS",
+      "period": "2025Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "3f612042029e14f8f1096f5b2485dbd1a2b863d2b5550a33ff823db574887e0a",
+      "availability_status": "BACKFILLED_UNKNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3324",
+      "issuer_id": "ISSUER_AURAS",
+      "period": "2025Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "f634837920c8a7a90b0448fbc87ea82b54ccc15ef02a5bf5430db08924c47ce8",
+      "availability_status": "BACKFILLED_UNKNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3324",
+      "issuer_id": "ISSUER_AURAS",
+      "period": "2025Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "4e5c88f7c61f0beb0bd5b78ebb5618e42e5bbd24b1e0d0d034c6750c17894a06",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3324",
+      "issuer_id": "ISSUER_AURAS",
+      "period": "2026Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "23376da548ea47f86af85e211caabdf1051d0ab5668487e0251737ae92fef1f7",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "3324",
+      "issuer_id": "ISSUER_AURAS",
+      "period": "2026Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "799756902351510663cb2795e66ce9b3ac15fbaf4b5b591a82eb07ba8930d43e",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "6274",
+      "issuer_id": "ISSUER_TUC",
+      "period": "2024Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "edc17b1eb9a9cd9b3f3c05fe78d41d56d58c3a61cb0c2c1b560c00f0fd56c915",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "6274",
+      "issuer_id": "ISSUER_TUC",
+      "period": "2024Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "5b0a59b9989e9ada112179d67fe3d5e411af85b0f816d2c9b91d6d9f075ca7b3",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "6274",
+      "issuer_id": "ISSUER_TUC",
+      "period": "2024Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "ec73164aa53862dc15f29eb34d4321c55e9e077202acba16ceb4e2d6dd2e34d8",
+      "availability_status": "BACKFILLED_UNKNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "6274",
+      "issuer_id": "ISSUER_TUC",
+      "period": "2025Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "8dcbaae2069fb140d8d1517e226186684abd9a4a6591d34053c717f9c1db1c58",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "6274",
+      "issuer_id": "ISSUER_TUC",
+      "period": "2025Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "2a3906feeffe3dba90f177fd8f251aa88690ae43f1d22d813c0ea4501fd86f03",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "6274",
+      "issuer_id": "ISSUER_TUC",
+      "period": "2025Q3",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "51e416c3cad91c5875f9bef22bdd58cb892cffe111dc4b4d01ba06b8ea58e070",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "6274",
+      "issuer_id": "ISSUER_TUC",
+      "period": "2025Q4",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "ba69f6c28cfd679a0f38353477f59da71bfdd0f4844119ba533bc712249c8ed0",
+      "availability_status": "BACKFILLED_UNKNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "6274",
+      "issuer_id": "ISSUER_TUC",
+      "period": "2026Q1",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "439c3106dd79e8789db1f20fcad8c1ba9b5d42374b70371d7971b0ef9678f24a",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    },
+    {
+      "ticker": "6274",
+      "issuer_id": "ISSUER_TUC",
+      "period": "2026Q2",
+      "report_scope": "CONSOLIDATED",
+      "raw_sha256": "bae0105a80715b5a84adfdede2e1ebc79dd5dcde6c4617cc9c4cd3803243a18c",
+      "availability_status": "POINT_IN_TIME_KNOWN",
+      "metrics": [
+        "FIN_CAPEX",
+        "FIN_CASH",
+        "FIN_CFO",
+        "FIN_CURRENT_ASSETS",
+        "FIN_CURRENT_LIABILITIES",
+        "FIN_DEBT_CURRENT",
+        "FIN_DEBT_NONCURRENT",
+        "FIN_DEPRECIATION_AMORTIZATION",
+        "FIN_GROSS_PROFIT",
+        "FIN_INTEREST_EXPENSE",
+        "FIN_OPERATING_INCOME",
+        "FIN_REVENUE",
+        "FIN_SHORT_TERM_INVESTMENTS",
+        "VER_DILUTED_EPS_Q",
+        "VER_DILUTED_EPS_YTD",
+        "VER_EQUITY_PARENT",
+        "VER_ISSUED_CAPITAL",
+        "VER_NET_INCOME_PARENT",
+        "VER_TREASURY_SHARES"
+      ],
+      "missing": [
+        "FIN_DILUTED_SHARES"
+      ],
+      "missing_reasons": {
+        "FIN_DILUTED_SHARES": "實測 XBRL 未找到稀釋加權平均股數；不得反推"
+      },
+      "fy_exclusion_reasons": []
+    }
+  ],
+  "observation_count": 1230,
+  "written": 0
+}

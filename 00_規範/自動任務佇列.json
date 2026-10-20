@@ -1,0 +1,916 @@
+{
+  "queue_version": "0.1",
+  "created_at": "2026-10-15T17:05:00+08:00",
+  "created_by": "Claude（使用者 2026-10-15 17:02 同意方向）",
+  "note": "迴圈只能改 status 與 result。開始前請先把已經由人工完成的任務標成 DONE 或 SKIPPED。",
+  "tasks": [
+    {
+      "id": "T01",
+      "title": "S3f-1 G-S3-9 範圍更正：離線補 STATUTORY_DEADLINE_CONSERVATIVE 版本列（3324、6274 等）",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "若 90_各AI工作區/codex/ 已有 S3f 完成報告且含本項，直接回報 STATUS: ALREADY_DONE。否則：凡是 MOPS 報表查不到官方申報時間的（不限 2021–2023），用本機已存在的原始檔離線追加 STATUTORY_DEADLINE_CONSERVATIVE 版本列（只用於 V1），不重新下載、不改寫舊列；把範圍更正寫入決定紀錄 G-S3-9。回報 3324、6274 的 V1 與有效月數，並人工抽查 1 個月。",
+      "acceptance": [
+        "回歸全綠",
+        "dry-run 零寫入",
+        "observations 只新增"
+      ],
+      "result": {
+        "marked_by": "Claude Code",
+        "marked_at": "2026-10-15",
+        "source": "人工完成（非迴圈）",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T02",
+      "title": "S3f-2 全域帳本防護測試",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "若已完成，回報 ALREADY_DONE。否則新增一個全域測試：在整個回歸流程前後，比對所有正式帳本（observations、各 ledger、events、prices、corporate_actions、docs_ledger、ai_extractions、ai_field_values、ai_reviews、影子快照目錄）的存在與否和雜湊；任何變動都判失敗。",
+      "acceptance": [
+        "回歸全綠",
+        "故意寫入暫存帳本的測試會失敗"
+      ],
+      "result": {
+        "marked_by": "Claude Code",
+        "marked_at": "2026-10-15",
+        "source": "人工完成（非迴圈）",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T03",
+      "title": "S3f-3 手動下載清單（2330 的 2020–2023、台股六家 2020）",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "若已完成，回報 ALREADY_DONE。否則產生 90_各AI工作區/codex/手動下載清單_MOPS.md：每份檔案列出 MOPS 頁面路徑、檔名格式、要放的資料夾，以及離線匯入指令。不要連線到 MOPS。",
+      "acceptance": [
+        "清單共 40 份",
+        "未對 MOPS 發出任何請求"
+      ],
+      "result": {
+        "marked_by": "Claude Code",
+        "marked_at": "2026-10-15",
+        "source": "人工完成（非迴圈）",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T04",
+      "title": "S4a 第二次獨立抽取（AVGO、ANET、MU、3324）",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "reviewer": "codex-sol",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "先確認 Claude Code 已完成 3324 登錄與 v0.3.1 第一次抽取寫入（ai_extractions.jsonl 有 C6_TABLE_V0.3 的 4 筆）；沒有就回報 BLOCKER。你是獨立的第二位抽取者：只讀 90_各AI工作區/claudecode/S4a_second_extraction/ 與 docs_index.md 列出的原文；不得讀 ai_extractions.jsonl、ai_field_values.jsonl 或任何先前的抽取結果。照 extraction_prompt.md 輸出 output/<ticker>.json。接著取鎖執行 submit_extraction.py 與 finalize_values.py，然後釋放鎖，回報一致率。",
+      "acceptance": [
+        "引句 100% 可在原文找到",
+        "一致率報告",
+        "MU 在沒有複核的情況下不是 A"
+      ],
+      "result": {
+        "marked_by": "Claude Code",
+        "marked_at": "2026-10-15",
+        "source": "人工完成（非迴圈）：S4a 收尾對話執行 submit_extraction.py 與 finalize_values.py",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T11",
+      "title": "短期投資上下界包絡",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "依 S4 規格附錄 S3d-8，在 health.py 實作上下界包絡；燈號相同時直接採用並標 SHORT_TERM_INV_IRRELEVANT_TO_BAND；不同時列出需要 AI 判讀附註的清單。回報可以免除判讀的比例。",
+      "acceptance": [
+        "回歸全綠",
+        "與既有人工判讀結果 100% 一致"
+      ],
+      "result": {
+        "run_id": "RUN_20261016T144640",
+        "reviewed_by": "Claude（主對話，人工複查取代迴圈 Opus 複查）",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T05",
+      "title": "S4b C5 規格細化與抽取格式（不寫帳本）",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "sonnet",
+      "effort": "medium",
+      "reviewer": "codex-sol",
+      "depends_on": [
+        "T04"
+      ],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "依 90_各AI工作區/claude/S4_AI閱讀欄位_規格_v0.1_2026-10-15.md 第 3.2 節，在 ai_fields.py 新增 C5 的抽取格式驗證與程式計算（ΔRev 取自 C1 的資料來源；X＝併購營收＋一次性營收；50% 與 2% 門檻依 G-S4-1、G-S4-2）。新增測試。不寫任何共用帳本。",
+      "acceptance": [
+        "回歸全綠",
+        "C5 的測試涵蓋有、無、null 三種情況"
+      ],
+      "result": {
+        "executed_by": "Claude Code（Sonnet，手動）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T06",
+      "title": "S4b C5 第一次抽取（16 家）",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "sonnet",
+      "effort": "medium",
+      "reviewer": "codex-sol",
+      "depends_on": [
+        "T05"
+      ],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "依 S4 規格 3.2 對 16 家做 C5 第一次抽取。只用已登錄的官方文件；台股缺文件時列入手動下載清單，不得從 mopsov 自動抓取。取鎖寫入 ai_extractions.jsonl。回報各家的檢查清單完成率與初步結果。",
+      "acceptance": [
+        "引句 100% 可在原文找到",
+        "檢查清單未完成的一律是 null"
+      ],
+      "result": {
+        "executed_by": "Claude Code（Sonnet，手動）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T07",
+      "title": "S4b C5 第二次獨立抽取並產生欄位值",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [
+        "T06"
+      ],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "你是 C5 的獨立第二位抽取者（第一位是 Claude Sonnet）。只能讀：90_各AI工作區/claudecode/S4b_work/c5_extraction_prompt.md、S4 規格 3.2 節、01_共用資料/data_spine/docs_ledger.jsonl 列出的原文。嚴禁讀取 ai_extractions.jsonl、ai_field_values.jsonl、90_各AI工作區/claudecode/S4b_work/ 內 c5_extraction_1_result.json 及任何第一次抽取結果。對美股 9 家（VRT、GEV、MRVL、AVGO、ANET、MU、LITE、COHR、ETN）依同一格式抽取 C5，只抽引句與數字；ETN 可用 acquired_revenue_pct_of_prior_year。取鎖 codex_t07（帶持鎖者名稱）提交抽取並執行 finalize，回報一致率與不一致原因。台股與 3324 不在本任務範圍。",
+      "acceptance": [
+        "一致率報告",
+        "不一致的取保守值並標 REVIEW_DISAGREEMENT"
+      ],
+      "result": {
+        "run_id": "RUN_20261016T212044",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T08",
+      "title": "S4c I4 四大雲端與 I2 抽取（兩次）",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "依 S4 規格 3.3、3.4：先實作 I2、I4 的程式計算與測試；登錄 Microsoft、Alphabet、Amazon、Meta 的官方財報文件（SEC）；做第一次抽取。第二次抽取由迴圈的下一個任務負責，本任務不做。",
+      "acceptance": [
+        "回歸全綠",
+        "四家都附前後兩次說法或 null 的原因"
+      ],
+      "result": {
+        "executed_by": "Codex App（手動）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T09",
+      "title": "S4c I2／I4 第二次獨立抽取",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "reviewer": "codex-sol",
+      "depends_on": [
+        "T19b"
+      ],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "你是 I2、I4 的獨立第二位抽取者（第一位是 Codex）。只讀 S4 規格 3.3、3.4 節、G-S4-3a／G-S4-5a（決定紀錄）與 docs_ledger 列出的原文；嚴禁讀取 ai_extractions.jsonl、ai_field_values.jsonl、90_各AI工作區/codex/T08_* 與 T08b_* 的抽取結果。對 I4 四家（Microsoft、Alphabet、Amazon、Meta）與 I2 追蹤名單中有同期財測修正的公司抽取引句與數字。取鎖 claude_t09（帶持鎖者名稱）提交，並依 ai_fields 產生欄位值（只用 active 列），回報一致率與不一致原因。\n補充（2026-10-17）：引句類型另含 G-S4-3b 擴充字詞與 G-S4-5b 的 COMPARABLE_EXPLICIT_UP/MAINTAIN/DOWN（須有 outside of／excluding 等排除字詞）。第一次抽取以 codex_t19b 為準（取代 T08／T08b 舊抽取）；你不得讀取第一次抽取內容，獨立完成後才由程式比對寫入 ai_field_values。",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "run_id": "RUN_20261017T224629",
+        "review": "FAIL（迴圈複查）→ Claude 裁決接受（附條件）",
+        "reviewed_by": "codex-sol；裁決 Claude",
+        "note": "詳見 90_各AI工作區/claude/T09_裁決_2026-10-17.md；後續 T20 追加 ai_reviews 標註"
+      }
+    },
+    {
+      "id": "T10",
+      "title": "ALFRED：M4、M5 改用當時公布的初值",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "依 S4 規格附錄 S3d-7：fetch_macro 支援 ALFRED vintage（realtime_start、realtime_end），保存每個公布版本（只新增）；market_env 在影子模式並列「初值版」與「修訂值版」的 M4、M5。正式欄位暫不改（需使用者決定）。",
+      "acceptance": [
+        "回歸全綠",
+        "初值與 FRED 官方歷史版本一致（抽查 2 個月）"
+      ],
+      "result": {
+        "executed_by": "Codex App（手動）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T13",
+      "title": "寫入時檢查鎖的持有者（不只檢查有沒有鎖）",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "lock.py 與所有共用帳本的寫入函式（含 ai_fields.append_row、data_spine、fetch_*）：寫入時必須提供持鎖者名稱，並與協作鎖定.lock 的 who 一致，不一致就拒絕寫入。起因：2026-10-15 測試在別人持鎖期間寫入 ai_reviews.jsonl。新增測試。",
+      "acceptance": [
+        "回歸全綠",
+        "持鎖者不同時寫入會被拒絕"
+      ],
+      "result": {
+        "executed_by": "Codex App（手動，非迴圈）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T12",
+      "title": "rules 1.11.0：AI 欄位接入正式分類",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [
+        "T07",
+        "T09",
+        "T21",
+        "T21b",
+        "T21c"
+      ],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App；使用者 2026-10-18 核准全部啟用）讀 90_各AI工作區/claude/給Codex_T12_rules1.11.0啟用_2026-10-18.md",
+      "acceptance": [],
+      "result": {
+        "approved_by": "使用者",
+        "approved_at": "2026-10-18",
+        "choice": "全部啟用",
+        "executed_by": "Codex App（手動）",
+        "reviewed_by": "Claude（裁決接受）",
+        "note": "正式快照 SNAP_20261018T082024Z_fe9ebd86；詳見 90_各AI工作區/codex/T12_rules1.11.0_執行與閘門報告_2026-10-18.md 與 T22 交接檔"
+      }
+    },
+    {
+      "id": "T14",
+      "title": "把 test_auto_loop.py 併入 test_regression.py 的執行流程",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "比照 test_regression.py 第 4767 行納入 test_ai_fields 的方式，把 03_工具/test_auto_loop.py 加入主回歸的執行流程（loader.loadTestsFromName(\"test_auto_loop\")）；不要修改 test_auto_loop.py、auto_loop.py、auto_gates.py。確認 test_auto_loop 全部用暫存根目錄與假的執行者，執行前後專案帳本與影子快照目錄不變（由既有的全域帳本防護測試把關）。回報主回歸的測試總數（應比原本多 42 個）。",
+      "acceptance": [
+        "回歸全綠",
+        "主回歸測試數增加 42",
+        "test_auto_loop.py、auto_loop.py、auto_gates.py 未被修改"
+      ],
+      "result": {
+        "executed_by": "Codex App（手動）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T16",
+      "title": "重查 6 家美股下一次財報日期（官方 IR）",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（已由 Codex App 手動完成）",
+      "acceptance": [],
+      "result": {
+        "executed_by": "Codex App（手動）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T17",
+      "title": "台股 6 家合併財報 PDF 手動下載後重做 C5",
+      "status": "STOPPED_FOR_USER",
+      "executor": "claude",
+      "model": "sonnet",
+      "effort": "medium",
+      "reviewer": "codex-sol",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（停止點）需使用者依 90_各AI工作區/claudecode/S4b_work/手動下載清單_台股合併財報PDF_2026-10-16.md 下載 PDF 後再執行。",
+      "acceptance": [],
+      "result": {
+        "run_id": "RUN_20261017T222704",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T07c",
+      "title": "T07 中斷後清理：作廢格式錯誤的 C5 欄位值、驗證正確列",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "sonnet",
+      "effort": "medium",
+      "reviewer": "codex-sol",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動）見 90_各AI工作區/claude/給ClaudeCode_T07c_清理_2026-10-16.md",
+      "acceptance": [],
+      "result": {
+        "executed_by": "Claude Code（Sonnet，手動）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T08b",
+      "title": "官方財報電話會議逐字稿／簡報（robots 允許者）＋重做 I2/I4 第一次抽取",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App；額度 01:30 後）",
+      "acceptance": [],
+      "result": {
+        "executed_by": "Codex App（手動）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T18",
+      "title": "作廢帳本加入 append-only 檢查與防污染測試",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "sonnet",
+      "effort": "medium",
+      "reviewer": "codex-sol",
+      "depends_on": [],
+      "stop_for_user": false,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（已手動完成）",
+      "acceptance": [],
+      "result": {
+        "executed_by": "Claude Code（Sonnet，手動）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T19",
+      "title": "G-S4-3a（I2 文字型明確上修／下修）與 G-S4-5a（I4 定義變更不可比）實作",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "sonnet",
+      "effort": "medium",
+      "reviewer": "codex-sol",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動）見 90_各AI工作區/claude/給ClaudeCode_T19_2026-10-17.md",
+      "acceptance": [],
+      "result": {
+        "executed_by": "Claude Code（Sonnet，手動）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T19b",
+      "title": "字詞表補充＋MSFT 可比文字例外＋補做 MSFT I4、TSMC I2 第一次抽取",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）",
+      "acceptance": [],
+      "result": {
+        "executed_by": "Claude Code（Sonnet，程式）＋Codex（Sol，抽取）",
+        "reviewed_by": "Claude",
+        "note": "詳細結果已移至 02_執行紀錄/佇列結果備註_封存_2026-10-17.json（避免抽取者從佇列看到欄位結果）"
+      }
+    },
+    {
+      "id": "T20",
+      "title": "T09 獨立性標註＋as_of 防線＋抽取任務禁讀清單",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "sonnet",
+      "effort": "medium",
+      "reviewer": "codex-sol",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Claude Code）讀 90_各AI工作區/claude/給ClaudeCode_T20_2026-10-17.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "executed_by": "Claude Code（Sonnet，手動）",
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/claudecode/T20_報告_2026-10-17.md"
+      }
+    },
+    {
+      "id": "T20b",
+      "title": "as_of 標註＋抽取者規則摘要＋禁讀決定紀錄",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "sonnet",
+      "effort": "medium",
+      "reviewer": "codex-sol",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Claude Code）讀 90_各AI工作區/claude/給ClaudeCode_T20b_2026-10-17.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "executed_by": "Claude Code（Sonnet，手動）",
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/claudecode/T20b_報告_2026-10-17.md"
+      }
+    },
+    {
+      "id": "T21",
+      "title": "I4 改用 SEC 實際資本支出年增率（影子）＋1.11.0 候選影子快照",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T21_I4改用SEC實際資本支出_2026-10-17.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "executed_by": "Codex App（手動）",
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/codex/T21_I4_SEC實際資本支出_執行報告_2026-10-17.md；後續 T21b"
+      }
+    },
+    {
+      "id": "T21b",
+      "title": "I4 加速度公式、季度連續性、Amazon 換標接續",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T21b_I4修正與Amazon接續_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "executed_by": "Codex App（手動）",
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/codex/T21b_I4修正與Amazon接續_執行報告_2026-10-18.md；後續 T21c"
+      }
+    },
+    {
+      "id": "T21c",
+      "title": "換科目檢查只看使用期間（Amazon）",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T21c_換標檢查只看使用期間_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "executed_by": "Codex App（手動）",
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/codex/T21c_I4使用期間與Amazon寫入_執行報告_2026-10-18.md"
+      }
+    },
+    {
+      "id": "T22",
+      "title": "T12 裁決紀錄＋正式前比較閘門偽陰性修正",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T22_T12裁決與比較閘門修正_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "executed_by": "Codex App（手動，Pro）",
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/codex/T22_T12裁決與比較閘門修正_執行報告_2026-10-18.md"
+      }
+    },
+    {
+      "id": "T23",
+      "title": "美股 7 家 C6 文件登錄＋第一次抽取",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "sonnet",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Claude Code）讀 90_各AI工作區/claude/給ClaudeCode_T23_*.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/claudecode/ 該任務報告；後續 T25a/T25b/T26"
+      }
+    },
+    {
+      "id": "T24",
+      "title": "美股 7 家 C6 第二次獨立抽取＋比對寫入",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [
+        "T23"
+      ],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Claude Code）讀 90_各AI工作區/claude/給ClaudeCode_T24_*.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/claudecode/ 該任務報告；後續 T25a/T25b/T26"
+      }
+    },
+    {
+      "id": "T25a",
+      "title": "C6 補件與第一次重抽",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Claude Code）讀 90_各AI工作區/claude/給ClaudeCode_T24_*.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "reviewed_by": "Claude",
+        "note": "COHR、TSMC 寫入；LITE/MRVL 待 T26"
+      }
+    },
+    {
+      "id": "T25b",
+      "title": "C6 第二次重抽與比對",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Claude Code）讀 90_各AI工作區/claude/給ClaudeCode_T24_*.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "reviewed_by": "Claude",
+        "note": "COHR、TSMC 寫入；LITE/MRVL 待 T26"
+      }
+    },
+    {
+      "id": "T26",
+      "title": "LITE/MRVL 手動簡報登錄＋雙抽取＋PRIOR_ROUND_VISIBLE",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，使用者先下載 2 份 PDF；Claude Code 兩視窗）讀 90_各AI工作區/claude/給ClaudeCode_T26_LITE_MRVL簡報與標註_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/claudecode/T26b_work/T26b_報告_2026-10-18.md"
+      }
+    },
+    {
+      "id": "T27",
+      "title": "週更新：價格＋財報日期涵蓋＋影子快照",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "sonnet",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Claude Code）讀 90_各AI工作區/claude/給ClaudeCode_T27_週更新_價格與財報日期_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/claudecode/T27_報告_2026-10-18.md"
+      }
+    },
+    {
+      "id": "T28",
+      "title": "分範圍協作鎖",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T22_T12裁決與比較閘門修正_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "executed_by": "Codex App（手動，Pro）",
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/codex/T28_分範圍鎖_執行報告_2026-10-18.md；註：本列與 T22 狀態於 2026-10-18 19:13:54 由 Claude 在未持鎖下寫入（acquire 失敗但管線未中止），於 21:2x 補記"
+      }
+    },
+    {
+      "id": "T28b",
+      "title": "鎖互斥檔殘留修正",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T22_T12裁決與比較閘門修正_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "executed_by": "Codex App（Pro）",
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/codex/T28b_鎖互斥檔殘留修正_執行報告_2026-10-18.md"
+      }
+    },
+    {
+      "id": "T29",
+      "title": "台股法定期限事件窗（影子）＋ANET 涵蓋",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T22_T12裁決與比較閘門修正_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "executed_by": "Codex App（Pro）",
+        "reviewed_by": "Claude",
+        "note": "見 90_各AI工作區/codex/T29_台股法定期限事件窗與ANET涵蓋_執行報告_2026-10-18.md；法定窗正式啟用待使用者決定"
+      }
+    },
+    {
+      "id": "T30",
+      "title": "台股 C5／C6 雙重抽取（含 T30c–T30f）",
+      "status": "DONE",
+      "executor": "claude",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T22_T12裁決與比較閘門修正_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "reviewed_by": "Claude",
+        "note": "見 claudecode/T30*_報告；華邦電、台積電 C6 待 T30f B 窗"
+      }
+    },
+    {
+      "id": "T31",
+      "title": "資料缺口補齊（V1、H）",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T22_T12裁決與比較閘門修正_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "reviewed_by": "Claude",
+        "note": "AVGO H 補齊；12 筆誤排除由 T33 修復"
+      }
+    },
+    {
+      "id": "T32",
+      "title": "回歸測試修正＋並行防護",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T22_T12裁決與比較閘門修正_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "reviewed_by": "Claude",
+        "note": "見 codex/T32_*"
+      }
+    },
+    {
+      "id": "T33",
+      "title": "G-S3-13 關係撤回＋恢復 12 筆 MOPS",
+      "status": "DONE",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex App）讀 90_各AI工作區/claude/給Codex_T22_T12裁決與比較閘門修正_2026-10-18.md",
+      "acceptance": [
+        "一致率報告"
+      ],
+      "result": {
+        "reviewed_by": "Claude",
+        "note": "Patch183 Claude 重跑 12/12 OK"
+      }
+    },
+    {
+      "id": "T34",
+      "title": "3324／6274 更正時點列寫入",
+      "status": "STOPPED_FOR_USER",
+      "executor": "codex",
+      "model": "gpt-5.6-sol",
+      "effort": "medium",
+      "reviewer": "claude-opus",
+      "depends_on": [],
+      "stop_for_user": true,
+      "allow_rules_change": false,
+      "allow_formal_snapshot": false,
+      "prompt": "（手動，Codex）讀 90_各AI工作區/claude/給Codex_T34_3324_6274更正時點寫入_2026-10-19.md",
+      "acceptance": [
+        "一致率報告"
+      ]
+    }
+  ]
+}

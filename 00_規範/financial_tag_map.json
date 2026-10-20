@@ -1,0 +1,648 @@
+{
+  "spec_version": "0.6.0",
+  "as_of": "2026-10-07",
+  "source": "SEC companyfacts standard taxonomy plus official MOPS inline XBRL exact namespace allowlists",
+  "selection_policy": "Exact allowlist in declared order; never fuzzy-match; never sum aliases that can represent the same balance. A declared composite may sum depreciation and intangible amortization only when both components exist for the same period. A declared difference may derive gross profit as revenue minus cost only when both components normalize to the same period. A period_fallback may combine explicitly equivalent duration concepts across filings, taking the first declared concept for duplicate filing contexts before quarterization.",
+  "sec_issuers": {
+    "ISSUER_MICRON": {
+      "ticker": "MU",
+      "cik": "0000723125",
+      "tags": {
+        "FIN_CASH": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "FIN_SHORT_TERM_INVESTMENTS": [
+          "AvailableForSaleSecuritiesDebtSecuritiesCurrent"
+        ],
+        "FIN_DEBT_CURRENT": [
+          "DebtCurrent"
+        ],
+        "FIN_DEBT_NONCURRENT": [
+          "LongTermDebtAndCapitalLeaseObligations"
+        ],
+        "FIN_OPERATING_INCOME": [
+          "OperatingIncomeLoss"
+        ],
+        "FIN_DEPRECIATION_AMORTIZATION": [
+          "DepreciationDepletionAndAmortization"
+        ],
+        "FIN_INTEREST_EXPENSE": [
+          "InterestExpenseNonoperating",
+          "InterestExpense"
+        ],
+        "FIN_CFO": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "FIN_CAPEX": [
+          "PaymentsToAcquirePropertyPlantAndEquipment"
+        ],
+        "FIN_CURRENT_ASSETS": [
+          "AssetsCurrent"
+        ],
+        "FIN_CURRENT_LIABILITIES": [
+          "LiabilitiesCurrent"
+        ],
+        "FIN_DILUTED_SHARES": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding"
+        ],
+        "FIN_REVENUE": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "FIN_GROSS_PROFIT": [
+          "GrossProfit"
+        ]
+      }
+    },
+    "ISSUER_LUMENTUM": {
+      "ticker": "LITE",
+      "cik": "0001633978",
+      "tags": {
+        "FIN_CASH": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "FIN_SHORT_TERM_INVESTMENTS": [
+          "ShortTermInvestments"
+        ],
+        "FIN_DEBT_CURRENT": [
+          "LongTermDebtCurrent",
+          "ShortTermBorrowings"
+        ],
+        "FIN_DEBT_NONCURRENT": [
+          "LongTermDebtNoncurrent"
+        ],
+        "FIN_OPERATING_INCOME": [
+          "OperatingIncomeLoss"
+        ],
+        "FIN_DEPRECIATION_AMORTIZATION": [],
+        "FIN_INTEREST_EXPENSE": [
+          "InterestExpenseNonoperating",
+          "InterestExpense"
+        ],
+        "FIN_CFO": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "FIN_CAPEX": [
+          "PaymentsToAcquirePropertyPlantAndEquipment"
+        ],
+        "FIN_CURRENT_ASSETS": [
+          "AssetsCurrent"
+        ],
+        "FIN_CURRENT_LIABILITIES": [
+          "LiabilitiesCurrent"
+        ],
+        "FIN_DILUTED_SHARES": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding"
+        ],
+        "FIN_REVENUE": [],
+        "FIN_GROSS_PROFIT": [
+          "GrossProfit"
+        ]
+      },
+      "composites": {
+        "FIN_DEPRECIATION_AMORTIZATION": [
+          [
+            "Depreciation"
+          ],
+          [
+            "AmortizationOfIntangibleAssets"
+          ]
+        ]
+      },
+      "period_fallbacks": {
+        "FIN_REVENUE": [
+          [
+            "RevenueFromContractWithCustomerExcludingAssessedTax"
+          ],
+          [
+            "RevenueFromContractWithCustomerIncludingAssessedTax"
+          ]
+        ]
+      }
+    },
+    "ISSUER_COHERENT": {
+      "ticker": "COHR",
+      "cik": "0000820318",
+      "tags": {
+        "FIN_CASH": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "FIN_SHORT_TERM_INVESTMENTS": [
+          "ShortTermInvestments"
+        ],
+        "FIN_DEBT_CURRENT": [
+          "LongTermDebtCurrent"
+        ],
+        "FIN_DEBT_NONCURRENT": [
+          "LongTermDebtNoncurrent"
+        ],
+        "FIN_OPERATING_INCOME": [
+          "OperatingIncomeLoss"
+        ],
+        "FIN_DEPRECIATION_AMORTIZATION": [],
+        "FIN_INTEREST_EXPENSE": [
+          "InterestExpenseOperating",
+          "InterestExpense"
+        ],
+        "FIN_CFO": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "FIN_CAPEX": [
+          "PaymentsToAcquirePropertyPlantAndEquipment"
+        ],
+        "FIN_CURRENT_ASSETS": [
+          "AssetsCurrent"
+        ],
+        "FIN_CURRENT_LIABILITIES": [
+          "LiabilitiesCurrent"
+        ],
+        "FIN_DILUTED_SHARES": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding"
+        ],
+        "FIN_REVENUE": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "FIN_GROSS_PROFIT": []
+      },
+      "composites": {
+        "FIN_DEPRECIATION_AMORTIZATION": [
+          [
+            "Depreciation"
+          ],
+          [
+            "AmortizationOfIntangibleAssets"
+          ]
+        ]
+      },
+      "differences": {
+        "FIN_GROSS_PROFIT": {
+          "minuend": [
+            "RevenueFromContractWithCustomerExcludingAssessedTax"
+          ],
+          "subtrahend": [
+            "CostOfGoodsAndServicesSold"
+          ]
+        }
+      }
+    },
+    "ISSUER_MARVELL": {
+      "ticker": "MRVL",
+      "cik": "0001835632",
+      "tags": {
+        "FIN_CASH": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "FIN_SHORT_TERM_INVESTMENTS": [],
+        "FIN_DEBT_CURRENT": [
+          "LongTermDebtCurrent",
+          "ShortTermBorrowings"
+        ],
+        "FIN_DEBT_NONCURRENT": [
+          "LongTermDebtNoncurrent"
+        ],
+        "FIN_OPERATING_INCOME": [
+          "OperatingIncomeLoss"
+        ],
+        "FIN_DEPRECIATION_AMORTIZATION": [],
+        "FIN_INTEREST_EXPENSE": [
+          "InterestExpenseDebt",
+          "InterestExpenseNonoperating",
+          "InterestExpense"
+        ],
+        "FIN_CFO": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "FIN_CAPEX": [
+          "PaymentsToAcquirePropertyPlantAndEquipment"
+        ],
+        "FIN_CURRENT_ASSETS": [
+          "AssetsCurrent"
+        ],
+        "FIN_CURRENT_LIABILITIES": [
+          "LiabilitiesCurrent"
+        ],
+        "FIN_DILUTED_SHARES": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding"
+        ],
+        "FIN_REVENUE": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "FIN_GROSS_PROFIT": [
+          "GrossProfit"
+        ]
+      },
+      "composites": {
+        "FIN_DEPRECIATION_AMORTIZATION": [
+          [
+            "OtherDepreciationAndAmortization"
+          ],
+          [
+            "AmortizationOfIntangibleAssets"
+          ]
+        ]
+      }
+    },
+    "ISSUER_BROADCOM": {
+      "ticker": "AVGO",
+      "cik": "0001730168",
+      "tags": {
+        "FIN_CASH": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "FIN_SHORT_TERM_INVESTMENTS": [],
+        "FIN_DEBT_CURRENT": [
+          "DebtCurrent",
+          "LongTermDebtCurrent"
+        ],
+        "FIN_DEBT_NONCURRENT": [
+          "LongTermDebtNoncurrent"
+        ],
+        "FIN_OPERATING_INCOME": [
+          "OperatingIncomeLoss"
+        ],
+        "FIN_DEPRECIATION_AMORTIZATION": [],
+        "FIN_INTEREST_EXPENSE": [
+          "InterestExpense",
+          "InterestExpenseNonoperating"
+        ],
+        "FIN_CFO": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "FIN_CAPEX": [
+          "PaymentsToAcquirePropertyPlantAndEquipment"
+        ],
+        "FIN_CURRENT_ASSETS": [
+          "AssetsCurrent"
+        ],
+        "FIN_CURRENT_LIABILITIES": [
+          "LiabilitiesCurrent"
+        ],
+        "FIN_DILUTED_SHARES": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding"
+        ],
+        "FIN_REVENUE": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "FIN_GROSS_PROFIT": [
+          "GrossProfit"
+        ]
+      },
+      "composites": {
+        "FIN_DEPRECIATION_AMORTIZATION": [
+          [
+            "Depreciation"
+          ],
+          [
+            "AmortizationOfIntangibleAssets"
+          ]
+        ]
+      }
+    },
+    "ISSUER_ARISTA": {
+      "ticker": "ANET",
+      "cik": "0001596532",
+      "tags": {
+        "FIN_CASH": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "FIN_SHORT_TERM_INVESTMENTS": [
+          "AvailableForSaleSecuritiesDebtSecuritiesCurrent"
+        ],
+        "FIN_DEBT_CURRENT": [],
+        "FIN_DEBT_NONCURRENT": [],
+        "FIN_OPERATING_INCOME": [
+          "OperatingIncomeLoss"
+        ],
+        "FIN_DEPRECIATION_AMORTIZATION": [
+          "DepreciationDepletionAndAmortization"
+        ],
+        "FIN_INTEREST_EXPENSE": [],
+        "FIN_CFO": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "FIN_CAPEX": [
+          "PaymentsToAcquirePropertyPlantAndEquipment"
+        ],
+        "FIN_CURRENT_ASSETS": [
+          "AssetsCurrent"
+        ],
+        "FIN_CURRENT_LIABILITIES": [
+          "LiabilitiesCurrent"
+        ],
+        "FIN_DILUTED_SHARES": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding"
+        ],
+        "FIN_REVENUE": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "FIN_GROSS_PROFIT": [
+          "GrossProfit"
+        ]
+      },
+      "period_fallbacks": {
+        "FIN_CAPEX": [
+          [
+            "PaymentsToAcquirePropertyPlantAndEquipment"
+          ],
+          [
+            "PaymentsToAcquireProductiveAssets"
+          ]
+        ]
+      }
+    },
+    "ISSUER_VERTIV": {
+      "ticker": "VRT",
+      "cik": "0001674101",
+      "tags": {
+        "FIN_CASH": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "FIN_SHORT_TERM_INVESTMENTS": [
+          "DebtSecuritiesHeldToMaturityAmortizedCostAfterAllowanceForCreditLossCurrent"
+        ],
+        "FIN_DEBT_CURRENT": [
+          "LongTermDebtCurrent"
+        ],
+        "FIN_DEBT_NONCURRENT": [
+          "LongTermDebtNoncurrent"
+        ],
+        "FIN_OPERATING_INCOME": [
+          "OperatingIncomeLoss"
+        ],
+        "FIN_DEPRECIATION_AMORTIZATION": [
+          "DepreciationDepletionAndAmortization"
+        ],
+        "FIN_INTEREST_EXPENSE": [
+          "InterestExpense"
+        ],
+        "FIN_CFO": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "FIN_CAPEX": [
+          "PaymentsToAcquirePropertyPlantAndEquipment"
+        ],
+        "FIN_CURRENT_ASSETS": [
+          "AssetsCurrent"
+        ],
+        "FIN_CURRENT_LIABILITIES": [
+          "LiabilitiesCurrent"
+        ],
+        "FIN_DILUTED_SHARES": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding"
+        ],
+        "FIN_REVENUE": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "FIN_GROSS_PROFIT": []
+      },
+      "differences": {
+        "FIN_GROSS_PROFIT": {
+          "minuend": [
+            "RevenueFromContractWithCustomerExcludingAssessedTax"
+          ],
+          "subtrahend": [
+            "CostOfGoodsAndServicesSold"
+          ]
+        }
+      }
+    },
+    "ISSUER_EATON": {
+      "ticker": "ETN",
+      "cik": "0001551182",
+      "tags": {
+        "FIN_CASH": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "FIN_SHORT_TERM_INVESTMENTS": [
+          "ShortTermInvestments"
+        ],
+        "FIN_DEBT_CURRENT": [
+          "LongTermDebtAndCapitalLeaseObligationsCurrent",
+          "ShortTermBorrowings"
+        ],
+        "FIN_DEBT_NONCURRENT": [
+          "LongTermDebtAndCapitalLeaseObligations"
+        ],
+        "FIN_OPERATING_INCOME": [
+          "OperatingIncomeLoss"
+        ],
+        "FIN_DEPRECIATION_AMORTIZATION": [
+          "DepreciationDepletionAndAmortization"
+        ],
+        "FIN_INTEREST_EXPENSE": [
+          "InterestExpenseNonoperating",
+          "InterestExpenseOperating",
+          "InterestExpense"
+        ],
+        "FIN_CFO": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "FIN_CAPEX": [
+          "PaymentsToAcquirePropertyPlantAndEquipment"
+        ],
+        "FIN_CURRENT_ASSETS": [
+          "AssetsCurrent"
+        ],
+        "FIN_CURRENT_LIABILITIES": [
+          "LiabilitiesCurrent"
+        ],
+        "FIN_DILUTED_SHARES": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding"
+        ],
+        "FIN_REVENUE": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "FIN_GROSS_PROFIT": []
+      },
+      "differences": {
+        "FIN_GROSS_PROFIT": {
+          "minuend": [
+            "RevenueFromContractWithCustomerExcludingAssessedTax"
+          ],
+          "subtrahend": [
+            "CostOfRevenue"
+          ]
+        }
+      }
+    },
+    "ISSUER_GEV": {
+      "ticker": "GEV",
+      "cik": "0001996810",
+      "tags": {
+        "FIN_CASH": [],
+        "FIN_SHORT_TERM_INVESTMENTS": [],
+        "FIN_DEBT_CURRENT": [
+          "LongTermDebtAndCapitalLeaseObligationsCurrent",
+          "ShortTermBorrowings"
+        ],
+        "FIN_DEBT_NONCURRENT": [
+          "LongTermDebtAndCapitalLeaseObligations"
+        ],
+        "FIN_OPERATING_INCOME": [
+          "OperatingIncomeLoss"
+        ],
+        "FIN_DEPRECIATION_AMORTIZATION": [],
+        "FIN_INTEREST_EXPENSE": [],
+        "FIN_CFO": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "FIN_CAPEX": [
+          "PaymentsToAcquireProductiveAssets"
+        ],
+        "FIN_CURRENT_ASSETS": [
+          "AssetsCurrent"
+        ],
+        "FIN_CURRENT_LIABILITIES": [
+          "LiabilitiesCurrent"
+        ],
+        "FIN_DILUTED_SHARES": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding"
+        ],
+        "FIN_REVENUE": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "FIN_GROSS_PROFIT": [
+          "GrossProfit"
+        ]
+      },
+      "composites": {
+        "FIN_DEPRECIATION_AMORTIZATION": [
+          [
+            "Depreciation"
+          ],
+          [
+            "AmortizationOfIntangibleAssets"
+          ]
+        ]
+      }
+    }
+  },
+  "i4_capex_issuers": {
+    "ISSUER_MICROSOFT": {"ticker":"MSFT","cik":"0000789019","fiscal_year_end_month":6,"tag_priority":["PaymentsToAcquirePropertyPlantAndEquipment","PaymentsToAcquireProductiveAssets"],"selected_tag":"PaymentsToAcquirePropertyPlantAndEquipment","tag_status":"OK"},
+    "ISSUER_ALPHABET": {"ticker":"GOOGL","cik":"0001652044","fiscal_year_end_month":12,"tag_priority":["PaymentsToAcquirePropertyPlantAndEquipment","PaymentsToAcquireProductiveAssets"],"selected_tag":"PaymentsToAcquirePropertyPlantAndEquipment","tag_status":"OK"},
+    "ISSUER_AMAZON": {"ticker":"AMZN","cik":"0001018724","fiscal_year_end_month":12,"tag_priority":["PaymentsToAcquirePropertyPlantAndEquipment","PaymentsToAcquireProductiveAssets"],"selected_tag":"PaymentsToAcquireProductiveAssets","tag_status":"OK"},
+    "ISSUER_META": {"ticker":"META","cik":"0001326801","fiscal_year_end_month":12,"tag_priority":["PaymentsToAcquirePropertyPlantAndEquipment","PaymentsToAcquireProductiveAssets"],"selected_tag":"PaymentsToAcquirePropertyPlantAndEquipment","tag_status":"OK"}
+  },
+  "taiwan": {
+    "status": "ENABLED_AFTER_INDEPENDENT_REVIEW",
+    "basic_probe_endpoints": [
+      "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+      "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci"
+    ],
+    "openapi_limit": "The official TWSE OpenAPI exposes summarized balance sheets and income statements but no cash-flow statement or sufficiently detailed cash, interest-bearing debt, interest expense, depreciation and capex fields for H1-H5.",
+    "canonical_source": "MOPS XBRL official filing document (single-company or bulk download); UI HTML and third-party data are not canonical.",
+    "third_party_fallback_allowed": false,
+    "profiles": {
+      "GENERAL_INDUSTRY_2024_2026": {
+        "overlap_rules_version": "TW_DEBT_OVERLAP_1",
+        "overlap_rules_note_zh": "1.8.2（C181-01）有息負債彙總科目與其細項的涵蓋關係。precedence=DETAILS_WHEN_ANY_PRESENT：任一細項有申報就用細項、彙總列入 excluded_overlapping_components；只有彙總時用彙總、未申報的細項列入 covered_by_aggregate。precedence=AGGREGATE_WHEN_PRESENT：彙總有申報就用彙總、有申報的細項列入 excluded_overlapping_components、未申報的細項列入 covered_by_aggregate。兩條規則的取捨與 1.8.0／1.8.1 的數值結果相同；只有未被已用彙總涵蓋的缺席科目才列入 absent_components。",
+        "overlap_rules": {
+          "FIN_DEBT_CURRENT": [
+            {"aggregate":"LongtermLiabilitiesCurrentPortion","covers":["CurrentPortionOfLongtermBorrowings","CurrentBondsIssuedAndCurrentPortionOfNoncurrentBondsIssued"],"precedence":"DETAILS_WHEN_ANY_PRESENT"}
+          ],
+          "FIN_DEBT_NONCURRENT": [
+            {"aggregate":"LongtermBorrowings","covers":["NoncurrentPortionOfNoncurrentLoansReceived"],"precedence":"AGGREGATE_WHEN_PRESENT"}
+          ]
+        },
+        "metrics": {
+          "FIN_REVENUE": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"Revenue","label_zh":"營業收入合計（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"Revenue","label_zh":"營業收入合計"}
+          ],
+          "FIN_GROSS_PROFIT": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"GrossProfit","label_zh":"營業毛利（毛損）淨額（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"GrossProfit","label_zh":"營業毛利（毛損）淨額"}
+          ],
+          "FIN_OPERATING_INCOME": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"ProfitLossFromOperatingActivities","label_zh":"營業利益（損失）（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"ProfitLossFromOperatingActivities","label_zh":"營業利益（損失）"}
+          ],
+          "FIN_INTEREST_EXPENSE": [
+            {"namespace":"http://www.xbrl.org/tifrs/notes/2020-06-30","local_name":"InterestExpense_n","label_zh":"利息費用（2020 年版台灣分類標準）"},
+            {"namespace":"http://www.xbrl.org/tifrs/notes/2025-06-30","local_name":"InterestExpense_n","label_zh":"利息費用（2025-06-30 台灣分類標準）"},
+            {"namespace":"http://www.xbrl.org/tifrs/notes/2026-03-31","local_name":"InterestExpense_n","label_zh":"利息費用"}
+          ],
+          "FIN_DEPRECIATION": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"AdjustmentsForDepreciationExpense","label_zh":"折舊費用（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"AdjustmentsForDepreciationExpense","label_zh":"折舊費用"}
+          ],
+          "FIN_AMORTIZATION": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"AdjustmentsForAmortisationExpense","label_zh":"攤銷費用（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"AdjustmentsForAmortisationExpense","label_zh":"攤銷費用"}
+          ],
+          "FIN_CFO": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"CashFlowsFromUsedInOperatingActivities","label_zh":"營業活動之淨現金流入（流出）（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"CashFlowsFromUsedInOperatingActivities","label_zh":"營業活動之淨現金流入（流出）"}
+          ],
+          "FIN_CAPEX": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities","label_zh":"取得不動產、廠房及設備（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities","label_zh":"取得不動產、廠房及設備"}
+          ],
+          "FIN_CASH": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"CashAndCashEquivalents","label_zh":"現金及約當現金（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"CashAndCashEquivalents","label_zh":"現金及約當現金"}
+          ],
+          "FIN_CURRENT_ASSETS": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"CurrentAssets","label_zh":"流動資產合計（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"CurrentAssets","label_zh":"流動資產合計"}
+          ],
+          "FIN_CURRENT_LIABILITIES": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"CurrentLiabilities","label_zh":"流動負債合計（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"CurrentLiabilities","label_zh":"流動負債合計"}
+          ],
+          "FIN_DEBT_CURRENT": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"ShorttermBorrowings","label_zh":"短期借款（2020 年版台灣分類標準）"},
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"CurrentCommercialPapersIssuedAndCurrentPortionOfNoncurrentCommercialPapersIssued","label_zh":"應付短期票券（2020 年版台灣分類標準）"},
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"CurrentPortionOfLongtermBorrowings","label_zh":"一年內到期長期借款（2020 年版台灣分類標準）"},
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"CurrentBondsIssuedAndCurrentPortionOfNoncurrentBondsIssued","label_zh":"一年內到期應付公司債（2020 年版台灣分類標準）"},
+            {"namespace":"http://www.xbrl.org/tifrs/bsci/ci/2020-06-30","local_name":"LongtermLiabilitiesCurrentPortion","label_zh":"一年內到期長期負債（2020 年版台灣分類標準）"},
+            {"namespace":"http://www.xbrl.org/tifrs/bsci/ci/2025-06-30","local_name":"LongtermLiabilitiesCurrentPortion","label_zh":"一年內到期長期負債（2025-06-30 台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"ShorttermBorrowings","label_zh":"短期借款"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"CurrentCommercialPapersIssuedAndCurrentPortionOfNoncurrentCommercialPapersIssued","label_zh":"應付短期票券"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"CurrentPortionOfLongtermBorrowings","label_zh":"一年內到期長期借款"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"CurrentBondsIssuedAndCurrentPortionOfNoncurrentBondsIssued","label_zh":"一年內到期應付公司債"},
+            {"namespace":"http://www.xbrl.org/tifrs/bsci/ci/2026-03-31","local_name":"LongtermLiabilitiesCurrentPortion","label_zh":"一年內到期長期負債"}
+          ],
+          "FIN_DEBT_NONCURRENT": [
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"LongtermBorrowings","label_zh":"長期借款（2020 年版台灣分類標準）"},
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"NoncurrentPortionOfNoncurrentBondsIssued","label_zh":"應付公司債（2020 年版台灣分類標準）"},
+            {"namespace":"http://xbrl.ifrs.org/taxonomy/2017-03-09/ifrs-full","local_name":"NoncurrentPortionOfNoncurrentLoansReceived","label_zh":"非流動借款（2020 年版台灣分類標準）"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"LongtermBorrowings","label_zh":"長期借款"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"NoncurrentPortionOfNoncurrentBondsIssued","label_zh":"應付公司債"},
+            {"namespace":"https://xbrl.ifrs.org/taxonomy/2025-03-27/ifrs-full","local_name":"NoncurrentPortionOfNoncurrentLoansReceived","label_zh":"非流動借款"}
+          ],
+          "FIN_SHORT_TERM_INVESTMENTS": [],
+          "FIN_DILUTED_SHARES": []
+        }
+      }
+    },
+    "issuers": {
+      "ISSUER_TSMC": {"ticker":"2330","report_scope":"CONSOLIDATED","metrics_profile":"GENERAL_INDUSTRY_2024_2026"},
+      "ISSUER_WINBOND": {"ticker":"2344","report_scope":"CONSOLIDATED","metrics_profile":"GENERAL_INDUSTRY_2024_2026"},
+      "ISSUER_NANYA": {"ticker":"2408","report_scope":"CONSOLIDATED","metrics_profile":"GENERAL_INDUSTRY_2024_2026"},
+      "ISSUER_AVC": {"ticker":"3017","report_scope":"CONSOLIDATED","metrics_profile":"GENERAL_INDUSTRY_2024_2026"},
+      "ISSUER_LANDMARK": {"ticker":"3081","report_scope":"INDIVIDUAL_ONLY","metrics_profile":"GENERAL_INDUSTRY_2024_2026","scope_evidence_sha256":"a6e20903b14adbad11ea328573bb8157061417beba75156b07f9a257aed71395","scope_reason":"Official filing list shows only individual statements from 2019Q1 through 2026Q2; reason not independently confirmed."},
+      "ISSUER_AURAS": {"ticker":"3324","report_scope":"CONSOLIDATED","metrics_profile":"GENERAL_INDUSTRY_2024_2026"},
+      "ISSUER_TUC": {"ticker":"6274","report_scope":"CONSOLIDATED","metrics_profile":"GENERAL_INDUSTRY_2024_2026"}
+    }
+  },
+  "foreign_issuer_probe": {
+    "ISSUER_TSMC": {
+      "cik": "0001046179",
+      "taxonomy": "ifrs-full",
+      "currency": "TWD",
+      "status": "ANNUAL_SEC_20F_AVAILABLE_BUT_CURRENT_QUARTER_MOPS_XBRL_REQUIRED",
+      "reason": "SEC Company Facts contains IFRS 20-F facts, but the latest usable facts are annual and stale for the 135-day health gate; current quarterly H1-H7 requires MOPS XBRL. TSM and 2330 remain one issuer but separate securities."
+    }
+  },
+  "unresolved_findings": {
+    "ISSUER_MARVELL_FIN_SHORT_TERM_INVESTMENTS": "Latest 2026-08-01 10-Q balance sheet has no short-term-investment line; a period-specific verified-zero assertion is pending independent review.",
+    "ISSUER_BROADCOM_FIN_SHORT_TERM_INVESTMENTS": "Latest filing discusses net purchases of short-term investments but does not expose a separately usable current balance in SEC Company Facts; it must remain missing and must not be asserted as zero.",
+    "ISSUER_EATON_FIN_OPERATING_INCOME": "Recent consolidated filings do not expose a current consolidated OperatingIncomeLoss fact; segment facts and pretax income are not substitutes under the fixed H2/H3 definition.",
+    "ISSUER_COHERENT_FIN_OPERATING_INCOME": "The latest 10-K does not expose a current consolidated OperatingIncomeLoss fact; OtherOperatingIncomeExpense and net income are not substitutes.",
+    "ISSUER_GEV_FIN_CASH": "Latest filing reports cash, cash equivalents and restricted cash together; the restricted component is only rounded in narrative disclosure, so unrestricted cash cannot be entered exactly.",
+    "ISSUER_GEV_FIN_INTEREST_EXPENSE": "The filing uses issuer extension gev:InterestAndOtherFinancialCharges; the current Company Facts adapter intentionally accepts only us-gaap and therefore leaves this metric missing until an independently reviewed inline-XBRL adapter exists."
+  },
+  "tag_semantics_notes": {
+    "LongTermDebtAndCapitalLeaseObligations": "us-gaap 定義為不含一年內到期部分的長期負債與租賃負債，只能對應 FIN_DEBT_NONCURRENT。1.3.1 誤對應為 FIN_DEBT_TOTAL，使總負債少算一年內到期的部分。Claude 2026-10-06 以美光 10-Q（accession 0000723125-26-000015）核對：資產負債表 Current debt 582、Long-term debt 5,140（即此標籤），合計 5,722 百萬美元。"
+  }
+}

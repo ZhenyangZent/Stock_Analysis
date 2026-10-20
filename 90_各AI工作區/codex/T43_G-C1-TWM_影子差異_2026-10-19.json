@@ -1,0 +1,166 @@
+{
+  "gate": "G-C1-TWM",
+  "candidate_version": "1.13.0",
+  "candidate_only": true,
+  "source_policy": {
+    "robots_prohibition_found": false,
+    "terms_or_license_allows_open_data": true,
+    "checked_at": "2026-10-20T00:30:35.875619+08:00"
+  },
+  "ledger_rows": 9,
+  "rows": [
+    {
+      "ticker": "2330",
+      "before": {
+        "c1_quarter": "UNCHANGED"
+      },
+      "after_candidate": {
+        "c1_quarter": "UNCHANGED",
+        "c1m": {
+          "value": null,
+          "status": "DATA_INSUFFICIENT_MONTHS",
+          "month_count": 1
+        },
+        "newer": "C1_QUARTER"
+      },
+      "deciding_factor": "OpenAPI provides only the latest month; three-month history is accumulated weekly without estimated backfill.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "2344",
+      "before": {
+        "c1_quarter": "UNCHANGED"
+      },
+      "after_candidate": {
+        "c1_quarter": "UNCHANGED",
+        "c1m": {
+          "value": null,
+          "status": "DATA_INSUFFICIENT_MONTHS",
+          "month_count": 1
+        },
+        "newer": "C1_QUARTER"
+      },
+      "deciding_factor": "OpenAPI provides only the latest month; three-month history is accumulated weekly without estimated backfill.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "2383",
+      "before": {
+        "c1_quarter": "UNCHANGED"
+      },
+      "after_candidate": {
+        "c1_quarter": "UNCHANGED",
+        "c1m": {
+          "value": null,
+          "status": "DATA_INSUFFICIENT_MONTHS",
+          "month_count": 1
+        },
+        "newer": "C1_QUARTER"
+      },
+      "deciding_factor": "OpenAPI provides only the latest month; three-month history is accumulated weekly without estimated backfill.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "2408",
+      "before": {
+        "c1_quarter": "UNCHANGED"
+      },
+      "after_candidate": {
+        "c1_quarter": "UNCHANGED",
+        "c1m": {
+          "value": null,
+          "status": "DATA_INSUFFICIENT_MONTHS",
+          "month_count": 1
+        },
+        "newer": "C1_QUARTER"
+      },
+      "deciding_factor": "OpenAPI provides only the latest month; three-month history is accumulated weekly without estimated backfill.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "3017",
+      "before": {
+        "c1_quarter": "UNCHANGED"
+      },
+      "after_candidate": {
+        "c1_quarter": "UNCHANGED",
+        "c1m": {
+          "value": null,
+          "status": "DATA_INSUFFICIENT_MONTHS",
+          "month_count": 1
+        },
+        "newer": "C1_QUARTER"
+      },
+      "deciding_factor": "OpenAPI provides only the latest month; three-month history is accumulated weekly without estimated backfill.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "3037",
+      "before": {
+        "c1_quarter": "UNCHANGED"
+      },
+      "after_candidate": {
+        "c1_quarter": "UNCHANGED",
+        "c1m": {
+          "value": null,
+          "status": "DATA_INSUFFICIENT_MONTHS",
+          "month_count": 1
+        },
+        "newer": "C1_QUARTER"
+      },
+      "deciding_factor": "OpenAPI provides only the latest month; three-month history is accumulated weekly without estimated backfill.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "3081",
+      "before": {
+        "c1_quarter": "UNCHANGED"
+      },
+      "after_candidate": {
+        "c1_quarter": "UNCHANGED",
+        "c1m": {
+          "value": null,
+          "status": "DATA_INSUFFICIENT_MONTHS",
+          "month_count": 1
+        },
+        "newer": "C1_QUARTER"
+      },
+      "deciding_factor": "OpenAPI provides only the latest month; three-month history is accumulated weekly without estimated backfill.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "3324",
+      "before": {
+        "c1_quarter": "UNCHANGED"
+      },
+      "after_candidate": {
+        "c1_quarter": "UNCHANGED",
+        "c1m": {
+          "value": null,
+          "status": "DATA_INSUFFICIENT_MONTHS",
+          "month_count": 1
+        },
+        "newer": "C1_QUARTER"
+      },
+      "deciding_factor": "OpenAPI provides only the latest month; three-month history is accumulated weekly without estimated backfill.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "6274",
+      "before": {
+        "c1_quarter": "UNCHANGED"
+      },
+      "after_candidate": {
+        "c1_quarter": "UNCHANGED",
+        "c1m": {
+          "value": null,
+          "status": "DATA_INSUFFICIENT_MONTHS",
+          "month_count": 1
+        },
+        "newer": "C1_QUARTER"
+      },
+      "deciding_factor": "OpenAPI provides only the latest month; three-month history is accumulated weekly without estimated backfill.",
+      "formal_effect": null
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "gate": "G-V1-ALT",
+  "candidate_version": "1.13.0",
+  "candidate_only": true,
+  "snapshot_id": "SNAP_20261019T090733Z_522a5100",
+  "rows": [
+    {
+      "ticker": "3081",
+      "before": {
+        "v1_status": "DATA_INSUFFICIENT_VALID_MONTHS",
+        "v1_value": null,
+        "valid_months": 37,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "after_candidate": {
+        "value": 2.3511550504945773,
+        "status": "OK",
+        "method": "V1_ALT_SHORT_HISTORY",
+        "score": -1,
+        "valid_months": 37,
+        "used_months": 36,
+        "median": 102.46913580246914,
+        "current_multiple": 240.92082616179005,
+        "shadow_classification": "WAIT"
+      },
+      "gap_type": "DATA_GAP",
+      "deciding_factor": "Existing MOPS raw covers 2021Q1-2026Q2; 37 valid P/E months make rung A eligible; no new MOPS/doc.twse fetch.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "COHR",
+      "before": {
+        "v1_status": "DATA_INSUFFICIENT_VALID_MONTHS",
+        "v1_value": null,
+        "valid_months": 39,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "after_candidate": {
+        "value": 0.42462924396541285,
+        "status": "OK",
+        "method": "V1_ALT_SHORT_HISTORY",
+        "score": 0,
+        "valid_months": 39,
+        "used_months": 36,
+        "median": 133.12525461721359,
+        "current_multiple": 56.52887622081049,
+        "shadow_classification": "RESEARCH_ELIGIBLE"
+      },
+      "gap_type": "STRUCTURAL_SHORT_HISTORY",
+      "deciding_factor": "39 valid P/E months make rung A eligible.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "GEV",
+      "before": {
+        "v1_status": "NOT_APPLICABLE_LISTED_UNDER_5Y",
+        "v1_value": null,
+        "valid_months": null,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "after_candidate": {
+        "method": null,
+        "status": "NO_ELIGIBLE_ALTERNATIVE",
+        "value": null,
+        "score": null,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "gap_type": "STRUCTURAL_LISTED_UNDER_5Y",
+      "deciding_factor": "Revenue history is under 12 quarters; both rungs remain null.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "LITE",
+      "before": {
+        "v1_status": "NOT_APPLICABLE_CURRENT_MULTIPLE",
+        "v1_value": null,
+        "valid_months": 31,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "after_candidate": {
+        "method": null,
+        "status": "NO_ELIGIBLE_ALTERNATIVE",
+        "value": null,
+        "score": null,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "gap_type": "STRUCTURAL_NONPOSITIVE_EPS",
+      "deciding_factor": "Revenue history is sufficient but PIT shares-outstanding history is not; diluted-share proxy is forbidden.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "MRVL",
+      "before": {
+        "v1_status": "DATA_INSUFFICIENT_VALID_MONTHS",
+        "v1_value": null,
+        "valid_months": 10,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "after_candidate": {
+        "method": null,
+        "status": "NO_ELIGIBLE_ALTERNATIVE",
+        "value": null,
+        "score": null,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "gap_type": "DATA_GAP",
+      "deciding_factor": "Only 10 valid P/E months; PIT shares-outstanding history is insufficient for EV/Sales.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "TSM",
+      "before": {
+        "v1_status": "DATA_INSUFFICIENT_VALID_MONTHS",
+        "v1_value": null,
+        "valid_months": 20,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "after_candidate": {
+        "method": null,
+        "status": "NO_ELIGIBLE_ALTERNATIVE",
+        "value": null,
+        "score": null,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "gap_type": "DATA_GAP",
+      "deciding_factor": "Canonical path already uses 2330 MOPS TTM EPS x ADR ratio 5 / PIT USD/TWD; only 20 valid months.",
+      "formal_effect": null,
+      "conversion_evidence": {
+        "formula": "MOPS_TTM_EPS_TWD*5/USD_TWD",
+        "underlying_eps_twd": 86.26819537315828,
+        "adr_ratio": 5,
+        "usdtwd": {
+          "available_at": "2026-10-09T12:00:00-04:00",
+          "fixing_at": "2026-10-09T12:00:00-04:00",
+          "fx_observation_id": "FX_6aec0b4bee4daeeb319a5ef5948de81d38eb72c9e3356c20ba5bfa46646e67b0",
+          "pair": "USD/TWD",
+          "rate": 31.94
+        },
+        "eps_usd_per_adr": 13.504726889974682,
+        "mops_inputs_available_at": "2026-08-14T13:59:44+08:00"
+      }
+    },
+    {
+      "ticker": "MU",
+      "before": {
+        "pb_shadow": 3.2882429906690858
+      },
+      "after_candidate": {
+        "pb_shadow": 3.2882429906690858
+      },
+      "deciding_factor": "P/B remains reference-only and unscored for memory issuers.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "2344",
+      "before": {
+        "pb_shadow": 3.7348165969486415
+      },
+      "after_candidate": {
+        "pb_shadow": 3.7348165969486415
+      },
+      "deciding_factor": "P/B remains reference-only and unscored for memory issuers.",
+      "formal_effect": null
+    },
+    {
+      "ticker": "2408",
+      "before": {
+        "pb_shadow": 4.01167483370562
+      },
+      "after_candidate": {
+        "pb_shadow": 4.01167483370562
+      },
+      "deciding_factor": "P/B remains reference-only and unscored for memory issuers.",
+      "formal_effect": null
+    }
+  ]
+}

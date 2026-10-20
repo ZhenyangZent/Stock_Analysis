@@ -1,0 +1,69 @@
+{
+  "gate": "G-T-SELF",
+  "candidate_version": "1.13.0",
+  "candidate_only": true,
+  "reference_only_classification_count": 0,
+  "reference_only_evaluation_count": 0,
+  "rows": [
+    {
+      "ticker": "TSM",
+      "theme": "foundry",
+      "before": {
+        "inputs": {
+          "I1": 1,
+          "I2": 1,
+          "I3": null,
+          "I4": 1
+        },
+        "theme_score": 3,
+        "shadow_classification": "DATA_INSUFFICIENT"
+      },
+      "after_candidate": {
+        "inputs": {
+          "I1": null,
+          "I2": null,
+          "I3": null,
+          "I4": 1
+        },
+        "theme_score": 1,
+        "enough": false,
+        "shadow_classification": "THEME_DATA_INSUFFICIENT"
+      },
+      "self_inputs": [
+        "I1",
+        "I2",
+        "I2Q"
+      ],
+      "deciding_factor": "GFS and 2303 are candidate reference-only but are not connected to comparable I1/I2 evidence; leave-one-out yields fewer than two fields."
+    },
+    {
+      "ticker": "6274",
+      "theme": "pcb",
+      "before": {
+        "inputs": {
+          "I1": 1,
+          "I2": null,
+          "I3": null,
+          "I4": 1
+        },
+        "theme_score": 2,
+        "shadow_classification": "WAIT"
+      },
+      "after_candidate": {
+        "inputs": {
+          "I1": null,
+          "I2": null,
+          "I3": null,
+          "I4": 1
+        },
+        "theme_score": 1,
+        "enough": false,
+        "shadow_classification": "THEME_DATA_INSUFFICIENT"
+      },
+      "self_inputs": [
+        "I1"
+      ],
+      "deciding_factor": "3037 and 2383 are candidate reference-only but are not connected to comparable I1 evidence; leave-one-out yields fewer than two fields."
+    }
+  ]
+}
