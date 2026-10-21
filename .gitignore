@@ -83,3 +83,14 @@
 90_各AI工作區/claude/*
 !90_各AI工作區/claude/台股財報原文抽查_2026-10-08.md
 
+# Phase 1 durable handoff files — exact allowlist only
+!90_各AI工作區/codex/START_HERE.md
+!90_各AI工作區/codex/HANDOFF_POLICY.md
+!90_各AI工作區/codex/templates/
+90_各AI工作區/codex/templates/*
+!90_各AI工作區/codex/templates/ADR_TEMPLATE.md
+!90_各AI工作區/codex/templates/EXECUTION_EVIDENCE_HANDOFF_TEMPLATE.md
+!90_各AI工作區/codex/reports/
+90_各AI工作區/codex/reports/*
+!90_各AI工作區/codex/reports/T46_DERIVED_ANALYSIS_CORRECTION_V2.md
+!90_各AI工作區/codex/reports/T46_DERIVED_ANALYSIS_V2.json

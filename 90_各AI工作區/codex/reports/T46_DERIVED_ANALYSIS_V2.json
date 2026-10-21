@@ -1,0 +1,71 @@
+{
+  "analysis_method": "T46_DERIVED_ANALYSIS_V2",
+  "appended_suffix": {
+    "bytes": 560236,
+    "doc_type_counts": {
+      "10-K": 76,
+      "10-Q": 220,
+      "8-K-EX99-EARNINGS": 303
+    },
+    "duplicate_url_group_count": 0,
+    "duplicate_url_groups": [],
+    "rows": 599,
+    "sha256": "15489db73ae3c4fbd76e82d68868575300e874dbf92c17bcd5e7b4c156db52ec"
+  },
+  "cross_partition": {
+    "common_url_count": 0,
+    "common_urls": []
+  },
+  "gates": {
+    "ledger_schema_doc_type_url": "PASS",
+    "ledger_sha256": "PASS",
+    "prefix_bytes_and_sha256": "PASS",
+    "zip_crc": "PASS",
+    "zip_sha256": "PASS"
+  },
+  "input": {
+    "audit_zip_sha256": "9ba5588e968c84a8ac032eeeb798e4882689ad2a41eaf170d97634d9f062b03b",
+    "ledger_bytes": 668666,
+    "ledger_member": "GPT_TAKEOVER_AUDIT_EVIDENCE/05_T46_EVIDENCE/docs_ledger.jsonl",
+    "ledger_sha256": "0b7f5242ad52557b6a07f7b0abe4d6fcf9821b09589a997cd7a57563676f3b88"
+  },
+  "mutation": {
+    "audit_zip": false,
+    "ledger": false
+  },
+  "original_prefix": {
+    "bytes": 108430,
+    "duplicate_url_group_count": 6,
+    "duplicate_url_groups": [
+      {
+        "row_count": 2,
+        "value": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=2330&year=115&seamon=&mtype=A"
+      },
+      {
+        "row_count": 2,
+        "value": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=2344&year=115&seamon=&mtype=A"
+      },
+      {
+        "row_count": 2,
+        "value": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=2408&year=115&seamon=&mtype=A"
+      },
+      {
+        "row_count": 2,
+        "value": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=3017&year=115&seamon=&mtype=A"
+      },
+      {
+        "row_count": 2,
+        "value": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=3081&year=115&seamon=&mtype=A"
+      },
+      {
+        "row_count": 2,
+        "value": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6274&year=115&seamon=&mtype=A"
+      }
+    ],
+    "rows": 107,
+    "sha256": "e5d5e81a1859a0b4a708c9880428c1353be51b74820451ac13d127219acd87b9"
+  },
+  "total": {
+    "rows": 706
+  }
+}
