@@ -474,7 +474,10 @@ def main(argv=None):
             report["steps"] += [{"step": 3, "status": preview_status},
                                 {"step": 4, "status": "WARN" if report["preview"].get("classification_changes") else "PASS"},
                                 {"step": 5, "status": "PASS" if report["preview"].get("candidate_run_id") else "FAIL"}]
-        report["status"] = _worst_status([row["status"] for row in report["steps"]])
+        statuses = [row["status"] for row in report["steps"]]
+        if report.get("stopped_at"):
+            statuses.append("FAIL")
+        report["status"] = _worst_status(statuses)
         report["ended_at"] = _now()
         if not args.dry_run:
             folder = REPORT_ROOT / run_id; folder.mkdir(parents=True, exist_ok=False)

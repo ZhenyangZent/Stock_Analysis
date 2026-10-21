@@ -5880,6 +5880,68 @@ class Rules1120ActivationT35d(unittest.TestCase):
 
 
 class T36StagingWeeklyAndClassification(unittest.TestCase):
+    def _weekly_live_fixture(self, fetch_outcomes=(0, 0, 0), watcher_outcome=0,
+                             lock_ok=True, fetch_exception=None, watcher_exception=None):
+        import contextlib, io, tempfile, types
+        import weekly_refresh as wr
+        from unittest import mock
+
+        acquired, released, operations = [], [], []
+        event_calls, scan_calls, preview_calls = [], [], []
+        fake_lock = types.SimpleNamespace(
+            acquire=lambda *args, **kwargs: (
+                acquired.append((args, kwargs)) or ((True, {}) if lock_ok else (False, {"holder": "other"}))),
+            release=lambda holder: (released.append(holder) or (True, "released")))
+        fake_monthly = types.SimpleNamespace(update=lambda holder: {
+            "status": "PASS", "formal_classification_changed": False,
+            "formal_snapshot_created": False})
+        fetch_iter = iter(fetch_outcomes)
+
+        def isolated_fetch(script, holder):
+            operations.append(script)
+            if fetch_exception and script == fetch_exception[0]:
+                raise fetch_exception[1]
+            return {"script": script, "exit_code": next(fetch_iter), "stdout": "", "stderr": ""}
+
+        def isolated_watcher(command, **kwargs):
+            operations.append("earnings_docs_watch.py")
+            if watcher_exception:
+                raise watcher_exception
+            return subprocess.CompletedProcess(command, watcher_outcome, stdout="", stderr="")
+
+        def reject_network(*args, **kwargs):
+            raise AssertionError("isolated weekly fixture attempted network access")
+
+        with tempfile.TemporaryDirectory() as folder:
+            report_root = pathlib.Path(folder) / "weekly_refresh"
+            stdout = io.StringIO()
+            error = None
+            exit_code = None
+            with mock.patch.dict(sys.modules, {"lock": fake_lock, "monthly_revenue_shadow": fake_monthly}), \
+                 mock.patch.object(wr, "REPORT_ROOT", report_root), \
+                 mock.patch.object(wr, "_run_tool", side_effect=isolated_fetch), \
+                 mock.patch.object(wr.subprocess, "run", side_effect=isolated_watcher), \
+                 mock.patch.object(wr.urllib.request, "urlopen", side_effect=reject_network), \
+                 mock.patch("socket.create_connection", side_effect=reject_network), \
+                 mock.patch.object(wr, "reconfirm_us_events", side_effect=lambda **kwargs: (
+                     event_calls.append(kwargs) or {"companies": []})), \
+                 mock.patch.object(wr, "scan_sec_8k_date_changes", side_effect=lambda **kwargs: (
+                     scan_calls.append(kwargs) or {"status": "PASS", "companies": []})), \
+                 mock.patch.object(wr, "local_preview", side_effect=lambda: (
+                     preview_calls.append(True) or {"candidate_run_id": "C", "classification_changes": [], "gaps": []})), \
+                 contextlib.redirect_stdout(stdout):
+                try:
+                    exit_code = wr.main([])
+                except BaseException as exc:
+                    error = exc
+            reports = list(report_root.glob("*/report.json")) if report_root.exists() else []
+            report = json.loads(reports[0].read_text(encoding="utf-8")) if len(reports) == 1 else None
+            return {"exit_code": exit_code, "error": error, "report": report,
+                    "report_count": len(reports), "operations": operations,
+                    "acquired": acquired, "released": released,
+                    "event_calls": event_calls, "scan_calls": scan_calls,
+                    "preview_calls": preview_calls}
+
     def test_t41_sec_scan_status_and_nearest_event_selection(self):
         import weekly_refresh as wr
         events=[{"event_id":"LATE","record_type":"EVENT","event_status":"SCHEDULED","issuer_id":"I",
@@ -6006,38 +6068,76 @@ class T36StagingWeeklyAndClassification(unittest.TestCase):
             self.assertFalse(report_root.exists())
 
     def test_weekly_live_mode_keeps_document_watcher_path_in_isolated_fixture(self):
-        import contextlib, io, tempfile, types
-        import weekly_refresh as wr
-        from unittest import mock
-        acquired, released, commands = [], [], []
-        fake_lock = types.SimpleNamespace(
-            acquire=lambda *args, **kwargs: (acquired.append((args, kwargs)) or (True, {})),
-            release=lambda holder: (released.append(holder) or (True, "released")))
-        fake_monthly = types.SimpleNamespace(update=lambda holder: {
-            "status": "PASS", "formal_classification_changed": False,
-            "formal_snapshot_created": False})
+        result = self._weekly_live_fixture()
+        self.assertIsNone(result["error"])
+        self.assertEqual(result["exit_code"], 0)
+        self.assertEqual(result["report"]["status"], "PASS")
+        self.assertEqual(result["operations"], [
+            "fetch_prices.py", "fetch_fx.py", "fetch_macro.py", "earnings_docs_watch.py"])
+        self.assertEqual(len(result["acquired"]), 1)
+        self.assertEqual(result["released"], ["weekly_refresh"])
 
-        def isolated_subprocess(command, **kwargs):
-            commands.append((command, kwargs))
-            return subprocess.CompletedProcess(command, 0, stdout="", stderr="")
+    def test_weekly_first_fetcher_failure_stops_and_returns_fail(self):
+        result = self._weekly_live_fixture(fetch_outcomes=(7,))
+        self.assertIsNone(result["error"])
+        self.assertEqual(result["exit_code"], 1)
+        self.assertEqual(result["report"]["status"], "FAIL")
+        self.assertEqual(result["report"]["stopped_at"], "fetch_prices.py")
+        self.assertEqual(result["operations"], ["fetch_prices.py"])
+        self.assertEqual(result["event_calls"] + result["scan_calls"] + result["preview_calls"], [])
+        self.assertEqual(result["released"], ["weekly_refresh"])
 
-        with tempfile.TemporaryDirectory() as folder:
-            stdout = io.StringIO()
-            with mock.patch.dict(sys.modules, {"lock": fake_lock, "monthly_revenue_shadow": fake_monthly}), \
-                 mock.patch.object(wr, "REPORT_ROOT", pathlib.Path(folder) / "weekly_refresh"), \
-                 mock.patch.object(wr, "_run_tool", side_effect=lambda script, holder: {
-                     "script": script, "exit_code": 0, "stdout": "", "stderr": ""}), \
-                 mock.patch.object(wr.subprocess, "run", side_effect=isolated_subprocess), \
-                 mock.patch.object(wr, "reconfirm_us_events", return_value={"companies": []}), \
-                 mock.patch.object(wr, "scan_sec_8k_date_changes", return_value={"status":"PASS","companies":[]}), \
-                 mock.patch.object(wr, "local_preview", return_value={"candidate_run_id":"C","classification_changes": [], "gaps": []}), \
-                 contextlib.redirect_stdout(stdout):
-                self.assertEqual(wr.main([]), 0)
-            self.assertEqual(len(commands), 1)
-            self.assertTrue(str(commands[0][0][3]).endswith("earnings_docs_watch.py"))
-            self.assertIn("--now", commands[0][0])
-            self.assertEqual(len(acquired), 1)
-            self.assertEqual(released, ["weekly_refresh"])
+    def test_weekly_middle_fetcher_failure_stops_and_returns_fail(self):
+        result = self._weekly_live_fixture(fetch_outcomes=(0, 7))
+        self.assertIsNone(result["error"])
+        self.assertEqual(result["exit_code"], 1)
+        self.assertEqual(result["report"]["status"], "FAIL")
+        self.assertEqual(result["report"]["stopped_at"], "fetch_fx.py")
+        self.assertEqual(result["operations"], ["fetch_prices.py", "fetch_fx.py"])
+        self.assertEqual(result["event_calls"] + result["scan_calls"] + result["preview_calls"], [])
+        self.assertEqual(result["released"], ["weekly_refresh"])
+
+    def test_weekly_watcher_failure_propagates_to_status_and_exit(self):
+        result = self._weekly_live_fixture(watcher_outcome=9)
+        self.assertIsNone(result["error"])
+        self.assertEqual(result["exit_code"], 1)
+        self.assertEqual(result["report"]["status"], "FAIL")
+        self.assertEqual(result["report"]["stopped_at"], "earnings_docs_watch.py")
+        self.assertEqual(result["report"]["steps"], [{"step": 1, "status": "PASS"}])
+        self.assertEqual(result["operations"], [
+            "fetch_prices.py", "fetch_fx.py", "fetch_macro.py", "earnings_docs_watch.py"])
+        self.assertEqual(result["event_calls"] + result["scan_calls"] + result["preview_calls"], [])
+        self.assertEqual(result["released"], ["weekly_refresh"])
+
+    def test_weekly_child_exception_keeps_existing_propagation_and_not_success(self):
+        error = OSError("isolated child exception")
+        result = self._weekly_live_fixture(fetch_exception=("fetch_macro.py", error))
+        self.assertIs(result["error"], error)
+        self.assertIsNone(result["exit_code"])
+        self.assertEqual(result["report_count"], 0)
+        self.assertEqual(result["operations"], ["fetch_prices.py", "fetch_fx.py", "fetch_macro.py"])
+        self.assertEqual(result["event_calls"] + result["scan_calls"] + result["preview_calls"], [])
+        self.assertEqual(result["released"], ["weekly_refresh"])
+
+    def test_weekly_child_timeout_keeps_existing_propagation_and_not_success(self):
+        error = subprocess.TimeoutExpired(cmd=["earnings_docs_watch.py"], timeout=1)
+        result = self._weekly_live_fixture(watcher_exception=error)
+        self.assertIs(result["error"], error)
+        self.assertIsNone(result["exit_code"])
+        self.assertEqual(result["report_count"], 0)
+        self.assertEqual(result["operations"], [
+            "fetch_prices.py", "fetch_fx.py", "fetch_macro.py", "earnings_docs_watch.py"])
+        self.assertEqual(result["event_calls"] + result["scan_calls"] + result["preview_calls"], [])
+        self.assertEqual(result["released"], ["weekly_refresh"])
+
+    def test_weekly_lock_rejection_has_no_children_or_report(self):
+        result = self._weekly_live_fixture(lock_ok=False)
+        self.assertIsInstance(result["error"], RuntimeError)
+        self.assertIn("WEEKLY_LOCK_FAILED", str(result["error"]))
+        self.assertIsNone(result["exit_code"])
+        self.assertEqual(result["report_count"], 0)
+        self.assertEqual(result["operations"], [])
+        self.assertEqual(result["released"], [])
 
 
 class T42DataIntegrityAndEvaluation(unittest.TestCase):
