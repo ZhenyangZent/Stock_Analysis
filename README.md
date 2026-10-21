@@ -59,3 +59,7 @@ AI 只負責**查資料並填表**，產生一個執行紀錄 JSON；判斷結�
 - 九家美股公司的單季營收與毛利由 SEC Company Facts 精確白名單匯入；不做模糊標籤配對。
 - 沒有直接毛利標籤的公司，只有同期間營收與成本都存在時才以相減產生毛利，來源 components 與推導方式一併保存。
 - `trend.py` 維持影子模式。趨勢帳本含資料指紋與 append-only 更正鏈，不影響 `verdict.py`。
+
+## Durable AI takeover
+
+Durable AI takeover starts at [START_HERE](90_各AI工作區/codex/START_HERE.md), with evidence and supersede rules in [HANDOFF_POLICY](90_各AI工作區/codex/HANDOFF_POLICY.md). Treat embedded versions and states as historical evidence at their `AS_OF_UTC`; every takeover must independently refresh Git HEAD, current rules, latest committed formal snapshot and collaboration-lock state. If a handoff conflicts with formal decisions or rules, stop the affected operation and request reconciliation.

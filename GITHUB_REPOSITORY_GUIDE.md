@@ -45,7 +45,7 @@ e5d5e81a1859a0b4a708c9880428c1353be51b74820451ac13d127219acd87b9
 
 ## Clone 後需要自行提供
 
-1. 在專案外建立 C:/Users/<user>/.ai_stock/.env。
+1. 在專案外建立 `%USERPROFILE%/.ai_stock/.env`。
 2. 視需要設定 TIINGO_API_KEY、FRED_API_KEY；不要把值提交。
 3. 透過 fetcher 重新取得允許下載的原始文件。
 4. portfolio.json 只能由使用者本人建立。
@@ -54,3 +54,12 @@ e5d5e81a1859a0b4a708c9880428c1353be51b74820451ac13d127219acd87b9
 ## 研究定位
 
 本專案輸出的是「可列入研究／等待／資料不足」等研究分類，不是買賣指令、目標價或報酬保證。回歸測試全綠只表示程式符合規格，不表示投資方法已被驗證。
+
+## Durable handoff evidence
+
+- [START_HERE](90_各AI工作區/codex/START_HERE.md) is the permanent navigation entry; it is not a replacement for formal decisions or rules.
+- [HANDOFF_POLICY](90_各AI工作區/codex/HANDOFF_POLICY.md) defines evidence states, live-state refresh, conflict-stop and supersede requirements.
+- Small, legal, non-sensitive templates and T46 derivative corrections may be tracked after review.
+- Historical `PASS` applies only to its bound code/input/rule/environment hashes; takeover requires fresh live-state readback.
+- Large/restricted source files remain outside public Git. Future external evidence indexing, historical ADR backfill, CI and automated restore drills are separate phases requiring separate authority.
+- T46 incident evidence remains immutable and blocked; a correction report does not constitute recovery.
