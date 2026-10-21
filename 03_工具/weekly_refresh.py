@@ -445,16 +445,25 @@ def main(argv=None):
             "WARN" if (report.get("monthly_revenue_shadow") or {}).get("status") == "WARN" else "PASS")
         report["steps"].append({"step": 1, "status": step1})
         if not report.get("stopped_at"):
-            # earnings_docs_watch is explicitly live only with --now.
-            command = [PYTHON, "-X", "utf8", str(Path(ROOT) / "03_工具" / "earnings_docs_watch.py"),
-                       "--now", "--lock-holder", holder]
-            completed = subprocess.run(command, cwd=ROOT, text=True, encoding="utf-8", errors="replace",
-                                       capture_output=True)
-            earnings = {"script": "earnings_docs_watch.py", "exit_code": completed.returncode,
-                        "stdout": completed.stdout[-12000:], "stderr": completed.stderr[-12000:]}
-            report["earnings_docs"] = earnings
-            if earnings["exit_code"] != 0:
-                report["stopped_at"] = "earnings_docs_watch.py"
+            if args.dry_run:
+                # A dry-run must never cross the process boundary into the live
+                # document watcher.  The watcher treats ``--now`` as authority
+                # to contact SEC and may write raw/candidate files before a
+                # later ledger lock check, so even a failing child is unsafe.
+                report["earnings_docs"] = {
+                    "script": "earnings_docs_watch.py", "status": "SKIPPED_DRY_RUN",
+                    "exit_code": None, "stdout": "", "stderr": ""}
+            else:
+                # earnings_docs_watch is explicitly live only with --now.
+                command = [PYTHON, "-X", "utf8", str(Path(ROOT) / "03_工具" / "earnings_docs_watch.py"),
+                           "--now", "--lock-holder", holder]
+                completed = subprocess.run(command, cwd=ROOT, text=True, encoding="utf-8", errors="replace",
+                                           capture_output=True)
+                earnings = {"script": "earnings_docs_watch.py", "exit_code": completed.returncode,
+                            "stdout": completed.stdout[-12000:], "stderr": completed.stderr[-12000:]}
+                report["earnings_docs"] = earnings
+                if earnings["exit_code"] != 0:
+                    report["stopped_at"] = "earnings_docs_watch.py"
         if not report.get("stopped_at"):
             report["events"] = reconfirm_us_events(dry_run=args.dry_run, lock_holder=holder if not args.dry_run else None)
             report["sec_event_scan"] = scan_sec_8k_date_changes(

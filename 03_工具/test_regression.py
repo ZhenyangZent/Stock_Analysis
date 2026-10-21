@@ -5969,13 +5969,75 @@ class T36StagingWeeklyAndClassification(unittest.TestCase):
             self.assertEqual(result["summary"]["20"]["等待"]["conclusion"], "樣本不足，不得下結論")
 
     def test_weekly_dry_run_does_not_execute_fetchers_or_write_reports(self):
+        import contextlib, io, tempfile
         import weekly_refresh as wr
         from unittest import mock
-        with mock.patch.object(wr, "_run_tool", side_effect=AssertionError("fetch must not run")), \
-             mock.patch.object(wr, "reconfirm_us_events", return_value={"companies": []}), \
-             mock.patch.object(wr, "scan_sec_8k_date_changes", return_value={"status":"DISABLED_CANDIDATE_NOT_ACTIVE","companies":[]}), \
-             mock.patch.object(wr, "local_preview", return_value={"candidate_run_id":"C","classification_changes": [], "gaps": []}):
-            self.assertEqual(wr.main(["--dry-run"]), 0)
+        network_attempts, subprocess_attempts = [], []
+
+        def reject_network(*args, **kwargs):
+            network_attempts.append((args, kwargs))
+            raise AssertionError("dry-run network access is forbidden")
+
+        def reject_subprocess(*args, **kwargs):
+            subprocess_attempts.append((args, kwargs))
+            raise AssertionError("dry-run child process is forbidden")
+
+        with tempfile.TemporaryDirectory() as folder:
+            report_root = pathlib.Path(folder) / "weekly_refresh"
+            stdout = io.StringIO()
+            with mock.patch.object(wr, "REPORT_ROOT", report_root), \
+                 mock.patch.object(wr, "_run_tool", side_effect=AssertionError("fetch must not run")), \
+                 mock.patch.object(wr.subprocess, "run", side_effect=reject_subprocess), \
+                 mock.patch.object(wr.urllib.request, "urlopen", side_effect=reject_network), \
+                 mock.patch("socket.create_connection", side_effect=reject_network), \
+                 mock.patch.object(wr, "reconfirm_us_events", return_value={"companies": []}), \
+                 mock.patch.object(wr, "scan_sec_8k_date_changes", return_value={"status":"DISABLED_CANDIDATE_NOT_ACTIVE","companies":[]}), \
+                 mock.patch.object(wr, "local_preview", return_value={"candidate_run_id":"C","classification_changes": [], "gaps": []}), \
+                 mock.patch.object(pathlib.Path, "write_text", side_effect=AssertionError("dry-run file write is forbidden")), \
+                 mock.patch.object(pathlib.Path, "write_bytes", side_effect=AssertionError("dry-run file write is forbidden")), \
+                 contextlib.redirect_stdout(stdout):
+                self.assertEqual(wr.main(["--dry-run"]), 0)
+            report = json.loads(stdout.getvalue())
+            self.assertEqual(report["earnings_docs"]["status"], "SKIPPED_DRY_RUN")
+            self.assertIsNone(report["earnings_docs"]["exit_code"])
+            self.assertFalse(report["formal_snapshot_created"])
+            self.assertEqual(network_attempts, [])
+            self.assertEqual(subprocess_attempts, [])
+            self.assertFalse(report_root.exists())
+
+    def test_weekly_live_mode_keeps_document_watcher_path_in_isolated_fixture(self):
+        import contextlib, io, tempfile, types
+        import weekly_refresh as wr
+        from unittest import mock
+        acquired, released, commands = [], [], []
+        fake_lock = types.SimpleNamespace(
+            acquire=lambda *args, **kwargs: (acquired.append((args, kwargs)) or (True, {})),
+            release=lambda holder: (released.append(holder) or (True, "released")))
+        fake_monthly = types.SimpleNamespace(update=lambda holder: {
+            "status": "PASS", "formal_classification_changed": False,
+            "formal_snapshot_created": False})
+
+        def isolated_subprocess(command, **kwargs):
+            commands.append((command, kwargs))
+            return subprocess.CompletedProcess(command, 0, stdout="", stderr="")
+
+        with tempfile.TemporaryDirectory() as folder:
+            stdout = io.StringIO()
+            with mock.patch.dict(sys.modules, {"lock": fake_lock, "monthly_revenue_shadow": fake_monthly}), \
+                 mock.patch.object(wr, "REPORT_ROOT", pathlib.Path(folder) / "weekly_refresh"), \
+                 mock.patch.object(wr, "_run_tool", side_effect=lambda script, holder: {
+                     "script": script, "exit_code": 0, "stdout": "", "stderr": ""}), \
+                 mock.patch.object(wr.subprocess, "run", side_effect=isolated_subprocess), \
+                 mock.patch.object(wr, "reconfirm_us_events", return_value={"companies": []}), \
+                 mock.patch.object(wr, "scan_sec_8k_date_changes", return_value={"status":"PASS","companies":[]}), \
+                 mock.patch.object(wr, "local_preview", return_value={"candidate_run_id":"C","classification_changes": [], "gaps": []}), \
+                 contextlib.redirect_stdout(stdout):
+                self.assertEqual(wr.main([]), 0)
+            self.assertEqual(len(commands), 1)
+            self.assertTrue(str(commands[0][0][3]).endswith("earnings_docs_watch.py"))
+            self.assertIn("--now", commands[0][0])
+            self.assertEqual(len(acquired), 1)
+            self.assertEqual(released, ["weekly_refresh"])
 
 
 class T42DataIntegrityAndEvaluation(unittest.TestCase):
