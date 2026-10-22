@@ -1990,6 +1990,81 @@ class MarketEnvironment(unittest.TestCase):
         self.assertEqual(v["M1"]["value"], "升息"); self.assertAlmostEqual(v["M2"]["value"], 40.0)
         self.assertAlmostEqual(v["M3"]["value"], 15.0); self.assertAlmostEqual(v["M4"]["value"], 0.5)
         self.assertAlmostEqual(v["M7"]["value"], 80.0); self.assertLess(v["M6"]["value"], -5)
+    def m4(self, rows, as_of="2026-09-30"):
+        import market_env as me
+        return me.compute({"UNRATE": rows}, [], as_of, RULES["market_env"], point_in_time=False,
+                          fomc_decisions=[])["M4"]
+    def test_m4_internal_gap_uses_exact_calendar_key(self):
+        rows = [("2026-04-01", 3.9), ("2026-05-01", 4.0),
+                ("2026-06-01", 4.1), ("2026-08-01", 4.3)]
+        got = self.m4(rows)
+        self.assertEqual(got["value"], 0.3)
+        self.assertEqual(got["calendar_months"], {"L": "2026-08", "L_MINUS_3": "2026-05"})
+        self.assertIn("曆月 2026-05", got["reason"]); self.assertIn("2026-08", got["reason"])
+    def test_m4_continuous_months_match_calendar_formula(self):
+        rows = [("2026-05-01", 4.0), ("2026-06-01", 4.1),
+                ("2026-07-01", 4.2), ("2026-08-01", 4.3)]
+        got = self.m4(rows)
+        self.assertEqual(got["value"], 0.3)
+        self.assertEqual(got["calendar_months"]["L_MINUS_3"], "2026-05")
+    def test_m4_cross_year_month_arithmetic(self):
+        rows = [("2025-10-01", 4.0), ("2025-11-01", 4.1),
+                ("2025-12-01", 4.2), ("2026-01-01", 4.3)]
+        got = self.m4(rows, "2026-01-31")
+        self.assertEqual(got["calendar_months"], {"L": "2026-01", "L_MINUS_3": "2025-10"})
+        self.assertEqual(got["value"], 0.3)
+    def test_m4_missing_required_month_fails_closed(self):
+        rows = [("2025-11-01", 4.1), ("2025-12-01", 4.2), ("2026-01-01", 4.3)]
+        got = self.m4(rows, "2026-01-31")
+        self.assertIsNone(got["value"]); self.assertEqual(got["missing_months"], ["2025-10"])
+        self.assertIn("缺少曆月：2025-10", got["reason"])
+    def test_m4_conflicting_required_month_fails_closed(self):
+        rows = [("2026-05-01", 4.0), ("2026-05-15", 9.0), ("2026-08-01", 4.3)]
+        got = self.m4(rows)
+        self.assertIsNone(got["value"]); self.assertEqual(got["conflict_months"], ["2026-05"])
+        self.assertIn("衝突曆月：2026-05", got["reason"])
+    def test_m4_identical_duplicate_required_month_is_deterministic(self):
+        rows = [("2026-05-01", 4.0), ("2026-05-15", 4.0), ("2026-08-01", 4.3)]
+        got = self.m4(rows)
+        self.assertEqual(got["value"], 0.3); self.assertEqual(got["conflict_months"], [])
+    def test_m4_invalid_date_and_value_fail_closed(self):
+        invalid_date = self.m4([("2026-05-XX", 4.0), ("2026-08-01", 4.3)])
+        invalid_value = self.m4([("2026-05-01", "bad"), ("2026-08-01", 4.3)])
+        self.assertIsNone(invalid_date["value"]); self.assertIn("2026-05-XX", invalid_date["reason"])
+        self.assertIsNone(invalid_value["value"]); self.assertIn("2026-05-01", invalid_value["reason"])
+    def test_m4_different_vintages_keep_calendar_keys(self):
+        initial = [("2026-05-01", 4.0), ("2026-08-01", 4.2)]
+        revised = [("2026-05-01", 4.0), ("2026-08-01", 4.3)]
+        a, b = self.m4(initial), self.m4(revised)
+        self.assertEqual(a["calendar_months"], b["calendar_months"])
+        self.assertEqual((a["value"], b["value"]), (0.2, 0.3))
+    def test_m4_frozen_gap_at_2025_12_uses_2025_09(self):
+        rows = [("2025-08-01", 4.3), ("2025-09-01", 4.4),
+                ("2025-11-01", 4.5), ("2025-12-01", 4.4)]
+        got = self.m4(rows, "2026-01-10")
+        self.assertEqual(got["calendar_months"], {"L": "2025-12", "L_MINUS_3": "2025-09"})
+        self.assertEqual(got["value"], 0.0)
+    def test_m4_current_frozen_revised_and_initial_values_and_periods(self):
+        import market_env as me
+        from fetch_macro import load_macro, load_macro_vintages
+        revised = me.compute(load_macro(), [], "2026-10-20", RULES["market_env"], point_in_time=False,
+                             fomc_decisions=[])["M4"]
+        initial = me.compute_initial_m4_m5(load_macro_vintages(), "2026-10-20", RULES["market_env"])["M4"]
+        expected_months = {"L": "2026-09", "L_MINUS_3": "2026-06"}
+        self.assertEqual((revised["value"], initial["value"]), (0.0, 0.0))
+        self.assertEqual(revised["calendar_months"], expected_months)
+        self.assertEqual(initial["calendar_months"], expected_months)
+        self.assertEqual((revised["data_date"], initial["data_date"]), ("2026-09-01", "2026-09-01"))
+        self.assertEqual(initial["basis"], "ALFRED_INITIAL_RELEASE")
+    def test_m4_insufficient_propagates_to_assessment(self):
+        import market_env as me
+        values = me.compute({"UNRATE": [("2025-11-01", 4.1), ("2025-12-01", 4.2),
+                                                ("2026-01-01", 4.3)]},
+                            [], "2026-01-31", RULES["market_env"], point_in_time=False,
+                            fomc_decisions=[])
+        assessment = me.assess(values, RULES)
+        self.assertIsNone(values["M4"]["value"]); self.assertIsNone(assessment["scores"]["M4"])
+        self.assertEqual(assessment["filled"], 0)
     def cpi_calendar(self, start, end, missing=()):
         import datetime
         current = datetime.date.fromisoformat(start); finish = datetime.date.fromisoformat(end); rows = []
