@@ -90,6 +90,52 @@ def _m5_calendar_inputs(series, as_of, stale_limit):
             "calendar_months": months, "values": values,
             "missing_months": [], "conflict_months": []}
 
+def _m4_calendar_inputs(series, as_of, stale_limit):
+    """Resolve M4 inputs by exact calendar month; never substitute nearby rows."""
+    try:
+        cutoff = datetime.date.fromisoformat(as_of)
+    except (TypeError, ValueError):
+        return {"status": "INVALID_AS_OF", "data_date": None, "invalid_dates": [str(as_of)]}
+    by_month = collections.defaultdict(list)
+    invalid_dates, invalid_values = [], []
+    for raw_date, raw_value in (series or []):
+        try:
+            observed = datetime.date.fromisoformat(str(raw_date))
+        except (TypeError, ValueError):
+            invalid_dates.append(str(raw_date))
+            continue
+        if observed > cutoff:
+            continue
+        try:
+            value = float(raw_value)
+        except (TypeError, ValueError):
+            invalid_values.append(observed.isoformat())
+            continue
+        by_month[f"{observed.year:04d}-{observed.month:02d}"].append((observed.isoformat(), value))
+    if invalid_dates or invalid_values:
+        return {"status": "INVALID_INPUT", "data_date": None,
+                "invalid_dates": sorted(set(invalid_dates)),
+                "invalid_values": sorted(set(invalid_values))}
+    if not by_month:
+        return {"status": "NO_DATA", "data_date": None}
+    latest_month = max(by_month)
+    latest_date = max(date for date, _ in by_month[latest_month])
+    if _days(as_of, latest_date) > stale_limit:
+        return {"status": "STALE", "data_date": latest_date, "latest_month": latest_month}
+    months = {"L": latest_month, "L_MINUS_3": _shift_month(latest_month, -3)}
+    missing = [month for month in months.values() if month not in by_month]
+    required_months = set(months.values())
+    conflicts = sorted(month for month, rows in by_month.items()
+                       if month in required_months and len({value for _, value in rows}) > 1)
+    if conflicts or missing:
+        return {"status": "DATA_INSUFFICIENT", "data_date": latest_date,
+                "calendar_months": months, "missing_months": missing,
+                "conflict_months": conflicts}
+    values = {name: by_month[month][-1][1] for name, month in months.items()}
+    return {"status": "OK", "data_date": latest_date,
+            "calendar_months": months, "values": values,
+            "missing_months": [], "conflict_months": []}
+
 def available(series, as_of, lag_days):
     """當時已公布的資料：資料日期加上公布延遲不晚於基準日。"""
     return [(d, v) for d, v in (series or []) if _days(as_of, d) >= lag_days]
@@ -176,12 +222,31 @@ def compute(macro, soxx_index, as_of, cfg, point_in_time=True, fomc_decisions=No
     if s:
         if len(s) <= n or s[-1 - n][1] <= 0: put("M3", date=s[-1][0], reason="歷史不足")
         else: put("M3", round((s[-1][1] / s[-1 - n][1] - 1) * 100, 1), s[-1][0], f"{s[-1 - n][1]:.1f} → {s[-1][1]:.1f} 美元")
-    # M4 失業率 3 個月變化（百分點）
-    s = fresh(macro.get("UNRATE"), ml, "M4")
-    if s:
-        a, b = _months_back(s, 3)
-        if not a: put("M4", date=s[-1][0], reason="歷史不足")
-        else: put("M4", round(a[1] - b[1], 2), a[0], f"{b[1]:.1f}% → {a[1]:.1f}%")
+    # M4 失業率 3 個曆月變化（百分點）。
+    # 必須精確使用 L、L-3；缺月或衝突時不可用列位置代替。
+    m4 = _m4_calendar_inputs(macro.get("UNRATE"), as_of, ml)
+    status = m4["status"]
+    if status == "OK":
+        values = m4["values"]
+        months = m4["calendar_months"]
+        put("M4", round(values["L"] - values["L_MINUS_3"], 2), m4["data_date"],
+            f"曆月 {months['L_MINUS_3']} {values['L_MINUS_3']:.1f}% → "
+            f"{months['L']} {values['L']:.1f}%")
+    elif status == "STALE":
+        put("M4", date=m4["data_date"], reason=f"資料過期（最後一筆 {m4['data_date']}）")
+    elif status == "NO_DATA":
+        put("M4", reason="沒有資料")
+    elif status in {"INVALID_INPUT", "INVALID_AS_OF"}:
+        invalid = m4.get("invalid_dates", []) + m4.get("invalid_values", [])
+        put("M4", reason="資料不足（無效日期或數值：" + "、".join(invalid) + "）")
+    else:
+        missing = "、".join(m4.get("missing_months", [])) or "無"
+        conflicts = "、".join(m4.get("conflict_months", [])) or "無"
+        put("M4", date=m4.get("data_date"),
+            reason=f"資料不足（缺少曆月：{missing}；衝突曆月：{conflicts}）")
+    res["M4"]["calendar_months"] = m4.get("calendar_months", {})
+    res["M4"]["missing_months"] = m4.get("missing_months", [])
+    res["M4"]["conflict_months"] = m4.get("conflict_months", [])
     # M5 核心 CPI 年增率的 3 個曆月變化（百分點）。
     # 必須精確使用 L、L-12、L-3、L-15；缺月或衝突時不可用列位置代替。
     m5 = _m5_calendar_inputs(macro.get("CPILFESL"), as_of, ml)
