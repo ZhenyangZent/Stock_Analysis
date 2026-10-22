@@ -1990,6 +1990,97 @@ class MarketEnvironment(unittest.TestCase):
         self.assertEqual(v["M1"]["value"], "升息"); self.assertAlmostEqual(v["M2"]["value"], 40.0)
         self.assertAlmostEqual(v["M3"]["value"], 15.0); self.assertAlmostEqual(v["M4"]["value"], 0.5)
         self.assertAlmostEqual(v["M7"]["value"], 80.0); self.assertLess(v["M6"]["value"], -5)
+    def cpi_calendar(self, start, end, missing=()):
+        import datetime
+        current = datetime.date.fromisoformat(start); finish = datetime.date.fromisoformat(end); rows = []
+        while current <= finish:
+            if current.strftime("%Y-%m") not in set(missing):
+                serial = (current.year - 2024) * 12 + current.month
+                rows.append((current.isoformat(), 100.0 + serial))
+            current = (current.replace(day=28) + datetime.timedelta(days=4)).replace(day=1)
+        return rows
+    def m5(self, rows, as_of="2026-09-30"):
+        import market_env as me
+        return me.compute({"CPILFESL": rows}, [], as_of, RULES["market_env"], point_in_time=False,
+                          fomc_decisions=[])["M5"]
+    def test_m5_missing_month_uses_exact_calendar_keys(self):
+        rows = self.cpi_calendar("2025-01-01", "2026-09-01", missing={"2025-10"})
+        got = self.m5(rows)
+        by_month = {date[:7]: value for date, value in rows}
+        expected = round(((by_month["2026-09"] / by_month["2025-09"] - 1) -
+                          (by_month["2026-06"] / by_month["2025-06"] - 1)) * 100, 2)
+        self.assertEqual(got["value"], expected)
+        self.assertEqual(got["calendar_months"], {
+            "L": "2026-09", "L_MINUS_12": "2025-09",
+            "L_MINUS_3": "2026-06", "L_MINUS_15": "2025-06"})
+        self.assertIn("2025-09", got["reason"]); self.assertIn("2025-06", got["reason"])
+    def test_m5_continuous_months_match_calendar_formula(self):
+        rows = self.cpi_calendar("2024-01-01", "2026-09-01")
+        got = self.m5(rows)
+        by_month = {d[:7]: value for d, value in rows}
+        expected = round(((by_month["2026-09"] / by_month["2025-09"] - 1) -
+                          (by_month["2026-06"] / by_month["2025-06"] - 1)) * 100, 2)
+        self.assertEqual(got["value"], expected)
+    def test_m5_cross_year_month_arithmetic(self):
+        rows = self.cpi_calendar("2024-01-01", "2026-01-01")
+        got = self.m5(rows, "2026-01-31")
+        self.assertEqual(got["calendar_months"], {
+            "L": "2026-01", "L_MINUS_12": "2025-01",
+            "L_MINUS_3": "2025-10", "L_MINUS_15": "2024-10"})
+    def test_m5_missing_required_month_fails_closed(self):
+        rows = self.cpi_calendar("2024-01-01", "2026-09-01", missing={"2025-09"})
+        got = self.m5(rows)
+        self.assertIsNone(got["value"]); self.assertEqual(got["missing_months"], ["2025-09"])
+        self.assertIn("缺少曆月：2025-09", got["reason"])
+    def test_m5_zero_denominator_fails_closed(self):
+        rows = self.cpi_calendar("2024-01-01", "2026-09-01")
+        rows = [(date, 0.0 if date == "2025-09-01" else value) for date, value in rows]
+        got = self.m5(rows)
+        self.assertIsNone(got["value"]); self.assertIn("分母月份為零", got["reason"])
+    def test_m5_conflicting_duplicate_month_fails_closed(self):
+        rows = self.cpi_calendar("2024-01-01", "2026-09-01") + [("2025-09-15", 999.0)]
+        got = self.m5(rows)
+        self.assertIsNone(got["value"]); self.assertEqual(got["conflict_months"], ["2025-09"])
+        self.assertIn("衝突曆月：2025-09", got["reason"])
+    def test_m5_identical_duplicate_month_is_deterministic(self):
+        rows = self.cpi_calendar("2024-01-01", "2026-09-01")
+        value = dict(rows)["2025-09-01"]
+        original = self.m5(rows)
+        duplicate = self.m5(rows + [("2025-09-15", value)])
+        self.assertEqual(duplicate["value"], original["value"])
+        self.assertEqual(duplicate["conflict_months"], [])
+    def test_m5_invalid_date_fails_closed(self):
+        got = self.m5(self.cpi_calendar("2024-01-01", "2026-09-01") + [("2025-09-XX", 1.0)])
+        self.assertIsNone(got["value"]); self.assertIn("2025-09-XX", got["reason"])
+    def test_m5_different_vintages_keep_calendar_keys(self):
+        base = self.cpi_calendar("2024-01-01", "2026-09-01")
+        revised = [(date, value + (2.0 if date in {"2026-09-01", "2026-06-01"} else 0.0))
+                   for date, value in base]
+        initial_result, revised_result = self.m5(base), self.m5(revised)
+        self.assertEqual(initial_result["calendar_months"], revised_result["calendar_months"])
+        self.assertNotEqual(initial_result["value"], revised_result["value"])
+    def test_m5_frozen_revised_and_initial_values_and_periods(self):
+        import market_env as me
+        from fetch_macro import load_macro, load_macro_vintages
+        revised = me.compute(load_macro(), [], "2026-10-20", RULES["market_env"], point_in_time=False,
+                             fomc_decisions=[])["M5"]
+        initial = me.compute_initial_m4_m5(load_macro_vintages(), "2026-10-20", RULES["market_env"])["M5"]
+        expected_months = {"L": "2026-09", "L_MINUS_12": "2025-09",
+                           "L_MINUS_3": "2026-06", "L_MINUS_15": "2025-06"}
+        self.assertEqual((revised["value"], initial["value"]), (0.0, -0.06))
+        self.assertEqual(revised["calendar_months"], expected_months)
+        self.assertEqual(initial["calendar_months"], expected_months)
+        self.assertEqual((revised["data_date"], initial["data_date"]), ("2026-09-01", "2026-09-01"))
+        self.assertEqual(initial["basis"], "ALFRED_INITIAL_RELEASE")
+    def test_m5_insufficient_propagates_to_assessment(self):
+        import market_env as me
+        values = me.compute({"CPILFESL": self.cpi_calendar("2024-01-01", "2026-09-01",
+                                                            missing={"2025-09"})},
+                            [], self.AS_OF, RULES["market_env"], point_in_time=False,
+                            fomc_decisions=[])
+        assessment = me.assess(values, RULES)
+        self.assertIsNone(values["M5"]["value"]); self.assertIsNone(assessment["scores"]["M5"])
+        self.assertEqual(assessment["filled"], 0)
     def test_alfred_initial_release_ignores_later_revision(self):
         import market_env as me
         rows = {"UNRATE": [
