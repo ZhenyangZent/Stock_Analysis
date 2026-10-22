@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any
 
 
-SCHEMA_VERSION = "PIT_FREEZE_ONLY_0.1_DISABLED"
+SCHEMA_VERSION = "PIT_FREEZE_ONLY_0.2_DISABLED"
 REQUIRED_LEDGERS = {
     "docs_ledger": "01_共用資料/data_spine/docs_ledger.jsonl",
     "ai_extractions": "01_共用資料/data_spine/ai_extractions.jsonl",
@@ -95,14 +95,44 @@ def _read_jsonl(root: Path, relative: str) -> tuple[bytes, list[dict[str, Any]]]
     return data, rows
 
 
-def _metadata(relative: str, data: bytes, rows: list[dict[str, Any]]) -> dict[str, Any]:
+def _metadata(relative: str, data: bytes, rows: list[dict[str, Any]],
+              staging_path: str) -> dict[str, Any]:
     return {
         "path": relative,
+        "staging_path": staging_path,
         "byte_length": len(data),
         "sha256": sha256(data),
         "row_count": len(rows),
         "row_count_semantics": "NONEMPTY_JSONL_OBJECT_ROWS_NO_HEADER",
     }
+
+
+def _ledger_staging_path(name: str) -> str:
+    if name not in REQUIRED_LEDGERS:
+        raise FreezeOnlyError("PRODUCTION_INPUT_SET_INVALID", name)
+    return f"ledgers/{name}.jsonl"
+
+
+def _doc_staging_component(doc_id: str) -> str:
+    """Return a platform-neutral component without embedding caller text."""
+    if not isinstance(doc_id, str) or not doc_id:
+        raise FreezeOnlyError("IDENTITY_MISSING", "docs_ledger:doc_id")
+    return sha256(doc_id.encode("utf-8"))
+
+
+def _validate_staging_plan(payloads: list[tuple[str, bytes, str]]) -> None:
+    """Reject aliases before staging exists; Windows paths are case-insensitive."""
+    destinations: dict[str, str] = {}
+    for relative, _data, identity in payloads:
+        candidate = Path(relative)
+        if (not relative or candidate.is_absolute() or ".." in candidate.parts
+                or any(part in {"", "."} for part in candidate.parts)):
+            raise FreezeOnlyError("STAGING_PATH_UNSAFE", relative)
+        normalized = candidate.as_posix().casefold()
+        previous = destinations.get(normalized)
+        if previous is not None and previous != identity:
+            raise FreezeOnlyError("STAGING_PATH_COLLISION", f"{previous}|{identity}|{relative}")
+        destinations[normalized] = identity
 
 
 def _unique(rows: list[dict[str, Any]], key: str, ledger: str) -> dict[str, dict[str, Any]]:
@@ -357,15 +387,20 @@ def freeze_only(root: Path, specification: dict[str, Any], staging_dir: Path,
     _validate_voids(effective["ai_field_value_voids"], values)
     _validate_reviews(effective["ai_reviews"], values, extractions)
     artifacts: list[dict[str, Any]] = []
-    payloads: list[tuple[str, bytes]] = []
+    payloads: list[tuple[str, bytes, str]] = []
+    for name, (data, _rows) in sorted(loaded.items()):
+        payloads.append((_ledger_staging_path(name), data, f"ledger:{name}"))
     for doc_id, doc in sorted(docs.items()):
         item = {"doc_id": doc_id}
+        component = _doc_staging_component(doc_id)
         for field in ("raw", "text"):
             meta = _artifact_meta(root, doc, doc_id, field)
-            target = f"artifacts/{doc_id}/{field}.bin"
-            payloads.append((target, meta.pop("payload")))
+            target = f"artifacts/{component}/{field}.bin"
+            payloads.append((target, meta.pop("payload"), f"document:{doc_id}:{field}"))
             item[field] = dict(meta, staging_path=target)
         artifacts.append(item)
+
+    _validate_staging_plan(payloads)
 
     manifest: dict[str, Any] = {
         "schema_version": SCHEMA_VERSION,
@@ -374,7 +409,7 @@ def freeze_only(root: Path, specification: dict[str, Any], staging_dir: Path,
         "classification_effect": "NONE",
         "cutoff_at": cutoff_at,
         "source_root": ".",
-        "inputs": {name: _metadata(paths[name], data, rows)
+        "inputs": {name: _metadata(paths[name], data, rows, _ledger_staging_path(name))
                    for name, (data, rows) in loaded.items()},
         "dependencies": {"documents": len(docs), "extractions": len(extractions),
                          "field_values": len(values)},
@@ -387,7 +422,7 @@ def freeze_only(root: Path, specification: dict[str, Any], staging_dir: Path,
     if staging_dir.exists():
         raise FreezeOnlyError("STAGING_ALREADY_EXISTS", str(staging_dir))
     staging_dir.mkdir(parents=True, exist_ok=False)
-    for name, data in payloads:
+    for name, data, _identity in payloads:
         target = _confined(staging_dir, name)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(data)
@@ -395,21 +430,111 @@ def freeze_only(root: Path, specification: dict[str, Any], staging_dir: Path,
     return manifest
 
 
-def verify_freeze(root: Path, manifest: dict[str, Any], staging_dir: Path) -> None:
-    if manifest.get("schema_version") != SCHEMA_VERSION:
+def _load_staged_manifest(staging_dir: Path, expected_manifest: dict[str, Any],
+                          expected_staged_manifest_sha256: str | None
+                          ) -> tuple[dict[str, Any], str, bool]:
+    path = _confined(staging_dir, "freeze_manifest.json")
+    if not path.is_file():
+        raise FreezeOnlyError("STAGED_MANIFEST_MISSING")
+    data = path.read_bytes()
+    try:
+        staged = json.loads(data.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise FreezeOnlyError("STAGED_MANIFEST_INVALID") from exc
+    if not isinstance(staged, dict):
+        raise FreezeOnlyError("STAGED_MANIFEST_INVALID")
+    if data != canonical_bytes(staged):
+        raise FreezeOnlyError("STAGED_MANIFEST_NOT_CANONICAL")
+    actual_sha = sha256(data)
+    if (expected_staged_manifest_sha256 is not None
+            and actual_sha != expected_staged_manifest_sha256):
+        raise FreezeOnlyError("TRUSTED_MANIFEST_DIGEST_MISMATCH")
+    return staged, actual_sha, actual_sha == sha256(canonical_bytes(expected_manifest))
+
+
+def _validate_manifest_derivation(manifest: dict[str, Any]) -> None:
+    if not isinstance(manifest, dict) or manifest.get("schema_version") != SCHEMA_VERSION:
         raise FreezeOnlyError("FREEZE_MANIFEST_SCHEMA_INVALID")
     signed = {key: value for key, value in manifest.items() if key != "derivation_sha256"}
     if manifest.get("derivation_sha256") != sha256(canonical_bytes(signed)):
         raise FreezeOnlyError("FREEZE_MANIFEST_DERIVATION_MISMATCH")
+
+
+def _validate_expected_event_prefixes(expected: dict[str, Any], staging_dir: Path) -> None:
+    """Preserve precise PIT-38 tamper diagnostics before identity rejection."""
+    inputs = expected.get("inputs")
+    if not isinstance(inputs, dict):
+        return
+    try:
+        cutoff = _parse_time(expected.get("cutoff_at"), "cutoff_at")
+        for ledger in EVENT_LEDGERS:
+            meta = inputs[ledger]
+            data, rows = _read_jsonl(staging_dir, meta["staging_path"])
+            _selected, prefix = _event_prefix(data, rows, cutoff, ledger)
+            recorded = (expected.get("event_prefixes") or {}).get(ledger)
+            if not isinstance(recorded, dict):
+                raise FreezeOnlyError("FREEZE_EVENT_PREFIX_MISMATCH", ledger)
+            recorded_prefix = {key: value for key, value in recorded.items()
+                               if key != "historical_witness"}
+            if recorded_prefix != prefix:
+                raise FreezeOnlyError("FREEZE_EVENT_PREFIX_MISMATCH", ledger)
+    except (KeyError, TypeError):
+        return
+
+
+def _source_drift(root: Path | None, manifest: dict[str, Any]) -> list[dict[str, str]]:
+    if root is None:
+        return [{"kind": "source_root", "identity": ".", "status": "NOT_CHECKED"}]
     root = Path(root)
-    loaded: dict[str, tuple[bytes, list[dict[str, Any]]]] = {}
-    for name, meta in manifest.get("inputs", {}).items():
-        data, rows = _read_jsonl(root, meta["path"])
-        if _metadata(meta["path"], data, rows) != meta:
-            raise FreezeOnlyError("FREEZE_INPUT_IDENTITY_MISMATCH", name)
-        loaded[name] = (data, rows)
-    if set(loaded) != set(REQUIRED_LEDGERS):
+    findings: list[dict[str, str]] = []
+    for name, meta in sorted((manifest.get("inputs") or {}).items()):
+        path = _confined(root, meta["path"])
+        if not path.is_file():
+            findings.append({"kind": "ledger", "identity": name, "status": "MISSING"})
+            continue
+        data = path.read_bytes()
+        status = "UNCHANGED" if (len(data) == meta["byte_length"]
+                                   and sha256(data) == meta["sha256"]) else "DRIFTED"
+        findings.append({"kind": "ledger", "identity": name, "status": status})
+    for item in manifest.get("document_artifacts") or []:
+        for field in ("raw", "text"):
+            meta = item[field]
+            path = _confined(root, meta["source_path"])
+            if not path.is_file():
+                status = "MISSING"
+            else:
+                data = path.read_bytes()
+                status = "UNCHANGED" if (len(data) == meta["byte_length"]
+                                           and sha256(data) == meta["sha256"]) else "DRIFTED"
+            findings.append({"kind": field, "identity": item["doc_id"], "status": status})
+    return findings
+
+
+def verify_freeze(root: Path | None, manifest: dict[str, Any], staging_dir: Path,
+                  *, expected_staged_manifest_sha256: str | None = None) -> dict[str, Any]:
+    staging_dir = Path(staging_dir)
+    _validate_manifest_derivation(manifest)
+    staged_manifest, staged_manifest_sha, identity_matches = _load_staged_manifest(
+        staging_dir, manifest, expected_staged_manifest_sha256)
+    _validate_manifest_derivation(staged_manifest)
+    if not identity_matches:
+        _validate_expected_event_prefixes(manifest, staging_dir)
+        raise FreezeOnlyError("STAGED_MANIFEST_IDENTITY_MISMATCH")
+    manifest = staged_manifest
+    recorded_inputs = manifest.get("inputs")
+    if not isinstance(recorded_inputs, dict) or set(recorded_inputs) != set(REQUIRED_LEDGERS):
         raise FreezeOnlyError("PRODUCTION_INPUT_SET_INVALID")
+    loaded: dict[str, tuple[bytes, list[dict[str, Any]]]] = {}
+    for name, meta in recorded_inputs.items():
+        if not isinstance(meta, dict):
+            raise FreezeOnlyError("FROZEN_LEDGER_METADATA_INVALID", name)
+        canonical_staging_path = _ledger_staging_path(name)
+        if meta.get("staging_path") != canonical_staging_path:
+            raise FreezeOnlyError("FROZEN_LEDGER_STAGING_PATH_INVALID", name)
+        data, rows = _read_jsonl(staging_dir, meta["staging_path"])
+        if _metadata(meta["path"], data, rows, meta["staging_path"]) != meta:
+            raise FreezeOnlyError("FROZEN_LEDGER_IDENTITY_MISMATCH", name)
+        loaded[name] = (data, rows)
     cutoff_at = manifest.get("cutoff_at")
     cutoff = _parse_time(cutoff_at, "cutoff_at")
     docs_data, doc_rows = loaded["docs_ledger"]
@@ -437,19 +562,37 @@ def verify_freeze(root: Path, manifest: dict[str, Any], staging_dir: Path) -> No
     _validate_voids(effective["ai_field_value_voids"], values)
     _validate_reviews(effective["ai_reviews"], values, extractions)
     expected_artifacts = []
+    planned: list[tuple[str, bytes, str]] = []
+    for name, (data, _rows) in sorted(loaded.items()):
+        planned.append((_ledger_staging_path(name), data, f"ledger:{name}"))
     for doc_id, doc in sorted(docs.items()):
         item = {"doc_id": doc_id}
+        component = _doc_staging_component(doc_id)
         for field in ("raw", "text"):
-            meta = _artifact_meta(root, doc, doc_id, field)
-            meta.pop("payload")
-            item[field] = dict(meta, staging_path=f"artifacts/{doc_id}/{field}.bin")
+            relative = doc.get(field + "_path")
+            if not isinstance(relative, str) or not relative:
+                raise FreezeOnlyError("DOCUMENT_ARTIFACT_PATH_MISSING", f"{doc_id}:{field}")
+            target = f"artifacts/{component}/{field}.bin"
+            path = _confined(staging_dir, target)
+            if not path.is_file():
+                raise FreezeOnlyError("FROZEN_ARTIFACT_MISSING", f"{doc_id}:{field}")
+            data = path.read_bytes()
+            expected_hash = doc.get(field + "_sha256")
+            actual_hash = sha256(data)
+            if actual_hash != expected_hash:
+                raise FreezeOnlyError("FROZEN_ARTIFACT_IDENTITY_MISMATCH", f"{doc_id}:{field}")
+            item[field] = {"source_path": relative, "byte_length": len(data),
+                           "sha256": actual_hash, "staging_path": target}
+            planned.append((target, data, f"document:{doc_id}:{field}"))
         expected_artifacts.append(item)
+    _validate_staging_plan(planned)
     if manifest.get("document_artifacts") != expected_artifacts:
         raise FreezeOnlyError("FREEZE_ARTIFACT_MANIFEST_MISMATCH")
-    for item in manifest.get("document_artifacts", []):
-        for field in ("raw", "text"):
-            meta = item[field]
-            source = _confined(Path(root), meta["source_path"]).read_bytes()
-            staged = _confined(Path(staging_dir), meta["staging_path"]).read_bytes()
-            if source != staged or sha256(staged) != meta["sha256"] or len(staged) != meta["byte_length"]:
-                raise FreezeOnlyError("FREEZE_ARTIFACT_IDENTITY_MISMATCH", f"{item['doc_id']}:{field}")
+    drift = _source_drift(root, manifest)
+    return {
+        "staging_integrity": "PASS",
+        "staged_manifest_sha256": staged_manifest_sha,
+        "external_trusted_time_authority": "NOT_GRANTED_FREEZE_ONLY",
+        "source_drift": drift,
+        "source_drift_count": sum(item["status"] in {"DRIFTED", "MISSING"} for item in drift),
+    }

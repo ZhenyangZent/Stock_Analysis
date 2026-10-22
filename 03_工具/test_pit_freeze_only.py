@@ -108,11 +108,13 @@ class FreezeOnlyPlumbingTests(unittest.TestCase):
         spec = self._spec()
         before = inventory(self.root)
         manifest = self._freeze(spec)
-        pit.verify_freeze(self.root, manifest, self.stage_parent / "stage")
+        verification = pit.verify_freeze(self.root, manifest, self.stage_parent / "stage")
         self.assertEqual(before, inventory(self.root))
         self.assertEqual(set(pit.REQUIRED_LEDGERS), set(manifest["inputs"]))
         self.assertEqual("NOT_GRANTED_FREEZE_ONLY", manifest["pit_certification"])
         self.assertEqual({"doc_id", "raw", "text"}, set(manifest["document_artifacts"][0]))
+        self.assertEqual("PASS", verification["staging_integrity"])
+        self.assertEqual(0, verification["source_drift_count"])
 
     def test_missing_historical_witness_fails_closed_before_staging(self):
         spec = self._spec(witnesses=False)
@@ -235,6 +237,120 @@ class FreezeOnlyPlumbingTests(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(0, research_snapshot.main(["--dry-run"]))
         dry.assert_called_once_with()
+
+    def test_all_five_ledger_bytes_are_preserved_in_staging(self):
+        spec = self._spec()
+        manifest = self._freeze(spec)
+        stage = self.stage_parent / "stage"
+        for name, source_relative in spec["inputs"].items():
+            meta = manifest["inputs"][name]
+            staged = stage / meta["staging_path"]
+            self.assertTrue(staged.is_file(), name)
+            self.assertEqual((self.root / source_relative).read_bytes(), staged.read_bytes())
+
+    def test_tampered_staged_manifest_is_rejected(self):
+        manifest = self._freeze(self._spec())
+        stage = self.stage_parent / "stage"
+        staged_manifest = json.loads((stage / "freeze_manifest.json").read_text(encoding="utf-8"))
+        staged_manifest["cutoff_at"] = "2025-08-01T00:00:00+00:00"
+        (stage / "freeze_manifest.json").write_bytes(pit.canonical_bytes(staged_manifest))
+        self.assert_code("FREEZE_MANIFEST_DERIVATION_MISMATCH", pit.verify_freeze,
+                         self.root, manifest, stage)
+
+    def test_rehashed_staged_manifest_derivation_is_recomputed_from_staging(self):
+        self._freeze(self._spec())
+        stage = self.stage_parent / "stage"
+        path = stage / "freeze_manifest.json"
+        staged = json.loads(path.read_text(encoding="utf-8"))
+        staged["event_prefixes"]["ai_reviews"]["future_row_count"] = 9
+        signed = {key: value for key, value in staged.items() if key != "derivation_sha256"}
+        staged["derivation_sha256"] = pit.sha256(pit.canonical_bytes(signed))
+        path.write_bytes(pit.canonical_bytes(staged))
+        self.assert_code("FREEZE_EVENT_PREFIX_MISMATCH", pit.verify_freeze,
+                         self.root, staged, stage)
+
+    def test_missing_staged_manifest_is_rejected(self):
+        manifest = self._freeze(self._spec())
+        stage = self.stage_parent / "stage"
+        (stage / "freeze_manifest.json").unlink()
+        self.assert_code("STAGED_MANIFEST_MISSING", pit.verify_freeze,
+                         self.root, manifest, stage)
+
+    def test_document_identifier_aliases_map_to_unique_safe_paths(self):
+        raw2 = self.root / "raw" / "D2.bin"
+        text2 = self.root / "text" / "D2.txt"
+        raw2.write_bytes(b"second raw")
+        text2.write_bytes(b"second text")
+        self.docs[0]["doc_id"] = "A/../B"
+        self.docs.append({
+            "doc_id": "B", "issuer_id": "ISSUER_Y", "doc_type": "10-Q",
+            "official_published_at": "2025-05-01T00:00:00+00:00",
+            "available_at": "2025-05-01T00:00:00+00:00",
+            "fetched_at": "2025-05-01T00:00:00+00:00",
+            "raw_path": "raw/D2.bin", "raw_sha256": pit.sha256(raw2.read_bytes()),
+            "text_path": "text/D2.txt", "text_sha256": pit.sha256(text2.read_bytes()),
+        })
+        self.extractions[0]["doc_ids"] = ["A/../B"]
+        self.values[0]["doc_ids"] = ["A/../B"]
+        spec = self._spec()
+        stage = self.stage_parent / "collision"
+        manifest = pit.freeze_only(self.root, spec, stage,
+                                   allow_synthetic_test_authority=True)
+        paths = {item[field]["staging_path"]
+                 for item in manifest["document_artifacts"] for field in ("raw", "text")}
+        self.assertEqual(4, len(paths))
+        self.assertTrue(all(".." not in pathlib.PurePosixPath(path).parts for path in paths))
+        self.assertEqual("PASS", pit.verify_freeze(self.root, manifest, stage)["staging_integrity"])
+
+    def test_unprovable_staging_mapping_collision_fails_before_staging(self):
+        raw2 = self.root / "raw" / "D2.bin"
+        text2 = self.root / "text" / "D2.txt"
+        raw2.write_bytes(b"second raw")
+        text2.write_bytes(b"second text")
+        self.docs.append({
+            "doc_id": "D2", "issuer_id": "ISSUER_Y", "doc_type": "10-Q",
+            "official_published_at": "2025-05-01T00:00:00+00:00",
+            "available_at": "2025-05-01T00:00:00+00:00",
+            "fetched_at": "2025-05-01T00:00:00+00:00",
+            "raw_path": "raw/D2.bin", "raw_sha256": pit.sha256(raw2.read_bytes()),
+            "text_path": "text/D2.txt", "text_sha256": pit.sha256(text2.read_bytes()),
+        })
+        spec = self._spec()
+        stage = self.stage_parent / "forced-collision"
+        with mock.patch.object(pit, "_doc_staging_component", return_value="0" * 64):
+            self.assert_code("STAGING_PATH_COLLISION", pit.freeze_only,
+                             self.root, spec, stage, allow_synthetic_test_authority=True)
+        self.assertFalse(stage.exists())
+
+    def test_staging_only_replay_survives_source_drift_and_reports_it(self):
+        manifest = self._freeze(self._spec())
+        stage = self.stage_parent / "stage"
+        (self.root / "values.jsonl").write_bytes(b'{"changed":true}\n')
+        (self.root / "raw" / "D1.bin").write_bytes(b"changed source raw")
+        checked = pit.verify_freeze(self.root, manifest, stage)
+        self.assertEqual("PASS", checked["staging_integrity"])
+        self.assertEqual(2, checked["source_drift_count"])
+        replay = pit.verify_freeze(None, manifest, stage)
+        self.assertEqual("PASS", replay["staging_integrity"])
+        self.assertEqual("NOT_CHECKED", replay["source_drift"][0]["status"])
+
+    def test_staged_ledger_tamper_is_rejected(self):
+        manifest = self._freeze(self._spec())
+        stage = self.stage_parent / "stage"
+        ledger = stage / manifest["inputs"]["ai_field_values"]["staging_path"]
+        ledger.write_bytes(ledger.read_bytes() + b'{"value_id":"EVIL"}\n')
+        self.assert_code("FROZEN_LEDGER_IDENTITY_MISMATCH", pit.verify_freeze,
+                         self.root, manifest, stage)
+
+    def test_explicit_staged_manifest_digest_is_checked_without_granting_authority(self):
+        manifest = self._freeze(self._spec())
+        stage = self.stage_parent / "stage"
+        digest = pit.sha256((stage / "freeze_manifest.json").read_bytes())
+        checked = pit.verify_freeze(None, manifest, stage,
+                                    expected_staged_manifest_sha256=digest)
+        self.assertEqual("NOT_GRANTED_FREEZE_ONLY", checked["external_trusted_time_authority"])
+        self.assert_code("TRUSTED_MANIFEST_DIGEST_MISMATCH", pit.verify_freeze,
+                         None, manifest, stage, expected_staged_manifest_sha256="0" * 64)
 
 
 if __name__ == "__main__":
