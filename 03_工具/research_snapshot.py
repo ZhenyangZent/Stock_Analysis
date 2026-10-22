@@ -1520,11 +1520,35 @@ def formal_run(root=ROOT, now_fn=utc_now):
         project_lock.release("research_snapshot")
 
 
+def freeze_only_run(root, specification, staging_dir, *, allow_synthetic_test_authority=False):
+    """Capture PIT evidence without invoking the existing snapshot pipeline.
+
+    The entry point is deliberately opt-in and writes only to the caller's
+    explicit staging directory.  It never obtains the formal snapshot lock,
+    writes a COMMITTED marker, appends outcomes, or computes classifications.
+    """
+    import pit_freeze_only
+
+    return pit_freeze_only.freeze_only(
+        Path(root), specification, Path(staging_dir),
+        allow_synthetic_test_authority=allow_synthetic_test_authority,
+    )
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description="S1A deterministic research snapshot")
     parser.add_argument("--dry-run", action="store_true", help="compute and print hashes; write nothing")
+    parser.add_argument("--freeze-only-spec", help="explicit JSON specification for disabled PIT freeze-only capture")
+    parser.add_argument("--freeze-only-staging", help="external staging directory for PIT freeze-only output")
     args = parser.parse_args(argv)
-    result = dry_run() if args.dry_run else formal_run()
+    freeze_requested = bool(args.freeze_only_spec or args.freeze_only_staging)
+    if freeze_requested:
+        if args.dry_run or not (args.freeze_only_spec and args.freeze_only_staging):
+            parser.error("freeze-only requires both --freeze-only-spec and --freeze-only-staging, without --dry-run")
+        specification = json.loads(Path(args.freeze_only_spec).read_text(encoding="utf-8"))
+        result = freeze_only_run(ROOT, specification, args.freeze_only_staging)
+    else:
+        result = dry_run() if args.dry_run else formal_run()
     print(json.dumps(result, ensure_ascii=False, sort_keys=True, indent=2))
     return 0
 

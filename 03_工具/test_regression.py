@@ -6623,6 +6623,7 @@ def load_tests(loader, tests, pattern):
     tests.addTests(loader.loadTestsFromName("test_ai_fields"))
     tests.addTests(loader.loadTestsFromName("test_auto_loop"))
     tests.addTests(loader.loadTestsFromName("test_earnings_docs_watch"))
+    tests.addTests(loader.loadTestsFromName("test_pit_freeze_only"))
     return _FormalLedgerGuardSuite([tests])
 
 if __name__ == "__main__":
