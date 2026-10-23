@@ -320,9 +320,11 @@ class TrackerCase(unittest.TestCase):
             service.state()
 
     def test_any_git_worktree_storage_is_rejected(self):
-        other_git_root = Path("C:/Users/zheny/Music/University/program/股票判斷")
-        if not (other_git_root / ".git").exists():
-            self.skipTest("OTHER_GIT_WORKTREE_NOT_AVAILABLE")
+        other_git_root = self.root / "disposable_git_worktree"
+        subprocess.run(
+            ["git", "init", "--quiet", str(other_git_root)],
+            check=True, capture_output=True, text=True)
+        self.assertTrue((other_git_root / ".git").exists())
         outside_candidate_but_in_git = other_git_root / "synthetic-forbidden-77"
         config = copy.deepcopy(self.config)
         config["storage_root"] = str(outside_candidate_but_in_git)
