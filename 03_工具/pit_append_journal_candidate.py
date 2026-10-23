@@ -5,7 +5,7 @@ timestamp and does not certify historical rows. It models durable intent,
 prepared candidates, deterministic recovery, and a commit/readback certificate.
 """
 from __future__ import annotations
-import hashlib, json, os, re, tempfile, uuid
+import hashlib, json, os, re, stat, tempfile, unicodedata, uuid
 from pathlib import Path, PurePosixPath
 from typing import Any
 
@@ -14,6 +14,8 @@ ZERO = "0" * 64
 UNVERIFIED = "HISTORICAL_PREFIX_PROVENANCE_UNVERIFIED"
 SAFE_ID=re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 WINDOWS_RESERVED={"CON","PRN","AUX","NUL",*(f"COM{i}" for i in range(1,10)),*(f"LPT{i}" for i in range(1,10))}
+ARTIFACT_NAMESPACE="raw"
+REPARSE_POINT_ATTRIBUTE=getattr(stat,"FILE_ATTRIBUTE_REPARSE_POINT",0x400)
 
 class TxError(RuntimeError):
     def __init__(self, code: str, detail: str = ""):
@@ -70,12 +72,29 @@ def safe_ledger_name(value: str) -> str:
     return value
 
 def safe_artifact_path(value: str) -> str:
-    if not isinstance(value,str) or not value or "\\" in value or ":" in value:
+    if (not isinstance(value,str) or not value or "\\" in value or ":" in value or
+            "//" in value or value.startswith("/") or value.endswith("/") or
+            unicodedata.normalize("NFC",value)!=value):
         raise TxError("ARTIFACT_PATH_INVALID",str(value))
+    lexical=value.split("/")
     p=PurePosixPath(value)
-    if p.is_absolute() or any(x in ("",".","..") or x.endswith(("."," ")) or x.split(".")[0].upper() in WINDOWS_RESERVED for x in p.parts):
+    if (p.is_absolute() or len(lexical)<2 or lexical[0]!=ARTIFACT_NAMESPACE or
+            p.as_posix()!=value or tuple(lexical)!=p.parts or
+            any(x in ("",".","..") or x.endswith(("."," ")) or
+                x.split(".")[0].upper() in WINDOWS_RESERVED for x in lexical)):
         raise TxError("ARTIFACT_PATH_INVALID",value)
     return value
+
+def is_reparse_point(path: Path) -> bool:
+    try:
+        info=os.lstat(path)
+    except FileNotFoundError:
+        return False
+    return stat.S_ISLNK(info.st_mode) or bool(getattr(info,"st_file_attributes",0)&REPARSE_POINT_ATTRIBUTE)
+
+def path_identity(path: Path) -> tuple[int,int,int]:
+    info=os.stat(path,follow_symlinks=False)
+    return (int(info.st_dev),int(info.st_ino),int(getattr(info,"st_file_attributes",0)))
 
 def chain_entry(sequence: int, transaction_id: str, ledger_name: str,
                 row_hash: str, previous: str, appended_at: str) -> dict[str,Any]:
@@ -98,6 +117,101 @@ class TransactionEngine:
     LOCK_ORDER=("docs","ai")
     def __init__(self, root: Path):
         self.root=root; self.txroot=root/"transactions"; self.txroot.mkdir(parents=True,exist_ok=True)
+        self.artifact_root=root/ARTIFACT_NAMESPACE
+        self._artifact_pre_write_hook=lambda relative,target: None
+
+    def _artifact_target(self, relative: str, *, create_parents: bool=False) -> Path:
+        relative=safe_artifact_path(relative)
+        if is_reparse_point(self.root): raise TxError("ARTIFACT_ROOT_REPARSE_POINT",str(self.root))
+        if not self.root.is_dir(): raise TxError("ARTIFACT_ROOT_INVALID",str(self.root))
+        current=self.root
+        parts=relative.split("/")
+        missing_parent=False
+        for number,part in enumerate(parts):
+            if missing_parent:
+                current=current/part
+                continue
+            if is_reparse_point(current): raise TxError("ARTIFACT_REPARSE_POINT",str(current))
+            if not current.is_dir(): raise TxError("ARTIFACT_PARENT_INVALID",str(current))
+            aliases=[entry for entry in current.iterdir() if entry.name.casefold()==part.casefold()]
+            if aliases and all(entry.name!=part for entry in aliases):
+                raise TxError("ARTIFACT_CASEFOLD_COLLISION",relative)
+            candidate=current/part
+            final=number==len(parts)-1
+            if candidate.exists() or is_reparse_point(candidate):
+                if is_reparse_point(candidate): raise TxError("ARTIFACT_REPARSE_POINT",relative)
+                if not final and not candidate.is_dir(): raise TxError("ARTIFACT_PARENT_INVALID",relative)
+            elif create_parents and not final:
+                candidate.mkdir()
+                if is_reparse_point(candidate) or not candidate.is_dir():
+                    raise TxError("ARTIFACT_PARENT_INVALID",relative)
+            elif not candidate.exists():
+                missing_parent=not final
+            current=candidate
+        return current
+
+    def _directory_witness(self, target: Path) -> tuple[tuple[Path,tuple[int,int,int]],...]:
+        chain=[]; current=self.root
+        for part in target.relative_to(self.root).parts[:-1]:
+            if is_reparse_point(current) or not current.is_dir():
+                raise TxError("ARTIFACT_PARENT_INVALID",str(current))
+            chain.append((current,path_identity(current))); current=current/part
+        if is_reparse_point(current) or not current.is_dir():
+            raise TxError("ARTIFACT_PARENT_INVALID",str(current))
+        chain.append((current,path_identity(current)))
+        return tuple(chain)
+
+    def _verify_directory_witness(self, witness: tuple[tuple[Path,tuple[int,int,int]],...]) -> None:
+        for path,identity in witness:
+            if is_reparse_point(path) or not path.is_dir() or path_identity(path)!=identity:
+                raise TxError("ARTIFACT_PARENT_IDENTITY_CHANGED",str(path))
+
+    def _artifact_plan(self, td: Path, intent: dict[str,Any]) -> list[dict[str,Any]]:
+        plans=[]; keys=set()
+        for artifact in intent.get("artifacts",[]):
+            if not isinstance(artifact,dict) or artifact.get("kind") not in ("raw","text"):
+                raise TxError("ARTIFACT_METADATA_INVALID")
+            relative=safe_artifact_path(artifact.get("path")); key=relative.casefold()
+            if key in keys: raise TxError("ARTIFACT_PATH_COLLISION",relative)
+            keys.add(key)
+            source=td/(artifact["kind"]+".payload")
+            if not source.is_file(): raise TxError("ARTIFACT_PAYLOAD_MISSING",relative)
+            data=source.read_bytes()
+            if len(data)!=artifact.get("byte_length") or digest(data)!=artifact.get("sha256"):
+                raise TxError("ARTIFACT_PAYLOAD_IDENTITY_MISMATCH",relative)
+            target=self._artifact_target(relative)
+            if target.exists():
+                current=target.read_bytes()
+                if len(current)==len(data) and digest(current)==artifact["sha256"]:
+                    action="ALREADY_APPLIED"
+                else:
+                    raise TxError("ARTIFACT_CAS_FAILED",relative)
+            else:
+                action="WRITE"
+            plans.append({"relative":relative,"target":target,"data":data,"action":action})
+        for plan in plans:
+            target=self._artifact_target(plan["relative"],create_parents=True)
+            if target!=plan["target"]: raise TxError("ARTIFACT_TARGET_CHANGED",plan["relative"])
+            plan["witness"]=self._directory_witness(target)
+        return plans
+
+    def _apply_artifact_plan(self, plans: list[dict[str,Any]]) -> None:
+        for plan in plans:
+            self._verify_directory_witness(plan["witness"])
+            target=self._artifact_target(plan["relative"])
+            if plan["action"]=="ALREADY_APPLIED":
+                if digest(target.read_bytes())!=digest(plan["data"]):
+                    raise TxError("ARTIFACT_CAS_FAILED",plan["relative"])
+                continue
+            self._artifact_pre_write_hook(plan["relative"],target)
+            self._verify_directory_witness(plan["witness"])
+            if target.exists() or is_reparse_point(target):
+                raise TxError("ARTIFACT_CAS_FAILED",plan["relative"])
+            durable_write(target,plan["data"])
+            self._verify_directory_witness(plan["witness"])
+            checked=self._artifact_target(plan["relative"])
+            if len(checked.read_bytes())!=len(plan["data"]) or digest(checked.read_bytes())!=digest(plan["data"]):
+                raise TxError("ARTIFACT_READBACK_MISMATCH",plan["relative"])
 
     def paths(self, ledger_name: str) -> tuple[Path,Path,Path]:
         ledger_name=safe_ledger_name(ledger_name)
@@ -175,12 +289,7 @@ class TransactionEngine:
         if not (td/"prepared.json").is_file(): raise TxError("PREPARED_MISSING")
         if crash_at=="after_prepared": raise InjectedCrash(crash_at)
         ledger,journal,audit=self.paths(intent["ledger_name"])
-        for artifact in intent.get("artifacts",[]):
-            source=td/(artifact["kind"]+".payload"); target=self.root/artifact["path"]
-            current=read(target)
-            if digest(current)==artifact["sha256"]: continue
-            if current: raise TxError("ARTIFACT_CAS_FAILED",artifact["path"])
-            durable_write(target,source.read_bytes())
+        self._apply_artifact_plan(self._artifact_plan(td,intent))
         if crash_at=="after_artifacts": raise InjectedCrash(crash_at)
         row=bytes.fromhex(intent["row_bytes_hex"]); entry=bytes.fromhex(intent["journal_entry_hex"])
         ops=[("ledger",ledger,intent["ledger_before_sha256"],row,intent["ledger_candidate_sha256"]),
@@ -270,7 +379,9 @@ class TransactionEngine:
                 audit_row.get("row_sha256")!=intent["row_sha256"] or audit_row.get("status")!="COMMITTED"):
             raise TxError("COMMITTED_AUDIT_ROW_MISMATCH")
         for artifact in intent.get("artifacts",[]):
-            relative=safe_artifact_path(artifact["path"]); data=read(self.root/relative)
+            relative=safe_artifact_path(artifact["path"]); target=self._artifact_target(relative)
+            if not target.is_file(): raise TxError("COMMITTED_ARTIFACT_MISMATCH",relative)
+            data=target.read_bytes()
             if len(data)!=artifact["byte_length"] or digest(data)!=artifact["sha256"]:
                 raise TxError("COMMITTED_ARTIFACT_MISMATCH",relative)
         return cert
@@ -295,11 +406,7 @@ class TransactionEngine:
 
     def recover_doc_artifacts(self,txid:str)->dict[str,Any]:
         td,intent=self._intent(txid)
-        for artifact in intent.get("artifacts",[]):
-            source=td/(artifact["kind"]+".payload"); target=self.root/artifact["path"]
-            if digest(read(target))==artifact["sha256"]: continue
-            if target.exists(): raise TxError("ARTIFACT_CAS_FAILED",artifact["path"])
-            durable_write(target,source.read_bytes())
+        self._apply_artifact_plan(self._artifact_plan(td,intent))
         return self.recover(txid)
 
 def prefix_checkpoint(journal_bytes:bytes,sequence:int)->dict[str,Any]:

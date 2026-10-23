@@ -1,5 +1,5 @@
 from __future__ import annotations
-import importlib.util, json, pathlib, tempfile, unittest
+import importlib.util, json, os, pathlib, shutil, tempfile, unittest
 
 MODULE=pathlib.Path(__file__).with_name("pit_append_journal_candidate.py")
 spec=importlib.util.spec_from_file_location("journal_transaction",MODULE)
@@ -145,6 +145,95 @@ class TransactionTests(unittest.TestCase):
             self.e.prepare("docs_ledger.jsonl",self.row,"2025-06-02T00:00:00+00:00",txid="DOCALIAS",
                 raw=("raw/docs/A.htm",b"a"),text=("raw/docs/a.HTM",b"b"))
         self.assertEqual("ARTIFACT_PATH_COLLISION",ctx.exception.code)
+
+    def test_artifact_namespace_and_lexical_aliases_rejected(self):
+        bad=("transactions/FAKE/committed.json","ledgers/other.jsonl","journals/x.jsonl",
+             "raw/./b.bin","raw/../b.bin","raw//b.bin","raw/b.bin/","RAW/b.bin")
+        for number,relative in enumerate(bad):
+            with self.subTest(relative=relative), self.assertRaises(jt.TxError):
+                self.e.prepare("docs_ledger.jsonl",self.row,"2025-06-02T00:00:00+00:00",
+                    txid=f"BAD{number}",scope="docs",raw=(relative,b"x"))
+
+    def test_all_artifact_paths_preflight_before_first_write(self):
+        conflict=self.root/"raw"/"b.bin"; conflict.parent.mkdir(parents=True); conflict.write_bytes(b"foreign")
+        tx=self.e.prepare("docs_ledger.jsonl",self.row,"2025-06-02T00:00:00+00:00",
+            txid="PREFLIGHT",scope="docs",raw=("raw/a.bin",b"first"),text=("raw/b.bin",b"second"))
+        with self.assertRaises(jt.TxError) as ctx: self.e.commit(tx)
+        self.assertEqual("ARTIFACT_CAS_FAILED",ctx.exception.code)
+        self.assertFalse((self.root/"raw"/"a.bin").exists())
+        self.assertEqual(b"foreign",conflict.read_bytes())
+
+    def test_existing_casefold_alias_is_rejected(self):
+        existing=self.root/"raw"/"docs"/"A.bin"; existing.parent.mkdir(parents=True); existing.write_bytes(b"old")
+        tx=self.e.prepare("docs_ledger.jsonl",self.row,"2025-06-02T00:00:00+00:00",
+            txid="CASE1",scope="docs",raw=("raw/docs/a.BIN",b"new"))
+        with self.assertRaises(jt.TxError) as ctx: self.e.commit(tx)
+        self.assertEqual("ARTIFACT_CASEFOLD_COLLISION",ctx.exception.code)
+        self.assertEqual(b"old",existing.read_bytes())
+
+    def test_symlink_or_windows_reparse_escape_is_rejected(self):
+        outside=self.root.parent/(self.root.name+"_outside"); outside.mkdir()
+        link=self.root/"raw"
+        try:
+            os.symlink(outside,link,target_is_directory=True)
+        except OSError as exc:
+            self.skipTest(f"platform cannot create a test reparse point: {exc}")
+        try:
+            tx=self.e.prepare("docs_ledger.jsonl",self.row,"2025-06-02T00:00:00+00:00",
+                txid="LINK1",scope="docs",raw=("raw/file.bin",b"escape"))
+            with self.assertRaises(jt.TxError) as ctx: self.e.commit(tx)
+            self.assertIn(ctx.exception.code,{"ARTIFACT_REPARSE_POINT","ARTIFACT_PARENT_INVALID"})
+            self.assertFalse((outside/"file.bin").exists())
+        finally:
+            link.unlink(missing_ok=True); outside.rmdir()
+
+    def test_target_symlink_is_rejected(self):
+        outside=self.root.parent/(self.root.name+"_target"); outside.write_bytes(b"outside")
+        target=self.root/"raw"/"file.bin"; target.parent.mkdir(parents=True)
+        try:
+            os.symlink(outside,target)
+        except OSError as exc:
+            outside.unlink(missing_ok=True); self.skipTest(f"platform cannot create a test symlink: {exc}")
+        try:
+            tx=self.e.prepare("docs_ledger.jsonl",self.row,"2025-06-02T00:00:00+00:00",
+                txid="LINK2",scope="docs",raw=("raw/file.bin",b"replacement"))
+            with self.assertRaises(jt.TxError) as ctx: self.e.commit(tx)
+            self.assertEqual("ARTIFACT_REPARSE_POINT",ctx.exception.code)
+            self.assertEqual(b"outside",outside.read_bytes())
+        finally:
+            target.unlink(missing_ok=True); outside.unlink(missing_ok=True)
+
+    def test_parent_identity_change_before_write_fails_closed(self):
+        outside=self.root.parent/(self.root.name+"_race"); outside.mkdir()
+        tx=self.e.prepare("docs_ledger.jsonl",self.row,"2025-06-02T00:00:00+00:00",
+            txid="RACE1",scope="docs",raw=("raw/docs/file.bin",b"secret"))
+        raw=self.root/"raw"; saved=self.root/"raw.saved"
+        def swap(_relative,_target):
+            raw.rename(saved)
+            os.symlink(outside,raw,target_is_directory=True)
+        self.e._artifact_pre_write_hook=swap
+        try:
+            try:
+                self.e.commit(tx)
+            except OSError as exc:
+                self.skipTest(f"platform cannot create a test reparse point: {exc}")
+            except jt.TxError as exc:
+                self.assertIn(exc.code,{"ARTIFACT_PARENT_IDENTITY_CHANGED","ARTIFACT_REPARSE_POINT"})
+                self.assertFalse((outside/"docs"/"file.bin").exists())
+            else:
+                self.fail("TOCTOU parent swap was not rejected")
+        finally:
+            if raw.is_symlink(): raw.unlink()
+            if saved.exists(): saved.rename(raw)
+            shutil.rmtree(outside,ignore_errors=True)
+
+    def test_payload_identity_is_checked_before_artifact_write(self):
+        tx=self.e.prepare("docs_ledger.jsonl",self.row,"2025-06-02T00:00:00+00:00",
+            txid="PAYLOAD1",scope="docs",raw=("raw/file.bin",b"expected"))
+        (self.e.txroot/tx/"raw.payload").write_bytes(b"tampered")
+        with self.assertRaises(jt.TxError) as ctx: self.e.commit(tx)
+        self.assertEqual("ARTIFACT_PAYLOAD_IDENTITY_MISMATCH",ctx.exception.code)
+        self.assertFalse((self.root/"raw"/"file.bin").exists())
 
     def test_local_commit_never_claims_trusted_history(self):
         cert=self.e.commit(self.prep())
