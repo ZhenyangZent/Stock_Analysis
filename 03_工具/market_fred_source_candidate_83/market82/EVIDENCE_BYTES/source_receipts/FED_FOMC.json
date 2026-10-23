@@ -1,0 +1,18 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "available_at": "2026-01-28T19:00:05Z",
+  "canonical_source_rowset_sha256": "2700b4b384c0b53bbce9ada7099326325481359c5d10c3dcdd646c0834d24252",
+  "failed_items": 0,
+  "fetched_at": "2026-02-20T23:30:00Z",
+  "receipt_id": "SOURCE-FED_FOMC-SYNTHETIC",
+  "requested_items": 1,
+  "response_artifact": {
+    "bytes": 388,
+    "path": "raw_sources/FED_FOMC.json",
+    "sha256": "7145ac57ebcbdfcb8d6d6567edb26e62b1385b73be636c4a0e11bc37d6440d83"
+  },
+  "rowset_sha256": "8c8361e89a14e695b80a1d06714c50ed17985fd60004a8a1bfd9482d50c1869e",
+  "source_id": "FED_FOMC",
+  "source_published_at": "2026-01-28T19:00:00Z",
+  "succeeded_items": 1
+}

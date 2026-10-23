@@ -1,0 +1,17 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "records": [
+    {
+      "calendar_key": "2026-02",
+      "observation_date": "2026-02-19",
+      "observation_key": "2026-02-19",
+      "source_id": "FRED_DGS10",
+      "unit": "PERCENT",
+      "value": 4.25,
+      "vintage_policy": "N/A"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_id": "FRED_DGS10",
+  "synthetic": true
+}

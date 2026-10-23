@@ -1,0 +1,18 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "available_at": "2026-02-20T18:05:00Z",
+  "canonical_source_rowset_sha256": "13ddbd70d123fb128723f2876c96bd9b3f1bf8c5336b4a849966378ca44c4ba3",
+  "failed_items": 0,
+  "fetched_at": "2026-02-20T23:30:00Z",
+  "receipt_id": "SOURCE-FRED_BRENT-SYNTHETIC",
+  "requested_items": 1,
+  "response_artifact": {
+    "bytes": 389,
+    "path": "raw_sources/FRED_BRENT.json",
+    "sha256": "041c40fef59826906f4fab417bfa748cd140592c24caf9013aa6a07c4fe78d24"
+  },
+  "rowset_sha256": "4f97a35b6761b320b4b47b462da07860f0bbc7d8c4631600ee7b7f432995bc4e",
+  "source_id": "FRED_BRENT",
+  "source_published_at": "2026-02-20T18:00:00Z",
+  "succeeded_items": 1
+}

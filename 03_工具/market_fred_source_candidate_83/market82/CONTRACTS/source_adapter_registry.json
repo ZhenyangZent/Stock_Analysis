@@ -1,0 +1,106 @@
+{
+  "registry_id": "MARKET82-SOURCE-ADAPTER-CONTRACTS",
+  "registry_version": "3.0.0",
+  "formal_validation_approved": false,
+  "adapters": {
+    "SYNTHETIC_MARKET_RECORDS_V1": {
+      "implementation_status": "IMPLEMENTED_SYNTHETIC_ONLY",
+      "formal_validation_allowed": false,
+      "payload_schema_version": "1.0.0",
+      "record_fields": [
+        "observation_key",
+        "observation_date",
+        "calendar_key",
+        "value",
+        "unit",
+        "source_id",
+        "vintage_policy"
+      ],
+      "additional_record_fields_allowed": false
+    },
+    "FRED_API_JSON_V1": {
+      "implementation_status": "IMPLEMENTED_PROVIDER_FORMAT_CURRENTNESS_BLOCKED",
+      "formal_validation_allowed": false,
+      "required_raw_artifacts": ["fred_series_json", "fred_series_observations_json"],
+      "required_semantics": ["series_id", "units", "frequency_short", "date", "value", "realtime_start", "realtime_end", "count", "limit", "offset", "order_by", "sort_order"],
+      "pagination_contract": {
+        "count_semantics": "TOTAL_MATCHING_OBSERVATION_COUNT_NOT_PAGE_ROW_COUNT",
+        "page_row_count_semantics": "MIN_LIMIT_AND_TOTAL_REMAINING",
+        "required_offset_start": 0,
+        "required_offset_continuity": true,
+        "required_cross_page_identity": ["series_id", "realtime_start", "realtime_end", "vintage_policy", "limit", "request_parameters_except_offset"],
+        "required_complete_assembly": true,
+        "raw_provider_bytes_rewrite_allowed": false
+      },
+      "publication_evidence": "REQUIRED_SEPARATE_TRUSTED_RECEIPT",
+      "availability_evidence": "REQUIRED_SEPARATE_TRUSTED_RECEIPT",
+      "notes": "Provider schema and pagination parsing are implemented. Provider-format verification remains distinct from publication/availability verification. FRED release dates and series last_updated are not treated as observation availability proof."
+    },
+    "FRED_CSV_REAL": {
+      "implementation_status": "DESIGN_ONLY_UNSUPPORTED_FAIL_CLOSED",
+      "formal_validation_allowed": false,
+      "evidence_basis": "Repository fetch_macro.py references FRED series, but no approved raw-response identity and semantic adapter contract is supplied in this task."
+    },
+    "ALFRED_REALTIME_REAL": {
+      "implementation_status": "DESIGN_ONLY_UNSUPPORTED_FAIL_CLOSED",
+      "formal_validation_allowed": false,
+      "evidence_basis": "Repository code recognizes realtime_start for initial releases; no approved ALFRED policy or raw-response contract is supplied."
+    },
+    "FED_FOMC_REAL": {
+      "implementation_status": "DESIGN_ONLY_UNSUPPORTED_FAIL_CLOSED",
+      "formal_validation_allowed": false,
+      "evidence_basis": "Repository market_env.py validates canonical fomc_decisions.csv fields, not an approved upstream web payload adapter."
+    },
+    "TIINGO_PRICE_REAL": {
+      "implementation_status": "DESIGN_ONLY_UNSUPPORTED_FAIL_CLOSED",
+      "formal_validation_allowed": false,
+      "evidence_basis": "Repository fetch_prices.py is a production writer path and was not executed or adopted as an adapter contract."
+    }
+  },
+  "fred_series_contracts": {
+    "GNPCA_DOCUMENTATION_EXAMPLE": {
+      "series_id": "GNPCA",
+      "units": "Billions of Chained 2009 Dollars",
+      "frequency_short": "A",
+      "vintage_policy": "REVISED_CURRENT",
+      "series_fixture_sha256": "38213149053ffd427084327df4434ab0c5452fe03915996fc19e3dff85d0969c",
+      "observations_fixture_sha256": "0556fe04e9ec909153a87cea24bc4941d4704f2fffd20bd198ac3dce6be7ce0a",
+      "acceptance_scope": "OFFICIAL_DOCUMENTATION_FORMAT_EXAMPLE_ONLY_NOT_M1_M7"
+    },
+    "DGS10": {
+      "series_id": "DGS10",
+      "units": "Percent",
+      "frequency_short": "D",
+      "vintage_policy": "REVISED_CURRENT",
+      "acceptance_scope": "TARGET_M2_RAW_SAMPLE_AND_PUBLICATION_PROOF_MISSING"
+    },
+    "DCOILBRENTEU": {
+      "series_id": "DCOILBRENTEU",
+      "units": "Dollars per Barrel",
+      "frequency_short": "D",
+      "vintage_policy": "REVISED_CURRENT",
+      "acceptance_scope": "TARGET_M3_RAW_SAMPLE_AND_PUBLICATION_PROOF_MISSING"
+    },
+    "UNRATE": {
+      "series_id": "UNRATE",
+      "units": "Percent",
+      "frequency_short": "M",
+      "vintage_policy": "REVISED_CURRENT",
+      "acceptance_scope": "TARGET_M4_REVISED_RAW_SAMPLE_AND_PUBLICATION_PROOF_MISSING_ALFRED_INITIAL_NOT_APPROVED"
+    },
+    "CPILFESL": {
+      "series_id": "CPILFESL",
+      "units": "Index 1982-1984=100",
+      "frequency_short": "M",
+      "vintage_policy": "REVISED_CURRENT",
+      "acceptance_scope": "TARGET_M5_REVISED_RAW_SAMPLE_AND_PUBLICATION_PROOF_MISSING_ALFRED_INITIAL_NOT_APPROVED_EXACT_CALENDAR_KEY_REQUIRED"
+    },
+    "BAMLH0A0HYM2": {
+      "series_id": "BAMLH0A0HYM2",
+      "units": "Percent",
+      "frequency_short": "D",
+      "vintage_policy": "REVISED_CURRENT",
+      "acceptance_scope": "TARGET_M7_RAW_SAMPLE_AND_PUBLICATION_PROOF_MISSING"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "calendar_id": "EIA_SPOT_PRICE_RELEASE_CALENDAR",
+  "indicator_id": "M3",
+  "latest_expected_period": "2026-02-18",
+  "latest_expected_published_at": "2026-02-20T18:00:00Z",
+  "source_id": "FRED_BRENT",
+  "synthetic": true
+}

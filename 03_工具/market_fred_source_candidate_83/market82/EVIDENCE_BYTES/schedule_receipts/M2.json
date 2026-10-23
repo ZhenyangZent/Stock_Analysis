@@ -1,0 +1,15 @@
+{
+  "calendar_artifact": {
+    "bytes": 222,
+    "path": "raw_schedules/M2.json",
+    "sha256": "56800fbee5197920a6dd7a6d0546cd3a4195cc37912c50c8ca18cb849314dfd2"
+  },
+  "calendar_id": "FED_H15_RELEASE_CALENDAR",
+  "derived_at": "2026-02-20T23:30:00Z",
+  "indicator_id": "M2",
+  "latest_expected_period": "2026-02-19",
+  "latest_expected_published_at": "2026-02-20T21:15:00Z",
+  "receipt_id": "SCHEDULE-M2-SYNTHETIC",
+  "source_id": "FRED_DGS10",
+  "status": "COMPLETE"
+}

@@ -1,0 +1,15 @@
+{
+  "calendar_artifact": {
+    "bytes": 229,
+    "path": "raw_schedules/M3.json",
+    "sha256": "3a5e5350b86481135acacff64885ba2e75d431e33dcb0c1a0db2217409c669a6"
+  },
+  "calendar_id": "EIA_SPOT_PRICE_RELEASE_CALENDAR",
+  "derived_at": "2026-02-20T23:30:00Z",
+  "indicator_id": "M3",
+  "latest_expected_period": "2026-02-18",
+  "latest_expected_published_at": "2026-02-20T18:00:00Z",
+  "receipt_id": "SCHEDULE-M3-SYNTHETIC",
+  "source_id": "FRED_BRENT",
+  "status": "COMPLETE"
+}

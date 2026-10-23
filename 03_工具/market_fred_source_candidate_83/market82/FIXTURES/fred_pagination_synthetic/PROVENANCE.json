@@ -1,0 +1,7 @@
+{
+  "fixture_class": "SYNTHETIC_FRED_PAGINATION_CONTRACT_TEST_ONLY",
+  "formal_currentness_acceptance": "PROHIBITED",
+  "live_market_fetch_performed": false,
+  "official_documentation_basis": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+  "raw_response_bytes_rewritten_after_generation": false
+}

@@ -1,0 +1,18 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "available_at": "2026-02-11T13:35:00Z",
+  "canonical_source_rowset_sha256": "35916511a72c3fb428e291c80a01b42a83065273fc50e9e77ce16e3b597fabf6",
+  "failed_items": 0,
+  "fetched_at": "2026-02-20T23:30:00Z",
+  "receipt_id": "SOURCE-FRED_CPILFESL_REVISED-SYNTHETIC",
+  "requested_items": 4,
+  "response_artifact": {
+    "bytes": 1195,
+    "path": "raw_sources/FRED_CPILFESL_REVISED.json",
+    "sha256": "1692ed6c9e82eef6f73c26afa650c738b3281e1d0d6fb8deb7a4fea9d387a0ae"
+  },
+  "rowset_sha256": "deee3142bf97cdee7b2556c6f4ac84ced9025961a4869c0aca2a6a1584fa9750",
+  "source_id": "FRED_CPILFESL_REVISED",
+  "source_published_at": "2026-02-11T13:30:00Z",
+  "succeeded_items": 4
+}

@@ -1,0 +1,18 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "available_at": "2026-02-20T15:05:00Z",
+  "canonical_source_rowset_sha256": "3797e2e3972cdd34e132a2fe513f9f0d69b375885f86756ff9e7b1a114382304",
+  "failed_items": 0,
+  "fetched_at": "2026-02-20T23:30:00Z",
+  "receipt_id": "SOURCE-FRED_HY_OAS-SYNTHETIC",
+  "requested_items": 1,
+  "response_artifact": {
+    "bytes": 393,
+    "path": "raw_sources/FRED_HY_OAS.json",
+    "sha256": "034ebe412608507c55a129007d5660c94070479c827c985c60195fd8db028f9e"
+  },
+  "rowset_sha256": "57eaef8e97cc6d63bee973bc1a7bdccc414da7f3c67783bd3a4ce9e53773374d",
+  "source_id": "FRED_HY_OAS",
+  "source_published_at": "2026-02-20T15:00:00Z",
+  "succeeded_items": 1
+}

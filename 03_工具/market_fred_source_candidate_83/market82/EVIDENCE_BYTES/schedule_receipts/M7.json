@@ -1,0 +1,15 @@
+{
+  "calendar_artifact": {
+    "bytes": 236,
+    "path": "raw_schedules/M7.json",
+    "sha256": "61d9806459d347b8094d4439707bba106223f5e16a1967c028c5a950fea1598c"
+  },
+  "calendar_id": "ICE_BOFA_DAILY_CLOSE_RELEASE_CALENDAR",
+  "derived_at": "2026-02-20T23:30:00Z",
+  "indicator_id": "M7",
+  "latest_expected_period": "2026-02-19",
+  "latest_expected_published_at": "2026-02-20T15:00:00Z",
+  "receipt_id": "SCHEDULE-M7-SYNTHETIC",
+  "source_id": "FRED_HY_OAS",
+  "status": "COMPLETE"
+}

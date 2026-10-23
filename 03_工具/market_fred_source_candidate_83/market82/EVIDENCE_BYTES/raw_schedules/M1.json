@@ -1,0 +1,8 @@
+{
+  "calendar_id": "FED_FOMC_MEETING_CALENDAR",
+  "indicator_id": "M1",
+  "latest_expected_period": "2026-01-28",
+  "latest_expected_published_at": "2026-01-28T19:00:00Z",
+  "source_id": "FED_FOMC",
+  "synthetic": true
+}

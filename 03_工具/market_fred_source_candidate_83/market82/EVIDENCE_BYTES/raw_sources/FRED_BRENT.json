@@ -1,0 +1,17 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "records": [
+    {
+      "calendar_key": "2026-02",
+      "observation_date": "2026-02-18",
+      "observation_key": "2026-02-18",
+      "source_id": "FRED_BRENT",
+      "unit": "USD_PER_BARREL",
+      "value": 73.2,
+      "vintage_policy": "N/A"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_id": "FRED_BRENT",
+  "synthetic": true
+}

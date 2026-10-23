@@ -1,0 +1,18 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "available_at": "2026-02-20T22:00:00Z",
+  "canonical_source_rowset_sha256": "d3eb2dd18d524ba4c027ebcce37756ea55ee596466f86e67836720b044286686",
+  "failed_items": 0,
+  "fetched_at": "2026-02-20T23:30:00Z",
+  "receipt_id": "SOURCE-TIINGO_SOXX-SYNTHETIC",
+  "requested_items": 1,
+  "response_artifact": {
+    "bytes": 393,
+    "path": "raw_sources/TIINGO_SOXX.json",
+    "sha256": "d18da6c38e06213ed8bc4f7412c3f867a95c3c89cd15084d1c6e44c324d7dfa8"
+  },
+  "rowset_sha256": "8eb60f06a4572ccedbed756b74a4db7faaa39cd9fe0064a33dd3022ae6e5fd75",
+  "source_id": "TIINGO_SOXX",
+  "source_published_at": "2026-02-20T21:00:00Z",
+  "succeeded_items": 1
+}

@@ -1,0 +1,30 @@
+{
+  "adapter": "FRED_API_JSON_V1",
+  "contract_name": "DGS10",
+  "series": {
+    "path": "market82/FIXTURES/fred_pagination_synthetic/series_DGS10.json",
+    "sha256": "69c70da7c02e1f8ad2bd729a03a7e742746a8197723b7acd4e3181f2c20211ba"
+  },
+  "pages": [
+    {
+      "request": {
+        "path": "market82/FIXTURES/fred_pagination_synthetic/request_offset_0.json",
+        "sha256": "3448187119e13b538a3a13bf24d943f5336f119051e12901cd7e0b7047630f85"
+      },
+      "response": {
+        "path": "market82/FIXTURES/fred_pagination_synthetic/response_offset_0.json",
+        "sha256": "2a28f2461239484a3691f1b10c8323b2db4a94d032e3fc98a5debb685c7bf633"
+      }
+    },
+    {
+      "request": {
+        "path": "market82/FIXTURES/fred_pagination_synthetic/request_offset_3.json",
+        "sha256": "1b9d2ff185117a290c8aef2de685b5e95ae222aa1d620d08255186f2c510e28e"
+      },
+      "response": {
+        "path": "market82/FIXTURES/fred_pagination_synthetic/response_offset_3.json",
+        "sha256": "41987b43f0bfe9b1589b86137985da25d9cb04b4ebfa842509a90cd800b41bc7"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "calendar_id": "BLS_EMPLOYMENT_SITUATION_CALENDAR",
+  "indicator_id": "M4",
+  "latest_expected_period": "2026-01",
+  "latest_expected_published_at": "2026-02-06T13:30:00Z",
+  "source_id": "FRED_UNRATE_REVISED",
+  "synthetic": true
+}

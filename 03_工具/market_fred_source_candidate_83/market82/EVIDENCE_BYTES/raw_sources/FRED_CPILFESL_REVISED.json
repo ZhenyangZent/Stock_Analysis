@@ -1,0 +1,44 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "records": [
+    {
+      "calendar_key": "2026-01",
+      "observation_date": "2026-01-01",
+      "observation_key": "2026-01",
+      "source_id": "FRED_CPILFESL_REVISED",
+      "unit": "INDEX_1982_1984_100",
+      "value": 340.1,
+      "vintage_policy": "REVISED"
+    },
+    {
+      "calendar_key": "2025-01",
+      "observation_date": "2025-01-01",
+      "observation_key": "2025-01",
+      "source_id": "FRED_CPILFESL_REVISED",
+      "unit": "INDEX_1982_1984_100",
+      "value": 330.0,
+      "vintage_policy": "REVISED"
+    },
+    {
+      "calendar_key": "2025-10",
+      "observation_date": "2025-10-01",
+      "observation_key": "2025-10",
+      "source_id": "FRED_CPILFESL_REVISED",
+      "unit": "INDEX_1982_1984_100",
+      "value": 338.0,
+      "vintage_policy": "REVISED"
+    },
+    {
+      "calendar_key": "2024-10",
+      "observation_date": "2024-10-01",
+      "observation_key": "2024-10",
+      "source_id": "FRED_CPILFESL_REVISED",
+      "unit": "INDEX_1982_1984_100",
+      "value": 328.5,
+      "vintage_policy": "REVISED"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_id": "FRED_CPILFESL_REVISED",
+  "synthetic": true
+}

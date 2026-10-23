@@ -1,0 +1,64 @@
+{
+  "registry_id": "MARKET75-SOURCE-POLICY-SYNTHETIC-ONLY",
+  "registry_version": "1.0.0",
+  "environment": "SYNTHETIC_TEST_ONLY",
+  "approved_for_formal_market_currentness": false,
+  "policies": {
+    "FED_FOMC": {
+      "indicator_ids": ["M1"],
+      "calendar_id": "FED_FOMC_MEETING_CALENDAR",
+      "source_kind": "OFFICIAL_DIRECT",
+      "synthetic_validation_allowed": true,
+      "formal_validation_allowed": false
+    },
+    "FRED_DGS10": {
+      "indicator_ids": ["M2"],
+      "calendar_id": "FED_H15_RELEASE_CALENDAR",
+      "source_kind": "OFFICIAL_AGGREGATOR",
+      "synthetic_validation_allowed": true,
+      "formal_validation_allowed": false
+    },
+    "FRED_BRENT": {
+      "indicator_ids": ["M3"],
+      "calendar_id": "EIA_SPOT_PRICE_RELEASE_CALENDAR",
+      "source_kind": "OFFICIAL_AGGREGATOR",
+      "synthetic_validation_allowed": true,
+      "formal_validation_allowed": false
+    },
+    "FRED_UNRATE_REVISED": {
+      "indicator_ids": ["M4"],
+      "calendar_id": "BLS_EMPLOYMENT_SITUATION_CALENDAR",
+      "source_kind": "OFFICIAL_AGGREGATOR_REVISED",
+      "synthetic_validation_allowed": true,
+      "formal_validation_allowed": false,
+      "allowed_vintage_policies": ["REVISED"]
+    },
+    "FRED_CPILFESL_REVISED": {
+      "indicator_ids": ["M5"],
+      "calendar_id": "BLS_CPI_RELEASE_CALENDAR",
+      "source_kind": "OFFICIAL_AGGREGATOR_REVISED",
+      "synthetic_validation_allowed": true,
+      "formal_validation_allowed": false,
+      "allowed_vintage_policies": ["REVISED"]
+    },
+    "TIINGO_SOXX": {
+      "indicator_ids": ["M6"],
+      "calendar_id": "XNYS_XNAS_COMPLETE_SESSION_CALENDAR",
+      "source_kind": "LICENSED_MARKET_DATA",
+      "synthetic_validation_allowed": true,
+      "formal_validation_allowed": false
+    },
+    "FRED_HY_OAS": {
+      "indicator_ids": ["M7"],
+      "calendar_id": "ICE_BOFA_DAILY_CLOSE_RELEASE_CALENDAR",
+      "source_kind": "OFFICIAL_AGGREGATOR",
+      "synthetic_validation_allowed": true,
+      "formal_validation_allowed": false
+    }
+  },
+  "unapproved_policies": [
+    "ALFRED_INITIAL",
+    "UNVERIFIED_INTRADAY_AVAILABILITY",
+    "CALLER_ASSERTED_SOURCE_IDENTITY"
+  ]
+}

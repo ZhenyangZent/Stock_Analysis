@@ -1,0 +1,8 @@
+{
+  "calendar_id": "FED_H15_RELEASE_CALENDAR",
+  "indicator_id": "M2",
+  "latest_expected_period": "2026-02-19",
+  "latest_expected_published_at": "2026-02-20T21:15:00Z",
+  "source_id": "FRED_DGS10",
+  "synthetic": true
+}
