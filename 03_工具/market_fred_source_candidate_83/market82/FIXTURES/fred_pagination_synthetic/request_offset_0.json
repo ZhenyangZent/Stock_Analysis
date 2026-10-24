@@ -1,0 +1,14 @@
+{
+  "file_type": "json",
+  "limit": 3,
+  "observation_end": "2026-12-31",
+  "observation_start": "2026-01-01",
+  "offset": 0,
+  "order_by": "observation_date",
+  "output_type": 1,
+  "realtime_end": "2026-10-24",
+  "realtime_start": "2026-10-24",
+  "series_id": "DGS10",
+  "sort_order": "asc",
+  "units": "lin"
+}

@@ -1,0 +1,18 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "available_at": "2026-02-06T13:35:00Z",
+  "canonical_source_rowset_sha256": "204b2efa1ff32f5cd0bc48472272a6d244970e04947f8884542263d2b3c40bc5",
+  "failed_items": 0,
+  "fetched_at": "2026-02-20T23:30:00Z",
+  "receipt_id": "SOURCE-FRED_UNRATE_REVISED-SYNTHETIC",
+  "requested_items": 2,
+  "response_artifact": {
+    "bytes": 643,
+    "path": "raw_sources/FRED_UNRATE_REVISED.json",
+    "sha256": "316010c708fb1395cdc3578a70899b8e6f7c2e23f8926a13711e3f7dd39317be"
+  },
+  "rowset_sha256": "317ab96c2e5d3ecebd61723882915dc3bf4c10b08af1d9defc0dd3f5f171e6c5",
+  "source_id": "FRED_UNRATE_REVISED",
+  "source_published_at": "2026-02-06T13:30:00Z",
+  "succeeded_items": 2
+}

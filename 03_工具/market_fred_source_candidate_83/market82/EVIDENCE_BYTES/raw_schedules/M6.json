@@ -1,0 +1,8 @@
+{
+  "calendar_id": "XNYS_XNAS_COMPLETE_SESSION_CALENDAR",
+  "indicator_id": "M6",
+  "latest_expected_period": "2026-02-20",
+  "latest_expected_published_at": "2026-02-20T21:00:00Z",
+  "source_id": "TIINGO_SOXX",
+  "synthetic": true
+}

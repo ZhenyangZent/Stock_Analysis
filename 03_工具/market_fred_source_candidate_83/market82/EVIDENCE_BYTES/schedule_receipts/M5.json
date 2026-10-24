@@ -1,0 +1,15 @@
+{
+  "calendar_artifact": {
+    "bytes": 230,
+    "path": "raw_schedules/M5.json",
+    "sha256": "82597e71deeca99b5afef7ff0c2be6aaf977de58450f1118d20847b59476680d"
+  },
+  "calendar_id": "BLS_CPI_RELEASE_CALENDAR",
+  "derived_at": "2026-02-20T23:30:00Z",
+  "indicator_id": "M5",
+  "latest_expected_period": "2026-01",
+  "latest_expected_published_at": "2026-02-11T13:30:00Z",
+  "receipt_id": "SCHEDULE-M5-SYNTHETIC",
+  "source_id": "FRED_CPILFESL_REVISED",
+  "status": "COMPLETE"
+}

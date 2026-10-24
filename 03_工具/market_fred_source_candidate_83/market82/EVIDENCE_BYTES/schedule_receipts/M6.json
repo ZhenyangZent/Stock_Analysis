@@ -1,0 +1,15 @@
+{
+  "calendar_artifact": {
+    "bytes": 234,
+    "path": "raw_schedules/M6.json",
+    "sha256": "eccebe9abeb001940dc55565951b0b1519d602d0e498ccb0f2f2e7dae7d5d2e5"
+  },
+  "calendar_id": "XNYS_XNAS_COMPLETE_SESSION_CALENDAR",
+  "derived_at": "2026-02-20T23:30:00Z",
+  "indicator_id": "M6",
+  "latest_expected_period": "2026-02-20",
+  "latest_expected_published_at": "2026-02-20T21:00:00Z",
+  "receipt_id": "SCHEDULE-M6-SYNTHETIC",
+  "source_id": "TIINGO_SOXX",
+  "status": "COMPLETE"
+}

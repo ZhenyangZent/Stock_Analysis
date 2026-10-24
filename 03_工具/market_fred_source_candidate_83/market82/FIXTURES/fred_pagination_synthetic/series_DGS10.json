@@ -1,0 +1,23 @@
+{
+  "realtime_end": "2013-08-14",
+  "realtime_start": "2013-08-14",
+  "seriess": [
+    {
+      "frequency": "Daily",
+      "frequency_short": "D",
+      "id": "DGS10",
+      "last_updated": "2013-07-31 09:26:16-05",
+      "notes": "BEA Account Code: A001RX1",
+      "observation_end": "2012-01-01",
+      "observation_start": "1929-01-01",
+      "popularity": 39,
+      "realtime_end": "2013-08-14",
+      "realtime_start": "2013-08-14",
+      "seasonal_adjustment": "Not Seasonally Adjusted",
+      "seasonal_adjustment_short": "NSA",
+      "title": "Real Gross National Product",
+      "units": "Percent",
+      "units_short": "Percent"
+    }
+  ]
+}

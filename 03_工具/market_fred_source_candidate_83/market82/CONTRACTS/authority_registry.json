@@ -1,0 +1,35 @@
+{
+  "registry_id": "MARKET75-AUTHORITY-REGISTRY-CANDIDATE-DENY",
+  "registry_version": "1.0.0",
+  "environment": "SYNTHETIC_TEST_ONLY",
+  "independent_from_data_receipt": true,
+  "authorities": {
+    "code_integration": {
+      "status": "NOT_APPROVED",
+      "authority_id": null
+    },
+    "pit_vintage_policy": {
+      "status": "NOT_APPROVED",
+      "authority_id": null,
+      "approved_policy": null
+    },
+    "source_policy": {
+      "status": "SYNTHETIC_ONLY",
+      "authority_id": "MARKET75-SYNTHETIC-SOURCE-POLICY"
+    },
+    "formal_market_data_write": {
+      "status": "NOT_AUTHORIZED",
+      "authority_id": null
+    },
+    "formal_snapshot": {
+      "status": "NOT_AUTHORIZED",
+      "authority_id": null
+    },
+    "formal_publication": {
+      "status": "NOT_AUTHORIZED",
+      "authority_id": null
+    }
+  },
+  "candidate_may_issue_formal_authority": false,
+  "formal_publish_eligible": false
+}

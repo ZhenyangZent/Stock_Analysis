@@ -1,0 +1,26 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "records": [
+    {
+      "calendar_key": "2026-01",
+      "observation_date": "2026-01-01",
+      "observation_key": "2026-01",
+      "source_id": "FRED_UNRATE_REVISED",
+      "unit": "PERCENT",
+      "value": 4.1,
+      "vintage_policy": "REVISED"
+    },
+    {
+      "calendar_key": "2025-10",
+      "observation_date": "2025-10-01",
+      "observation_key": "2025-10",
+      "source_id": "FRED_UNRATE_REVISED",
+      "unit": "PERCENT",
+      "value": 4.2,
+      "vintage_policy": "REVISED"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_id": "FRED_UNRATE_REVISED",
+  "synthetic": true
+}

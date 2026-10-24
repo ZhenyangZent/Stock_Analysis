@@ -1,0 +1,12 @@
+{
+  "fixture_class": "OFFICIAL_DOCUMENTATION_FORMAT_EXAMPLE_NOT_LIVE_FETCH",
+  "provider": "Federal Reserve Bank of St. Louis FRED API",
+  "series_documentation_url": "https://fred.stlouisfed.org/docs/api/fred/series.html",
+  "observations_documentation_url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+  "retrieved_for_research_date": "2026-10-24",
+  "live_market_fetch_performed": false,
+  "private_api_key_used": false,
+  "target_m1_m7_raw_sample": false,
+  "transformation_note": "The series object is the official JSON example. The observations fixture preserves the first three official JSON example records and changes top-level count from 84 to 3 so the bounded excerpt is internally complete. It is not represented as an actual API response or a current target-series payload.",
+  "currentness_acceptance": "PROHIBITED"
+}

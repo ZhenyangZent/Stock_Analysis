@@ -1,0 +1,8 @@
+{
+  "calendar_id": "ICE_BOFA_DAILY_CLOSE_RELEASE_CALENDAR",
+  "indicator_id": "M7",
+  "latest_expected_period": "2026-02-19",
+  "latest_expected_published_at": "2026-02-20T15:00:00Z",
+  "source_id": "FRED_HY_OAS",
+  "synthetic": true
+}

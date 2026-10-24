@@ -1,0 +1,15 @@
+{
+  "calendar_artifact": {
+    "bytes": 221,
+    "path": "raw_schedules/M1.json",
+    "sha256": "2380e1e6331b424357a5ccee02b93cf5b3969fa6ec0d105569595bfffad55be2"
+  },
+  "calendar_id": "",
+  "derived_at": "2026-02-20T23:30:00Z",
+  "indicator_id": "M1",
+  "latest_expected_period": "2026-01-28",
+  "latest_expected_published_at": "2026-01-28T19:00:00Z",
+  "receipt_id": "SCHEDULE-M1-SYNTHETIC",
+  "source_id": "FED_FOMC",
+  "status": "COMPLETE"
+}

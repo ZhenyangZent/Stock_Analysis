@@ -1,0 +1,18 @@
+{
+  "adapter_id": "SYNTHETIC_MARKET_RECORDS_V1",
+  "available_at": "2026-02-20T21:20:00Z",
+  "canonical_source_rowset_sha256": "d0c0a806b6095d90e60bfbdd9e6161fc86b8decb0edbf9b301f388ceb6991d3e",
+  "failed_items": 0,
+  "fetched_at": "2026-02-20T23:30:00Z",
+  "receipt_id": "SOURCE-FRED_DGS10-SYNTHETIC",
+  "requested_items": 1,
+  "response_artifact": {
+    "bytes": 382,
+    "path": "raw_sources/FRED_DGS10.json",
+    "sha256": "d16c3c3ab501b3847a927fcb2475a58362ba79cc1faa5de0658a82591d52469b"
+  },
+  "rowset_sha256": "3bb90a4f0b6ac564f616ea2b77685b26b2d4f14beddce9fd78ea50fef35084b8",
+  "source_id": "FRED_DGS10",
+  "source_published_at": "2026-02-20T21:15:00Z",
+  "succeeded_items": 1
+}

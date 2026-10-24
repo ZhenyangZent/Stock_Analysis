@@ -1,0 +1,370 @@
+{
+  "governance": {
+    "formal_market_data_write_authorized": true,
+    "formal_publication_authorized": true,
+    "formal_rules_code_integrated": true,
+    "formal_snapshot_authorized": true,
+    "pit_vintage_policy_status": "APPROVED_REVISED"
+  },
+  "identity": {
+    "input_market72_zip_sha256": "6451f00f94d2eb0025eef776edf94dd259aebdfaa4dab5c27f5d2cab579f33ad",
+    "rules_sha256": "fe072304ff62092b355d1c9c844227eb3bee1a7abc1475d0888d50291885e4d1"
+  },
+  "indicators": [
+    {
+      "indicator_id": "M1",
+      "latest_expected_period": "2026-01-28",
+      "latest_observed_period": "2026-01-28",
+      "missing_expected_periods": [],
+      "observations": [
+        {
+          "available_at": "2026-01-28T19:00:05Z",
+          "calendar_key": "2026-01",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2026-01-28",
+          "observation_key": "2026-01-28",
+          "schedule_payload_sha256": "2380e1e6331b424357a5ccee02b93cf5b3969fa6ec0d105569595bfffad55be2",
+          "schedule_receipt_id": "SCHEDULE-M1-SYNTHETIC",
+          "source_id": "FED_FOMC",
+          "source_payload_sha256": "7145ac57ebcbdfcb8d6d6567edb26e62b1385b73be636c4a0e11bc37d6440d83",
+          "source_published_at": "2026-01-28T19:00:00Z",
+          "source_receipt_id": "SOURCE-FED_FOMC-SYNTHETIC",
+          "unit": "DECISION_ENUM",
+          "value": "不變",
+          "vintage_policy": "N/A"
+        }
+      ],
+      "publication_receipt_present": true,
+      "schedule_receipt_ref": {
+        "bytes": 471,
+        "path": "schedule_receipts/M1.json",
+        "schedule_receipt_id": "SCHEDULE-M1-SYNTHETIC",
+        "sha256": "c5b7e97eb5f930ca527886ee32b0edd6c5e96d266d69a35b6589725b32ba557b"
+      },
+      "source_id": "FED_FOMC"
+    },
+    {
+      "indicator_id": "M2",
+      "latest_expected_period": "2026-02-19",
+      "latest_observed_period": "2026-02-19",
+      "missing_expected_periods": [],
+      "observations": [
+        {
+          "available_at": "2026-02-20T21:20:00Z",
+          "calendar_key": "2026-02",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2026-02-19",
+          "observation_key": "2026-02-19",
+          "schedule_payload_sha256": "56800fbee5197920a6dd7a6d0546cd3a4195cc37912c50c8ca18cb849314dfd2",
+          "schedule_receipt_id": "SCHEDULE-M2-SYNTHETIC",
+          "source_id": "FRED_DGS10",
+          "source_payload_sha256": "d16c3c3ab501b3847a927fcb2475a58362ba79cc1faa5de0658a82591d52469b",
+          "source_published_at": "2026-02-20T21:15:00Z",
+          "source_receipt_id": "SOURCE-FRED_DGS10-SYNTHETIC",
+          "unit": "PERCENT",
+          "value": 4.25,
+          "vintage_policy": "N/A"
+        }
+      ],
+      "schedule_receipt_ref": {
+        "bytes": 472,
+        "path": "schedule_receipts/M2.json",
+        "schedule_receipt_id": "SCHEDULE-M2-SYNTHETIC",
+        "sha256": "9e76385ac44f785d52d635c4194aa7a701860a916b86210951b02c3deeb4d408"
+      },
+      "source_id": "FRED_DGS10"
+    },
+    {
+      "indicator_id": "M3",
+      "latest_expected_period": "2026-02-18",
+      "latest_observed_period": "2026-02-18",
+      "missing_expected_periods": [],
+      "observations": [
+        {
+          "available_at": "2026-02-20T18:05:00Z",
+          "calendar_key": "2026-02",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2026-02-18",
+          "observation_key": "2026-02-18",
+          "schedule_payload_sha256": "3a5e5350b86481135acacff64885ba2e75d431e33dcb0c1a0db2217409c669a6",
+          "schedule_receipt_id": "SCHEDULE-M3-SYNTHETIC",
+          "source_id": "FRED_BRENT",
+          "source_payload_sha256": "041c40fef59826906f4fab417bfa748cd140592c24caf9013aa6a07c4fe78d24",
+          "source_published_at": "2026-02-20T18:00:00Z",
+          "source_receipt_id": "SOURCE-FRED_BRENT-SYNTHETIC",
+          "unit": "USD_PER_BARREL",
+          "value": 73.2,
+          "vintage_policy": "N/A"
+        }
+      ],
+      "schedule_receipt_ref": {
+        "bytes": 479,
+        "path": "schedule_receipts/M3.json",
+        "schedule_receipt_id": "SCHEDULE-M3-SYNTHETIC",
+        "sha256": "3c81715e4775a503230a930ad76cca7a0cf97cf7a075f3ffbb7a529c4f175d85"
+      },
+      "source_id": "FRED_BRENT"
+    },
+    {
+      "indicator_id": "M4",
+      "latest_expected_period": "2026-01",
+      "latest_observed_period": "2026-01",
+      "missing_expected_periods": [],
+      "observations": [
+        {
+          "available_at": "2026-02-06T13:35:00Z",
+          "calendar_key": "2026-01",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2026-01-01",
+          "observation_key": "2026-01",
+          "schedule_payload_sha256": "2f1c8a804dadda91afedeac80314d42a0687b6ff70db36599d4dd03e8d6d504a",
+          "schedule_receipt_id": "SCHEDULE-M4-SYNTHETIC",
+          "source_id": "FRED_UNRATE_REVISED",
+          "source_payload_sha256": "316010c708fb1395cdc3578a70899b8e6f7c2e23f8926a13711e3f7dd39317be",
+          "source_published_at": "2026-02-06T13:30:00Z",
+          "source_receipt_id": "SOURCE-FRED_UNRATE_REVISED-SYNTHETIC",
+          "unit": "PERCENT",
+          "value": 4.1,
+          "vintage_policy": "REVISED"
+        },
+        {
+          "available_at": "2026-02-06T13:35:00Z",
+          "calendar_key": "2025-10",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2025-10-01",
+          "observation_key": "2025-10",
+          "schedule_payload_sha256": "2f1c8a804dadda91afedeac80314d42a0687b6ff70db36599d4dd03e8d6d504a",
+          "schedule_receipt_id": "SCHEDULE-M4-SYNTHETIC",
+          "source_id": "FRED_UNRATE_REVISED",
+          "source_payload_sha256": "316010c708fb1395cdc3578a70899b8e6f7c2e23f8926a13711e3f7dd39317be",
+          "source_published_at": "2026-02-06T13:30:00Z",
+          "source_receipt_id": "SOURCE-FRED_UNRATE_REVISED-SYNTHETIC",
+          "unit": "PERCENT",
+          "value": 4.2,
+          "vintage_policy": "REVISED"
+        }
+      ],
+      "required_calendar_keys": {
+        "L": "2026-01",
+        "L_MINUS_3": "2025-10"
+      },
+      "schedule_receipt_ref": {
+        "bytes": 487,
+        "path": "schedule_receipts/M4.json",
+        "schedule_receipt_id": "SCHEDULE-M4-SYNTHETIC",
+        "sha256": "5dabb35271defe8c295b21eed6a52a2f9c12f64477ca8a36a73ed043e59cc473"
+      },
+      "source_id": "FRED_UNRATE_REVISED",
+      "vintage_policy": "REVISED"
+    },
+    {
+      "indicator_id": "M5",
+      "latest_expected_period": "2026-01",
+      "latest_observed_period": "2026-01",
+      "missing_expected_periods": [],
+      "observations": [
+        {
+          "available_at": "2026-02-11T13:35:00Z",
+          "calendar_key": "2026-01",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2026-01-01",
+          "observation_key": "2026-01",
+          "schedule_payload_sha256": "82597e71deeca99b5afef7ff0c2be6aaf977de58450f1118d20847b59476680d",
+          "schedule_receipt_id": "SCHEDULE-M5-SYNTHETIC",
+          "source_id": "FRED_CPILFESL_REVISED",
+          "source_payload_sha256": "1692ed6c9e82eef6f73c26afa650c738b3281e1d0d6fb8deb7a4fea9d387a0ae",
+          "source_published_at": "2026-02-11T13:30:00Z",
+          "source_receipt_id": "SOURCE-FRED_CPILFESL_REVISED-SYNTHETIC",
+          "unit": "INDEX_1982_1984_100",
+          "value": 340.1,
+          "vintage_policy": "REVISED"
+        },
+        {
+          "available_at": "2026-02-11T13:35:00Z",
+          "calendar_key": "2025-01",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2025-01-01",
+          "observation_key": "2025-01",
+          "schedule_payload_sha256": "82597e71deeca99b5afef7ff0c2be6aaf977de58450f1118d20847b59476680d",
+          "schedule_receipt_id": "SCHEDULE-M5-SYNTHETIC",
+          "source_id": "FRED_CPILFESL_REVISED",
+          "source_payload_sha256": "1692ed6c9e82eef6f73c26afa650c738b3281e1d0d6fb8deb7a4fea9d387a0ae",
+          "source_published_at": "2026-02-11T13:30:00Z",
+          "source_receipt_id": "SOURCE-FRED_CPILFESL_REVISED-SYNTHETIC",
+          "unit": "INDEX_1982_1984_100",
+          "value": 330.0,
+          "vintage_policy": "REVISED"
+        },
+        {
+          "available_at": "2026-02-11T13:35:00Z",
+          "calendar_key": "2025-10",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2025-10-01",
+          "observation_key": "2025-10",
+          "schedule_payload_sha256": "82597e71deeca99b5afef7ff0c2be6aaf977de58450f1118d20847b59476680d",
+          "schedule_receipt_id": "SCHEDULE-M5-SYNTHETIC",
+          "source_id": "FRED_CPILFESL_REVISED",
+          "source_payload_sha256": "1692ed6c9e82eef6f73c26afa650c738b3281e1d0d6fb8deb7a4fea9d387a0ae",
+          "source_published_at": "2026-02-11T13:30:00Z",
+          "source_receipt_id": "SOURCE-FRED_CPILFESL_REVISED-SYNTHETIC",
+          "unit": "INDEX_1982_1984_100",
+          "value": 338.0,
+          "vintage_policy": "REVISED"
+        },
+        {
+          "available_at": "2026-02-11T13:35:00Z",
+          "calendar_key": "2024-10",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2024-10-01",
+          "observation_key": "2024-10",
+          "schedule_payload_sha256": "82597e71deeca99b5afef7ff0c2be6aaf977de58450f1118d20847b59476680d",
+          "schedule_receipt_id": "SCHEDULE-M5-SYNTHETIC",
+          "source_id": "FRED_CPILFESL_REVISED",
+          "source_payload_sha256": "1692ed6c9e82eef6f73c26afa650c738b3281e1d0d6fb8deb7a4fea9d387a0ae",
+          "source_published_at": "2026-02-11T13:30:00Z",
+          "source_receipt_id": "SOURCE-FRED_CPILFESL_REVISED-SYNTHETIC",
+          "unit": "INDEX_1982_1984_100",
+          "value": 328.5,
+          "vintage_policy": "REVISED"
+        }
+      ],
+      "required_calendar_keys": {
+        "L": "2026-01",
+        "L_MINUS_12": "2025-01",
+        "L_MINUS_15": "2024-10",
+        "L_MINUS_3": "2025-10"
+      },
+      "schedule_receipt_ref": {
+        "bytes": 480,
+        "path": "schedule_receipts/M5.json",
+        "schedule_receipt_id": "SCHEDULE-M5-SYNTHETIC",
+        "sha256": "b6a2d72006f094f230683538ffe999c647830b6ba9cdb72747c1ce42bed5aa00"
+      },
+      "source_id": "FRED_CPILFESL_REVISED",
+      "vintage_policy": "REVISED"
+    },
+    {
+      "indicator_id": "M6",
+      "latest_expected_period": "2026-02-20",
+      "latest_observed_period": "2026-02-20",
+      "missing_expected_periods": [],
+      "observations": [
+        {
+          "available_at": "2026-02-20T22:00:00Z",
+          "calendar_key": "2026-02",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2026-02-20",
+          "observation_key": "2026-02-20",
+          "schedule_payload_sha256": "eccebe9abeb001940dc55565951b0b1519d602d0e498ccb0f2f2e7dae7d5d2e5",
+          "schedule_receipt_id": "SCHEDULE-M6-SYNTHETIC",
+          "source_id": "TIINGO_SOXX",
+          "source_payload_sha256": "d18da6c38e06213ed8bc4f7412c3f867a95c3c89cd15084d1c6e44c324d7dfa8",
+          "source_published_at": "2026-02-20T21:00:00Z",
+          "source_receipt_id": "SOURCE-TIINGO_SOXX-SYNTHETIC",
+          "unit": "USD_INDEX_LEVEL",
+          "value": 510.0,
+          "vintage_policy": "N/A"
+        }
+      ],
+      "price_anchors": {
+        "corporate_action_anchor": "2026-02-20",
+        "latest_complete_market_session": "2026-02-20",
+        "price_anchor": "2026-02-20",
+        "total_return_anchor": "2026-02-20"
+      },
+      "schedule_receipt_ref": {
+        "bytes": 484,
+        "path": "schedule_receipts/M6.json",
+        "schedule_receipt_id": "SCHEDULE-M6-SYNTHETIC",
+        "sha256": "df2c20bfab55aea7518f8890c7e513bcbf4ee498c7e1fa4f23512c6522a84a78"
+      },
+      "source_id": "TIINGO_SOXX"
+    },
+    {
+      "indicator_id": "M7",
+      "latest_expected_period": "2026-02-19",
+      "latest_observed_period": "2026-02-19",
+      "missing_expected_periods": [],
+      "observations": [
+        {
+          "available_at": "2026-02-20T15:05:00Z",
+          "calendar_key": "2026-02",
+          "fetched_at": "2026-02-20T23:30:00Z",
+          "observation_date": "2026-02-19",
+          "observation_key": "2026-02-19",
+          "schedule_payload_sha256": "61d9806459d347b8094d4439707bba106223f5e16a1967c028c5a950fea1598c",
+          "schedule_receipt_id": "SCHEDULE-M7-SYNTHETIC",
+          "source_id": "FRED_HY_OAS",
+          "source_payload_sha256": "034ebe412608507c55a129007d5660c94070479c827c985c60195fd8db028f9e",
+          "source_published_at": "2026-02-20T15:00:00Z",
+          "source_receipt_id": "SOURCE-FRED_HY_OAS-SYNTHETIC",
+          "unit": "PERCENTAGE_POINTS",
+          "value": 3.1,
+          "vintage_policy": "N/A"
+        }
+      ],
+      "schedule_receipt_ref": {
+        "bytes": 486,
+        "path": "schedule_receipts/M7.json",
+        "schedule_receipt_id": "SCHEDULE-M7-SYNTHETIC",
+        "sha256": "6689ffd5081f60b4f929747ac76266d7e24f7a9c1ae2be52a257d355bd86915d"
+      },
+      "source_id": "FRED_HY_OAS"
+    }
+  ],
+  "receipt_id": "HARDENED-SYNTHETIC-SELF-AUTHORITY",
+  "receipt_kind": "MARKET_ONLY",
+  "run_cutoff": "2026-02-21T00:00:00Z",
+  "schema_version": "MARKET_SOURCE_SEMANTICS_3.0.0",
+  "scope": {
+    "dependency_domains": [
+      "MARKET_ONLY"
+    ],
+    "t46_document_ledger_required": false
+  },
+  "source_receipt_refs": [
+    {
+      "bytes": 683,
+      "path": "source_receipts/FED_FOMC.json",
+      "sha256": "06b7c962886a700cb4bd88b8532088415c69b79ee34c98567abc2ed2bcb79914",
+      "source_id": "FED_FOMC"
+    },
+    {
+      "bytes": 689,
+      "path": "source_receipts/FRED_DGS10.json",
+      "sha256": "d41aa47909aeb4e40c909bd8df2dfcd93236a4b9acb1f94b5b5e54a534a4dc56",
+      "source_id": "FRED_DGS10"
+    },
+    {
+      "bytes": 689,
+      "path": "source_receipts/FRED_BRENT.json",
+      "sha256": "955ab1766475f97d9b469c2e23cc0232992f7c02b25b71e2eb831c57d9992991",
+      "source_id": "FRED_BRENT"
+    },
+    {
+      "bytes": 716,
+      "path": "source_receipts/FRED_UNRATE_REVISED.json",
+      "sha256": "88b6fdffa927cf918a0d2fc23c6db280f68f8f081a672d169a1c99b6285d4848",
+      "source_id": "FRED_UNRATE_REVISED"
+    },
+    {
+      "bytes": 723,
+      "path": "source_receipts/FRED_CPILFESL_REVISED.json",
+      "sha256": "4afd5b77d3607eaf2e4550e31030e3d6bf3ddc0ef5b458a12bb98302baa0480d",
+      "source_id": "FRED_CPILFESL_REVISED"
+    },
+    {
+      "bytes": 692,
+      "path": "source_receipts/TIINGO_SOXX.json",
+      "sha256": "01c5d13e5c3313b17113ac75e6e2a099254c0164cfeaea4b0b9384c33419178b",
+      "source_id": "TIINGO_SOXX"
+    },
+    {
+      "bytes": 692,
+      "path": "source_receipts/FRED_HY_OAS.json",
+      "sha256": "b8c8b2c2996733712c41a76c89199e3fe393928d67c050416f31e7fe35357a44",
+      "source_id": "FRED_HY_OAS"
+    }
+  ],
+  "synthetic": true
+}

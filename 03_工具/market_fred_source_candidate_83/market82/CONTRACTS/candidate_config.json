@@ -1,0 +1,18 @@
+{
+  "candidate_id": "MARKET_FRED_PAGINATION_INTEGRITY_82",
+  "enabled": false,
+  "formal_publish_capability": "DISABLED",
+  "formal_market_data_write_capability": "DISABLED",
+  "formal_snapshot_capability": "DISABLED",
+  "network_access": "DISABLED",
+  "provider_format_validation_scope": "OFFLINE_PINNED_FIXTURES_AND_SYNTHETIC_PAGINATION_ONLY",
+  "currentness_eligibility": "BLOCKED_UNLESS_SEPARATE_TRUSTED_PUBLICATION_AVAILABILITY_AND_FETCH_RECEIPTS_EXIST",
+  "production_repository_write": "DISABLED",
+  "required_runtime_inputs": [
+    "receipt_path",
+    "evidence_root",
+    "pinned_source_policy_registry",
+    "pinned_source_adapter_registry",
+    "pinned_authority_registry"
+  ]
+}

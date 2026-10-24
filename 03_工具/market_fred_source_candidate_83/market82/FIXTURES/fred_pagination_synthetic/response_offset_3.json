@@ -1,0 +1,34 @@
+{
+  "count": 6,
+  "file_type": "json",
+  "limit": 3,
+  "observation_end": "2026-12-31",
+  "observation_start": "2026-01-01",
+  "observations": [
+    {
+      "date": "2026-01-07",
+      "realtime_end": "2026-10-24",
+      "realtime_start": "2026-10-24",
+      "value": "4.3"
+    },
+    {
+      "date": "2026-01-08",
+      "realtime_end": "2026-10-24",
+      "realtime_start": "2026-10-24",
+      "value": "4.4"
+    },
+    {
+      "date": "2026-01-09",
+      "realtime_end": "2026-10-24",
+      "realtime_start": "2026-10-24",
+      "value": "4.5"
+    }
+  ],
+  "offset": 3,
+  "order_by": "observation_date",
+  "output_type": 1,
+  "realtime_end": "2026-10-24",
+  "realtime_start": "2026-10-24",
+  "sort_order": "asc",
+  "units": "lin"
+}

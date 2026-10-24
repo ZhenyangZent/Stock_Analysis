@@ -1,0 +1,15 @@
+{
+  "calendar_artifact": {
+    "bytes": 237,
+    "path": "raw_schedules/M4.json",
+    "sha256": "2f1c8a804dadda91afedeac80314d42a0687b6ff70db36599d4dd03e8d6d504a"
+  },
+  "calendar_id": "BLS_EMPLOYMENT_SITUATION_CALENDAR",
+  "derived_at": "2026-02-20T23:30:00Z",
+  "indicator_id": "M4",
+  "latest_expected_period": "2026-01",
+  "latest_expected_published_at": "2026-02-06T13:30:00Z",
+  "receipt_id": "SCHEDULE-M4-SYNTHETIC",
+  "source_id": "FRED_UNRATE_REVISED",
+  "status": "COMPLETE"
+}
