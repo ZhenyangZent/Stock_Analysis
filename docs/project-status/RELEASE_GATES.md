@@ -71,7 +71,7 @@ STATUS_STAGE: `N/A`
 | F180 normalized trailing-LF equivalence | `PASS` | Removing exactly one ZIP-only final LF yields each Git blob byte sequence |
 | SHA field separation | `PASS` | Blob SHA-1, byte SHA-256, document SHA-256, archive SHA-256, and manifest SHA-256 remain distinct |
 
-## F215 authorized publication gate
+## Historical F215 authorized publication gate (consumed)
 
 | Gate | State |
 |---|---|
@@ -118,4 +118,50 @@ STATUS_STAGE: `N/A`
 | Formal universe change | `NOT_APPROVED` |
 | Formal forward evaluation | `NOT_APPROVED` |
 
-F215 may perform one normal commit and one normal push only after all gates above remain true. It must then re-read PR #9 and remote `main`; no Ready, merge, main push, force push, CI/security change, or formal research promotion is authorized.
+F215's one-time publication authority has been consumed. F233 has no Git write authority.
+
+## F233 incremental gates
+
+| Gate | State |
+|---|---|
+| PR #9 live state | `PASS — OPEN, draft=true, merged=false` |
+| PR #9 head/base | `PASS — c68f24acb6d3a1b8ed8f2aa6b2665a9fe8fe0f2a / 6e2740d9877364619ca046cb54829350fd0db5ef` |
+| Six live blobs vs F215 receipt | `PASS — 6/6 exact` |
+| Remote main drift | `PASS — no drift` |
+| PR checks | `NONE_REPORTED` |
+| Main traditional branch protection | `ABSENT` |
+| Repository rulesets | `EMPTY` |
+| A221 Stage 2 integrity | `PASS`; synthetic candidate only |
+| B223 canonical handoff | `BLOCKED_INPUT`; extracted blocked decision retained |
+| E225 integrity and erratum | `PASS`; offline candidate only |
+| E227 integrity | `PASS`; trusted test harness only |
+| H226 canonical handoff | `BLOCKED_INPUT`; T46 remains `RECOVERY_BLOCKED` |
+| Scheduler last hash-bound state | `Disabled`; `Enabled=false` from H218 receipt |
+| New Git write authority | `NOT_GRANTED` |
+| Commit/push/PR update | `PROHIBITED` |
+
+Any later publication requires a fresh exact one-time authority, immediate remote identity recheck, docs-only changed-path/security gates, and preservation of Draft/unmerged state. No authentication state by itself grants that authority.
+
+## F241 current release and authority gates
+
+| Gate | State |
+|---|---|
+| F233 input archive | `PASS — 15 payloads` |
+| PR #9 pre-publication identity | `PASS — OPEN, draft=true, merged=false, head c68f24acb6d3a1b8ed8f2aa6b2665a9fe8fe0f2a` |
+| D236/A237/E232 Resumed/G234/E239/G240 archive integrity | `PASS` |
+| B228 canonical archive identity | `BLOCKED_INPUT`; status recorded as user-supplied only |
+| B228 offline trusted harness | `PASS_OFFLINE_TRUSTED_HARNESS_RELEASE`; 10/10 sequences; 2710/2710 assertions |
+| B228 production FRED/network authority | `false` |
+| B238 Stage 2 | `AWAITING_EVIDENCE` |
+| E232/E239 accepted numeric feature count | `0` |
+| Real approved market observation count | `0` |
+| Formal PIT issued | `false` |
+| Formal source policy approved | `false` |
+| G234/G240 formal activation | `false` |
+| Predictive value established | `false` |
+| Weekly scheduler | `Disabled`; `Enabled=false` |
+| T46 recovery | `RECOVERY_BLOCKED` |
+| F241 Git write authority | `ONE_NORMAL_COMMIT_AND_ONE_NORMAL_PUSH_ONLY` |
+| Ready/merge/main/force push/CI/security authority | `false` |
+
+F241 publication changes status documentation only. A successful push consumes the one-time authority and grants no follow-on Git write.

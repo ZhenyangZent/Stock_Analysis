@@ -74,3 +74,45 @@ F215 re-read these six blob identities from the live PR files API at head `56a18
 | `docs/project-status/WORKSTREAMS.md` | `9dbe6de63066a602bfaaa17817dab17418f775a3` | `e1db1c9b4c95a6a41758a3acd74dd983f895f5c186159c31ef61f9984cb73ab8` | `81b6d3310cf92e3547dcb91a65297fc77a644d9b9debbca9bc3d39bbc47cc86e` | `false` | `PASS_AFTER_REMOVING_ONE_TRAILING_LF_FROM_ZIP_DOCUMENT` |
 
 Git blob SHA-1, Git blob byte SHA-256, ZIP-document SHA-256, handoff ZIP SHA-256, and manifest SHA-256 are distinct identities.
+
+## F233 live PR #9 identity
+
+| Path | LIVE_GIT_BLOB_SHA1 | F215_RECEIPT_BLOB_SHA1 | GATE |
+|---|---|---|---|
+| `docs/project-status/CURRENT_STATUS.md` | `2799d7735f8376614c91b61a1231e8e5d1c870f9` | `2799d7735f8376614c91b61a1231e8e5d1c870f9` | `PASS` |
+| `docs/project-status/DECISION_LOG.md` | `fc9094bcf4375442566fe4921d8dc039ff124cba` | `fc9094bcf4375442566fe4921d8dc039ff124cba` | `PASS` |
+| `docs/project-status/EVIDENCE_INDEX.md` | `aaad9f81ddcb0467a116df7ccfec4a63b66dce91` | `aaad9f81ddcb0467a116df7ccfec4a63b66dce91` | `PASS` |
+| `docs/project-status/RELEASE_GATES.md` | `a0bfe71d330acc2d9bb536a0b3c9c83bfdc11485` | `a0bfe71d330acc2d9bb536a0b3c9c83bfdc11485` | `PASS` |
+| `docs/project-status/ROADMAP.md` | `f9cc8a013c1c19ffd70d2c2a70d30499de6ae829` | `f9cc8a013c1c19ffd70d2c2a70d30499de6ae829` | `PASS` |
+| `docs/project-status/WORKSTREAMS.md` | `bfcd30ff1ffcb4c78666664c1781b46c3fa18282` | `bfcd30ff1ffcb4c78666664c1781b46c3fa18282` | `PASS` |
+
+## F233 newer evidence identity
+
+| TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | PAYLOADS | INTEGRITY | CLASSIFICATION | STATUS |
+|---|---|---|---:|---|---|---|
+| `F215` | `cc5c3b9f2f3c0ad2803853c56d4970efb3dc91a675efb76ff558be3561c38c0a` | `78688ab1d6e51d776a08fee9c5cd5d8eff16321d202e9ceeb202c166cb0dc1ec` | 12 | `PASS` | `GPT_VERIFIED` publication receipt | `PUBLISHED` |
+| `A221_STAGE2` | `0b7ffae86a01f3ea26495b561d71c7cfa7cfa00f76e1a0a3cb24101e84c90321` | `020b7ae17c43f28b1275ad40d1d46ce07f1413b5d4420af9f02c09cdc066b478` | 28 | `PASS` | `CODEX_REPORTED`; `ARCHIVED_WINDOWS_EVIDENCE` | `PASS_SYNTHETIC_ONLY_NO_FORMAL_AUTHORITY` |
+| `B223` | `UNKNOWN` | `UNKNOWN` | `UNKNOWN` | `BLOCKED_INPUT` | `CODEX_REPORTED_EXTRACTED_EVIDENCE` | `BLOCKED_INDEPENDENT_PREFLIGHT_NOT_VERIFIED` |
+| `E225` | `064f77252fc15822be9bc24b7902f3bd7cccc21b79db84be1f9a91eb545089d1` | `8f1a8142dff1348b2464737af6d26b58d883b3f5ec2e01f378b52672301bde8d` | 31 | `PASS` | `CODEX_REPORTED`; `ARCHIVED_WINDOWS_EVIDENCE` | `OFFLINE_POLICY_GATE_CANDIDATE` |
+| `E225_ERRATUM` | `N/A` | `N/A` | `N/A` | `PASS_READ_ONLY_FILE_SHA256=c086a5bf51f349e80596e3ab8fd692984bbaed3cecb4961c36b35f6fc29cae4e` | `CODEX_REPORTED` | `IDENTITY_TRANSCRIPTION_CORRECTED` |
+| `E227` | `66f2b8d0bba1dbf1e7dc3ea67dfe945ac846ec85bb0c17ce7f54a339e92d59d8` | `198fb72d7efd4259f7b105c9aba7ef10925add73e40df53b2b3970391663fdaf` | 42 | `PASS` | `CODEX_REPORTED`; `ARCHIVED_WINDOWS_EVIDENCE` | `TRUSTED_TEST_HARNESS_ONLY_CANDIDATE` |
+| `H226` | `UNKNOWN` | `UNKNOWN` | `UNKNOWN` | `BLOCKED_INPUT` | `NOT_VERIFIED` | `BLOCKED_CANONICAL_HANDOFF_ABSENT` |
+
+For each passing ZIP, F233 verified exact payload bytes/SHA-256, sizes, full stream reads (CRC), exact member set, path traversal, exact duplicates, and casefold aliases. Integrity does not constitute GPT acceptance or formal authority.
+
+## F241 evidence status matrix
+
+| TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | PAYLOADS | INTEGRITY | ACCEPTANCE_CLASS | BOUNDED_RESULT |
+|---|---|---|---:|---|---|---|
+| `F233` | `63ab92731509d28a263f3098bafec9ce719b953687da9f08bc77038231e951d7` | `86ccd9d3bc3b51fc8a3e6e043e3809b293f1d1e6ee45fe3091904be3d1e7678f` | 15 | `PASS` | `GPT_VERIFIED_INPUT_TO_F241` | docs-only patch candidate, historically not published |
+| `D236` | `906d1f1958ebf819f3ef5e5380c1344c1f48336d5ea5ee671f2191421d2c76a7` | `54fa5ab6fe019e7665cafec2486630f48ded21e71b0b3a0b29e9bca080987625` | 9 | `PASS` | `CODEX_REPORTED` | corrected research cohort membership; no formal registry change |
+| `A237` | `6a0dbcaffa5ccac7956afc2a1ab53a48a27608196d60045256af1de39f603b3e` | `caef8d52b05063971e3233e83640f0480065f78f97135fb25dc8117eb9be9684` | 18 | `PASS` | `CODEX_REPORTED` | three hypotheses affected; real outcome effect unproven |
+| `E232_RESUMED` | `65a55ee1973cbc10b3c2c1be9bdebf6579facb0c7f36230b2dca59ad37acdca6` | `235d87d8664a9fe8730ca1ef0fd777b8f04e42c97b161c996c872fbbc79976db` | 18 | `PASS` | `CODEX_REPORTED` | 18/18 synthetic; zero accepted numeric features |
+| `G234` | `5b2dd370733201388885ea0e37ad6b5628fe9d73c802953c945a127888435b7c` | `17b830a1559334d2c8efe0d51c3e191b41d1182cd2abc08cb7ea11ed4fec3fa5` | 10 | `PASS` | `CODEX_REPORTED` | 22 proposed decisions; activation disabled |
+| `E239` | `6d69549b759bb1028e8108fc30f3ce6bcc8b2d760f09bb12f899c8b705023cf5` | `88ef6709c6acd81120cd9f27a3852a179189fdbf744a2c09d2373794f5dae5c8` | 20 | `PASS` | `CODEX_REPORTED_NOT_GPT_ACCEPTED` | later handoff; 18/18 plus 13/13 synthetic only |
+| `G240` | `edc3cfcad4fd828e8fce319cf372a7efd4721a52e5cb7bce18e20f3ad5f87d4f` | `602ebe1906fc2f95860ca710cc343c5fa0ed9c02691dce6901d7dfbe6aaec5d6` | 11 | `PASS` | `CODEX_REPORTED_NOT_GPT_ACCEPTED` | later amendment candidate, not approved or activated |
+| `B228` | `UNKNOWN` | `UNKNOWN` | `UNKNOWN` | `BLOCKED_INPUT_CANONICAL_HANDOFF_ABSENT` | `USER_SUPPLIED_STATUS` | 10/10 and 2710/2710 offline trusted harness; no production FRED authority |
+| `B238` | `UNKNOWN` | `UNKNOWN` | `UNKNOWN` | `BLOCKED_INPUT_CANONICAL_HANDOFF_ABSENT` | `USER_SUPPLIED_STATUS` | Stage 1 complete; Stage 2 awaiting evidence |
+| `H226` / `H235` | `UNKNOWN` | `UNKNOWN` | `UNKNOWN` | `BLOCKED_OR_INCOMPLETE` | `NOT_VERIFIED` | T46 remains `RECOVERY_BLOCKED` |
+
+F241 stream-read each available archive and verified payload bytes/SHA-256, size, CRC, exact member set, traversal safety, exact duplicate names, and casefold aliases. Archive integrity and Codex self-reports are not GPT acceptance or formal approval.

@@ -52,6 +52,16 @@ STATUS_STAGE: `N/A`
 
 ## Decisions still required
 
+| Decision date | Decision | Authority/source | Effect | Explicit non-effect |
+|---|---|---|---|---|
+| `2026-10-28` | F215 publication independently re-read without drift | F233 live GitHub readback | Confirms PR #9 head/base/Draft and all six blobs match F215 receipt | Does not renew F215 write authority |
+| `2026-10-28` | A221 Stage 2 remains synthetic-only | Exact local archive/manifest integrity plus Codex report | Records 44/44 archived synthetic checks | No production trust root, real observation, PIT, or signal authority |
+| `2026-10-28` | B223 remains blocked | Extracted B223 decision/report; canonical outer handoff ZIP absent | Preserves `BLOCKED_INDEPENDENT_PREFLIGHT_NOT_VERIFIED` and ten-sequence `NOT_RUN` | Does not promote 252/252 functional assertions to independent release evidence |
+| `2026-10-28` | E225 erratum corrects only source identity transcription | Exact E225 archive plus read-only erratum | Protected-entry SHA is `01462ebbbda2c9b593440a6fd42e6547081e9314ff0cee47355d25ad91c00f9f` | No source mutation or formal-policy/PIT approval |
+| `2026-10-28` | E227 remains a trusted-harness candidate | Exact local archive/manifest integrity plus Codex report | Records controlled code-32 I/O witness and archived 271/271 | No production trust root, arbitrary in-process authenticity, or release approval |
+| `2026-10-28` | T46 scheduler state is disabled; H226 blocked input | H218 extracted receipt; H226 canonical handoff absent | Corrects the old enabled-as-last-verified status to `Disabled`/`false` | No recovery, ledger, restore, snapshot, or re-enable authority |
+| `2026-10-28` | F233 may prepare one local status-only candidate | Current task authority | Allows minimal diff and exact authority request | No commit, push, PR update, Ready, merge, or CI/security mutation |
+
 - Independent verification of the F215 commit, push, and post-push PR #9 receipt.
 - Exact B202, A211, C212, D213, E209, E214, G216, and H217 handoffs and independent acceptance.
 - Formal FRED and D182 bounded network authority.
@@ -59,3 +69,17 @@ STATUS_STAGE: `N/A`
 - User decision and separate authority for the exact H185 scheduler pause.
 - T46 recovery execution authority.
 - Formal forward-evaluation protocol.
+
+## F241 decisions and preserved non-decisions
+
+| Decision date | Record | Evidence class | Effect | Explicit non-effect |
+|---|---|---|---|---|
+| `2026-10-28` | F241 one-time publication authority granted | Explicit user authority | Permits one six-file commit and one push to existing Draft PR #9 | No Ready, merge, main, force push, CI/security, code, or formal-data authority |
+| `2026-10-28` | B228 offline trusted-harness release status recorded | `USER_SUPPLIED_STATUS`; canonical archive absent | Records 10/10 sequences and 2710/2710 assertions | Not GPT acceptance; no production FRED/network authority |
+| `2026-10-28` | D236/A237 research cohort correction recorded | Exact archives; `CODEX_REPORTED` | Corrects research membership and identifies three affected hypotheses | No formal registry/universe change or real outcome effect claim |
+| `2026-10-28` | E232 Resumed remains data-insufficient synthetic evidence | Exact archive; `CODEX_REPORTED` | Records 18/18, two synthetic observations, zero accepted numeric features, six diagnostics | No formal feature, PIT, source policy, or signal |
+| `2026-10-28` | B238 Stage 2 remains pending | `USER_SUPPLIED_STATUS`; canonical archive absent | Preserves Stage 1 complete status | No Stage 2 acceptance |
+| `2026-10-28` | E239 later handoff recorded without promotion | Exact archive; `CODEX_REPORTED_NOT_GPT_ACCEPTED` | Records 18/18 replay plus 13/13 negatives and zero qualified numeric features | No GPT/formal acceptance |
+| `2026-10-28` | G234 decisions remain proposed | Exact archive; `CODEX_REPORTED` | Preserves 22 proposal decisions and disabled activation | No approval, evaluator execution, or predictive value claim |
+| `2026-10-28` | G240 later amendment remains proposed | Exact archive; `CODEX_REPORTED_NOT_GPT_ACCEPTED` | Adds a separate cohort/denominator candidate | Does not modify or activate G234 |
+| `2026-10-28` | H218 disabled scheduler and T46 block preserved | Hash-bound receipt plus user status | Scheduler remains disabled | No recovery, re-enable, ledger, snapshot, or formal write authority |

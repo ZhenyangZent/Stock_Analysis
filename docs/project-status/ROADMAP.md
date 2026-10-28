@@ -7,7 +7,7 @@ STATUS_STAGE: `N/A`
 
 ## Next milestone
 
-Publish the accepted F205 baseline plus the bounded A201/B200/C203/D204/E208/G206/H207 currentness update through the one authorized normal commit and push to existing Draft PR #9. Preserve Draft state and leave `main` unchanged. After publication, independently verify the exact remote receipt before any later governance decision.
+Review the F233 material-drift candidate against the live F215-published baseline. Any publication requires a new exact one-time authorization; PR #9 must remain Draft and `main` must remain unchanged.
 
 ## Ordered roadmap
 
@@ -34,3 +34,24 @@ Publish the accepted F205 baseline plus the bounded A201/B200/C203/D204/E208/G20
 ## Pending governance proposals
 
 README entry point, GitHub Issue organization, PR dependency graph, required CI, release checklist, branch protection, and rulesets remain proposals only. F215 does not deploy or change them.
+
+## F233 next controlled milestone
+
+1. Independently review this material-drift patch covering A221 Stage 2, B223 blocked status, E225 erratum, E227 candidate, H218 disabled scheduler readback, and H226 missing canonical handoff.
+2. If publication is desired, issue a fresh exact authority limited to one normal commit and one normal push to existing Draft PR #9, with no Ready or merge authority and only the changed `docs/project-status/*.md` paths in this patch.
+3. Re-read PR #9 head/base/Draft and all changed blobs immediately before any authorized write; stop on any identity drift.
+4. Obtain the missing canonical B223 and H226 handoff ZIP/manifest identities before promoting their integrity beyond `BLOCKED_INPUT`/extracted evidence.
+5. At F233, B228 had not run and required separate authority. Its later user-supplied offline status is recorded in the F241 section; do not infer production FRED authority from either E227 or B228.
+6. Keep the exact weekly scheduler disabled and T46 `RECOVERY_BLOCKED` until separate re-enable or bounded recovery authority is granted.
+
+No CI, branch protection, ruleset, source policy, formal data, PIT, scheduler, or recovery mutation is part of F233.
+
+## F241 ordered next gates
+
+1. Publish this six-document status-only update through the single authorized normal commit and push; keep PR #9 Open, Draft, and unmerged, and keep `main` unchanged.
+2. Obtain canonical B228 and B238 handoff archives and independent acceptance records. B228's offline trusted-harness pass does not grant production FRED/network authority.
+3. Independently review D236/A237 cohort corrections before any downstream research eligibility decision; never mutate the formal issuer registry or universe through status documentation.
+4. Keep E232/E239 at synthetic `DATA_INSUFFICIENT` with zero qualified numeric features until production trust, real historical evidence, source policy, and PIT are separately approved.
+5. Decide the 22 G234 proposals and the separate G240 amendment only through explicit governance authority. Neither package is activated or predictive-value evidence.
+6. Keep the weekly scheduler disabled and T46 `RECOVERY_BLOCKED`; H226/H235 must provide complete canonical evidence before recovery authority is considered.
+7. Preserve real approved market observations at zero and prohibit formal signals until all source, PIT, outcome-maturity, evaluation, and activation gates are independently satisfied.

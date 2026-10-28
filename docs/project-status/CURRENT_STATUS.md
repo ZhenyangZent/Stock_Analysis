@@ -1,8 +1,8 @@
 # Stock_Analysis current status
 
 DATA_AS_OF: `2026-10-28`
-LAST_VERIFIED_AT: `2026-10-28T01:03:27+08:00`
-STATUS_TASK_ID: `STOCK-GITHUB-PR9-ONE-TIME-STATUS-PUBLICATION-215`
+LAST_VERIFIED_AT: `2026-10-28T14:54:51+08:00`
+STATUS_TASK_ID: `STOCK-PR9-STATUS-PUBLICATION-241`
 STATUS_STAGE: `N/A`
 LAST_VERIFIED_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
 LAST_VERIFIED_PR9_HEAD_SHA: `56a18e260b5b8a20ce482f30d48ccdc8172d7cc7`
@@ -13,7 +13,7 @@ PR9_HEAD_BEFORE_F215_SHA: `56a18e260b5b8a20ce482f30d48ccdc8172d7cc7`
 
 F215 re-read GitHub successfully before publication. Draft PR #9 is `OPEN`, `draft=true`, unmerged, based on `main` at `6e2740d9877364619ca046cb54829350fd0db5ef`, headed before F215 by `56a18e260b5b8a20ce482f30d48ccdc8172d7cc7`, and changes exactly six files under `docs/project-status/`. The PR reported no CI checks; traditional `main` branch protection returned 404 and repository rulesets were empty. F215 does not modify those governance settings.
 
-F205's accepted offline patch remains the baseline. F215 adds exact local ZIP/manifest identity for A201, B200, C203, D204, E208, G206, and H207 without promoting those Codex-reported artifacts to GPT-verified or formal status. B200 is `FAIL_RELEASE_GATE`; B202 remains awaiting evidence. F215 has one-time authority to publish only these six status documents to the existing Draft PR #9 branch; it has no Ready, merge, main, CI, security, data, source-policy, PIT, or signal authority.
+F205's accepted offline patch remains the baseline. F215 added exact local ZIP/manifest identity for A201, B200, C203, D204, E208, G206, and H207 without promoting those Codex-reported artifacts to GPT-verified or formal status. B200 is `FAIL_RELEASE_GATE`; B202 remains awaiting evidence. F215's one-time six-document publication authority was consumed by commit `c68f24acb6d3a1b8ed8f2aa6b2665a9fe8fe0f2a`; it grants no future write, Ready, merge, main, CI, security, data, source-policy, PIT, or signal authority.
 
 ## Evidence classification
 
@@ -33,7 +33,7 @@ F205's accepted offline patch remains the baseline. F215 adds exact local ZIP/ma
 | C | `C203` | archived tests `68/68 PASS`; `GUI_BROWSER_QA_NOT_VERIFIED`; C212 `ASSIGNED_AWAITING_EVIDENCE` | `CODEX_REPORTED`; `ARCHIVED_WINDOWS_EVIDENCE` | `false` |
 | D | `D204` | offline contract tests `86/86 PASS`; `REAL_PROVIDER_BYTES=0`; D213 `ASSIGNED_AWAITING_EVIDENCE` | `CODEX_REPORTED`; `ARCHIVED_WINDOWS_EVIDENCE` | `FORMAL_APPROVAL=false` |
 | E | `E199` / `E208` | E199 development self-test `228/228`; B200 failure retained. E197 offline alias hardening accepted but production trust root absent. E208 synthetic staging `31/31`; OS outbound isolation not verified. E209/E214 awaiting evidence | E197 `GPT_VERIFIED`; E199/E208 `CODEX_REPORTED` | launch/network/formal trust `false` |
-| F | `F215` | One-time six-document Draft PR #9 currentness publication; F205 remains `OFFLINE_STATUS_PATCH_ACCEPTED` and historically `NOT_PUBLISHED` | F205 `GPT_VERIFIED`; F215 publication receipt is the current dependency | Ready/merge/main authority `false` |
+| F | `F233` | Live readback passed; F215 publication preserved; material docs-only patch ready but not published | F215 receipt `GPT_VERIFIED`; F233 local validation only | Git/Ready/merge/main authority `false` |
 | G | `G206` | offline evaluation tests `45/45 PASS`; `MATURE_REAL_OUTCOME_COUNT=0`; predictive value `NOT_ESTABLISHED`; G216 awaiting evidence | `CODEX_REPORTED`; `ARCHIVED_WINDOWS_EVIDENCE` | formal evaluation `false` |
 | H | `H207` | `T46_RECOVERY_BLOCKED`; historical 708-row ledger; scheduler enabled as last verified; H217 awaiting evidence | `CODEX_REPORTED`; preserved read-only observation | recovery/scheduler mutation `false` |
 
@@ -60,4 +60,32 @@ The six live Git blob SHA-1 values are recorded in `EVIDENCE_INDEX.md`. They are
 
 ## Publication boundary
 
-F215 is authorized for exactly one normal commit and one normal push to the existing PR #9 head branch. The containing commit updates status documentation only. PR #9 must remain Draft and unmerged; `main`, CI, security settings, formal data, source policy, ledgers, snapshots, PIT, live capture, and investment signals remain untouched.
+F215's one-time commit/push authority has been consumed. F233 re-read PR #9 as `OPEN`, `draft=true`, unmerged, head `c68f24acb6d3a1b8ed8f2aa6b2665a9fe8fe0f2a`, and base/main `6e2740d9877364619ca046cb54829350fd0db5ef`. The six live Git blob SHA-1 values match the F215 post-publication receipt exactly. No checks are reported; traditional `main` branch protection is absent and repository rulesets are empty.
+
+## Material currentness after F215
+
+- `A221 Stage 2` is a `CODEX_REPORTED` synthetic candidate: exact archive integrity passed and fresh archived results report Stage 1 17/17 plus V3 27/27, combined 44/44. Production trust roots, real observations, formal PIT, and formal signal authority remain absent.
+- `B223` remains `BLOCKED_INDEPENDENT_PREFLIGHT_NOT_VERIFIED`; 252 assertions were reported fresh, but independent OS-I/O provenance, persisted process identity/exit evidence, and the ten-sequence gate were not established. The canonical B223 outer handoff ZIP was not present for F233, so this remains bounded extracted evidence rather than a newly verified archive.
+- `E225` is an offline policy-gate candidate with 70/70 archived tests. Its erratum corrects the protected-entry SHA-256 to `01462ebbbda2c9b593440a6fd42e6547081e9314ff0cee47355d25ad91c00f9f`; production trust, durable replay protection, real provider compatibility, PIT, and formal source policy remain absent.
+- `E227` is preserved as a `TRUSTED_TEST_HARNESS_ONLY` candidate: exact archive integrity passed; archived clean-extract evidence reports 271/271 and observed native Windows code 32 in the controlled harness. Arbitrary equal-privilege in-process authenticity is not covered and no production trust root exists. B228's later bounded status is recorded below.
+- `H218` is the last hash-bound scheduler state available to F233: the exact weekly scheduler was disabled once and read back as `State=Disabled`, `Enabled=false`. `H226` has no canonical handoff ZIP/manifest in the available workspace and remains `BLOCKED_INPUT`; T46 remains `RECOVERY_BLOCKED`.
+- No new item above is promoted to `GPT_VERIFIED` or `FORMAL_APPROVED` by F233.
+
+## F233 publication boundary
+
+F233 had read-only GitHub authority and isolated status-document candidate authority only. Its candidate remained unpublished. F241 supplies the later exact single-push authorization described below.
+
+## F241 latest bounded status
+
+- `B228` is recorded from the user-authorized F241 status packet as `PASS_OFFLINE_TRUSTED_HARNESS_RELEASE`: 10/10 Windows sequences and 2710/2710 sequence assertions. No canonical B228 handoff archive was present for F241 integrity verification, so this is `USER_SUPPLIED_STATUS`, not `GPT_ACCEPTED` or `FORMAL_APPROVED`. Production FRED authority remains false.
+- `D236` exact archive integrity passed. It corrects Pilot10/Phase2 membership in research metadata only; the formal issuer registry, formal universe, source policy, and PIT remain unchanged.
+- `A237` exact archive integrity passed. Three preregistered monthly-revenue hypotheses (`MRH01`, `MRH02`, `MRH03`) are affected by earlier cohort errors; no real observation, mature outcome, evaluator run, or realized performance effect is established.
+- `E232 Resumed` exact archive integrity passed. Its archived run reports 18/18 synthetic integration tests, two synthetic observations, zero accepted numeric features, final protected consumer `DESCRIPTION_ONLY`, and six `DATA_INSUFFICIENT` diagnostics. No formal feature or PIT was issued.
+- `B238` is `STAGE1_COMPLETED_STAGE2_AWAITING_EVIDENCE` per the user-supplied F241 status. No canonical B238 handoff archive was present; no Stage 2 result is accepted.
+- `E239` arrived after the F241 packet's assigned state. Its exact archive integrity passed; the Codex report records fresh E232 replay 18/18 and new status/cohort negatives 13/13, with zero qualified numeric features. It remains `CODEX_REPORTED_NOT_GPT_ACCEPTED` and grants no formal authority.
+- `G234` exact archive integrity passed. All 22 decisions remain `PROPOSED_NOT_APPROVED`, formal activation is disabled, real observations and mature outcomes are zero, and predictive value is not established.
+- `G240` also arrived after the packet's assigned state. Its exact archive integrity passed and it remains a separate `PROPOSED_NOT_APPROVED` cohort/denominator amendment candidate; it does not activate G234 or establish predictive value.
+- `H218` remains the last hash-bound scheduler state: exact weekly scheduler `Disabled`, `Enabled=false`. `H226` and `H235` remain blocked or incomplete; T46 remains `RECOVERY_BLOCKED`.
+- `F233` is preserved as `VERIFIED_DOCS_ONLY_PATCH_CANDIDATE_NOT_PUBLISHED`. F241 is authorized for one six-document commit and one push only; this authority does not include Ready, merge, main, CI/security, code, or formal-data actions.
+
+Across all current workstreams, real approved market observation count is 0, formal PIT is not issued, formal source policy is not approved, and no formal investment signal is available.
