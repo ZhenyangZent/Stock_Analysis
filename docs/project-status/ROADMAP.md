@@ -1,9 +1,9 @@
 # Project roadmap
 
 DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
-STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
-STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
+LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
+STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
+STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
 
 ## Next milestone
 
@@ -73,3 +73,14 @@ No CI, branch protection, ruleset, source policy, formal data, PIT, scheduler, o
 3. Keep the Patch183 `active <= new_ids` release assertion unchanged; validate fixture presence before recomputation rather than skipping or weakening the gate.
 4. Obtain B291 independent acceptance of F287 before releasing or deploying the collector. Preserve B279's historical 24/27 failure regardless of later remediation.
 5. Continue docs-only publication only when a material status change passes fresh remote identity, full regression, exact-path, consistency, and security gates.
+
+## F312 ordered next gates
+
+1. Preserve B299 as `INDEPENDENT_FAIL` until all four failures are remediated and independently rerun: two provider-type exceptions, output-parent reparse alias acceptance, and incomplete cleanup after receipt-publication failure.
+2. Treat E302 as an isolated repair candidate only. Its strict-type repair does not close B299's reparse-path or cleanup failures and does not authorize provider admission, parser admission, PIT, or formal data.
+3. Obtain explicit shared-tool replacement authority before deploying F303 candidate SHA-256 `f4ad401059e740d8d293730ed53b0de9262b1d5b09ab7912585c06cbffd86ba4`; preserve the deployed tool and require post-replacement smoke tests.
+4. Run C300 real Windows browser/file-picker/pixel/accessibility QA before any workbench deployment.
+5. Admit no D301/E302 official source until exact real CSV bytes, encoding/dialect/header semantics, publication/revision evidence, and a hash-bound parser have independent approval.
+6. Keep G304 synthetic until admitted mature real observations exist under an approved prospective protocol; predictive value remains not established.
+7. Keep H305 documentation-only and T46 `RECOVERY_BLOCKED` until explicit data-acquisition, Reader, backup, and bounded recovery authorities are separately granted.
+8. Use F306 only as the 8/8 central location/integrity receipt. Never infer functional release or formal approval from ZIP integrity.

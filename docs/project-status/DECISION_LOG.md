@@ -1,9 +1,9 @@
 # Decision log
 
 DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
-STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
-STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
+LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
+STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
+STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
 
 | Decision date | Decision | Authority/source | Effect | Explicit non-effect |
 |---|---|---|---|---|
@@ -99,3 +99,13 @@ STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
 | `2026-10-29` | F286 regression blockers classified as missing external prerequisites | F295 fresh clean-worktree execution | Preserves the original failures while distinguishing absent Git-excluded official raw inputs from product-code drift | No fabricated fixture, skipped test, weakened assertion, or formal-source approval |
 | `2026-10-29` | Trusted hash-identified raw-store mount restores repository regression | F295 fresh targeted and full-suite execution | Both targeted tests and 669/669 full regression passed | Does not admit the raw documents to Git or grant production/formal authority |
 | `2026-10-29` | F287 remains pending B291 | F287 archive integrity plus current acceptance boundary | Keeps patched collector candidate visible | Does not override the preserved B279 independent failure or declare release |
+
+## F312 decisions and preserved boundaries
+
+| Decision date | Record | Evidence class | Effect | Explicit non-effect |
+|---|---|---|---|---|
+| `2026-10-29` | F306 central READY identity receipt accepted for status tracking | Exact user-pinned F306 ZIP/manifest plus archive readback | Records A298-H305 as 8/8 located and byte-verified | Does not approve any function, release, source, PIT, signal, or deployment |
+| `2026-10-29` | B299 four-failure result remains controlling | `INDEPENDENT_FAIL` exact archive | Preserves two type exceptions, reparse-path acceptance, and incomplete cleanup | E302 and F303 candidate passes do not erase the independent failure |
+| `2026-10-29` | E302 records bounded strict-type remediation | `CODEX_REPORTED` exact archive | Records both provider-type cases as repaired in the isolated candidate | Reparse-path and cleanup gaps remain; no importer release or formal-data authority |
+| `2026-10-29` | F303 is eligible only for a future controlled replacement decision | `CODEX_REPORTED` exact archive with B291 evidence reconciliation | Records runner compatibility, CRC rejection, concurrency, and index results | Shared `TOOLS` replacement remains unauthorized and not deployed |
+| `2026-10-29` | A298, C300, D301, G304, and H305 remain bounded candidates/documentation | Exact archives; `CODEX_REPORTED` | Makes current engineering/research state visible | No item becomes `GPT_ACCEPTED_OFFLINE` or `FORMAL_APPROVED` without explicit acceptance |

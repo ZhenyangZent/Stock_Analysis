@@ -1,11 +1,11 @@
 # Stock_Analysis current status
 
 DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
-STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
-STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
+LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
+STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
+STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
 LAST_VERIFIED_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
-LAST_VERIFIED_PR9_HEAD_SHA: `79e5eae814eab37138eefe0063c7629625cbaacf`
+LAST_VERIFIED_PR9_HEAD_SHA: `fe06d37fd398eec1ba60c2377e7617f2faed8ed5`
 CURRENT_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
 PR9_HEAD_BEFORE_F215_SHA: `56a18e260b5b8a20ce482f30d48ccdc8172d7cc7`
 
@@ -118,3 +118,22 @@ Repository policy intentionally excludes `data_spine/raw`, `*.html`, and `*.xhtm
 After mounting the existing trusted raw store read-only in the isolated worktree, both targeted tests passed. Patch183 then observed 142 filings, 2,722 active IDs, 2,840 recomputed IDs, and 0 missing active IDs. With an ASCII-only temporary directory, the complete repository regression suite passed 669/669. This is a prerequisite-restoration result, not formal data, source-policy, or production authority.
 
 The B279 independent collector failure remains historical and controlling for the F276 release gate. F287 remains a patched candidate awaiting B291 independent acceptance.
+
+## F312 evidence currentness
+
+F312 re-read Draft PR #9 as `OPEN`, `draft=true`, unmerged, with head `fe06d37fd398eec1ba60c2377e7617f2faed8ed5` and base/main `6e2740d9877364619ca046cb54829350fd0db5ef`. The PR changes seven files under `docs/project-status/` and reports no CI checks. F312 updates only the six established status documents; `PUBLISHING_POLICY.md` is unchanged.
+
+F306 independently confirmed the exact A298-H305 ZIPs at the single authorized central READY location: 8/8 existed, 8/8 pinned SHA-256 identities matched, all CRC and declared payload checks passed, and the central index reported no issue. This is a packaging/location result only; it does not convert candidate evidence into a release or formal approval.
+
+| Lane | Latest bounded result | Evidence class | Preserved boundary |
+|---|---|---|---|
+| A | `A298`: 21-company research ontology, 11 metric concepts, 30 typed Pilot10 metrics, Phase2 typed metrics `0` | `CODEX_REPORTED` | No formal-universe, PIT, certification, or signal authority |
+| B | `B299`: original 38/38 passed; independent 39/43 passed and four failed | `INDEPENDENT_FAIL` | Two uncontrolled provider-type exceptions, output-parent symlink acceptance, and incomplete cleanup remain release blockers |
+| C | `C300`: 89/89 fresh offline preview checks passed | `CODEX_REPORTED` | Browser/file-picker/pixel QA remains `NOT_VERIFIED`; no shared or formal data write |
+| D | `D301`: conservative official-CSV raw contract; E294 regression 38/38, CSV import rejected before output | `CODEX_REPORTED` | Contract-ready but implementation-blocked; no provider bytes, parser admission, PIT, or source approval |
+| E | `E302`: 38/38 E294 regression plus 32/32 new checks; both B299 provider-type `TypeError` cases repaired in the isolated candidate | `CODEX_REPORTED` | Output-parent reparse handling and receipt-failure cleanup remain unverified gaps; max state is quarantine pending review |
+| F | `F303`: B291 direct 19/19 preserved; packaged runners 9/9 and 14/14 passed with CRC/concurrency/index gates | `CODEX_REPORTED` | Candidate tool `f4ad401059e740d8d293730ed53b0de9262b1d5b09ab7912585c06cbffd86ba4` is not deployed; replacement authority absent |
+| G | `G304`: 28/28 synthetic sample-completeness checks passed | `CODEX_REPORTED` | Real observations `0`; formal activation false; predictive value not established |
+| H | `H305`: manual official-data operations for two documented dataset routes | `CODEX_REPORTED` | No provider GET or real bytes; Provider Admission/PIT/Reader/recovery absent; T46 remains `RECOVERY_BLOCKED` |
+
+No A298-H305 item is `FORMAL_APPROVED`. B299's four independent failures remain explicit and are not overwritten by E302's local repair or F303's runner results.

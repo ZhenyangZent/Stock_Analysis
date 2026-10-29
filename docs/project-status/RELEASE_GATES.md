@@ -1,9 +1,9 @@
 # Release and publication gates
 
 DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
-STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
-STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
+LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
+STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
+STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
 
 ## PR #9 remote identity gate
 
@@ -202,3 +202,20 @@ The standing publication authority removes the need to request another docs-only
 | Formal source/data/PIT authority | `false` | Regression recovery grants no formal authority |
 
 The minimum durable remediation is a canonical, hash-bound external fixture-bundle contract plus fail-fast prerequisite diagnostics. The `active <= new_ids` assertion must remain unchanged; missing raw inputs must not be hidden by skipping or weakening the test.
+
+## F312 candidate and publication gates
+
+| Gate | Status | Evidence / boundary |
+|---|---|---|
+| F306 central location/integrity | `PASS — 8/8` | Exact pinned SHA-256, CRC, manifest payload, and central index checks; packaging only |
+| B299 independent importer QA | `FAIL — 39/43` | Four failures preserved: two type exceptions, output reparse alias, incomplete cleanup |
+| E302 strict-type candidate | `PASS — 70/70 CODEX_REPORTED` | Repairs the two type exceptions only; reparse-path and cleanup gaps remain open |
+| F303 runner compatibility | `PASS_IN_TESTED_SCOPE_NOT_DEPLOYED` | B291 direct 19/19; packaged 9/9 and 14/14; CRC/concurrency/index pass |
+| F303 shared-tool replacement | `BLOCKED_AUTHORITY` | Candidate SHA known; explicit shared `TOOLS` replacement authority absent |
+| C300 GUI QA | `NOT_VERIFIED` | Offline 89/89 does not cover browser/file-picker/pixel/accessibility interaction |
+| D301/E302 official-source admission | `BLOCKED` | Real provider bytes 0; encoding/dialect/publication/revision/parser authority absent |
+| G304 prospective value | `NOT_VERIFIED` | Synthetic 28/28; real observations 0; predictive value not established |
+| H305/T46 recovery | `BLOCKED` | Documentation only; no Provider Admission, Reader migration, backup, or recovery authority |
+| Formal approval across A298-H305 | `false` | No exact formal-authority record supplied |
+
+B299 remains a failed release gate even though the exact ZIP and F306 location checks pass. ZIP integrity, local candidate tests, and documentation publication are distinct gates.

@@ -1,9 +1,9 @@
 # Evidence index
 
 DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
-STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
-STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
+LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
+STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
+STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
 
 ## Accepted and status-bearing evidence
 
@@ -141,3 +141,19 @@ F286 independently matched all eight outer ZIP SHA-256 values, raw manifest SHA-
 | `STOCK-CENTRAL-RECEIVED-ARCHIVE-289` | `25dae9b7465cbee1c450902d3129d287aaa6e4b404893b0e49ee13a38393451a` | `ee257d2413b8fc4f6e6814132ef0bb7f60d1e6a67e8b4f54f1383fce13c1d627` | `ARCHIVED_EVIDENCE` | Central archive operation verified; no GitHub or formal-data authority |
 
 F295 fresh execution reproduced both baseline failures without raw fixtures, then passed both targeted tests after mounting the existing hash-identified official raw store. The full regression suite passed 669/669 with that prerequisite and an ASCII-only temporary directory. These results establish repository regression readiness for the docs batch only; they do not constitute official-source certification, formal approval, or production activation.
+
+## F312 evidence identities
+
+| TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | PAYLOAD_COUNT | SOURCE_LEVEL | BOUNDED_RESULT |
+|---|---|---|---:|---|---|
+| `AI-21-COMPANY-FINANCIAL-EVIDENCE-ONTOLOGY-298` | `45058c0f7a240d3fdcb34bab16e068a2e053eab40f9fe58f26fe7881fde994cb` | `ae44c04753e7b1afca8481e210bd3a96d74068447f0b8e264b9410c0009782c2` | 19 | `CODEX_REPORTED` | 21-company ontology candidate; no formal certification |
+| `TW-OFFLINE-RAW-IMPORT-INDEPENDENT-QA-299` | `9bd655a5f35396196d549aa3df8a139200899b813f7c15428e46ea73ff2bed9e` | `57449481ef32e9b9a255f637e371ba93fd772c85286ca31f37c88f591bcb67ed` | 15 | `INDEPENDENT_FAIL` | 39/43 independent; four failures preserved |
+| `STOCK-WORKBENCH-MANUAL-RAW-EVIDENCE-PREVIEW-300` | `9ce7cc9c587fa1bb0f11817cc54caf7452de35b32a24cba08a0933f7a15932e5` | `5886ed841191a55db4d367aaada257743fb453ffef5a4b941a136d6ac1d96e80` | 42 | `CODEX_REPORTED` | 89/89 offline; GUI not verified |
+| `TW-OFFICIAL-CSV-RAW-ADMISSION-CONTRACT-301` | `71140793f26b704d83c600032213759ef244d03c4c22df68b218f1f713fffc3d` | `c392f7b51d3d608ce298ebfb14695feca04bec44909b5f0fe48e4e603d4ffdad` | 8 | `CODEX_REPORTED` | Contract candidate; CSV implementation blocked |
+| `TW-OFFLINE-CSV-QUARANTINE-IMPORTER-302` | `566bbb34778a143a961afd0d4f38960f0ebe93bfefe3f05dfac40241c4cb05ca` | `9d11060546af867ad13f3805069885c81dbd2e58718af32d2d55b3041da71969` | 21 | `CODEX_REPORTED` | 70/70 isolated candidate; B299 path/cleanup gaps remain |
+| `STOCK-COLLECTOR-RUNNER-COMPATIBILITY-303` | `72b8d6528262d5d221db3390d94766952f0936c01cd2adf5c5b473aceeb9e20f` | `f8ddf070a50c9829b9dfa812c7f84f65d0de24d7d7d0cac0edef2ee77009211e` | 26 | `CODEX_REPORTED` | Candidate passes tested gates; not deployed |
+| `STOCK-PROSPECTIVE-SAMPLE-COMPLETENESS-304` | `11a37659355225413f65cf1c58183315b5c391ad1a0e6f2f29301bc522fd916f` | `43f2178b4469d4457cfc7f871d78e55b2fb11aee463797a8d2a6a33816f12f2a` | 18 | `CODEX_REPORTED` | 28/28 synthetic; no real outcomes or predictive-value claim |
+| `STOCK-MANUAL-OFFICIAL-DATA-OPERATIONS-305` | `d48e43917dcf2930b71c34ecd8af9c72abd54ec5ef729ce53dd99c9ab94f1075` | `b9aeab3bcb83058d5698b902e95c31e5596cb5ab329b3e30963c20ffb032e355` | 7 | `CODEX_REPORTED` | Documentation only; no provider bytes or admission |
+| `STOCK-CENTRAL-READY-LOCATION-FIX-306` | `69f2c921f47833dcc8d3b9a64b541c27e2220afd670a113b88c8ed807b3a99fb` | `37e4022f9d95fe78b7256f4b71bdc618d49d4ee223aa4d0d7fcfa944b8690f55` | 7 | `CODEX_REPORTED_LOCATION_AND_INTEGRITY` | A298-H305 central READY 8/8 verification; not a release gate |
+
+All nine manifest identities above were read from the exact archives. Archive integrity and central location remain separate from functional acceptance, deployment, and `FORMAL_APPROVED` authority.

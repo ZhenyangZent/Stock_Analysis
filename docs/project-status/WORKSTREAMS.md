@@ -1,9 +1,9 @@
 # Workstreams A-H
 
 DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
-STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
-STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
+LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
+STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
+STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
 
 `HANDOFF_ZIP_SHA256` identifies an exact handoff archive. `MANIFEST_SHA256` identifies the manifest file inside that handoff. `GPT_ACCEPTANCE_SCOPE` is explicit; `NOT_PROVIDED` must not be read as independent acceptance.
 
@@ -82,3 +82,17 @@ F170 remains `NOT_PUBLISHED`. New candidates never overwrite historical failures
 |---|---|---|---|---|---|---|
 | F | `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295` | F286 `ddd2377a80458639dcbe3f0ebb49e1691db3a25aad7d8ac5180257652e5b2aaf`; F287 `144c69794cda149762f7d420db50199fe2c979da959e7cfb72a74dacc0f38e20`; F289 `25dae9b7465cbee1c450902d3129d287aaa6e4b404893b0e49ee13a38393451a` | `FRESH_EXECUTED` regression triage | Original failures preserved; targeted 2/2 and full 669/669 passed with trusted external raw prerequisite | code/source/data/PIT `false`; docs-only standing authority `true` | Canonical fixture-bundle contract under separate code authority |
 | F | `STOCK-ZIP-ONLY-COLLECTOR-INTEGRITY-FIX-287` | ZIP `144c69794cda149762f7d420db50199fe2c979da959e7cfb72a74dacc0f38e20`; manifest `991e460bb5a7aaea8cac99b3365b3fd24dd86529bfda5705d480fb75b4648bee` | `CODEX_REPORTED` | Patched candidate, not deployed | collector release `false` | B291 independent acceptance; B279 failure remains historical |
+
+## F312 A298-H305 workstream update
+
+| Lane | TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | EVIDENCE_CLASS | STATUS | FORMAL_AUTHORITY | NEXT_DEPENDENCY |
+|---|---|---|---|---|---|---|---|
+| A | `AI-21-COMPANY-FINANCIAL-EVIDENCE-ONTOLOGY-298` | `45058c0f7a240d3fdcb34bab16e068a2e053eab40f9fe58f26fe7881fde994cb` | `ae44c04753e7b1afca8481e210bd3a96d74068447f0b8e264b9410c0009782c2` | `CODEX_REPORTED` | 21 companies; 11 metric concepts; 30 Pilot10 typed metrics; Phase2 typed metrics `0` | universe/PIT/signal `false` | Populate Phase2 only from independently admitted source evidence |
+| B | `TW-OFFLINE-RAW-IMPORT-INDEPENDENT-QA-299` | `9bd655a5f35396196d549aa3df8a139200899b813f7c15428e46ea73ff2bed9e` | `57449481ef32e9b9a255f637e371ba93fd772c85286ca31f37c88f591bcb67ed` | `INDEPENDENT_FAIL` | Original 38/38; independent 39/43; four failures preserved | importer release/formal data `false` | Independent rerun after type, reparse-path, and cleanup remediation |
+| C | `STOCK-WORKBENCH-MANUAL-RAW-EVIDENCE-PREVIEW-300` | `9ce7cc9c587fa1bb0f11817cc54caf7452de35b32a24cba08a0933f7a15932e5` | `5886ed841191a55db4d367aaada257743fb453ffef5a4b941a136d6ac1d96e80` | `CODEX_REPORTED` | 89/89 offline preview checks; `GUI_NOT_VERIFIED` | shared/formal data `false` | Windows browser, file-picker, pixel, and accessibility QA |
+| D | `TW-OFFICIAL-CSV-RAW-ADMISSION-CONTRACT-301` | `71140793f26b704d83c600032213759ef244d03c4c22df68b218f1f713fffc3d` | `c392f7b51d3d608ce298ebfb14695feca04bec44909b5f0fe48e4e603d4ffdad` | `CODEX_REPORTED` | CSV raw contract defined; current JSON importer rejects CSV before output | source/PIT/parser `false` | Real-byte review and separately accepted byte-only quarantine path |
+| E | `TW-OFFLINE-CSV-QUARANTINE-IMPORTER-302` | `566bbb34778a143a961afd0d4f38960f0ebe93bfefe3f05dfac40241c4cb05ca` | `9d11060546af867ad13f3805069885c81dbd2e58718af32d2d55b3041da71969` | `CODEX_REPORTED` | 70/70 isolated checks; two provider-type exceptions repaired | source/PIT/parser/release `false` | Fix and independently verify reparse-path rejection and failed-publication cleanup |
+| F | `STOCK-COLLECTOR-RUNNER-COMPATIBILITY-303` | `72b8d6528262d5d221db3390d94766952f0936c01cd2adf5c5b473aceeb9e20f` | `f8ddf070a50c9829b9dfa812c7f84f65d0de24d7d7d0cac0edef2ee77009211e` | `CODEX_REPORTED` | B291 19/19; packaged runners 9/9 and 14/14; candidate not deployed | shared-tool replacement `false` | Explicit atomic replacement authority and post-deployment smoke test |
+| G | `STOCK-PROSPECTIVE-SAMPLE-COMPLETENESS-304` | `11a37659355225413f65cf1c58183315b5c391ad1a0e6f2f29301bc522fd916f` | `43f2178b4469d4457cfc7f871d78e55b2fb11aee463797a8d2a6a33816f12f2a` | `CODEX_REPORTED` | 28/28 synthetic checks; real observations `0`; predictive value not established | activation/evaluation `false` | Admitted mature real outcomes and approved prospective protocol |
+| H | `STOCK-MANUAL-OFFICIAL-DATA-OPERATIONS-305` | `d48e43917dcf2930b71c34ecd8af9c72abd54ec5ef729ce53dd99c9ab94f1075` | `b9aeab3bcb83058d5698b902e95c31e5596cb5ab329b3e30963c20ffb032e355` | `CODEX_REPORTED` | Two manual dataset routes documented; no provider GET; T46 `RECOVERY_BLOCKED` | admission/PIT/Reader/recovery `false` | User-acquired exact bytes, independent admission, and bounded recovery authority |
+| F | `STOCK-CENTRAL-READY-LOCATION-FIX-306` | `69f2c921f47833dcc8d3b9a64b541c27e2220afd670a113b88c8ed807b3a99fb` | `37e4022f9d95fe78b7256f4b71bdc618d49d4ee223aa4d0d7fcfa944b8690f55` | `CODEX_REPORTED_LOCATION_AND_INTEGRITY` | Central READY 8/8 location, SHA, CRC, payload, and index checks passed | release/formal authority `false` | Preserve exact archive identities; do not infer functional release |
