@@ -1,9 +1,9 @@
 # Evidence index
 
 DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T00:57:31+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND36-CURRENTNESS-320`
-STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
+LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
+STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
 
 ## Accepted and status-bearing evidence
 
@@ -167,8 +167,23 @@ All nine manifest identities above were read from the exact archives. Archive in
 | `TW-E302-INDEPENDENT-IMPORT-QA-308` | `c998db39fae0c0bb26d0af5375c99b746ee51b068759dc22f3a3588c3f6d4450` | `68c4ea045112391e8d50b1b4ec328f6d3ff9393ed063750c9c7ce64a55f4507b` | 27 | `INDEPENDENT_FAIL` | `15 PASS / 4 FAIL`; package self-containment failed |
 | `STOCK-WORKBENCH-RAW-INTAKE-HANDOFF-309` | `8c92bb939b857874742a224d97178a44b26a5bee4574b0a107535bc034a861a2` | `4fb355e11aa85c133225ec7a0d16ff544bc9c9344bc1633102b21864791411f9` | 50 | `CODEX_REPORTED` | `110/110` offline; GUI `NOT_VERIFIED` |
 | `TW-CSV-ADMISSION-INTEROPERABILITY-310` | `83b63765fae654290f1f5de0801a96952e187ecb96e860d924da8074b6d3221d` | `526fc26fe2a7ace61c1d3015870e874a6d5131bbab19903f2e4c8ae3ef65268f` | 8 | `CODEX_REPORTED` | `25/25` synthetic contract; real provider bytes `0` |
-| `TW-OFFLINE-IMPORT-OUTPUT-BOUNDARY-311` | `4eb8101e8527340c86e89b6584146b96a6914fce2dd141919e6dc1bb337a3e7a` | `973d8c7f7b5e36d44b0a62b15c51803c85606de07dfe06d13db30d63c451155e` | 23 | `CODEX_REPORTED` | `59 PASS / 1 NOT_VERIFIED`; junction `STATIC_DEPENDENCY_GAP`; release blocked |
+| `TW-OFFLINE-IMPORT-OUTPUT-BOUNDARY-311` | `4eb8101e8527340c86e89b6584146b96a6914fce2dd141919e6dc1bb337a3e7a` | `973d8c7f7b5e36d44b0a62b15c51803c85606de07dfe06d13db30d63c451155e` | 23 | `CODEX_REPORTED` | `59 PASS / 1 NOT_VERIFIED`; missing E302 baseline is `STATIC_PACKAGING_DEPENDENCY_GAP`; junction is separately `ACCESS_DENIED_NOT_VERIFIED`; release blocked |
 | `STOCK-PROSPECTIVE-COMPLETENESS-QA-313` | `b3ac328475b94b3120fc882c4df059f7c64085dc2fe8c92596fffa3bae3209d4` | `68d0523f8fca5484adb0c7a0f689854cf7626155518cc0ef6d372ef5f80c499c` | 21 | `CODEX_REPORTED` | `12/12` fresh synthetic QA; real observations `0` |
 | `STOCK-USER-MANUAL-CSV-HANDOFF-314` | `34db648f6cecf62589b4bce747eaf216c5d67fcef337022cae6634e1fc438991` | `e3e30003ed960929ef9fc98ddfed2ea8fd5723adba7b5286d0dbb8520c2b2a7b` | 10 | `CODEX_REPORTED` | Synthetic local receipt helper; source admission and PIT absent |
 
 F320 independently verified all 167 declared payloads across these eight archives, with missing, hash mismatch, size mismatch, CRC failure, duplicate, casefold alias, unsafe path, undeclared file, and task-ID mismatch counts all zero. Raw archive identity, reported test status, independent acceptance, and formal authority remain distinct fields.
+
+## F328 Round 37 evidence identities
+
+| TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | PAYLOAD_COUNT | ACCEPTANCE_CLASS | BOUNDED_RESULT |
+|---|---|---|---:|---|---|
+| `STOCK-PR9-ROUND36-CURRENTNESS-320` | `0287d843cad4ad373789226b1cb36bb27057bf8c8b942ed2cf76522d7ce976f6` | `c79900dc8d2f3e5e2cbd8881f451d5723acf7f256949d64c1548fca83327ac39` | 11 | `CODEX_REPORTED` | Round36 one-push publication receipt; historical input to F328 |
+| `AI-FIRST-MANUAL-CSV-RESEARCH-ADMISSION-315` | `17f6a7af3b5421c4fe2db14652c649ad5ab48ccbba23ac9171d1e1d1f5b79384` | `9499e4ce97c730669b40c8adf4762877869b2f4a90373a537209fba53edc1218` | 15 | `CODEX_REPORTED` | `39/39 PASS_OFFLINE`; formal admission and real observations zero |
+| `TW-E311-INDEPENDENT-OUTPUT-QA-316` | `3ae7783c96f5b67a0636d38af8c13ed2dbf6ff4ff0cbeeac9fd658593bf939d8` | `ace0d153c9f1407302b7b8c429c5be699e2e701f9a540160c49f8b652f38243c` | 37 | `INDEPENDENT_FAIL` | `24 PASS / 2 FAIL / 2 NOT_VERIFIED`; static clean-extract dependency failure plus observed parent-swap residue failures |
+| `STOCK-RAW-RECEIPT-UX-INTEROPERABILITY-317` | `d42ae058c3503e2a9ccf8e4adfc8773dec97e3f96373e4d428057faf3611c7d1` | `23ff7cd972c6a84bebeaa00f2ad53bffb59f115fe37871e8e371092c5e507399` | 51 | `CODEX_REPORTED`; bounded `GPT_ACCEPTED_OFFLINE` retest | Archive `74/74`; JS `43/43`; Python `28/31` then supplemented `31/31`; GUI unverified |
+| `TW-MANUAL-CSV-ADMISSION-318` | `7b7bdc52b2a51ed7503f25c5fe13ec02ed199d8079059ad74a9232e9cd8d6dca` | `4bcaeea7074bbb47251b9a35b57a5a30a0735a8ad7d5320ffccc91a97597fe02` | 11 | `CODEX_REPORTED` | `19/19` synthetic contract candidate; real provider bytes zero |
+| `TW-OFFLINE-IMPORT-RECEIPT-INTEGRATION-319` | `db4d399f73938ebf294e933c3fa9078afab071a39ab853845140331d42c7f7d6` | `cbe7176287f73a53c2db5a393fe50af520c39ef6c9cf451e2680798897d7657a` | 148 | `CODEX_REPORTED`; manifest authority classification absent | `111 PASS / 0 FAIL / 1 NOT_VERIFIED`; release blocked by B316 |
+| `STOCK-EVALUATION-SYNTHETIC-ADMISSION-321` | `f1e551bed4fcc41a5747c8d842843822ad650de6be0b949a9f91ad1bfddd71a7` | `8efbf5316bce961e6c4a9ea41a5667b5a6d812777a881cd357265ffe2d229125` | 15 | bounded `GPT_ACCEPTED_OFFLINE`; package `CODEX_REPORTED` | `21/21` synthetic independently retested; no real observations/outcomes |
+| `STOCK-MANUAL-CSV-RECEIPT-QA-322` | `e03c3675388c552e2b59da5285ddea3bacd8866d28a4c44e7b561848d927547c` | `34b0ac5b6b8d7f737cf956ba972592ba14fb1bda93d9cb850628a04f97780158` | 24 | `CODEX_REPORTED` | `15 PASS / 1 FAIL / 3 NOT_VERIFIED`; aggregate JSON stall and semantics FAIL |
+
+The eight archives contain 312 declared payloads in total. All outer, manifest, payload, size, CRC, duplicate/casefold, unsafe-path, undeclared-file, and task-identity gates passed. These identity results are not functional release gates.

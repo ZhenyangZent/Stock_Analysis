@@ -1,9 +1,9 @@
 # Project roadmap
 
 DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T00:57:31+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND36-CURRENTNESS-320`
-STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
+LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
+STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
 
 ## Next milestone
 
@@ -91,8 +91,19 @@ No CI, branch protection, ruleset, source policy, formal data, PIT, scheduler, o
 2. Remediate B308's exact four independent failures, restore package self-containment, and obtain a fresh independent rerun. Preserve B299 and B308 as separate historical failures.
 3. Complete real Windows GUI/file-picker/pixel/accessibility QA for C309 before any workbench release.
 4. Bind D310's explicit adapter to independently verified real provider bytes and obtain parser/source admission; formal provider-byte admission remains `0`.
-5. Supply a trusted, hash-bound Windows junction baseline for E311 and rerun the junction case. Until then record only `STATIC_DEPENDENCY_GAP`, not runtime failure; release remains blocked.
+5. Treat E311's missing E302 baseline as `STATIC_PACKAGING_DEPENDENCY_GAP`; separately rerun the Windows junction case in an authorized environment because its observed state is `ACCESS_DENIED_NOT_VERIFIED`. Neither may be converted into a junction runtime PASS or FAIL without execution evidence.
 6. Keep F303's shared collector candidate undeployed until explicit replacement authority and post-replacement verification exist.
 7. Do not activate G313 evaluation until an approved protocol has admitted mature real outcomes; current mature real outcome count is `0` and predictive value is `NOT_ESTABLISHED`.
 8. Keep H314 receipt metadata non-admitting and T46 `RECOVERY_BLOCKED`; Reader Ready/Migrated remains `0/12` pending separate recovery authority.
 9. Continue standing docs-only publication only for material changes after exact archive identity, live PR identity, repository regression, allowed-path, consistency, secret, and private-path gates pass.
+
+## F328 Round 37 ordered next gates
+
+1. B316 is the controlling importer release blocker: preserve the original clean-extract missing-E302 packaging failure, fix both observed parent rename/swap raw-only residue failures, and rerun the independent suite without weakening cleanup assertions.
+2. Run the E311 junction case separately in an authorized Windows environment capable of creating the required junction. Until then it remains `ACCESS_DENIED_NOT_VERIFIED`, not a runtime PASS or FAIL.
+3. Complete C317 Windows human/browser/file-picker/pixel/accessibility QA. Offline JS/Python results do not substitute for GUI behavior.
+4. Keep D318 and E319 in candidate scope until real provider bytes, parser/source admission, formal PIT, and independent release authority are separately supplied.
+5. Repair H322's exact receipt-semantics contract, make the aggregate runner finish without offline reconstruction, and execute the symlink, hardlink, and hash-race cases under suitable authority.
+6. Accumulate preregistered mature real outcomes before evaluating G321 predictive value. Synthetic `21/21` does not establish predictive performance.
+7. Keep formal observations, formally admitted provider bytes, and mature real outcomes at `0`; keep predictive value `NOT_ESTABLISHED`, `9069` `REFERENCE_ONLY`, and T46 `RECOVERY_BLOCKED` until exact formal authority exists.
+8. Keep F303's shared collector candidate undeployed and preserve B299, B308, and B316 as separate historical/current failures.

@@ -1,9 +1,9 @@
 # Release and publication gates
 
 DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T00:57:31+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND36-CURRENTNESS-320`
-STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
+LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
+STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
 
 ## PR #9 remote identity gate
 
@@ -231,7 +231,7 @@ B299 remains a failed release gate even though the exact ZIP and F306 location c
 | B308 independent QA | `FAIL — 15 PASS / 4 FAIL` | Package self-containment failed; B299 history preserved |
 | C309 GUI acceptance | `NOT_VERIFIED` | 110/110 offline checks do not cover Windows GUI/browser/file picker |
 | D310 provider admission | `BLOCKED` | Synthetic contract passed 25/25; real provider bytes and parser/source approval absent |
-| E311 junction/release | `BLOCKED` | 59 checks passed; one Windows junction case is `NOT_VERIFIED` due to `STATIC_DEPENDENCY_GAP`, not an observed runtime failure |
+| E311 junction/release | `BLOCKED` | 59 checks passed; the missing E302 baseline is `STATIC_PACKAGING_DEPENDENCY_GAP`; the separate Windows junction case is `ACCESS_DENIED_NOT_VERIFIED`, not an observed runtime PASS or FAIL |
 | F312 publication identity | `PASS` | Existing docs-only commit `2dafa6c5d5abe5ba95d0632a92e89ce784893590`; historical 822/822 remains archived evidence |
 | G313 predictive value | `NOT_VERIFIED` | Synthetic 12/12 fresh; real observations and mature real outcomes `0` |
 | H314 source/PIT/Reader | `BLOCKED` | Receipt helper only; Reader Ready/Migrated `0/12`; T46 `RECOVERY_BLOCKED` |
@@ -241,3 +241,27 @@ B299 remains a failed release gate even though the exact ZIP and F306 location c
 | Ready/merge/main/force push/CI/security authority | `false` | Explicit standing-authority exclusions |
 
 One failed evidence lane does not prohibit truthful documentation of that failure. Publication remains conditional on a clean isolated worktree, trusted external MOPS fixture prerequisite, fresh full repository regression, exact six-path diff, consistency/whitespace/security scans, and immediate pre-write remote identity recheck.
+
+## F328 Round 37 candidate and publication gates
+
+| Gate | Status | Evidence / boundary |
+|---|---|---|
+| Same-task deduplication | `PASS` | No F328 commit, central handoff, or index record existed before this batch |
+| Initial PR #9 identity | `PASS` | `OPEN`, `draft=true`, unmerged; head `9a857bf5d4bfdcbbc5cb633b91c88dd0d0c6b1db`; base/main `6e2740d9877364619ca046cb54829350fd0db5ef`; no unexplained drift |
+| Pinned archive integrity | `PASS — 8/8` | 312/312 declared payloads; outer and manifest SHA-256, size, CRC, path, duplicate/casefold, undeclared-file, and task-ID gates passed |
+| A315 offline candidate | `PASS_OFFLINE_CODEX_REPORTED — 39/39` | No formal admission, real observation, or financial certification |
+| B316 independent QA | `FAIL — 24 PASS / 2 FAIL / 2 NOT_VERIFIED` | Two observed parent-swap raw-only residue failures; original clean-extract static dependency failure; junction access denied/not verified |
+| C317 offline interoperability | `PASS_WITH_GUI_GAP` | Archive `74/74`; independent JS `43/43`; Python `28/31` then supplemented `31/31`; GUI not verified |
+| D318 synthetic contract | `PASS_OFFLINE_CODEX_REPORTED — 19/19` | Real provider bytes and formal source/PIT authority absent |
+| E319 integration/release | `BLOCKED` | `111 PASS / 0 FAIL / 1 NOT_VERIFIED`; B316 independent failures remain controlling |
+| G321 synthetic evaluation | `PASS_OFFLINE_ONLY — 21/21` | Real observations/outcomes zero; predictive value not established |
+| H322 Windows receipt QA | `FAIL_WITH_NOT_VERIFIED — 15/1/3` | Aggregate `ConvertTo-Json` stall; receipt-semantics mismatch; link/race cases not verified |
+| Historical independent failures | `PRESERVED` | B299, B308, and B316 remain distinct; no later package-integrity result erases them |
+| F303 shared collector deployment | `BLOCKED_AUTHORITY` | Candidate remains undeployed |
+| T46 / 9069 | `RECOVERY_BLOCKED / REFERENCE_ONLY` | No mutation or promotion authority |
+| Formal observations/provider bytes/outcomes | `0 / 0 / 0` | No formal activation record in Round 37 |
+| Predictive value | `NOT_ESTABLISHED` | No mature real-outcome evidence |
+| Allowed publication paths | `docs/project-status/*.md` | F328 is restricted to the six existing status documents |
+| Ready/merge/main/force push/CI/security authority | `false` | Explicit standing-authority exclusions |
+
+Truthfully publishing a failed evidence lane is allowed, but Git publication remains conditional on fresh repository regression with the hash-bound external MOPS fixture, exact six-path scope, document consistency, whitespace/security scans, and an immediate no-drift readback.

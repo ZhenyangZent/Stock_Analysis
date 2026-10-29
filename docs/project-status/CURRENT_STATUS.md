@@ -1,11 +1,11 @@
 # Stock_Analysis current status
 
 DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T00:57:31+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND36-CURRENTNESS-320`
-STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
+LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
+STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
 LAST_VERIFIED_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
-LAST_VERIFIED_PR9_HEAD_SHA: `fe06d37fd398eec1ba60c2377e7617f2faed8ed5`
+LAST_VERIFIED_PR9_HEAD_SHA: `9a857bf5d4bfdcbbc5cb633b91c88dd0d0c6b1db`
 CURRENT_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
 PR9_HEAD_BEFORE_F215_SHA: `56a18e260b5b8a20ce482f30d48ccdc8172d7cc7`
 
@@ -150,9 +150,26 @@ All eight pinned F312/A307-H314 archives passed outer ZIP SHA-256, pinned manife
 | B | `B308`: `FAIL_INDEPENDENT_QA`; independent checks `15 PASS / 4 FAIL`; package self-containment failed | `INDEPENDENT_FAIL` | B299's historical four failures remain preserved; no importer release or formal data authority |
 | C | `C309`: `PASS_OFFLINE_GUI_NOT_VERIFIED`; fresh offline tests `110/110` | `CODEX_REPORTED`; GUI `NOT_VERIFIED` | No browser/file-picker/pixel QA, importer execution, formal data write, or market signal |
 | D | `D310`: `PASS_SYNTHETIC_CONTRACT`; fresh tests `25/25`; explicit adapter required rather than direct schema identity | `CODEX_REPORTED` | Real provider bytes `0`; parser admission, historical PIT, and formal source authority absent |
-| E | `E311`: `59 PASS / 1 NOT_VERIFIED` across its recorded JSON regression and E311 checks; `RELEASE_BLOCKED` | `CODEX_REPORTED`; Windows junction `NOT_VERIFIED` | The junction result is a `STATIC_DEPENDENCY_GAP`, not a runtime failure; production release, network, source, PIT, and formal writes remain false |
+| E | `E311`: `59 PASS / 1 NOT_VERIFIED` across its recorded JSON regression and E311 checks; `RELEASE_BLOCKED` | `CODEX_REPORTED`; Windows junction `ACCESS_DENIED_NOT_VERIFIED` | The missing E302 baseline is a separate `STATIC_PACKAGING_DEPENDENCY_GAP`; the junction was not executed successfully, so no junction runtime PASS or FAIL is claimed; production release, network, source, PIT, and formal writes remain false |
 | F | `F312`: docs-only Draft PR publication succeeded at `2dafa6c5d5abe5ba95d0632a92e89ce784893590` | `CODEX_REPORTED` publication receipt | Status publication grants no Ready, merge, main, code, data, or shared-tool deployment authority |
 | G | `G313`: `PASS_SYNTHETIC_INDEPENDENT_QA`; fresh tests `12/12`; archived G296 `18/18` and G304 `28/28` preserved | `CODEX_REPORTED` | Real observations `0`; formal activation false; predictive value `NOT_ESTABLISHED` |
 | H | `H314`: `PASS_SYNTHETIC_TOOL`; local CSV receipt helper records identity without parsing or copying source bytes | `CODEX_REPORTED` | Source admission and historical PIT remain false; T46 stays `RECOVERY_BLOCKED` with Reader Ready/Migrated `0/12` |
 
 Across Round 36, approved real market observations remain `0`, formally admitted provider bytes remain `0`, mature real outcomes remain `0`, predictive value is `NOT_ESTABLISHED`, and no Round 36 item is `FORMAL_APPROVED`. F303's shared collector remains a non-deployed candidate. B299 and B308 failures, E311's junction `NOT_VERIFIED`, and all earlier FAIL/BLOCKED records remain visible and controlling within their scopes.
+
+## F328 Round 37 status correction
+
+F328 initially re-read Draft PR #9 as `OPEN`, `draft=true`, unmerged, at head `9a857bf5d4bfdcbbc5cb633b91c88dd0d0c6b1db` and base/main `6e2740d9877364619ca046cb54829350fd0db5ef`; the historical F320 head matched and no unexplained drift existed. F328 also validated all eight pinned F320/A315-H322 archives byte-for-byte: outer ZIP SHA-256, pinned root-manifest SHA-256, 312 declared payload hashes and sizes, CRC, path safety, duplicate/casefold aliases, undeclared files, and manifest task identity all passed. Package integrity establishes identity only and does not promote a reported candidate to release or formal approval.
+
+| Lane | Latest bounded result | Evidence class | Preserved boundary |
+|---|---|---|---|
+| A | `A315`: `39/39 PASS_OFFLINE` for the bounded manual-CSV research-admission candidate | `CODEX_REPORTED` | Formal admission `0`; real approved observations `0`; no official financial certification, PIT, universe, or signal authority |
+| B | `B316`: `FAIL_INDEPENDENT_QA`; `24 PASS / 2 FAIL / 2 NOT_VERIFIED`; original E311 clean-extract runner failed because the E302 baseline source was not packaged | `INDEPENDENT_FAIL` | The clean-extract failure is a static packaging/dependency failure. Separately, two parent rename/swap cases produced real raw-only residue at runtime. The junction case is `ACCESS_DENIED_NOT_VERIFIED`. B299 and B308 failures remain preserved |
+| C | `C317`: task archive reports `74/74`; GPT-independent JavaScript retest `43/43`; Python initial `28/31` with three missing inputs, then supplemented `31/31` | `CODEX_REPORTED` plus `GPT_ACCEPTED_OFFLINE` only for the stated independent retest scope | Windows GUI/browser/file-picker/pixel/accessibility QA remains `NOT_VERIFIED`; no formal data write |
+| D | `D318`: `19/19 PASS_SYNTHETIC_CONTRACT` candidate | `CODEX_REPORTED` | No real monthly-revenue bytes, parser/source admission, formal PIT, or production authority |
+| E | `E319`: clean-extract integration `111 PASS / 0 FAIL / 1 NOT_VERIFIED`; Stage 1 candidate complete | `CODEX_REPORTED`; root manifest declares no formal authority class | `RELEASE_BLOCKED` by B316; packaged dependencies do not cure the parent-swap runtime failures or grant source/network/formal authority |
+| F | `F320`: one normal docs-only commit and one normal push reported for Round 36 | `CODEX_REPORTED` publication receipt | Historical result only; it does not prove F328 publication or grant main/Ready/merge authority |
+| G | `G321`: `21/21 PASS_SYNTHETIC_INDEPENDENT_QA` | `GPT_ACCEPTED_OFFLINE` for the bounded synthetic retest; package itself is `CODEX_REPORTED` | Real approved observations `0`, mature real outcomes `0`, predictive value `NOT_ESTABLISHED`, formal activation false |
+| H | `H322`: Windows QA `15 PASS / 1 FAIL / 3 NOT_VERIFIED`; the large aggregate runner `ConvertTo-Json` did not complete and the canonical table was reconstructed offline from the eighth run's per-case raw logs | `CODEX_REPORTED`; one observed semantics FAIL | Exact `LOCAL_RECEIPT_OBSERVATION_ONLY` semantics are missing/mismatched; symlink, hardlink, and hash-race cases remain `NOT_VERIFIED`; Reader Ready/Migrated `0/12`; T46 `RECOVERY_BLOCKED` |
+
+Round 37 preserves approved real market observations at `0`, formally admitted provider bytes at `0`, and mature real outcomes at `0`. Predictive value remains `NOT_ESTABLISHED`; T46 remains `RECOVERY_BLOCKED`; `9069` remains `REFERENCE_ONLY`; no Round 37 item is `FORMAL_APPROVED`.

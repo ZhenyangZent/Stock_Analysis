@@ -1,9 +1,9 @@
 # Decision log
 
 DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T00:57:31+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND36-CURRENTNESS-320`
-STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
+LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
+STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
 
 | Decision date | Decision | Authority/source | Effect | Explicit non-effect |
 |---|---|---|---|---|
@@ -117,7 +117,20 @@ STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
 | `2026-10-30` | A307 remains an offline acquisition plan | Exact archive; `CODEX_REPORTED` | Records priorities and eight study targets | No real observation, live fetch, certification, PIT, universe, or signal authority |
 | `2026-10-30` | B308 is a new independent failure record | Exact archive; `INDEPENDENT_FAIL` | Preserves `15 PASS / 4 FAIL` and package self-containment failure | Does not overwrite B299 or authorize importer release |
 | `2026-10-30` | C309 and D310 remain bounded offline/synthetic candidates | Exact archives; `CODEX_REPORTED` | Records C309 110/110 and D310 25/25 in tested scopes | No GUI acceptance, real provider bytes, parser/source admission, or formal data |
-| `2026-10-30` | E311 release remains blocked | Exact archive; `CODEX_REPORTED` plus `NOT_VERIFIED` junction | Records 59 passing checks and one unverified junction case | Missing baseline is `STATIC_DEPENDENCY_GAP`; no runtime-failure claim or production release |
+| `2026-10-30` | E311 release remains blocked | Exact archive; `CODEX_REPORTED` plus junction `ACCESS_DENIED_NOT_VERIFIED` | Records 59 passing checks; distinguishes the missing E302 baseline as a static packaging dependency from the unexecuted junction case | No junction runtime PASS/FAIL claim and no production release |
 | `2026-10-30` | F312 publication is historical and sealed | Exact archive plus live GitHub readback | Confirms existing PR head `2dafa6c5d5abe5ba95d0632a92e89ce784893590` before F320 | Historical 822/822 is not counted as F320 fresh regression and does not grant broader authority |
 | `2026-10-30` | G313 and H314 remain synthetic/offline tools | Exact archives; `CODEX_REPORTED` | Records G313 12/12 fresh synthetic QA and H314 receipt-helper behavior | No predictive-value claim, source admission, PIT, Reader migration, or T46 recovery |
 | `2026-10-30` | Round 36 preserves zero formal activation | Current bounded evidence set | Keeps formal observations, admitted provider bytes, and mature real outcomes at `0` | No Round 36 item becomes `FORMAL_APPROVED` through ZIP or documentation integrity |
+
+## F328 Round 37 decisions and preserved boundaries
+
+| Date | Decision / evidence | Basis | Effect | Boundary |
+|---|---|---|---|---|
+| `2026-10-30` | Preserve A315 as bounded offline evidence | Exact archive; `39/39 PASS_OFFLINE`; `CODEX_REPORTED` | Records manual-CSV research-admission candidate progress | Formal admission, real observations, PIT, and financial certification remain absent |
+| `2026-10-30` | Classify B316 as `INDEPENDENT_FAIL` | Exact archive; `24 PASS / 2 FAIL / 2 NOT_VERIFIED` | Makes both parent-swap raw-only residue failures controlling release blockers | Does not merge those runtime failures with the static missing-E302 packaging failure or junction access denial |
+| `2026-10-30` | Accept only C317's stated offline retest scope | Task archive plus GPT-supplied independent results | Records JS `43/43`, Python initial `28/31` with three missing inputs, supplemented `31/31` | GUI remains `NOT_VERIFIED`; no formal write or deployment |
+| `2026-10-30` | Keep D318/E319 as candidates | Exact archives; D318 `19/19`; E319 `111/0/1` | Records contract/integration progress | Real bytes/source/PIT/formal authority absent; E319 remains blocked by B316 |
+| `2026-10-30` | Preserve F320 as historical one-push publication | Exact F320 archive and publication receipt | Establishes the prior status-document baseline | Does not claim F328 publication or authorize main/Ready/merge |
+| `2026-10-30` | Record G321 synthetic independent retest | Exact archive plus GPT-supplied bounded acceptance | Records `21/21` synthetic evidence | Predictive value remains not established; real observations/outcomes zero |
+| `2026-10-30` | Record H322 with failure and not-verified cases | Actual Windows QA evidence | Records `15 PASS / 1 FAIL / 3 NOT_VERIFIED`, aggregate JSON stall, and semantics mismatch | No release, Reader migration, or T46 recovery claim |
+| `2026-10-30` | Round 37 preserves formal zero state | Current bounded evidence set | Keeps formal observations, admitted provider bytes, and mature real outcomes at `0` | Predictive value `NOT_ESTABLISHED`; T46 blocked; `9069` reference-only; no formal approval |
