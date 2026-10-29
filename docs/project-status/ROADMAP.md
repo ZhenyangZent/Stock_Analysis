@@ -1,13 +1,13 @@
 # Project roadmap
 
-DATA_AS_OF: `2026-10-28`
-LAST_VERIFIED_AT: `2026-10-28T01:03:27+08:00`
-STATUS_TASK_ID: `STOCK-GITHUB-PR9-ONE-TIME-STATUS-PUBLICATION-215`
-STATUS_STAGE: `N/A`
+DATA_AS_OF: `2026-10-29`
+LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
+STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
+STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
 
 ## Next milestone
 
-Review the F233 material-drift candidate against the live F215-published baseline. Any publication requires a new exact one-time authorization; PR #9 must remain Draft and `main` must remain unchanged.
+Remediate and independently retest the F276 CRC fail-open found by B279. PR #9 remains the Draft status center; `main` remains unchanged and no collector release may be claimed while this gate fails.
 
 ## Ordered roadmap
 
@@ -55,3 +55,21 @@ No CI, branch protection, ruleset, source policy, formal data, PIT, scheduler, o
 5. Decide the 22 G234 proposals and the separate G240 amendment only through explicit governance authority. Neither package is activated or predictive-value evidence.
 6. Keep the weekly scheduler disabled and T46 `RECOVERY_BLOCKED`; H226/H235 must provide complete canonical evidence before recovery authority is considered.
 7. Preserve real approved market observations at zero and prohibit formal signals until all source, PIT, outcome-maturity, evaluation, and activation gates are independently satisfied.
+
+## F286 ordered next gates
+
+1. Treat B279 as the controlling F276 release gate: implement a fail-closed CRC validation fix under separate tool-change authority, then rerun the full original and independent suites. Do not advertise F276/F283 workflow tooling as released before that pass.
+2. Run Windows browser GUI, pixel, and accessibility QA for C281 before repository integration or deployment.
+3. Obtain exact API-resource/provider bytes and publication-time evidence for D282 under separate network/source authority; keep real provider bytes at zero until then.
+4. Keep E278 synthetic capture completeness separate from parser verification, source approval, historical PIT, and production-ledger deployment.
+5. Resolve G284's 22 governance decisions and accumulate admitted, mature real outcomes under an approved prospective protocol before enabling any evaluator or predictive-value claim.
+6. Select formal R07/R10 identities and owners, approve backups, and authorize bounded migration/recovery before any H285 Reader migration; keep formal migration at 0/12 and T46 `RECOVERY_BLOCKED`.
+7. Publish later material status batches only under `PUBLISHING_POLICY.md`: fresh remote readback, one consolidated docs-only commit/push, preserved historical FAIL, and no main/Ready/merge/force-push/CI/security mutation.
+
+## F295 next gates
+
+1. Under separate code-change authority, define a canonical external MOPS fixture-bundle contract containing exact required identities, origin metadata, payload sizes, and SHA-256 hashes. Do not commit or fabricate official raw XHTML.
+2. Add deterministic local/CI provisioning or read-only mounting for that approved bundle, with a fail-fast `MOPS_OFFLINE_FIXTURE_BUNDLE_REQUIRED` diagnostic that lists missing identities.
+3. Keep the Patch183 `active <= new_ids` release assertion unchanged; validate fixture presence before recomputation rather than skipping or weakening the gate.
+4. Obtain B291 independent acceptance of F287 before releasing or deploying the collector. Preserve B279's historical 24/27 failure regardless of later remediation.
+5. Continue docs-only publication only when a material status change passes fresh remote identity, full regression, exact-path, consistency, and security gates.

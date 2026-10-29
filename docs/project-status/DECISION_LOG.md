@@ -1,9 +1,9 @@
 # Decision log
 
-DATA_AS_OF: `2026-10-28`
-LAST_VERIFIED_AT: `2026-10-28T01:03:27+08:00`
-STATUS_TASK_ID: `STOCK-GITHUB-PR9-ONE-TIME-STATUS-PUBLICATION-215`
-STATUS_STAGE: `N/A`
+DATA_AS_OF: `2026-10-29`
+LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
+STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
+STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
 
 | Decision date | Decision | Authority/source | Effect | Explicit non-effect |
 |---|---|---|---|---|
@@ -83,3 +83,19 @@ STATUS_STAGE: `N/A`
 | `2026-10-28` | G234 decisions remain proposed | Exact archive; `CODEX_REPORTED` | Preserves 22 proposal decisions and disabled activation | No approval, evaluator execution, or predictive value claim |
 | `2026-10-28` | G240 later amendment remains proposed | Exact archive; `CODEX_REPORTED_NOT_GPT_ACCEPTED` | Adds a separate cohort/denominator candidate | Does not modify or activate G234 |
 | `2026-10-28` | H218 disabled scheduler and T46 block preserved | Hash-bound receipt plus user status | Scheduler remains disabled | No recovery, re-enable, ledger, snapshot, or formal write authority |
+
+## F286 decisions and preserved boundaries
+
+| Decision date | Record | Evidence class | Effect | Explicit non-effect |
+|---|---|---|---|---|
+| `2026-10-29` | Standing docs-only publication authority granted | Explicit user authority | F may consolidate and publish material status updates to `docs/project-status/*.md` and `docs/handoffs/*.md` on existing Draft PR #9 after every fresh preflight | No main, merge, Ready, force push, code, rules, CI/security, formal data, PIT, source-policy, or T46 authority |
+| `2026-10-29` | B279 controls the F276 release gate | Exact archive plus independent QA result | Preserves `FAIL_OFFLINE_LOCAL_TOOL_QA`, 24/27 fresh pass, three failures, and corrupt-CRC acceptance | F276/F283 self-tests and ZIP integrity cannot override the independent failure |
+| `2026-10-29` | A280 accepted only offline | User-supplied GPT-independent acceptance plus exact archive | Records 40/40 offline validation | No official financial certification, PIT, universe, or signal authority |
+| `2026-10-29` | C281 fixed Node runtime candidate accepted in tested scope | User-supplied acceptance plus exact archive | Records original TypeError reproduction and fixed candidate verification | Windows GUI/pixel/accessibility QA and deployment remain unverified |
+| `2026-10-29` | D282 document review accepted without provider identity promotion | User-supplied bounded status plus exact archive | Records official document review | Exact API-resource bytes, real provider bytes, source admission, and network authority remain absent |
+| `2026-10-29` | E278 synthetic completeness accepted offline | User-supplied GPT-independent acceptance plus exact archive | Records 18/18 synthetic replay | No parser, source, PIT, or production-ledger approval |
+| `2026-10-29` | G284 remains pre-evaluation governance work | Exact archive; `CODEX_REPORTED` | Preserves eight studies and 22 pending decisions | No mature real outcomes, evaluator run, activation, or predictive-value claim |
+| `2026-10-29` | H285 remains provenance-only | Exact archive; `CODEX_REPORTED` | Maps R07 lineages and preserves R10 snapshots | No formal identity/owner selection, Reader migration, recovery, or T46 authority |
+| `2026-10-29` | F286 regression blockers classified as missing external prerequisites | F295 fresh clean-worktree execution | Preserves the original failures while distinguishing absent Git-excluded official raw inputs from product-code drift | No fabricated fixture, skipped test, weakened assertion, or formal-source approval |
+| `2026-10-29` | Trusted hash-identified raw-store mount restores repository regression | F295 fresh targeted and full-suite execution | Both targeted tests and 669/669 full regression passed | Does not admit the raw documents to Git or grant production/formal authority |
+| `2026-10-29` | F287 remains pending B291 | F287 archive integrity plus current acceptance boundary | Keeps patched collector candidate visible | Does not override the preserved B279 independent failure or declare release |

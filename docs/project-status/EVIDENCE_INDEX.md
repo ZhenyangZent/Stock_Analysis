@@ -1,9 +1,9 @@
 # Evidence index
 
-DATA_AS_OF: `2026-10-28`
-LAST_VERIFIED_AT: `2026-10-28T01:03:27+08:00`
-STATUS_TASK_ID: `STOCK-GITHUB-PR9-ONE-TIME-STATUS-PUBLICATION-215`
-STATUS_STAGE: `N/A`
+DATA_AS_OF: `2026-10-29`
+LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
+STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
+STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
 
 ## Accepted and status-bearing evidence
 
@@ -116,3 +116,28 @@ For each passing ZIP, F233 verified exact payload bytes/SHA-256, sizes, full str
 | `H226` / `H235` | `UNKNOWN` | `UNKNOWN` | `UNKNOWN` | `BLOCKED_OR_INCOMPLETE` | `NOT_VERIFIED` | T46 remains `RECOVERY_BLOCKED` |
 
 F241 stream-read each available archive and verified payload bytes/SHA-256, size, CRC, exact member set, traversal safety, exact duplicate names, and casefold aliases. Archive integrity and Codex self-reports are not GPT acceptance or formal approval.
+
+## F286 first standing-publication evidence matrix
+
+| TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | PAYLOADS | INTEGRITY | ACCEPTANCE_CLASS | BOUNDED_RESULT |
+|---|---|---|---:|---|---|---|
+| `AI-PILOT10-FISCAL-PERIOD-IDENTITY-280` | `9c19fd2fabb86291288b4a0ccef6c40b440f5eb3687be1ed4c5c8a2e1d208166` | `fea2f25561d7e21d19145faa3f5f47c54e6826bd5a2687576167ea7bc6761b1b` | 19 | `PASS` | `GPT_ACCEPTED_OFFLINE` | 40/40 independent offline validation; no official financial certification |
+| `STOCK-CENTRAL-HANDOFF-INDEPENDENT-QA-279` | `17ac6f1f076eaa72608feeeef5f1823d152dda94acffd5828c8df59fb3484eb4` | `ca1a2b03a78fdef8f83d6d924a9b45964a70cbe7f5ca1d1107f8dbac813130a6` | 42 | `PASS` | `INDEPENDENT_FAIL` | 24/27 fresh passed; corrupted ZIP CRC metadata accepted; F276 release blocked |
+| `STOCK-COCKPIT-OFFLINE-RUNTIME-STABILITY-281` | `6feb796872f1073bd2f148638803d1d3a2a89df60b1a4bca0c364a70f0322cb9` | `a86a80ff722dc94964306c56c2532ac03f1f1a31f03227326c1665f9528b99d1` | 49 | `PASS` | `GPT_ACCEPTED_OFFLINE` | TypeError reproduced and Node candidate verified; GUI not verified |
+| `TW-OFFICIAL-DATASET-API-IDENTITY-282` | `43c56719da390ac39013e61f60294f4d391b7c4a08d85c32f76e682b2a5bcf3c` | `a0acb73750a4aa839f8b50e1931cdacd95151ac68847a582d8536ae76675e177` | 8 | `PASS` | `GPT_ACCEPTED_OFFLINE` document-review scope | API-resource byte identity unverified; real provider bytes 0 |
+| `TW-SYNTHETIC-CAPTURE-COMPLETENESS-278` | `528bed1e4a9f50d2a7b9488b3cc63adf59a7798f186d5d97eeee62487f924c4d` | `dc59ec037940f1201105e0942fc9a682bbd5ec1f3b2e00beca85a0ed9ea63569` | 19 | `PASS` | `GPT_ACCEPTED_OFFLINE` synthetic scope | 18/18 synthetic replay; no parser/source approval |
+| `STOCK-ALL-WORKSTREAM-ZIP-ONLY-ADOPTION-283` | `d5386db9b8a953b8e37bc9fb9ab4ec3e00462713aadcfc711b2e875e444e8642` | `9af97a9453b755fd3ef35bc9e4ce35372834adab943b682ac87bdc95f0e9fdab` | 17 | `PASS` | `CODEX_REPORTED` | templates/self-tests passed; independent F276 release gate failed |
+| `STOCK-PROSPECTIVE-REAL-OUTCOME-READINESS-284` | `42759bce9124e762f97251dd278d74ccb18da8fc3f4365685f3351c6292748e9` | `e19891b49f572babf26fbc93d237d4c625936caaaeccf3f54dfb76d5af695535` | 10 | `PASS` | `CODEX_REPORTED` | eight studies; 22 decisions pending; mature real outcomes 0 |
+| `T46-READER-R07-R10-PROVENANCE-285` | `ca71d3e60ae005edcbdef3fed901a89ce411e4cc41468b3dcc0f8addad267ac6` | `8cfd2a2745685811d81c0a192025bd6baa29785cceb4b32c4d9b58304df08f7d` | 7 | `PASS` | `CODEX_REPORTED`; `NOT_VERIFIED` for formal identity | R07 lineage mapped; R10 historical snapshots; migration 0/12; T46 blocked |
+
+F286 independently matched all eight outer ZIP SHA-256 values, raw manifest SHA-256 values, manifest task IDs, declared payload hashes and byte sizes, exact member coverage, duplicate/casefold safety, and full entry reads. This integrity gate is intentionally separate from acceptance and release classification. In particular, the B279 `INDEPENDENT_FAIL` is not overwritten by the same archive's integrity pass.
+
+## F295 triage evidence
+
+| TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | EVIDENCE_CLASS | BOUNDED_RESULT |
+|---|---|---|---|---|
+| `STOCK-PR9-CONTINUOUS-EVIDENCE-PUBLICATION-286` | `ddd2377a80458639dcbe3f0ebb49e1691db3a25aad7d8ac5180257652e5b2aaf` | `5da6a403c0d5d9884590b819b73f9e4f1899dd6b329a13e130ff35c4ac6aa336` | `ARCHIVED_EVIDENCE` | Original docs batch and two regression failures preserved; archive integrity does not imply publication |
+| `STOCK-ZIP-ONLY-COLLECTOR-INTEGRITY-FIX-287` | `144c69794cda149762f7d420db50199fe2c979da959e7cfb72a74dacc0f38e20` | `991e460bb5a7aaea8cac99b3365b3fd24dd86529bfda5705d480fb75b4648bee` | `CODEX_REPORTED` | Patched candidate only; B291 independent acceptance remains required |
+| `STOCK-CENTRAL-RECEIVED-ARCHIVE-289` | `25dae9b7465cbee1c450902d3129d287aaa6e4b404893b0e49ee13a38393451a` | `ee257d2413b8fc4f6e6814132ef0bb7f60d1e6a67e8b4f54f1383fce13c1d627` | `ARCHIVED_EVIDENCE` | Central archive operation verified; no GitHub or formal-data authority |
+
+F295 fresh execution reproduced both baseline failures without raw fixtures, then passed both targeted tests after mounting the existing hash-identified official raw store. The full regression suite passed 669/669 with that prerequisite and an ASCII-only temporary directory. These results establish repository regression readiness for the docs batch only; they do not constitute official-source certification, formal approval, or production activation.

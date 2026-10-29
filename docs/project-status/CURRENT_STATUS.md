@@ -1,11 +1,11 @@
 # Stock_Analysis current status
 
-DATA_AS_OF: `2026-10-28`
-LAST_VERIFIED_AT: `2026-10-28T14:54:51+08:00`
-STATUS_TASK_ID: `STOCK-PR9-STATUS-PUBLICATION-241`
-STATUS_STAGE: `N/A`
+DATA_AS_OF: `2026-10-29`
+LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
+STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
+STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
 LAST_VERIFIED_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
-LAST_VERIFIED_PR9_HEAD_SHA: `56a18e260b5b8a20ce482f30d48ccdc8172d7cc7`
+LAST_VERIFIED_PR9_HEAD_SHA: `79e5eae814eab37138eefe0063c7629625cbaacf`
 CURRENT_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
 PR9_HEAD_BEFORE_F215_SHA: `56a18e260b5b8a20ce482f30d48ccdc8172d7cc7`
 
@@ -89,3 +89,32 @@ F233 had read-only GitHub authority and isolated status-document candidate autho
 - `F233` is preserved as `VERIFIED_DOCS_ONLY_PATCH_CANDIDATE_NOT_PUBLISHED`. F241 is authorized for one six-document commit and one push only; this authority does not include Ready, merge, main, CI/security, code, or formal-data actions.
 
 Across all current workstreams, real approved market observation count is 0, formal PIT is not issued, formal source policy is not approved, and no formal investment signal is available.
+
+## F286 currentness batch
+
+F286 re-read GitHub before publication. Draft PR #9 was `OPEN`, `draft=true`, unmerged, based on `main` at `6e2740d9877364619ca046cb54829350fd0db5ef`, and headed by `79e5eae814eab37138eefe0063c7629625cbaacf`. The PR still changed exactly the six historical status documents, reported no CI checks, and `main` traditional branch protection returned 404. These governance settings were not changed.
+
+The user granted standing authority for material documentation-only updates under `docs/project-status/*.md` and `docs/handoffs/*.md`. It does not authorize main, merge, Ready, force push, code, rules, CI/security, source policy, PIT, formal data, or T46 mutations. Each batch still requires fresh remote identity, evidence classification, exact-path, consistency, secret, and private-path gates.
+
+| Lane | Latest bounded status | Evidence class | Explicit boundary |
+|---|---|---|---|
+| A | `A280`: 40/40 GPT-independent offline validation passed; fiscal-period identity remains research evidence | `GPT_ACCEPTED_OFFLINE` | No official financial certification, formal PIT, or universe change |
+| B | `B279`: `FAIL_OFFLINE_LOCAL_TOOL_QA`; 24/27 fresh passed, 3 failed; corrupted ZIP CRC metadata was accepted | `INDEPENDENT_FAIL` | F276 release gate is blocked; package integrity success elsewhere does not erase the failure |
+| C | `C281`: original runtime `TypeError` reproduced; fixed Node runtime candidate verified | `GPT_ACCEPTED_OFFLINE` within tested Node scope | Windows browser GUI/pixel/accessibility QA remains `NOT_VERIFIED` |
+| D | `D282`: official dataset documents reviewed; API-resource byte identity remains unverified | `GPT_ACCEPTED_OFFLINE` for document review only | Real provider bytes `0`; no source admission or production authority |
+| E | `E278`: 18/18 GPT-independent synthetic replay passed | `GPT_ACCEPTED_OFFLINE` synthetic scope | Completeness only; no parser, source, PIT, or production-ledger approval |
+| F | `F283`: A-H ZIP-only templates documented; self-tests passed | `CODEX_REPORTED` | B279 independently blocks treating F276 collector as released or CRC-validating |
+| G | `G284`: eight study contracts preserved; 22 decisions pending | `CODEX_REPORTED` | Mature real outcomes `0`; predictive value not established; formal evaluation disabled |
+| H | `H285`: R07 historical Git lineages documented; R10 remains historical snapshots only | `CODEX_REPORTED`; formal identity `NOT_VERIFIED` | Formal Reader migration `0/12`; T46 remains `RECOVERY_BLOCKED` |
+
+Archive integrity passed for all eight handoffs, but this establishes only byte identity. It does not convert `CODEX_REPORTED` into `GPT_ACCEPTED_OFFLINE`, does not override `INDEPENDENT_FAIL`, and does not grant `FORMAL_APPROVED` authority.
+
+## F295 regression-blocker triage
+
+F295 reproduced both F286 blockers from the clean PR #9 head. Without the Git-excluded MOPS raw-document prerequisite, the saved-fixture test failed while resolving `2024Q1_C_*.xhtml`, and Patch183 recomputation found 0 filing inputs, 2,722 active row IDs, 0 recomputed IDs, and therefore 2,722 missing active IDs.
+
+Repository policy intentionally excludes `data_spine/raw`, `*.html`, and `*.xhtml`; the repository guide requires raw source documents to be reconstructed outside Git. The required official 2330 2024 Q1 consolidated filing was found in the trusted local raw store with SHA-256 `68117c2ed0caa105921d9cfe27afe9ed02472dcc33066ead9b31e1603a77357c`. No fixture bytes were fabricated, copied into Git, or changed.
+
+After mounting the existing trusted raw store read-only in the isolated worktree, both targeted tests passed. Patch183 then observed 142 filings, 2,722 active IDs, 2,840 recomputed IDs, and 0 missing active IDs. With an ASCII-only temporary directory, the complete repository regression suite passed 669/669. This is a prerequisite-restoration result, not formal data, source-policy, or production authority.
+
+The B279 independent collector failure remains historical and controlling for the F276 release gate. F287 remains a patched candidate awaiting B291 independent acceptance.

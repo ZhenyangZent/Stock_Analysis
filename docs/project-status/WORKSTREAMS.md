@@ -1,9 +1,9 @@
 # Workstreams A-H
 
-DATA_AS_OF: `2026-10-28`
-LAST_VERIFIED_AT: `2026-10-28T01:03:27+08:00`
-STATUS_TASK_ID: `STOCK-GITHUB-PR9-ONE-TIME-STATUS-PUBLICATION-215`
-STATUS_STAGE: `N/A`
+DATA_AS_OF: `2026-10-29`
+LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
+STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
+STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
 
 `HANDOFF_ZIP_SHA256` identifies an exact handoff archive. `MANIFEST_SHA256` identifies the manifest file inside that handoff. `GPT_ACCEPTANCE_SCOPE` is explicit; `NOT_PROVIDED` must not be read as independent acceptance.
 
@@ -62,3 +62,23 @@ F170 remains `NOT_PUBLISHED`. New candidates never overwrite historical failures
 | G | `G240` | `edc3cfcad4fd828e8fce319cf372a7efd4721a52e5cb7bce18e20f3ad5f87d4f` | `602ebe1906fc2f95860ca710cc343c5fa0ed9c02691dce6901d7dfbe6aaec5d6` | `CODEX_REPORTED_NOT_GPT_ACCEPTED`; later local handoff | Separate cohort/denominator amendment `PROPOSED_NOT_APPROVED` | formal evaluation/activation `false` | Independent acceptance and explicit plan approval |
 | H | `H218` / `H226` / `H235` | `UNKNOWN` | `UNKNOWN` | H218 extracted hash-bound receipt; H226/H235 incomplete | scheduler `Disabled`; T46 `RECOVERY_BLOCKED` | recovery/re-enable/formal write `false` | Canonical handoffs, approved backup, bounded recovery authority |
 | F | `F241` | `N/A` | `N/A` | Exact user publication authority | `ONE_TIME_STATUS_ONLY_PUBLICATION_AUTHORIZED` | Ready/merge/main/CI/security `false` | Publish once and independently verify receipt |
+
+## F286 continuous-publication batch
+
+| Lane | TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | EVIDENCE_CLASS | STATUS | FORMAL_AUTHORITY | NEXT_DEPENDENCY |
+|---|---|---|---|---|---|---|---|
+| A | `AI-PILOT10-FISCAL-PERIOD-IDENTITY-280` | `9c19fd2fabb86291288b4a0ccef6c40b440f5eb3687be1ed4c5c8a2e1d208166` | `fea2f25561d7e21d19145faa3f5f47c54e6826bd5a2687576167ea7bc6761b1b` | `GPT_ACCEPTED_OFFLINE` | 40/40 independent offline validation passed; fiscal identity research retained | official financial certification/PIT/universe `false` | Official certification and formal source/PIT authority |
+| B | `STOCK-CENTRAL-HANDOFF-INDEPENDENT-QA-279` | `17ac6f1f076eaa72608feeeef5f1823d152dda94acffd5828c8df59fb3484eb4` | `ca1a2b03a78fdef8f83d6d924a9b45964a70cbe7f5ca1d1107f8dbac813130a6` | `INDEPENDENT_FAIL` | `FAIL_OFFLINE_LOCAL_TOOL_QA`; 24/27 fresh passed; corrupt CRC metadata accepted | collector release/production `false` | CRC fail-closed fix and independent rerun |
+| C | `STOCK-COCKPIT-OFFLINE-RUNTIME-STABILITY-281` | `6feb796872f1073bd2f148638803d1d3a2a89df60b1a4bca0c364a70f0322cb9` | `a86a80ff722dc94964306c56c2532ac03f1f1a31f03227326c1665f9528b99d1` | `GPT_ACCEPTED_OFFLINE` | Original `TypeError` reproduced; fixed Node candidate verified; GUI `NOT_VERIFIED` | repository integration/formal deployment `false` | Windows browser GUI, pixel, and accessibility QA |
+| D | `TW-OFFICIAL-DATASET-API-IDENTITY-282` | `43c56719da390ac39013e61f60294f4d391b7c4a08d85c32f76e682b2a5bcf3c` | `a0acb73750a4aa839f8b50e1931cdacd95151ac68847a582d8536ae76675e177` | `GPT_ACCEPTED_OFFLINE` document-review scope | Official documents reviewed; exact API-resource bytes `UNVERIFIED`; real provider bytes `0` | source admission/network/PIT `false` | Provider byte capture under separate authority and exact API identity |
+| E | `TW-SYNTHETIC-CAPTURE-COMPLETENESS-278` | `528bed1e4a9f50d2a7b9488b3cc63adf59a7798f186d5d97eeee62487f924c4d` | `dc59ec037940f1201105e0942fc9a682bbd5ec1f3b2e00beca85a0ed9ea63569` | `GPT_ACCEPTED_OFFLINE` synthetic scope | 18/18 independent synthetic replay passed; capture completeness only | parser/source/PIT/production ledger `false` | Parser and source approval; real provider evidence |
+| F | `STOCK-ALL-WORKSTREAM-ZIP-ONLY-ADOPTION-283` | `d5386db9b8a953b8e37bc9fb9ab4ec3e00462713aadcfc711b2e875e444e8642` | `9af97a9453b755fd3ef35bc9e4ce35372834adab943b682ac87bdc95f0e9fdab` | `CODEX_REPORTED` | A-H templates/self-tests passed; F276 release remains blocked by B279 | collector release `false` | CRC fix plus independent full QA |
+| G | `STOCK-PROSPECTIVE-REAL-OUTCOME-READINESS-284` | `42759bce9124e762f97251dd278d74ccb18da8fc3f4365685f3351c6292748e9` | `e19891b49f572babf26fbc93d237d4c625936caaaeccf3f54dfb76d5af695535` | `CODEX_REPORTED` | Eight studies preserved; 22 decisions pending; mature real outcomes `0` | formal evaluator/activation `false` | Governance decisions, real observations, mature outcomes, protocol approval |
+| H | `T46-READER-R07-R10-PROVENANCE-285` | `ca71d3e60ae005edcbdef3fed901a89ce411e4cc41468b3dcc0f8addad267ac6` | `8cfd2a2745685811d81c0a192025bd6baa29785cceb4b32c4d9b58304df08f7d` | `CODEX_REPORTED`; formal identity `NOT_VERIFIED` | R07 lineages mapped; R10 historical snapshots only; Reader migration `0/12`; T46 `RECOVERY_BLOCKED` | Reader migration/recovery `false` | Formal identity/owner decision and bounded recovery authority |
+
+## F295 F-lane status
+
+| Lane | TASK_ID | INPUT_IDENTITIES | EVIDENCE_CLASS | STATUS | FORMAL_AUTHORITY | NEXT_DEPENDENCY |
+|---|---|---|---|---|---|---|
+| F | `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295` | F286 `ddd2377a80458639dcbe3f0ebb49e1691db3a25aad7d8ac5180257652e5b2aaf`; F287 `144c69794cda149762f7d420db50199fe2c979da959e7cfb72a74dacc0f38e20`; F289 `25dae9b7465cbee1c450902d3129d287aaa6e4b404893b0e49ee13a38393451a` | `FRESH_EXECUTED` regression triage | Original failures preserved; targeted 2/2 and full 669/669 passed with trusted external raw prerequisite | code/source/data/PIT `false`; docs-only standing authority `true` | Canonical fixture-bundle contract under separate code authority |
+| F | `STOCK-ZIP-ONLY-COLLECTOR-INTEGRITY-FIX-287` | ZIP `144c69794cda149762f7d420db50199fe2c979da959e7cfb72a74dacc0f38e20`; manifest `991e460bb5a7aaea8cac99b3365b3fd24dd86529bfda5705d480fb75b4648bee` | `CODEX_REPORTED` | Patched candidate, not deployed | collector release `false` | B291 independent acceptance; B279 failure remains historical |

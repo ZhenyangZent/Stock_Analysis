@@ -1,9 +1,9 @@
 # Release and publication gates
 
-DATA_AS_OF: `2026-10-28`
-LAST_VERIFIED_AT: `2026-10-28T01:03:27+08:00`
-STATUS_TASK_ID: `STOCK-GITHUB-PR9-ONE-TIME-STATUS-PUBLICATION-215`
-STATUS_STAGE: `N/A`
+DATA_AS_OF: `2026-10-29`
+LAST_VERIFIED_AT: `2026-10-29T15:38:16+08:00`
+STATUS_TASK_ID: `STOCK-PR9-REGRESSION-BLOCKER-TRIAGE-295`
+STATUS_STAGE: `REGRESSION_PREREQUISITE_RESTORED`
 
 ## PR #9 remote identity gate
 
@@ -165,3 +165,40 @@ Any later publication requires a fresh exact one-time authority, immediate remot
 | Ready/merge/main/force push/CI/security authority | `false` |
 
 F241 publication changes status documentation only. A successful push consumes the one-time authority and grants no follow-on Git write.
+
+## F286 standing-publication and release gates
+
+| Gate | State | Evidence |
+|---|---|---|
+| Standing docs-only authority | `true` | Explicit user authorization; limited to material updates under `docs/project-status/*.md` and `docs/handoffs/*.md` |
+| PR #9 live identity before batch | `PASS` | `OPEN`, `draft=true`, unmerged; head `79e5eae814eab37138eefe0063c7629625cbaacf`; base/main `6e2740d9877364619ca046cb54829350fd0db5ef` |
+| Authentication | `PASS` | Active account `ZhenyangZent`; token value not recorded |
+| A280 offline gate | `PASS — 40/40` | `GPT_ACCEPTED_OFFLINE`; no official certification |
+| B279 F276 release gate | `FAIL` | 24/27 fresh passed, three failed; corrupt ZIP CRC metadata accepted and published in isolated QA |
+| F276/F283 collector release | `BLOCKED` | Self-tests and package integrity do not override B279 independent failure |
+| C281 Node runtime candidate | `PASS_WITH_GAP` | Original TypeError reproduced and fixed candidate verified; GUI `NOT_VERIFIED` |
+| D282 provider identity | `BLOCKED` | Exact API-resource bytes unverified; real provider bytes `0` |
+| E278 synthetic completeness | `PASS_OFFLINE_ONLY` | 18/18 synthetic; parser/source/PIT/production approval absent |
+| G284 real-outcome evaluation | `BLOCKED` | 22 decisions pending; mature real outcomes `0`; predictive value not established |
+| H285 Reader migration | `BLOCKED` | Formal migration `0/12`; identity/owner approval absent; T46 `RECOVERY_BLOCKED` |
+| Formal source policy | `false` | No approval in this batch |
+| Formal PIT issued | `false` | No issuance in this batch |
+| Real approved market observations | `0` | No formal data authority in this batch |
+| Ready/merge/main/force push/CI/security authority | `false` | Explicit standing-authority exclusions |
+
+The standing publication authority removes the need to request another docs-only permission for every material batch; it does not remove any identity, evidence, path, consistency, security, or remote-state gate. A failed preflight blocks that batch without weakening historical records.
+
+## F295 repository regression recovery
+
+| Gate | Status | Evidence / boundary |
+|---|---|---|
+| Clean-head failure reproduction | `PASS` | Both F286 failures reproduced from PR #9 head without the external raw prerequisite |
+| Official fixture provenance | `PASS` | Existing trusted raw document matched SHA-256 `68117c2ed0caa105921d9cfe27afe9ed02472dcc33066ead9b31e1603a77357c`; no fixture was fabricated or committed |
+| Saved official fixture parser | `PASS — 1/1` | Passed after trusted raw-store mount |
+| Patch183 active-row preservation | `PASS — 1/1` | 2,722 active IDs were a subset of 2,840 recomputed IDs; missing count 0 |
+| Full repository regression | `PASS — 669/669` | Completed with trusted raw prerequisite and ASCII-only temporary directory |
+| B279 collector release gate | `FAIL — PRESERVED` | Historical 24/27 result and corrupt-CRC acceptance remain controlling for F276 |
+| F287 independent acceptance | `BLOCKED` | B291 evidence not yet accepted |
+| Formal source/data/PIT authority | `false` | Regression recovery grants no formal authority |
+
+The minimum durable remediation is a canonical, hash-bound external fixture-bundle contract plus fail-fast prerequisite diagnostics. The `active <= new_ids` assertion must remain unchanged; missing raw inputs must not be hidden by skipping or weakening the test.
