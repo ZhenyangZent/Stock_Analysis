@@ -1,9 +1,9 @@
 # Evidence index
 
-DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
-STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
-STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
+DATA_AS_OF: `2026-10-30`
+LAST_VERIFIED_AT: `2026-10-30T00:57:31+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND36-CURRENTNESS-320`
+STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
 
 ## Accepted and status-bearing evidence
 
@@ -157,3 +157,18 @@ F295 fresh execution reproduced both baseline failures without raw fixtures, the
 | `STOCK-CENTRAL-READY-LOCATION-FIX-306` | `69f2c921f47833dcc8d3b9a64b541c27e2220afd670a113b88c8ed807b3a99fb` | `37e4022f9d95fe78b7256f4b71bdc618d49d4ee223aa4d0d7fcfa944b8690f55` | 7 | `CODEX_REPORTED_LOCATION_AND_INTEGRITY` | A298-H305 central READY 8/8 verification; not a release gate |
 
 All nine manifest identities above were read from the exact archives. Archive integrity and central location remain separate from functional acceptance, deployment, and `FORMAL_APPROVED` authority.
+
+## F320 Round 36 evidence identities
+
+| TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | PAYLOAD_COUNT | MANIFEST_AUTHORITY | BOUNDED_RESULT |
+|---|---|---|---:|---|---|
+| `STOCK-PR9-EVIDENCE-CURRENTNESS-312` | `1593f9d50e104fe35761f938c525c3a510e681985cc618de870d0d1ebf5848f0` | `821c45ee42ba95c07865b7c0303075dcd3b620ac7cb06c99826a0f4dca07db5e` | 9 | `CODEX_REPORTED` | Docs-only Draft PR publication at `2dafa6c5d5abe5ba95d0632a92e89ce784893590`; archived 822/822 is historical, not F320 execution |
+| `AI-FIRST-REAL-EVIDENCE-ACQUISITION-307` | `9daab7ee95c9a9478ab5bbfe2a548e1d666884b8270a98a307712f8bfc324d18` | `4e25ac70d795b8af6ef0265fe082662d8c1e0ea83c39cd27e2aaae1fd8f6a7b4` | 19 | `CODEX_REPORTED` | `PASS_OFFLINE`; no real observation or live fetch |
+| `TW-E302-INDEPENDENT-IMPORT-QA-308` | `c998db39fae0c0bb26d0af5375c99b746ee51b068759dc22f3a3588c3f6d4450` | `68c4ea045112391e8d50b1b4ec328f6d3ff9393ed063750c9c7ce64a55f4507b` | 27 | `INDEPENDENT_FAIL` | `15 PASS / 4 FAIL`; package self-containment failed |
+| `STOCK-WORKBENCH-RAW-INTAKE-HANDOFF-309` | `8c92bb939b857874742a224d97178a44b26a5bee4574b0a107535bc034a861a2` | `4fb355e11aa85c133225ec7a0d16ff544bc9c9344bc1633102b21864791411f9` | 50 | `CODEX_REPORTED` | `110/110` offline; GUI `NOT_VERIFIED` |
+| `TW-CSV-ADMISSION-INTEROPERABILITY-310` | `83b63765fae654290f1f5de0801a96952e187ecb96e860d924da8074b6d3221d` | `526fc26fe2a7ace61c1d3015870e874a6d5131bbab19903f2e4c8ae3ef65268f` | 8 | `CODEX_REPORTED` | `25/25` synthetic contract; real provider bytes `0` |
+| `TW-OFFLINE-IMPORT-OUTPUT-BOUNDARY-311` | `4eb8101e8527340c86e89b6584146b96a6914fce2dd141919e6dc1bb337a3e7a` | `973d8c7f7b5e36d44b0a62b15c51803c85606de07dfe06d13db30d63c451155e` | 23 | `CODEX_REPORTED` | `59 PASS / 1 NOT_VERIFIED`; junction `STATIC_DEPENDENCY_GAP`; release blocked |
+| `STOCK-PROSPECTIVE-COMPLETENESS-QA-313` | `b3ac328475b94b3120fc882c4df059f7c64085dc2fe8c92596fffa3bae3209d4` | `68d0523f8fca5484adb0c7a0f689854cf7626155518cc0ef6d372ef5f80c499c` | 21 | `CODEX_REPORTED` | `12/12` fresh synthetic QA; real observations `0` |
+| `STOCK-USER-MANUAL-CSV-HANDOFF-314` | `34db648f6cecf62589b4bce747eaf216c5d67fcef337022cae6634e1fc438991` | `e3e30003ed960929ef9fc98ddfed2ea8fd5723adba7b5286d0dbb8520c2b2a7b` | 10 | `CODEX_REPORTED` | Synthetic local receipt helper; source admission and PIT absent |
+
+F320 independently verified all 167 declared payloads across these eight archives, with missing, hash mismatch, size mismatch, CRC failure, duplicate, casefold alias, unsafe path, undeclared file, and task-ID mismatch counts all zero. Raw archive identity, reported test status, independent acceptance, and formal authority remain distinct fields.

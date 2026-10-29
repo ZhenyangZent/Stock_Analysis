@@ -1,11 +1,26 @@
 # Workstreams A-H
 
-DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
-STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
-STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
+DATA_AS_OF: `2026-10-30`
+LAST_VERIFIED_AT: `2026-10-30T00:57:31+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND36-CURRENTNESS-320`
+STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
 
 `HANDOFF_ZIP_SHA256` identifies an exact handoff archive. `MANIFEST_SHA256` identifies the manifest file inside that handoff. `GPT_ACCEPTANCE_SCOPE` is explicit; `NOT_PROVIDED` must not be read as independent acceptance.
+
+## Round 36 current workstreams
+
+| Lane | TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | EVIDENCE_CLASS | STATUS_AS_OF | STATUS | FORMAL_AUTHORITY | NEXT_DEPENDENCY |
+|---|---|---|---|---|---|---|---|---|
+| A | `AI-FIRST-REAL-EVIDENCE-ACQUISITION-307` | `9daab7ee95c9a9478ab5bbfe2a548e1d666884b8270a98a307712f8bfc324d18` | `4e25ac70d795b8af6ef0265fe082662d8c1e0ea83c39cd27e2aaae1fd8f6a7b4` | `CODEX_REPORTED` | `2026-10-30` | `PASS_OFFLINE`; real observations `0` | live fetch/formal PIT/universe/signal `false` | Approved acquisition authority and real evidence |
+| B | `TW-E302-INDEPENDENT-IMPORT-QA-308` | `c998db39fae0c0bb26d0af5375c99b746ee51b068759dc22f3a3588c3f6d4450` | `68c4ea045112391e8d50b1b4ec328f6d3ff9393ed063750c9c7ce64a55f4507b` | `INDEPENDENT_FAIL` | `2026-10-30` | `FAIL_INDEPENDENT_QA`; `15 PASS / 4 FAIL`; package self-containment failed | formal/importer release `false` | Repair four failures and obtain a fresh independent rerun |
+| C | `STOCK-WORKBENCH-RAW-INTAKE-HANDOFF-309` | `8c92bb939b857874742a224d97178a44b26a5bee4574b0a107535bc034a861a2` | `4fb355e11aa85c133225ec7a0d16ff544bc9c9344bc1633102b21864791411f9` | `CODEX_REPORTED`; GUI `NOT_VERIFIED` | `2026-10-30` | `PASS_OFFLINE_GUI_NOT_VERIFIED`; `110/110` offline | formal data/signal `false` | Independent browser/file-picker/pixel QA |
+| D | `TW-CSV-ADMISSION-INTEROPERABILITY-310` | `83b63765fae654290f1f5de0801a96952e187ecb96e860d924da8074b6d3221d` | `526fc26fe2a7ace61c1d3015870e874a6d5131bbab19903f2e4c8ae3ef65268f` | `CODEX_REPORTED` | `2026-10-30` | `PASS_SYNTHETIC_CONTRACT`; `25/25`; adapter required | parser/source/PIT approval `false` | Real provider-byte identity and parser admission |
+| E | `TW-OFFLINE-IMPORT-OUTPUT-BOUNDARY-311` | `4eb8101e8527340c86e89b6584146b96a6914fce2dd141919e6dc1bb337a3e7a` | `973d8c7f7b5e36d44b0a62b15c51803c85606de07dfe06d13db30d63c451155e` | `CODEX_REPORTED`; junction `NOT_VERIFIED` | `2026-10-30` | `59 PASS / 1 NOT_VERIFIED`; `RELEASE_BLOCKED`; `STATIC_DEPENDENCY_GAP` | production/network/formal write `false` | Supply an authorized Windows junction baseline and independent release QA |
+| F | `STOCK-PR9-EVIDENCE-CURRENTNESS-312` | `1593f9d50e104fe35761f938c525c3a510e681985cc618de870d0d1ebf5848f0` | `821c45ee42ba95c07865b7c0303075dcd3b620ac7cb06c99826a0f4dca07db5e` | `CODEX_REPORTED` publication receipt | `2026-10-29` | `DOCS_ONLY_DRAFT_PR_PUBLISHED`; commit `2dafa6c5d5abe5ba95d0632a92e89ce784893590` | main/Ready/merge/code/data `false` | Preserve Draft; publish only material bounded status updates |
+| G | `STOCK-PROSPECTIVE-COMPLETENESS-QA-313` | `b3ac328475b94b3120fc882c4df059f7c64085dc2fe8c92596fffa3bae3209d4` | `68d0523f8fca5484adb0c7a0f689854cf7626155518cc0ef6d372ef5f80c499c` | `CODEX_REPORTED` | `2026-10-30` | `PASS_SYNTHETIC_INDEPENDENT_QA`; fresh `12/12` | formal evaluation `false` | Mature real observations/outcomes and formal evaluation authority |
+| H | `STOCK-USER-MANUAL-CSV-HANDOFF-314` | `34db648f6cecf62589b4bce747eaf216c5d67fcef337022cae6634e1fc438991` | `e3e30003ed960929ef9fc98ddfed2ea8fd5723adba7b5286d0dbb8520c2b2a7b` | `CODEX_REPORTED` | `2026-10-30` | `PASS_SYNTHETIC_TOOL`; `T46_RECOVERY_BLOCKED`; Reader Ready/Migrated `0/12` | source/PIT/recovery `false` | Independent helper QA, source admission, and separate T46 recovery authority |
+
+Round 36 package integrity passed for all eight rows, but it is not an acceptance or release class. B299 and B308 remain distinct historical/current independent failures; F303 remains a non-deployed shared-tool candidate.
 
 | Lane | TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | GPT_ACCEPTANCE_SCOPE | STATUS_AS_OF | STATUS | FORMAL_AUTHORITY | NEXT_DEPENDENCY |
 |---|---|---|---|---|---|---|---|---|

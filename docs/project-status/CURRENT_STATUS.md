@@ -1,9 +1,9 @@
 # Stock_Analysis current status
 
-DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
-STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
-STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
+DATA_AS_OF: `2026-10-30`
+LAST_VERIFIED_AT: `2026-10-30T00:57:31+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND36-CURRENTNESS-320`
+STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
 LAST_VERIFIED_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
 LAST_VERIFIED_PR9_HEAD_SHA: `fe06d37fd398eec1ba60c2377e7617f2faed8ed5`
 CURRENT_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
@@ -137,3 +137,22 @@ F306 independently confirmed the exact A298-H305 ZIPs at the single authorized c
 | H | `H305`: manual official-data operations for two documented dataset routes | `CODEX_REPORTED` | No provider GET or real bytes; Provider Admission/PIT/Reader/recovery absent; T46 remains `RECOVERY_BLOCKED` |
 
 No A298-H305 item is `FORMAL_APPROVED`. B299's four independent failures remain explicit and are not overwritten by E302's local repair or F303's runner results.
+
+## F320 Round 36 evidence currentness
+
+F320 independently re-read Draft PR #9 before this batch as `OPEN`, `draft=true`, unmerged, with head `2dafa6c5d5abe5ba95d0632a92e89ce784893590` and base/main `6e2740d9877364619ca046cb54829350fd0db5ef`. The historical sealed head therefore matched the live head, no prior F320 commit was present, and no unexplained branch drift was observed. The PR cumulatively changes seven files under `docs/project-status/`; this batch is limited to the six existing status documents and leaves `PUBLISHING_POLICY.md` unchanged.
+
+All eight pinned F312/A307-H314 archives passed outer ZIP SHA-256, pinned manifest SHA-256, declared payload hash and size, CRC, duplicate/casefold, unsafe-path, undeclared-file, and manifest task-ID checks. Archive integrity establishes identity only; acceptance classifications remain separate.
+
+| Lane | Latest bounded result | Evidence class | Preserved boundary |
+|---|---|---|---|
+| A | `A307`: `PASS_OFFLINE`; four acquisition priorities, three Taiwan priorities, and eight studies; real observations `0` | `CODEX_REPORTED` | No live fetch, official financial certification, formal PIT, universe, or signal authority |
+| B | `B308`: `FAIL_INDEPENDENT_QA`; independent checks `15 PASS / 4 FAIL`; package self-containment failed | `INDEPENDENT_FAIL` | B299's historical four failures remain preserved; no importer release or formal data authority |
+| C | `C309`: `PASS_OFFLINE_GUI_NOT_VERIFIED`; fresh offline tests `110/110` | `CODEX_REPORTED`; GUI `NOT_VERIFIED` | No browser/file-picker/pixel QA, importer execution, formal data write, or market signal |
+| D | `D310`: `PASS_SYNTHETIC_CONTRACT`; fresh tests `25/25`; explicit adapter required rather than direct schema identity | `CODEX_REPORTED` | Real provider bytes `0`; parser admission, historical PIT, and formal source authority absent |
+| E | `E311`: `59 PASS / 1 NOT_VERIFIED` across its recorded JSON regression and E311 checks; `RELEASE_BLOCKED` | `CODEX_REPORTED`; Windows junction `NOT_VERIFIED` | The junction result is a `STATIC_DEPENDENCY_GAP`, not a runtime failure; production release, network, source, PIT, and formal writes remain false |
+| F | `F312`: docs-only Draft PR publication succeeded at `2dafa6c5d5abe5ba95d0632a92e89ce784893590` | `CODEX_REPORTED` publication receipt | Status publication grants no Ready, merge, main, code, data, or shared-tool deployment authority |
+| G | `G313`: `PASS_SYNTHETIC_INDEPENDENT_QA`; fresh tests `12/12`; archived G296 `18/18` and G304 `28/28` preserved | `CODEX_REPORTED` | Real observations `0`; formal activation false; predictive value `NOT_ESTABLISHED` |
+| H | `H314`: `PASS_SYNTHETIC_TOOL`; local CSV receipt helper records identity without parsing or copying source bytes | `CODEX_REPORTED` | Source admission and historical PIT remain false; T46 stays `RECOVERY_BLOCKED` with Reader Ready/Migrated `0/12` |
+
+Across Round 36, approved real market observations remain `0`, formally admitted provider bytes remain `0`, mature real outcomes remain `0`, predictive value is `NOT_ESTABLISHED`, and no Round 36 item is `FORMAL_APPROVED`. F303's shared collector remains a non-deployed candidate. B299 and B308 failures, E311's junction `NOT_VERIFIED`, and all earlier FAIL/BLOCKED records remain visible and controlling within their scopes.

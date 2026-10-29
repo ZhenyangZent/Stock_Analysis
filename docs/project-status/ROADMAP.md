@@ -1,9 +1,9 @@
 # Project roadmap
 
-DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
-STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
-STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
+DATA_AS_OF: `2026-10-30`
+LAST_VERIFIED_AT: `2026-10-30T00:57:31+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND36-CURRENTNESS-320`
+STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
 
 ## Next milestone
 
@@ -84,3 +84,15 @@ No CI, branch protection, ruleset, source policy, formal data, PIT, scheduler, o
 6. Keep G304 synthetic until admitted mature real observations exist under an approved prospective protocol; predictive value remains not established.
 7. Keep H305 documentation-only and T46 `RECOVERY_BLOCKED` until explicit data-acquisition, Reader, backup, and bounded recovery authorities are separately granted.
 8. Use F306 only as the 8/8 central location/integrity receipt. Never infer functional release or formal approval from ZIP integrity.
+
+## F320 Round 36 ordered next gates
+
+1. Keep A307 offline and acquisition-plan only until separately authorized real evidence exists; real observation count remains `0`.
+2. Remediate B308's exact four independent failures, restore package self-containment, and obtain a fresh independent rerun. Preserve B299 and B308 as separate historical failures.
+3. Complete real Windows GUI/file-picker/pixel/accessibility QA for C309 before any workbench release.
+4. Bind D310's explicit adapter to independently verified real provider bytes and obtain parser/source admission; formal provider-byte admission remains `0`.
+5. Supply a trusted, hash-bound Windows junction baseline for E311 and rerun the junction case. Until then record only `STATIC_DEPENDENCY_GAP`, not runtime failure; release remains blocked.
+6. Keep F303's shared collector candidate undeployed until explicit replacement authority and post-replacement verification exist.
+7. Do not activate G313 evaluation until an approved protocol has admitted mature real outcomes; current mature real outcome count is `0` and predictive value is `NOT_ESTABLISHED`.
+8. Keep H314 receipt metadata non-admitting and T46 `RECOVERY_BLOCKED`; Reader Ready/Migrated remains `0/12` pending separate recovery authority.
+9. Continue standing docs-only publication only for material changes after exact archive identity, live PR identity, repository regression, allowed-path, consistency, secret, and private-path gates pass.

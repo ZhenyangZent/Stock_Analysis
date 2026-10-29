@@ -1,9 +1,9 @@
 # Decision log
 
-DATA_AS_OF: `2026-10-29`
-LAST_VERIFIED_AT: `2026-10-29T20:25:04+08:00`
-STATUS_TASK_ID: `STOCK-PR9-EVIDENCE-CURRENTNESS-312`
-STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
+DATA_AS_OF: `2026-10-30`
+LAST_VERIFIED_AT: `2026-10-30T00:57:31+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND36-CURRENTNESS-320`
+STATUS_STAGE: `A307_H314_ROUND36_EVIDENCE_CURRENTNESS`
 
 | Decision date | Decision | Authority/source | Effect | Explicit non-effect |
 |---|---|---|---|---|
@@ -109,3 +109,15 @@ STATUS_STAGE: `A298_H305_EVIDENCE_CURRENTNESS`
 | `2026-10-29` | E302 records bounded strict-type remediation | `CODEX_REPORTED` exact archive | Records both provider-type cases as repaired in the isolated candidate | Reparse-path and cleanup gaps remain; no importer release or formal-data authority |
 | `2026-10-29` | F303 is eligible only for a future controlled replacement decision | `CODEX_REPORTED` exact archive with B291 evidence reconciliation | Records runner compatibility, CRC rejection, concurrency, and index results | Shared `TOOLS` replacement remains unauthorized and not deployed |
 | `2026-10-29` | A298, C300, D301, G304, and H305 remain bounded candidates/documentation | Exact archives; `CODEX_REPORTED` | Makes current engineering/research state visible | No item becomes `GPT_ACCEPTED_OFFLINE` or `FORMAL_APPROVED` without explicit acceptance |
+
+## F320 Round 36 decisions and preserved boundaries
+
+| Decision date | Record | Evidence class | Effect | Explicit non-effect |
+|---|---|---|---|---|
+| `2026-10-30` | A307 remains an offline acquisition plan | Exact archive; `CODEX_REPORTED` | Records priorities and eight study targets | No real observation, live fetch, certification, PIT, universe, or signal authority |
+| `2026-10-30` | B308 is a new independent failure record | Exact archive; `INDEPENDENT_FAIL` | Preserves `15 PASS / 4 FAIL` and package self-containment failure | Does not overwrite B299 or authorize importer release |
+| `2026-10-30` | C309 and D310 remain bounded offline/synthetic candidates | Exact archives; `CODEX_REPORTED` | Records C309 110/110 and D310 25/25 in tested scopes | No GUI acceptance, real provider bytes, parser/source admission, or formal data |
+| `2026-10-30` | E311 release remains blocked | Exact archive; `CODEX_REPORTED` plus `NOT_VERIFIED` junction | Records 59 passing checks and one unverified junction case | Missing baseline is `STATIC_DEPENDENCY_GAP`; no runtime-failure claim or production release |
+| `2026-10-30` | F312 publication is historical and sealed | Exact archive plus live GitHub readback | Confirms existing PR head `2dafa6c5d5abe5ba95d0632a92e89ce784893590` before F320 | Historical 822/822 is not counted as F320 fresh regression and does not grant broader authority |
+| `2026-10-30` | G313 and H314 remain synthetic/offline tools | Exact archives; `CODEX_REPORTED` | Records G313 12/12 fresh synthetic QA and H314 receipt-helper behavior | No predictive-value claim, source admission, PIT, Reader migration, or T46 recovery |
+| `2026-10-30` | Round 36 preserves zero formal activation | Current bounded evidence set | Keeps formal observations, admitted provider bytes, and mature real outcomes at `0` | No Round 36 item becomes `FORMAL_APPROVED` through ZIP or documentation integrity |
