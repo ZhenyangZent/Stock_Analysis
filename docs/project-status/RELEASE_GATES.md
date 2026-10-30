@@ -1,9 +1,9 @@
 # Release and publication gates
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
-STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
+STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
 
 ## PR #9 remote identity gate
 
@@ -290,3 +290,19 @@ Truthfully publishing a failed evidence lane is allowed, but Git publication rem
 | Main/Ready/merge/force push/CI/security authority | `false` | Standing docs-only authority exclusions remain controlling |
 
 Publication may proceed only after the trusted external MOPS fixture is hash-verified, the complete repository regression passes fresh, the exact six-path diff and security gates pass, and PR #9 is re-read immediately before the one normal push.
+
+## Round39 release-gate status
+
+| Gate | Status | Evidence | Required next condition |
+|---|---|---|---|
+| Round39 archive identity | `PASS` | Eight new archives plus historical B316 retransmission passed ZIP/manifest/payload/CRC/path/task checks | Keep acceptance class separate from archive integrity |
+| B324 importer security | `BLOCKED` | Six assertion failures and policy-blocked race cases retained | Exact independent QA under approved policy; no failure reclassification |
+| E327 release | `NOT_VERIFIED_BLOCKED_RELEASE` | Existing Stage1 candidate; independent gaps remain | Independent security and race evidence |
+| E335 engineering candidate | `INDEPENDENT_SECURITY_GATE_NOT_PASSED` | 16/16 allowed tests; importer SHA fixed | Independent QA of exact bytes; no deployment before pass and authority |
+| First real CSV/source | `BLOCKED` | Formal observations/provider bytes remain 0 | Exact original bytes plus independent source/time/revision admission |
+| C333 GUI | `NOT_VERIFIED` | CLI 22/22 does not cover GUI | Windows browser/file-picker/pixel/accessibility evidence |
+| G337 formal preregistration | `BLOCKED` | 22 decisions `PROPOSED_NOT_APPROVED`; lock count 0 | Explicit approval and formal freeze authority |
+| Formal predictive evaluation | `BLOCKED` | Mature real outcomes 0; predictive value not established | Approved protocol plus admitted mature outcomes |
+| T46 | `RECOVERY_BLOCKED` | Preserved governance boundary | Separate bounded recovery authority |
+
+B299, B308, B316, and B324 adverse evidence is immutable historical evidence for current release decisions. Synthetic/offline success never upgrades a candidate to formal or production release.

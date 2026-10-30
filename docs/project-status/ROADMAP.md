@@ -1,9 +1,9 @@
 # Project roadmap
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
-STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
+STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
 
 ## Next milestone
 
@@ -119,3 +119,15 @@ No CI, branch protection, ruleset, source policy, formal data, PIT, scheduler, o
 7. Approve or reject G329's 22 preregistration decisions explicitly before evaluator activation; require mature real outcomes before any predictive-performance statement.
 8. Keep H330's H314 v2 helper isolated until the three unresolved link/race cases and formal source/PIT review pass.
 9. Preserve `FORMAL_OBSERVATIONS=0`, `ADMITTED_PROVIDER_BYTES=0`, `MATURE_REAL_OUTCOMES=0`, predictive value `NOT_ESTABLISHED`, T46 `RECOVERY_BLOCKED`, R12 `NO_IMPORT_NO_EXECUTION`, and `9069 REFERENCE_ONLY` until exact authority and evidence change them.
+
+## Round39 next dependencies
+
+1. Obtain the first exact user-supplied CSV bytes and preserve original hash/length without spreadsheet re-save; until then real provider bytes remain `0`.
+2. Independently admit source/time/revision evidence before any parser, PIT, or research use. D334/H338 can produce only quarantine candidates.
+3. Run independent security QA on exact E335 importer SHA `60d1e9674abc555c88f73a36e02a28210df6b94fd3c93cb789a1af209190f2cc`; B324 remains policy-blocked and E327 remains blocked release.
+4. Resolve the public error contract without erasing B324 assertion failures or B316 parent-swap runtime failures.
+5. Complete Windows GUI QA for C333; CLI success does not verify browser/file-picker/pixel behavior.
+6. Submit all 22 G337 preregistration decisions for explicit approval; until approved, formal lock count remains `0` and evaluation remains disabled.
+7. Keep T46 `RECOVERY_BLOCKED`, R12 `NO_IMPORT_NO_EXECUTION`, and 9069 `REFERENCE_ONLY` until separately authorized evidence exists.
+
+Round39 does not change formal observations (`0`), admitted provider bytes (`0`), mature real outcomes (`0`), or predictive value (`NOT_ESTABLISHED`).

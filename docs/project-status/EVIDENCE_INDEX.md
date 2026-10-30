@@ -1,9 +1,9 @@
 # Evidence index
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
-STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
+STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
 
 ## Accepted and status-bearing evidence
 
@@ -202,3 +202,19 @@ The eight archives contain 312 declared payloads in total. All outer, manifest, 
 | `STOCK-WINDOWS-RECEIPT-HARNESS-STABILITY-330` | `38fc1bdbdb069d2305c20ea6bb940285d56906184214283145dc3524301edd8c` | `d524b6f25bc457ee45b3a315fc7c04653c33cd689c6739df0ce345712498747b` | 48 | `CODEX_REPORTED` | `16/0/3`; approximately 130.8 MB full-runner peak; H314 v2 candidate only |
 
 The eight Round 38 inputs contain 359 declared payloads. Identity, CRC, duplicate/casefold, unsafe-path, undeclared-file, and task-ID gates passed. B324 is an inner manual-recovery archive whose evidence integrity is accepted; its manifest authority remains `NOT_VERIFIED`, so it is not a formal handoff READY completion or release authorization.
+
+## Round39 evidence identities
+
+| TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | EVIDENCE_CLASS | Verified result | Authority boundary |
+|---|---|---|---|---|---|
+| `AI-FIRST-CSV-EVIDENCE-PRIORITIZATION-331` | `5a12b9db36900c18f8c6346a5859d8f2585ada11fb8f7a75114c6392b70c2bc5` | `6f0a79f870ec0593bab71d4963ba690e7e1430d532a7fdbdcec11a1078ebedc7` | `CODEX_REPORTED` | 14/14 fresh; 22 structural | Research planning only |
+| `TW-IMPORTER-ERROR-CONTRACT-DESK-REVIEW-332` | `92f5e835bf39332eac70832e38bc839ec34af3eed5c4f93f064ee613cd487f58` | `da4eaaf32cfb702e17f4df46634f24e2b1908caeae3ce67c795256863e5daa2c` | `CODEX_REPORTED` | Read-only review; test count 0 | B324 six assertion failures preserved; no release |
+| `STOCK-LOCAL-CSV-OPERATOR-WORKFLOW-333` | `40e1a3a6546f719c552afabd009c06d104137298342ec2a40cbc4863e0cf287c` | `cfa579012f1209406b10081504b571b82582b995f8c486d7eb29e3097b4ce4c5` | `CODEX_REPORTED` | 22/22 fresh offline CLI | GUI `NOT_VERIFIED`; source not admitted |
+| `TW-FIRST-CSV-MANUAL-HANDOFF-334` | `5ae2f216f0b14cb3e830954efb7280e3e1dd6127674db13e4c6695b9888a9c0c` | `9fc1e7d9ceb27fb898bf28f4bf7491f7977a8e9d3950486127d301298ef65694` | `CODEX_REPORTED` | 14/14 synthetic Windows | Manual handoff only; source not admitted |
+| `TW-IMPORTER-ERROR-CLEANUP-REMEDIATION-335` | `12e67b75a01f5e74ca01b8150cabefd1effea72c142bec8e56607edd9d616dd7` | `40e32ebd138c818a11bfa253019889aa6a6d34ee36d5829d55c4ce46fc7fda74` | `CODEX_REPORTED` | 16/16 allowed; exact importer `60d1e9674abc555c88f73a36e02a28210df6b94fd3c93cb789a1af209190f2cc` | Independent security gate not passed; not deployed |
+| `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336` | `a81a3707fec71e4afa04aa2a7c03ddb49c8878162e252200516f03cdbee4cfb4` | `e9448d7db71da6abf5497ad50f51fff496d7f9e2b34b0ac8533de25ea4f5f3e6` | `CODEX_REPORTED` receipt | 822/822 and one docs push reported | Historical publication receipt only |
+| `STOCK-PREREGISTRATION-FREEZE-DECISION-337` | `a4a3eced5a822b3babeaadae8507ef498b919938c5dbb20f9c24e3c058e7896c` | `9e4bc17024a8bc080a1ea8be49acaec1ab290d3aa0e17e21b8407ccee00cd194` | `CODEX_REPORTED` | 11/11 synthetic | 22 decisions proposed, none approved; lock count 0 |
+| `STOCK-WINDOWS-FIRST-CSV-RECEIPT-WORKFLOW-338` | `ed5887de54b7df1f84cf277feb34d3fa88d98832b805f81d9612b9f49ea4d15d` | `3bcdb3f88d10ac88cc435a19acaa843ab066d2c0d0d803fbc990be24659b9141` | `CODEX_REPORTED` | 10/10 Windows; three OS boundaries not verified | Quarantine maximum; source/PIT not admitted |
+| `TW-E311-OUTPUT-BOUNDARY-INDEPENDENT-QA-316` | `3ae7783c96f5b67a0636d38af8c13ed2dbf6ff4ff0cbeeac9fd658593bf939d8` | `ace0d153c9f1407302b7b8c429c5be699e2e701f9a540160c49f8b652f38243c` | `INDEPENDENT_FAIL` historical retransmission | 24 PASS / 2 FAIL / 2 NOT_VERIFIED | Round37 evidence only; never a Round39 result |
+
+All archive-integrity gates passed, but byte identity is not functional release or `FORMAL_APPROVED` status.

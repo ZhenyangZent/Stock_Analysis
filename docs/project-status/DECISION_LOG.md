@@ -1,9 +1,9 @@
 # Decision log
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
-STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
+STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
 
 | Decision date | Decision | Authority/source | Effect | Explicit non-effect |
 |---|---|---|---|---|
@@ -147,3 +147,14 @@ STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
 | `2026-10-31` | Keep G329 decisions proposed | Exact archive; `20/20` synthetic; 22 decisions | Records preregistration candidate | No evaluator activation, mature real outcomes, or predictive-value claim |
 | `2026-10-31` | Keep H330 helper isolated | Exact archive; `16/0/3`; full runner peak about 130.8 MB | Records bounded Windows harness stabilization | H314 v2 is not formally admitted; three cases remain not verified |
 | `2026-10-31` | Preserve formal zero state and recovery boundaries | Current Round38 evidence set | Maintains observations/provider bytes/outcomes at `0` | T46 blocked; R12 no-import/no-execution; 9069 reference-only; no formal approval |
+
+## Round39 decisions and non-decisions
+
+| Decision date | Decision | Authority/source | Effect | Explicit non-effect |
+|---|---|---|---|---|
+| `2026-10-31` | A331 evidence acquisition order recorded | `CODEX_REPORTED` research plan | Prioritizes evidence collection | Does not rank securities or approve source/PIT |
+| `2026-10-31` | B332 read-only error-contract review recorded | `CODEX_REPORTED`; tests not run | Separates four public-error assertions, two lexical test limitations, and static cleanup risk | Does not erase six B324 FAILs or approve E335 policy |
+| `2026-10-31` | C333/D334/H338 operator candidates recorded | Exact handoff identities | Enables bounded offline/manual workflows | Does not admit any source or provider bytes; GUI remains unverified for C333 |
+| `2026-10-31` | E335 Stage1 engineering candidate recorded | Exact importer SHA and 16/16 allowed tests | Candidate may proceed to independent security QA | Does not pass independent security, deploy code, or release E327/B324 |
+| `2026-10-31` | G337 freeze candidate remains proposed | 11/11 synthetic checks | Preserves a reviewable configuration identity | All 22 decisions remain `PROPOSED_NOT_APPROVED`; formal lock count 0 |
+| `2026-10-31` | B316 retransmission classified as historical | Exact B316 ZIP/manifest identity | Preserves Round37 independent failure evidence | Not a Round39 B result and does not supersede B332 |

@@ -1,9 +1,9 @@
 # Workstreams A-H
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
-STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
+STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
 
 `HANDOFF_ZIP_SHA256` identifies an exact handoff archive. `MANIFEST_SHA256` identifies the manifest file inside that handoff. `GPT_ACCEPTANCE_SCOPE` is explicit; `NOT_PROVIDED` must not be read as independent acceptance.
 
@@ -141,3 +141,18 @@ F170 remains `NOT_PUBLISHED`. New candidates never overwrite historical failures
 | G | `STOCK-PROSPECTIVE-SAMPLE-COMPLETENESS-304` | `11a37659355225413f65cf1c58183315b5c391ad1a0e6f2f29301bc522fd916f` | `43f2178b4469d4457cfc7f871d78e55b2fb11aee463797a8d2a6a33816f12f2a` | `CODEX_REPORTED` | 28/28 synthetic checks; real observations `0`; predictive value not established | activation/evaluation `false` | Admitted mature real outcomes and approved prospective protocol |
 | H | `STOCK-MANUAL-OFFICIAL-DATA-OPERATIONS-305` | `d48e43917dcf2930b71c34ecd8af9c72abd54ec5ef729ce53dd99c9ab94f1075` | `b9aeab3bcb83058d5698b902e95c31e5596cb5ab329b3e30963c20ffb032e355` | `CODEX_REPORTED` | Two manual dataset routes documented; no provider GET; T46 `RECOVERY_BLOCKED` | admission/PIT/Reader/recovery `false` | User-acquired exact bytes, independent admission, and bounded recovery authority |
 | F | `STOCK-CENTRAL-READY-LOCATION-FIX-306` | `69f2c921f47833dcc8d3b9a64b541c27e2220afd670a113b88c8ed807b3a99fb` | `37e4022f9d95fe78b7256f4b71bdc618d49d4ee223aa4d0d7fcfa944b8690f55` | `CODEX_REPORTED_LOCATION_AND_INTEGRITY` | Central READY 8/8 location, SHA, CRC, payload, and index checks passed | release/formal authority `false` | Preserve exact archive identities; do not infer functional release |
+
+## Round39 current workstreams
+
+| Lane | TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | Current status | Formal authority | Next dependency |
+|---|---|---|---|---|---|---|
+| A | `AI-FIRST-CSV-EVIDENCE-PRIORITIZATION-331` | `5a12b9db36900c18f8c6346a5859d8f2585ada11fb8f7a75114c6392b70c2bc5` | `6f0a79f870ec0593bab71d4963ba690e7e1430d532a7fdbdcec11a1078ebedc7` | 14/14 fresh plus 22 structural; research plan | `false` | First exact real CSV plus independent admission evidence |
+| B | `TW-IMPORTER-ERROR-CONTRACT-DESK-REVIEW-332` | `92f5e835bf39332eac70832e38bc839ec34af3eed5c4f93f064ee613cd487f58` | `da4eaaf32cfb702e17f4df46634f24e2b1908caeae3ce67c795256863e5daa2c` | `PASS_READ_ONLY_CONTRACT_REVIEW`; tests not run | `false` | Central public-error contract decision and independent security rerun |
+| C | `STOCK-LOCAL-CSV-OPERATOR-WORKFLOW-333` | `40e1a3a6546f719c552afabd009c06d104137298342ec2a40cbc4863e0cf287c` | `cfa579012f1209406b10081504b571b82582b995f8c486d7eb29e3097b4ce4c5` | 22/22 fresh; offline CLI candidate; GUI not verified | `false` | Windows GUI/file-picker/pixel/accessibility QA |
+| D | `TW-FIRST-CSV-MANUAL-HANDOFF-334` | `5ae2f216f0b14cb3e830954efb7280e3e1dd6127674db13e4c6695b9888a9c0c` | `9fc1e7d9ceb27fb898bf28f4bf7491f7977a8e9d3950486127d301298ef65694` | 14/14 Windows synthetic; manual handoff ready | `false` | User-acquired original bytes and independent source admission |
+| E | `TW-IMPORTER-ERROR-CLEANUP-REMEDIATION-335` | `12e67b75a01f5e74ca01b8150cabefd1effea72c142bec8e56607edd9d616dd7` | `40e32ebd138c818a11bfa253019889aa6a6d34ee36d5829d55c4ce46fc7fda74` | 16/16 allowed; Stage1 engineering candidate | `false` | Independent security gate for exact importer SHA `60d1e9674abc555c88f73a36e02a28210df6b94fd3c93cb789a1af209190f2cc` |
+| F | `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336` | `a81a3707fec71e4afa04aa2a7c03ddb49c8878162e252200516f03cdbee4cfb4` | `e9448d7db71da6abf5497ad50f51fff496d7f9e2b34b0ac8533de25ea4f5f3e6` | 822/822 regression and docs-only push reported | docs-only history only | F344 independent verification and currentness receipt |
+| G | `STOCK-PREREGISTRATION-FREEZE-DECISION-337` | `a4a3eced5a822b3babeaadae8507ef498b919938c5dbb20f9c24e3c058e7896c` | `9e4bc17024a8bc080a1ea8be49acaec1ab290d3aa0e17e21b8407ccee00cd194` | 11/11 synthetic; 22 decisions proposed, approval/lock count 0 | `false` | Explicit decision approval and mature real outcomes |
+| H | `STOCK-WINDOWS-FIRST-CSV-RECEIPT-WORKFLOW-338` | `ed5887de54b7df1f84cf277feb34d3fa88d98832b805f81d9612b9f49ea4d15d` | `3bcdb3f88d10ac88cc435a19acaa843ab066d2c0d0d803fbc990be24659b9141` | 10/10 Windows; three OS boundaries not verified; quarantine maximum | `false` | Real source bytes, OS-boundary evidence, source/PIT admission |
+
+Historical B316 retransmission SHA `3ae7783c96f5b67a0636d38af8c13ed2dbf6ff4ff0cbeeac9fd658593bf939d8` remains Round37 `INDEPENDENT_FAIL`; it is not a Round39 B deliverable. B299/B308/B316/B324 failures remain controlling in their scopes.
