@@ -1,9 +1,9 @@
 # Project roadmap
 
-DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
-STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
+DATA_AS_OF: `2026-10-31`
+LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
+STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
 
 ## Next milestone
 
@@ -107,3 +107,15 @@ No CI, branch protection, ruleset, source policy, formal data, PIT, scheduler, o
 6. Accumulate preregistered mature real outcomes before evaluating G321 predictive value. Synthetic `21/21` does not establish predictive performance.
 7. Keep formal observations, formally admitted provider bytes, and mature real outcomes at `0`; keep predictive value `NOT_ESTABLISHED`, `9069` `REFERENCE_ONLY`, and T46 `RECOVERY_BLOCKED` until exact formal authority exists.
 8. Keep F303's shared collector candidate undeployed and preserve B299, B308, and B316 as separate historical/current failures.
+
+## F336 Round 38 ordered next gates
+
+1. Obtain the first exact official manual CSV without spreadsheet resave; bind its raw hash, provider/dataset, issuer, acquisition, publication, revision, encoding, dialect, unit, and scale evidence before any quarantine or admission claim.
+2. Keep A323 research readiness offline until that real CSV exists. Structural `38/38` and synthetic-negative `8/8` do not prove source or parser admission.
+3. Preserve B324's four distinct execution groups. Resolve the six defensive assertion failures, then obtain separate authority to execute the seven policy-blocked race cases and a real junction case. Do not report a blended pass rate.
+4. Treat E327 only as `STAGE1_SECURITY_REMEDIATION_CANDIDATE`. Close B324 assertion failures, blocked race gates, junction uncertainty, and static path-based cleanup risk before any release decision.
+5. Complete C325 Windows human browser/file-picker/pixel/accessibility QA; fresh clean-extract `74/74` does not verify GUI behavior.
+6. Keep D326 at `QUARANTINED_PENDING_REVIEW` maximum and validate hardlink/TOCTOU behavior independently before admitting any real file.
+7. Approve or reject G329's 22 preregistration decisions explicitly before evaluator activation; require mature real outcomes before any predictive-performance statement.
+8. Keep H330's H314 v2 helper isolated until the three unresolved link/race cases and formal source/PIT review pass.
+9. Preserve `FORMAL_OBSERVATIONS=0`, `ADMITTED_PROVIDER_BYTES=0`, `MATURE_REAL_OUTCOMES=0`, predictive value `NOT_ESTABLISHED`, T46 `RECOVERY_BLOCKED`, R12 `NO_IMPORT_NO_EXECUTION`, and `9069 REFERENCE_ONLY` until exact authority and evidence change them.

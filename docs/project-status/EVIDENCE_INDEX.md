@@ -1,9 +1,9 @@
 # Evidence index
 
-DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
-STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
+DATA_AS_OF: `2026-10-31`
+LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
+STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
 
 ## Accepted and status-bearing evidence
 
@@ -187,3 +187,18 @@ F320 independently verified all 167 declared payloads across these eight archive
 | `STOCK-MANUAL-CSV-RECEIPT-QA-322` | `e03c3675388c552e2b59da5285ddea3bacd8866d28a4c44e7b561848d927547c` | `34b0ac5b6b8d7f737cf956ba972592ba14fb1bda93d9cb850628a04f97780158` | 24 | `CODEX_REPORTED` | `15 PASS / 1 FAIL / 3 NOT_VERIFIED`; aggregate JSON stall and semantics FAIL |
 
 The eight archives contain 312 declared payloads in total. All outer, manifest, payload, size, CRC, duplicate/casefold, unsafe-path, undeclared-file, and task-identity gates passed. These identity results are not functional release gates.
+
+## F336 Round 38 evidence identities
+
+| TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | PAYLOAD_COUNT | ACCEPTANCE_CLASS | BOUNDED_RESULT |
+|---|---|---|---:|---|---|
+| `AI-FIRST-CSV-STUDY-READINESS-323` | `611704a5dc7a46dede155457cfab61d23022a47750f515f9d43cc0dddfab6de8` | `d4ad629f892f916dd6c6bd17cd1f27ba1e526a24aca09ee1a6cb771d519d059d` | 19 | `CODEX_REPORTED` | `38/38` fresh structural; `8/8` synthetic negatives; real CSV `0` |
+| `TW-NEW-IMPORTER-INDEPENDENT-RACE-QA-324` | `a5a1540e437ab58ee283db5a46882f5971788901ea49e40f937f1dfa7ca3343e` | `9c2d38fe7f91ee52271fba25132bbaf458d60b5b25406c0d02abebf0d911ad0f` | 49 | `MANUAL_RECOVERY_EVIDENCE_INTEGRITY_ACCEPTED`; authority `NOT_VERIFIED` | Partial policy-blocked QA; not formal READY or release pass |
+| `STOCK-WORKBENCH-GUI-REPRODUCIBILITY-325` | `f34657cf2fc42279262e810b69264e888be423930cb826165a46b6b86842cf58` | `f202eebc08e94154f297efe6fe36c6de00d2e38f136025b10111025e9654e129` | 115 | `CODEX_REPORTED` | Fresh clean-extract `74/74`; GUI and Linux/WSL not verified |
+| `TW-MANUAL-CSV-SIDECAR-OFFLINE-CONTRACT-326` | `4d79947e72b3b96866498f11b9f0cbabba805fe19ef85611a5a4909562e216f5` | `f1532daf72d1f39b2591b47dcdb481df24c42e751587d5f6316e87c1937834d4` | 37 | `CODEX_REPORTED` | `25/0/1`; quarantine pending review; real bytes zero |
+| `TW-IMPORTER-PARENT-SWAP-REMEDIATION-327` | `a4a421ee7635ba9859b06cb09a0d37678a15a788e0c72dabcf19a19fdeb846d7` | `2d7c539f2318944ebd5340b41e89f3d4cbe23636eddad53e3aae0cc1b588b770` | 63 | `CODEX_REPORTED` | `128/0/2` Stage1 candidate; B324 release gate blocked |
+| `STOCK-PR9-ROUND37-STATUS-CORRECTION-328` | `39ec1237035a322294a0fd921ea2c7e82a5641d27fe385cc35a6fb87d428c297` | `58f6f01bc80726a1edeb5b4545d6848e4f7cdf2beb5fb6f16b6ec160e0477b15` | 13 | `CODEX_REPORTED` | Docs-only publication at `50e7342f30570b35c4e6ba331e482be03aa0719b` |
+| `STOCK-PROSPECTIVE-EVALUATOR-PREREGISTRATION-329` | `f4c810546ded430c96d0f1aadb676591a31731665cc324bad03b08c1f0979c99` | `9c7fb9662c4d60f133d4493142558384c1f3a037c7f5905219fcbd1aa6373b8d` | 15 | `CODEX_REPORTED` | `20/20` synthetic; 22 decisions proposed, none approved |
+| `STOCK-WINDOWS-RECEIPT-HARNESS-STABILITY-330` | `38fc1bdbdb069d2305c20ea6bb940285d56906184214283145dc3524301edd8c` | `d524b6f25bc457ee45b3a315fc7c04653c33cd689c6739df0ce345712498747b` | 48 | `CODEX_REPORTED` | `16/0/3`; approximately 130.8 MB full-runner peak; H314 v2 candidate only |
+
+The eight Round 38 inputs contain 359 declared payloads. Identity, CRC, duplicate/casefold, unsafe-path, undeclared-file, and task-ID gates passed. B324 is an inner manual-recovery archive whose evidence integrity is accepted; its manifest authority remains `NOT_VERIFIED`, so it is not a formal handoff READY completion or release authorization.

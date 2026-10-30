@@ -1,9 +1,9 @@
 # Workstreams A-H
 
-DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
-STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
+DATA_AS_OF: `2026-10-31`
+LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
+STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
 
 `HANDOFF_ZIP_SHA256` identifies an exact handoff archive. `MANIFEST_SHA256` identifies the manifest file inside that handoff. `GPT_ACCEPTANCE_SCOPE` is explicit; `NOT_PROVIDED` must not be read as independent acceptance.
 
@@ -36,6 +36,21 @@ Round 36 package integrity passed for all eight rows, but it is not an acceptanc
 | H | `STOCK-MANUAL-CSV-RECEIPT-QA-322` | `e03c3675388c552e2b59da5285ddea3bacd8866d28a4c44e7b561848d927547c` | `34b0ac5b6b8d7f737cf956ba972592ba14fb1bda93d9cb850628a04f97780158` | `CODEX_REPORTED`; actual Windows QA | `2026-10-30` | `15 PASS / 1 FAIL / 3 NOT_VERIFIED`; aggregate JSON stall and receipt-semantics FAIL; T46 blocked | Reader/recovery `false` | Repair semantic contract and rerun link/race cases plus independent QA |
 
 Round 37 package identity passed for all eight inputs and 312 declared payloads. That identity gate does not override B299/B308/B316 failures, does not convert a synthetic result to formal approval, and does not deploy the F303 shared-tool candidate.
+
+## Round 38 current workstreams
+
+| Lane | Current task | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | Acceptance scope | Current status / blocker | Formal authority | Next dependency |
+|---|---|---|---|---|---|---|---|
+| A | `AI-FIRST-CSV-STUDY-READINESS-323` | `611704a5dc7a46dede155457cfab61d23022a47750f515f9d43cc0dddfab6de8` | `d4ad629f892f916dd6c6bd17cd1f27ba1e526a24aca09ee1a6cb771d519d059d` | `CODEX_REPORTED` offline readiness | `38/38` structural plus `8/8` synthetic negatives; real CSV count `0` | `false` | User-supplied exact CSV plus independent quarantine/source-admission review |
+| B | `TW-NEW-IMPORTER-INDEPENDENT-RACE-QA-324` | `a5a1540e437ab58ee283db5a46882f5971788901ea49e40f937f1dfa7ca3343e` | `9c2d38fe7f91ee52271fba25132bbaf458d60b5b25406c0d02abebf0d911ad0f` | `MANUAL_RECOVERY_EVIDENCE_INTEGRITY_ACCEPTED`; manifest authority `NOT_VERIFIED` | `PARTIAL_QA_COMPLETE_POLICY_BLOCKED`; 111/1, 17/1, initial invocation 1 FAIL, defensive 13/6, seven blocked race cases, junction not verified | release/production `false` | Resolve six assertions, execute seven required races and junction on authorized host, then independent release decision |
+| C | `STOCK-WORKBENCH-GUI-REPRODUCIBILITY-325` | `f34657cf2fc42279262e810b69264e888be423930cb826165a46b6b86842cf58` | `f202eebc08e94154f297efe6fe36c6de00d2e38f136025b10111025e9654e129` | `CODEX_REPORTED` Windows clean-extract | fresh `74/74`; GUI and Linux/WSL `NOT_VERIFIED` | `false` | Authorized human Windows browser/file-picker/pixel/accessibility QA |
+| D | `TW-MANUAL-CSV-SIDECAR-OFFLINE-CONTRACT-326` | `4d79947e72b3b96866498f11b9f0cbabba805fe19ef85611a5a4909562e216f5` | `f1532daf72d1f39b2591b47dcdb481df24c42e751587d5f6316e87c1937834d4` | `CODEX_REPORTED` quarantine candidate | `25 PASS / 0 FAIL / 1 NOT_VERIFIED`; real provider bytes `0`; maximum `QUARANTINED_PENDING_REVIEW` | source/PIT `false` | Obtain first exact official CSV and independent byte/source admission without spreadsheet resave |
+| E | `TW-IMPORTER-PARENT-SWAP-REMEDIATION-327` | `a4a421ee7635ba9859b06cb09a0d37678a15a788e0c72dabcf19a19fdeb846d7` | `2d7c539f2318944ebd5340b41e89f3d4cbe23636eddad53e3aae0cc1b588b770` | `CODEX_REPORTED` Stage1 candidate | `128 PASS / 0 FAIL / 2 NOT_VERIFIED`; B324 makes release `NOT_VERIFIED_BLOCKED_RELEASE` | safety release/formal write `false` | Close B324 assertion/race/junction gates and static cleanup risk under independent QA |
+| F | `STOCK-PR9-ROUND37-STATUS-CORRECTION-328` | `39ec1237035a322294a0fd921ea2c7e82a5641d27fe385cc35a6fb87d428c297` | `58f6f01bc80726a1edeb5b4545d6848e4f7cdf2beb5fb6f16b6ec160e0477b15` | `CODEX_REPORTED` publication receipt | Round37 one-push published; F336 is current status batch | main/Ready/merge `false` | Complete F336 gates and post-push readback |
+| G | `STOCK-PROSPECTIVE-EVALUATOR-PREREGISTRATION-329` | `f4c810546ded430c96d0f1aadb676591a31731665cc324bad03b08c1f0979c99` | `9c7fb9662c4d60f133d4493142558384c1f3a037c7f5905219fcbd1aa6373b8d` | `CODEX_REPORTED` synthetic preregistration | `20/20`; 22 decisions `PROPOSED_NOT_APPROVED`; predictive value not established | evaluator activation `false` | Explicit decision approval plus admitted mature real observations under preregistered protocol |
+| H | `STOCK-WINDOWS-RECEIPT-HARNESS-STABILITY-330` | `38fc1bdbdb069d2305c20ea6bb940285d56906184214283145dc3524301edd8c` | `d524b6f25bc457ee45b3a315fc7c04653c33cd689c6739df0ce345712498747b` | `CODEX_REPORTED` Windows synthetic harness | `16 PASS / 0 FAIL / 3 NOT_VERIFIED`; peak about 130.8 MB; H314 v2 candidate only | source/PIT/importer `false` | Execute three unresolved link/race cases and obtain formal helper/source review |
+
+Round 38 identity integrity passed for eight inputs and 359 declared payloads. It does not combine B324's four separate test groups, does not erase B299/B308/B316/B324 adverse evidence, and does not authorize E327 release or first-manual-CSV admission.
 
 | Lane | TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | GPT_ACCEPTANCE_SCOPE | STATUS_AS_OF | STATUS | FORMAL_AUTHORITY | NEXT_DEPENDENCY |
 |---|---|---|---|---|---|---|---|---|

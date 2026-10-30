@@ -1,11 +1,11 @@
 # Stock_Analysis current status
 
-DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
-STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
+DATA_AS_OF: `2026-10-31`
+LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
+STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
 LAST_VERIFIED_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
-LAST_VERIFIED_PR9_HEAD_SHA: `9a857bf5d4bfdcbbc5cb633b91c88dd0d0c6b1db`
+LAST_VERIFIED_PR9_HEAD_SHA: `50e7342f30570b35c4e6ba331e482be03aa0719b`
 CURRENT_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
 PR9_HEAD_BEFORE_F215_SHA: `56a18e260b5b8a20ce482f30d48ccdc8172d7cc7`
 
@@ -173,3 +173,20 @@ F328 initially re-read Draft PR #9 as `OPEN`, `draft=true`, unmerged, at head `9
 | H | `H322`: Windows QA `15 PASS / 1 FAIL / 3 NOT_VERIFIED`; the large aggregate runner `ConvertTo-Json` did not complete and the canonical table was reconstructed offline from the eighth run's per-case raw logs | `CODEX_REPORTED`; one observed semantics FAIL | Exact `LOCAL_RECEIPT_OBSERVATION_ONLY` semantics are missing/mismatched; symlink, hardlink, and hash-race cases remain `NOT_VERIFIED`; Reader Ready/Migrated `0/12`; T46 `RECOVERY_BLOCKED` |
 
 Round 37 preserves approved real market observations at `0`, formally admitted provider bytes at `0`, and mature real outcomes at `0`. Predictive value remains `NOT_ESTABLISHED`; T46 remains `RECOVERY_BLOCKED`; `9069` remains `REFERENCE_ONLY`; no Round 37 item is `FORMAL_APPROVED`.
+
+## F336 Round 38 evidence currentness
+
+F336 re-read Draft PR #9 as `OPEN`, `draft=true`, unmerged, at head `50e7342f30570b35c4e6ba331e482be03aa0719b` and base/main `6e2740d9877364619ca046cb54829350fd0db5ef`; the F328 sealed head matched live and no unexplained drift existed. All eight A323/B324/C325/D326/E327/F328/G329/H330 inputs passed exact outer ZIP, root-manifest, 359 declared payload hash/size, CRC, path, duplicate/casefold, undeclared-file, and task-ID gates. B324 is the exact manual-recovery inner ZIP and is accepted for evidence integrity only.
+
+| Lane | Latest bounded result | Evidence class | Preserved boundary |
+|---|---|---|---|
+| A | `A323`: `PASS_OFFLINE_RESEARCH_READY`; 38/38 structural checks and 8/8 synthetic negatives; `REAL_CSV_COUNT=0` | `CODEX_REPORTED` | First manual CSV not obtained or admitted; all formal results remain unknown; R12 `NO_IMPORT_NO_EXECUTION` |
+| B | `B324`: `PARTIAL_QA_COMPLETE_POLICY_BLOCKED`; clean extract `111 PASS / 1 NOT_VERIFIED`; correctly invoked packaged security `17 PASS / 1 NOT_VERIFIED`; initial packaged invocation `1 FAIL`; defensive tests `13 PASS / 6 FAIL`; seven required race cases policy-blocked; real junction `NOT_VERIFIED_ACCESS_DENIED` | `MANUAL_RECOVERY_EVIDENCE_INTEGRITY_ACCEPTED`; manifest authority `NOT_VERIFIED` | Not formally READY, not release-passed, and not production-authorized; B299/B308/B316/B324 adverse evidence remains distinct |
+| C | `C325`: fresh Windows clean extract `74/74`; original first attempt failures preserved | `CODEX_REPORTED` | GUI, pixel, keyboard, and file-picker behavior remains `GUI_NOT_VERIFIED`; Linux/WSL not verified |
+| D | `D326`: `25 PASS / 0 FAIL / 1 NOT_VERIFIED`; maximum state `QUARANTINED_PENDING_REVIEW` | `CODEX_REPORTED` | Real provider bytes `0`; first manual CSV not obtained; hardlink and full TOCTOU not verified; no parser/source/PIT approval |
+| E | `E327`: `128 PASS / 0 FAIL / 2 NOT_VERIFIED`; `STAGE1_SECURITY_REMEDIATION_CANDIDATE` | `CODEX_REPORTED` | `NOT_VERIFIED_BLOCKED_RELEASE`; B324 six assertion failures, seven blocked race gates, and static path-based cleanup risk remain separate; no formal safety release |
+| F | `F328`: one normal docs-only commit/push published Round37 at `50e7342f30570b35c4e6ba331e482be03aa0719b` | `CODEX_REPORTED` publication receipt | Historical publication only; it grants no main/Ready/merge or formal-system authority |
+| G | `G329`: `20/20` synthetic preregistration tests; all 22 decisions remain `PROPOSED_NOT_APPROVED` | `CODEX_REPORTED` | Real observations/outcomes `0`; predictive value `NOT_ESTABLISHED`; formal evaluator disabled |
+| H | `H330`: `16 PASS / 0 FAIL / 3 NOT_VERIFIED`; full runner peak `130,813,952` bytes (approximately 130.8 MB); no timeout or residual new PowerShell PID | `CODEX_REPORTED` | H314 v2 remains an isolated candidate; symlink, hardlink, and concurrent hash modification remain not verified; no formal source/PIT/importer approval |
+
+Round 38 preserves `FORMAL_OBSERVATIONS=0`, `ADMITTED_PROVIDER_BYTES=0`, and `MATURE_REAL_OUTCOMES=0`. Predictive value remains `NOT_ESTABLISHED`; T46 remains `RECOVERY_BLOCKED`; R12 remains `NO_IMPORT_NO_EXECUTION`; `9069` remains `REFERENCE_ONLY`. No real manual CSV has been formally obtained, quarantined, parsed, or admitted.

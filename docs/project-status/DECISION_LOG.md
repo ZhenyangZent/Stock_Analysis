@@ -1,9 +1,9 @@
 # Decision log
 
-DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
-STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
+DATA_AS_OF: `2026-10-31`
+LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
+STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
 
 | Decision date | Decision | Authority/source | Effect | Explicit non-effect |
 |---|---|---|---|---|
@@ -134,3 +134,16 @@ STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
 | `2026-10-30` | Record G321 synthetic independent retest | Exact archive plus GPT-supplied bounded acceptance | Records `21/21` synthetic evidence | Predictive value remains not established; real observations/outcomes zero |
 | `2026-10-30` | Record H322 with failure and not-verified cases | Actual Windows QA evidence | Records `15 PASS / 1 FAIL / 3 NOT_VERIFIED`, aggregate JSON stall, and semantics mismatch | No release, Reader migration, or T46 recovery claim |
 | `2026-10-30` | Round 37 preserves formal zero state | Current bounded evidence set | Keeps formal observations, admitted provider bytes, and mature real outcomes at `0` | Predictive value `NOT_ESTABLISHED`; T46 blocked; `9069` reference-only; no formal approval |
+
+## F336 Round 38 decisions and preserved boundaries
+
+| Date | Decision / evidence | Basis | Effect | Explicit non-effect |
+|---|---|---|---|---|
+| `2026-10-31` | Accept B324 manual-recovery evidence integrity | Exact inner ZIP/manifest and 49 declared payloads | Records `MANUAL_RECOVERY_EVIDENCE_INTEGRITY_ACCEPTED` and the exact partial-QA groups | Does not mark B324 formally READY, release-passed, or production-authorized |
+| `2026-10-31` | Preserve B324 as policy-blocked partial QA | 111/1 clean extract; 17/1 correct packaged invocation; initial invocation 1 FAIL; defensive 13/6; seven blocked races; junction unverified | Makes adverse and unexecuted gates explicit without blending counts | Does not erase B299, B308, B316, or B324 failures |
+| `2026-10-31` | Keep E327 below release | Exact archive `128/0/2` plus B324 central decision | Records Stage1 remediation progress and independent blockers | No formal safety release; static cleanup risk is not converted to runtime PASS or FAIL |
+| `2026-10-31` | Keep A323/D326 before first real CSV admission | Exact archives; real CSV/provider bytes `0` | Records offline readiness and quarantine contract | No real file obtained, quarantined, parsed, admitted, or PIT-certified |
+| `2026-10-31` | Preserve C325 GUI boundary | Fresh Windows clean extract `74/74` | Records self-contained packaging progress | GUI/pixel/keyboard/file-picker behavior remains not verified |
+| `2026-10-31` | Keep G329 decisions proposed | Exact archive; `20/20` synthetic; 22 decisions | Records preregistration candidate | No evaluator activation, mature real outcomes, or predictive-value claim |
+| `2026-10-31` | Keep H330 helper isolated | Exact archive; `16/0/3`; full runner peak about 130.8 MB | Records bounded Windows harness stabilization | H314 v2 is not formally admitted; three cases remain not verified |
+| `2026-10-31` | Preserve formal zero state and recovery boundaries | Current Round38 evidence set | Maintains observations/provider bytes/outcomes at `0` | T46 blocked; R12 no-import/no-execution; 9069 reference-only; no formal approval |

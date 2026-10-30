@@ -1,9 +1,9 @@
 # Release and publication gates
 
-DATA_AS_OF: `2026-10-30`
-LAST_VERIFIED_AT: `2026-10-30T01:57:46+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND37-STATUS-CORRECTION-328`
-STATUS_STAGE: `A315_H322_ROUND37_STATUS_CORRECTION`
+DATA_AS_OF: `2026-10-31`
+LAST_VERIFIED_AT: `2026-10-31T00:00:11+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND38-STATUS-PUBLICATION-336`
+STATUS_STAGE: `A323_H330_ROUND38_STATUS_PUBLICATION`
 
 ## PR #9 remote identity gate
 
@@ -265,3 +265,28 @@ One failed evidence lane does not prohibit truthful documentation of that failur
 | Ready/merge/main/force push/CI/security authority | `false` | Explicit standing-authority exclusions |
 
 Truthfully publishing a failed evidence lane is allowed, but Git publication remains conditional on fresh repository regression with the hash-bound external MOPS fixture, exact six-path scope, document consistency, whitespace/security scans, and an immediate no-drift readback.
+
+## F336 Round 38 candidate and publication gates
+
+| Gate | Status | Evidence / boundary |
+|---|---|---|
+| Same-task deduplication | `PASS` | No F336 commit, central ZIP, or index record existed before this batch |
+| Initial PR #9 identity | `PASS` | `OPEN`, `draft=true`, unmerged; head `50e7342f30570b35c4e6ba331e482be03aa0719b`; base/main `6e2740d9877364619ca046cb54829350fd0db5ef`; no unexplained drift |
+| Pinned input integrity | `PASS — 8/8` | 359/359 declared payloads; outer/manifest SHA-256, size, CRC, path, duplicate/casefold, undeclared-file, and task-ID gates passed |
+| A323 offline readiness | `PASS_OFFLINE_CODEX_REPORTED` | 38/38 structural and 8/8 synthetic negatives; real CSV `0` |
+| B324 evidence identity | `MANUAL_RECOVERY_EVIDENCE_INTEGRITY_ACCEPTED` | Exact inner ZIP and manifest; authority classification remains `NOT_VERIFIED`; not formal READY |
+| B324 independent release | `BLOCKED` | 111/1 clean extract; 17/1 correct packaged security; initial invocation 1 FAIL; defensive 13/6; seven required races policy-blocked; junction not verified |
+| C325 clean extract / GUI | `PASS_OFFLINE_WITH_GUI_NOT_VERIFIED` | Fresh 74/74; GUI/pixel/keyboard/file-picker and Linux/WSL not verified |
+| D326 quarantine contract | `PASS_OFFLINE_CANDIDATE — 25/0/1` | Maximum `QUARANTINED_PENDING_REVIEW`; real provider bytes zero; no admission |
+| E327 release | `NOT_VERIFIED_BLOCKED_RELEASE` | `128/0/2` Stage1 candidate; B324 six assertions, blocked races, junction gap, and static cleanup risk remain |
+| G329 evaluator | `BLOCKED_FORMAL_ACTIVATION` | 20/20 synthetic; 22 decisions proposed and 0 approved; no mature real outcomes |
+| H330 helper | `PASS_SYNTHETIC_CANDIDATE_WITH_3_NOT_VERIFIED` | 16/0/3; peak about 130.8 MB; H314 v2 candidate only |
+| Historical adverse evidence | `PRESERVED` | B299, B308, B316, and B324 remain separate and are not reclassified as PASS |
+| First manual CSV | `NOT_OBTAINED_NOT_ADMITTED` | Formal observation and admitted provider-byte counts remain zero |
+| Formal observations/provider bytes/outcomes | `0 / 0 / 0` | No formal activation or real-performance evidence |
+| Predictive value | `NOT_ESTABLISHED` | No mature real outcomes or approved evaluator run |
+| T46 / R12 / 9069 | `RECOVERY_BLOCKED / NO_IMPORT_NO_EXECUTION / REFERENCE_ONLY` | No mutation, import, execution, or promotion authority |
+| Allowed publication paths | `docs/project-status/*.md` | F336 is restricted to the six existing status documents |
+| Main/Ready/merge/force push/CI/security authority | `false` | Standing docs-only authority exclusions remain controlling |
+
+Publication may proceed only after the trusted external MOPS fixture is hash-verified, the complete repository regression passes fresh, the exact six-path diff and security gates pass, and PR #9 is re-read immediately before the one normal push.
