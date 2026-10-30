@@ -1,9 +1,9 @@
 # Release and publication gates
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
-STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T03:21:05+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND40-CURRENTNESS-352`
+STATUS_STAGE: `A339_H346_ROUND40_STATUS_PUBLICATION`
 
 ## PR #9 remote identity gate
 
@@ -306,3 +306,20 @@ Publication may proceed only after the trusted external MOPS fixture is hash-ver
 | T46 | `RECOVERY_BLOCKED` | Preserved governance boundary | Separate bounded recovery authority |
 
 B299, B308, B316, and B324 adverse evidence is immutable historical evidence for current release decisions. Synthetic/offline success never upgrades a candidate to formal or production release.
+
+## Round40 release-gate status
+
+| Gate | Status | Evidence | Required next condition |
+|---|---|---|---|
+| Round40 archive identity | `PASS` | Eight new archives plus B316/B332 historical retransmissions passed identity and CRC checks | Keep acceptance separate from integrity |
+| Host RAM preflight | `PASS_FOR_F352_REGRESSION_ONLY` | At `2026-10-31T03:20:08+08:00`: 52.3% used, 14.965 GiB available, PID 53548 absent, no matching QA runner | Does not clear H346 incident |
+| H346 functional gate | `OPERATOR_FUNCTIONAL_TESTS_REPORTED_PASS` | Packaged Windows operator tests 15/15 | Independent bounded rerun remains required |
+| H346 resource gate | `QA_HARNESS_MEMORY_CRITICAL_FAIL` | 97.6% RAM, 0.76 GB available, 17,884 MB working set, 41,507 MB private memory | Root cause, remediation, bounded independent rerun, no recurrence |
+| E343 security gate | `NOT_RUN` | Author normal 21/21; development 16/4 preserved | Independent security QA on exact bytes |
+| B340 contract gate | `REQUIRED_CHANGES` | Read-only review; test count 0 | Approved public error policy, code change, independent tests |
+| D342 provider/source gate | `BLOCKED` | Provider bytes 0 and two document identity conflicts | Exact bytes and independent source/time admission |
+| G345 formal freeze | `BLOCKED` | 22 decisions `PROPOSED_NOT_APPROVED` | Explicit approval and formal lock authority |
+| Formal predictive evaluation | `BLOCKED` | Formal observations/provider bytes/outcomes 0 | Approved protocol and admitted mature outcomes |
+| T46 | `RECOVERY_BLOCKED` | Preserved governance boundary | Separate bounded recovery authority |
+
+H346 functional success must never be aggregated with or used to hide its resource failure. E343 author tests must never be represented as independent security approval.

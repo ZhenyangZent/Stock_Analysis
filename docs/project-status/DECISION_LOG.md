@@ -1,9 +1,9 @@
 # Decision log
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
-STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T03:21:05+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND40-CURRENTNESS-352`
+STATUS_STAGE: `A339_H346_ROUND40_STATUS_PUBLICATION`
 
 | Decision date | Decision | Authority/source | Effect | Explicit non-effect |
 |---|---|---|---|---|
@@ -158,3 +158,15 @@ STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
 | `2026-10-31` | E335 Stage1 engineering candidate recorded | Exact importer SHA and 16/16 allowed tests | Candidate may proceed to independent security QA | Does not pass independent security, deploy code, or release E327/B324 |
 | `2026-10-31` | G337 freeze candidate remains proposed | 11/11 synthetic checks | Preserves a reviewable configuration identity | All 22 decisions remain `PROPOSED_NOT_APPROVED`; formal lock count 0 |
 | `2026-10-31` | B316 retransmission classified as historical | Exact B316 ZIP/manifest identity | Preserves Round37 independent failure evidence | Not a Round39 B result and does not supersede B332 |
+
+## Round40 decisions and non-decisions
+
+| Decision date | Decision | Authority/source | Effect | Explicit non-effect |
+|---|---|---|---|---|
+| `2026-10-31` | Record A339 bounded synthetic feature engine | Package plus stated independent rerun | Preserves 24/24 author and 24/24 independent offline evidence | No formal feature, source, PIT, or signal admission |
+| `2026-10-31` | Record B340 required changes | Read-only contract review; tests 0 | Routes public-error and cleanup work to follow-up | No independent security pass or E343 release |
+| `2026-10-31` | Record C341 compatibility candidate | 17/17 author and independent rerun | Preserves bounded adapter evidence | Original error preserved; GUI not verified |
+| `2026-10-31` | Preserve D342 official-document conflicts | Seven provenance gates | Makes metadata/API divergence explicit | No provider-byte or source admission claim |
+| `2026-10-31` | Record E343 Stage1 candidate | Author 21/21; development 16/4 | Candidate may proceed to independent QA | Author tests do not constitute security release |
+| `2026-10-31` | Keep G345 decisions proposed | 10/10 author and independent synthetic rerun | Adds bounded evidence gates | All 22 decisions remain unapproved; no formal lock |
+| `2026-10-31` | Split H346 functional and resource classifications | Package plus central resource diagnostic | Records 15/15 functional evidence separately from critical memory failure | Process termination/RAM recovery does not prove a fix or release safety |

@@ -1,9 +1,9 @@
 # Project roadmap
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
-STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T03:21:05+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND40-CURRENTNESS-352`
+STATUS_STAGE: `A339_H346_ROUND40_STATUS_PUBLICATION`
 
 ## Next milestone
 
@@ -131,3 +131,14 @@ No CI, branch protection, ruleset, source policy, formal data, PIT, scheduler, o
 7. Keep T46 `RECOVERY_BLOCKED`, R12 `NO_IMPORT_NO_EXECUTION`, and 9069 `REFERENCE_ONLY` until separately authorized evidence exists.
 
 Round39 does not change formal observations (`0`), admitted provider bytes (`0`), mature real outcomes (`0`), or predictive value (`NOT_ESTABLISHED`).
+
+## Round40 next dependencies
+
+1. Root-cause H346's QA harness memory explosion and independently rerun under explicit memory/process bounds. Functional 15/15 cannot clear the resource failure.
+2. Execute independent security QA on exact E343 bytes; author 21/21 does not constitute release approval.
+3. Resolve B340's required public-error-contract changes before independent execution or deployment.
+4. Obtain exact raw provider bytes and reconcile D342's 18420 bilingual metadata and 56510 API-document identity conflicts.
+5. Complete Windows GUI QA for C341; offline adapter success does not verify GUI behavior.
+6. Keep A339 formal feature admission false until exact admitted historical source/PIT evidence exists.
+7. Keep all 22 G234 decisions `PROPOSED_NOT_APPROVED` until explicit central approval and formal freeze authority.
+8. Preserve formal zero states, T46 `RECOVERY_BLOCKED`, R12 `NO_IMPORT_NO_EXECUTION`, and `9069 REFERENCE_ONLY`.

@@ -1,9 +1,9 @@
 # Evidence index
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
-STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T03:21:05+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND40-CURRENTNESS-352`
+STATUS_STAGE: `A339_H346_ROUND40_STATUS_PUBLICATION`
 
 ## Accepted and status-bearing evidence
 
@@ -218,3 +218,18 @@ The eight Round 38 inputs contain 359 declared payloads. Identity, CRC, duplicat
 | `TW-E311-OUTPUT-BOUNDARY-INDEPENDENT-QA-316` | `3ae7783c96f5b67a0636d38af8c13ed2dbf6ff4ff0cbeeac9fd658593bf939d8` | `ace0d153c9f1407302b7b8c429c5be699e2e701f9a540160c49f8b652f38243c` | `INDEPENDENT_FAIL` historical retransmission | 24 PASS / 2 FAIL / 2 NOT_VERIFIED | Round37 evidence only; never a Round39 result |
 
 All archive-integrity gates passed, but byte identity is not functional release or `FORMAL_APPROVED` status.
+
+## Round40 evidence identities
+
+| TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | EVIDENCE_CLASS | Verified result | Authority boundary |
+|---|---|---|---|---|---|
+| `AI-PIT-BOUND-REVENUE-FEATURE-ENGINE-339` | `aa3a8fc79b755c119c647baa5cb0768c90afcdc84eaa06be6017b5b0f9245611` | `9e035201c43dffe09ff950f5d1450df2481a0fa3d280c13d01f97af6d3548239` | `CODEX_REPORTED`; `GPT_ACCEPTED_OFFLINE` rerun | 24/24 fresh plus 24/24 independent rerun | Formal feature not admitted |
+| `TW-E335-INDEPENDENT-CONTRACT-DESK-QA-340` | `38211553901a0d1a31cf2d6ecbe5782b59c5c50642f9ff656420b9c9d670dd80` | `ce9a329e9aacd4d793970fad8764f8af49665805fddeab3889dd0be95f18b946` | `CODEX_REPORTED` read-only review | Required changes; test count 0 | Independent security QA not run |
+| `STOCK-OPERATOR-CROSSLINE-COMPATIBILITY-341` | `18746bf9b1a99221181061e5b614fdb1152ab337f2718f7db899f7f06f85ac20` | `5168c4068839ba2772472fcd3325ed9a06919ec60f625932812d3abe8a3b895d` | `CODEX_REPORTED`; `GPT_ACCEPTED_OFFLINE` rerun | 17/17 fresh plus 17/17 independent rerun; original error preserved | GUI not verified |
+| `TW-MANUAL-CSV-OFFICIAL-PROVENANCE-342` | `2c616144a3e25c631533118e3d1af91ccd907665379182832d71bb9438c9ec0a` | `083c44b5c6958168d4326607ffb9b31dc8670df1704e9824e45711306c4675a9` | `CODEX_REPORTED` document review | Seven provenance gates; 18420/56510 conflicts | Provider bytes 0; source not admitted |
+| `TW-IMPORTER-ERROR-CONTROL-HARDENING-343` | `2278542fe02621771d00852330de8ab8b8f9c9ee5631702ed9e68c0700b2e1d0` | `b194512a01e0ddc8a5c68d4afdb2905269047b9881f10e560016d94e6a664505` | `CODEX_REPORTED` author evidence | 21/21 normal; development 16/4 preserved | Independent security QA `NOT_RUN` |
+| `STOCK-PR9-ROUND39-CURRENTNESS-344` | `a9b43b8b4e709eaaa72cb21348f40b4c08f1a43d79d7eaa684cc67dbc6538f26` | `2dc733d0363b1f827e3ea4b7addf5366a0dd3a4fbaeda932fa91758859f3e5af` | `CODEX_REPORTED` receipt | Docs-only publication at `8fa72e66444bb6b173dce5ab85b39c3e022e0caa` | Historical receipt only |
+| `STOCK-PREREG-EVIDENCE-DECISION-GATES-345` | `b3bb365d3ac9be47c74cc13624de13b828ac775c1ea11c2f4840634888050832` | `e612e9c41f26cea5bcd8fcb2f948345f1644855c9044e3a7fecbffc76629e878` | `CODEX_REPORTED`; `GPT_ACCEPTED_OFFLINE` rerun | 10/10 fresh plus 10/10 independent rerun | 22 decisions proposed, not approved |
+| `STOCK-WINDOWS-CSV-DELIVERY-HANDOFF-346` | `aeb23181c877e7e966acd5728bfd0b858099ad8ad949c37a352dbe7b75d0c388` | `88f4461e1fb55cff231a21f57f40d306e32a15bd78f0fad482005c2b0b5cdafd` | `CODEX_REPORTED` | `OPERATOR_FUNCTIONAL_TESTS_REPORTED_PASS` 15/15; three OS boundaries not verified | Separate `QA_HARNESS_MEMORY_CRITICAL_FAIL`; not fixed or release-cleared |
+
+The H346 resource diagnostic is preserved without private paths or raw private logs: PID 53548, 17,884 MB working set, 41,507 MB private memory, host RAM 97.6% used and 0.76 GB available at `2026-10-31 02:58 +08`. Later process absence and RAM recovery do not establish remediation.

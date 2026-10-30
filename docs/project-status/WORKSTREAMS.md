@@ -1,9 +1,9 @@
 # Workstreams A-H
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
-STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T03:21:05+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND40-CURRENTNESS-352`
+STATUS_STAGE: `A339_H346_ROUND40_STATUS_PUBLICATION`
 
 `HANDOFF_ZIP_SHA256` identifies an exact handoff archive. `MANIFEST_SHA256` identifies the manifest file inside that handoff. `GPT_ACCEPTANCE_SCOPE` is explicit; `NOT_PROVIDED` must not be read as independent acceptance.
 
@@ -156,3 +156,18 @@ F170 remains `NOT_PUBLISHED`. New candidates never overwrite historical failures
 | H | `STOCK-WINDOWS-FIRST-CSV-RECEIPT-WORKFLOW-338` | `ed5887de54b7df1f84cf277feb34d3fa88d98832b805f81d9612b9f49ea4d15d` | `3bcdb3f88d10ac88cc435a19acaa843ab066d2c0d0d803fbc990be24659b9141` | 10/10 Windows; three OS boundaries not verified; quarantine maximum | `false` | Real source bytes, OS-boundary evidence, source/PIT admission |
 
 Historical B316 retransmission SHA `3ae7783c96f5b67a0636d38af8c13ed2dbf6ff4ff0cbeeac9fd658593bf939d8` remains Round37 `INDEPENDENT_FAIL`; it is not a Round39 B deliverable. B299/B308/B316/B324 failures remain controlling in their scopes.
+
+## Round40 current workstreams
+
+| Lane | TASK_ID | HANDOFF_ZIP_SHA256 | MANIFEST_SHA256 | Current status | Formal authority | Next dependency |
+|---|---|---|---|---|---|---|
+| A | `AI-PIT-BOUND-REVENUE-FEATURE-ENGINE-339` | `aa3a8fc79b755c119c647baa5cb0768c90afcdc84eaa06be6017b5b0f9245611` | `9e035201c43dffe09ff950f5d1450df2481a0fa3d280c13d01f97af6d3548239` | 24/24 fresh synthetic and 24/24 GPT-independent rerun | `false` | Exact admitted real history and formal feature authority |
+| B | `TW-E335-INDEPENDENT-CONTRACT-DESK-QA-340` | `38211553901a0d1a31cf2d6ecbe5782b59c5c50642f9ff656420b9c9d670dd80` | `ce9a329e9aacd4d793970fad8764f8af49665805fddeab3889dd0be95f18b946` | Read-only review with required changes; tests 0 | `false` | Policy decision, code change, then independent security execution |
+| C | `STOCK-OPERATOR-CROSSLINE-COMPATIBILITY-341` | `18746bf9b1a99221181061e5b614fdb1152ab337f2718f7db899f7f06f85ac20` | `5168c4068839ba2772472fcd3325ed9a06919ec60f625932812d3abe8a3b895d` | 17/17 fresh and 17/17 GPT-independent rerun; original error preserved | `false` | Windows GUI/file-picker/pixel/accessibility QA |
+| D | `TW-MANUAL-CSV-OFFICIAL-PROVENANCE-342` | `2c616144a3e25c631533118e3d1af91ccd907665379182832d71bb9438c9ec0a` | `083c44b5c6958168d4326607ffb9b31dc8670df1704e9824e45711306c4675a9` | Seven document gates; two official-document identity conflicts | `false` | Original provider bytes and independent resource/time admission |
+| E | `TW-IMPORTER-ERROR-CONTROL-HARDENING-343` | `2278542fe02621771d00852330de8ab8b8f9c9ee5631702ed9e68c0700b2e1d0` | `b194512a01e0ddc8a5c68d4afdb2905269047b9881f10e560016d94e6a664505` | 21/21 author normal tests; development 16/4 preserved | `false` | Independent security QA of exact E343 bytes |
+| F | `STOCK-PR9-ROUND39-CURRENTNESS-344` | `a9b43b8b4e709eaaa72cb21348f40b4c08f1a43d79d7eaa684cc67dbc6538f26` | `2dc733d0363b1f827e3ea4b7addf5366a0dd3a4fbaeda932fa91758859f3e5af` | Round39 docs-only publication reported | docs-only history only | F352 publication readback |
+| G | `STOCK-PREREG-EVIDENCE-DECISION-GATES-345` | `b3bb365d3ac9be47c74cc13624de13b828ac775c1ea11c2f4840634888050832` | `e612e9c41f26cea5bcd8fcb2f948345f1644855c9044e3a7fecbffc76629e878` | 10/10 fresh and 10/10 GPT-independent synthetic rerun | `false` | Explicit approval of 22 decisions and admitted mature outcomes |
+| H | `STOCK-WINDOWS-CSV-DELIVERY-HANDOFF-346` | `aeb23181c877e7e966acd5728bfd0b858099ad8ad949c37a352dbe7b75d0c388` | `88f4461e1fb55cff231a21f57f40d306e32a15bd78f0fad482005c2b0b5cdafd` | Functional 15/15; three OS boundaries not verified; separate QA harness memory critical fail | `false` | Root-cause and bounded independent rerun proving memory safety |
+
+H346 functional evidence does not override its resource incident. B316/B332 are historical retransmissions only; B299/B308/B316/B324 failures remain controlling.

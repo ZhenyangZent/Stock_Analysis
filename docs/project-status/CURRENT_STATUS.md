@@ -1,11 +1,11 @@
 # Stock_Analysis current status
 
 DATA_AS_OF: `2026-10-31`
-LAST_VERIFIED_AT: `2026-10-31T02:09:26+08:00`
-STATUS_TASK_ID: `STOCK-PR9-ROUND39-CURRENTNESS-344`
-STATUS_STAGE: `A331_H338_ROUND39_STATUS_PUBLICATION`
+LAST_VERIFIED_AT: `2026-10-31T03:21:05+08:00`
+STATUS_TASK_ID: `STOCK-PR9-ROUND40-CURRENTNESS-352`
+STATUS_STAGE: `A339_H346_ROUND40_STATUS_PUBLICATION`
 LAST_VERIFIED_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
-LAST_VERIFIED_PR9_HEAD_SHA: `d3af8fcd3d318ac6c63bc5d6b795a011b9eaeb14`
+LAST_VERIFIED_PR9_HEAD_SHA: `8fa72e66444bb6b173dce5ab85b39c3e022e0caa`
 CURRENT_REMOTE_MAIN_SHA: `6e2740d9877364619ca046cb54829350fd0db5ef`
 PR9_HEAD_BEFORE_F215_SHA: `56a18e260b5b8a20ce482f30d48ccdc8172d7cc7`
 
@@ -207,3 +207,20 @@ F344 re-read Draft PR #9 as `OPEN`, `draft=true`, unmerged, at head `d3af8fcd3d3
 | H | `H338`: `10/10` fresh Windows tests; three OS boundaries `NOT_VERIFIED`; bounded operator memory | `CODEX_REPORTED` | Maximum `QUARANTINED_PENDING_REVIEW`; source not admitted; no historical PIT certification |
 
 B316's exact retransmission is historical Round37 `INDEPENDENT_FAIL` evidence, not a new Round39 B result. B299, B308, B316, and B324 adverse evidence remains permanently visible. Across Round39, `FORMAL_OBSERVATIONS=0`, `ADMITTED_PROVIDER_BYTES=0`, `MATURE_REAL_OUTCOMES=0`, and `PREDICTIVE_VALUE=NOT_ESTABLISHED`; T46 remains `RECOVERY_BLOCKED`, R12 remains `NO_IMPORT_NO_EXECUTION`, and `9069` remains `REFERENCE_ONLY`.
+
+## F352 Round 40 evidence currentness
+
+F352 re-read Draft PR #9 as `OPEN`, `draft=true`, unmerged, at head `8fa72e66444bb6b173dce5ab85b39c3e022e0caa` and base/main `6e2740d9877364619ca046cb54829350fd0db5ef`. The sealed F344 head matched live, no prior F352 publication existed, and no unexplained drift was observed. Eight Round40 archives plus the separately classified B316/B332 historical retransmissions passed exact ZIP, manifest, payload hash/size, CRC, path, duplicate/casefold, undeclared-file, and task-ID gates.
+
+| Lane | Latest bounded result | Evidence class | Preserved boundary |
+|---|---|---|---|
+| A | `A339`: 24/24 fresh synthetic tests; GPT-independent rerun 24/24 | `CODEX_REPORTED` plus `GPT_ACCEPTED_OFFLINE` for the stated rerun | Formal feature admission remains false; no real observation or signal |
+| B | `B340`: `PASS_READ_ONLY_CONTRACT_REVIEW_WITH_REQUIRED_CHANGES`; executed tests `0` | `CODEX_REPORTED` read-only review | Independent security QA `NOT_RUN`; E335/E343 not release-approved |
+| C | `C341`: 17/17 fresh; GPT-independent rerun 17/17; original first-run `ERROR` preserved | `CODEX_REPORTED` plus `GPT_ACCEPTED_OFFLINE` for the stated rerun | `GUI_NOT_VERIFIED`; no importer/source/PIT authority |
+| D | `D342`: seven document-provenance gates; 18420 bilingual metadata conflict; 56510 API-document identity divergence | `CODEX_REPORTED` document review | Actual raw provider bytes `0`; document evidence is not resource identity or source admission |
+| E | `E343`: author normal unit tests 21/21; development 16 PASS / 4 FAIL preserved; `STAGE1_ENGINEERING_CANDIDATE` | `CODEX_REPORTED` author test evidence | Independent security QA `NOT_RUN`; no formal safety release or deployment |
+| F | `F344`: one docs-only Round39 publication reported at `8fa72e66444bb6b173dce5ab85b39c3e022e0caa` | `CODEX_REPORTED` publication receipt | Historical receipt only; no main/Ready/merge/formal-system authority |
+| G | `G345`: 10/10 fresh synthetic tests; GPT-independent rerun 10/10 | `CODEX_REPORTED` plus `GPT_ACCEPTED_OFFLINE` for the stated rerun | All 22 G234 decisions remain `PROPOSED_NOT_APPROVED`; no formal lock or activation |
+| H | `H346`: packaged operator functional tests 15/15; three OS boundaries `NOT_VERIFIED` | `OPERATOR_FUNCTIONAL_TESTS_REPORTED_PASS` | Separate diagnostic is `QA_HARNESS_MEMORY_CRITICAL_FAIL`: at `2026-10-31 02:58 +08`, PID 53548 used 17,884 MB working set and 41,507 MB private memory while RAM was 97.6% used with 0.76 GB available. The runner later stopped and host RAM recovered, but the fault is not fixed or release-cleared |
+
+B316 and B332 retransmissions remain historical evidence, not new Round40 results. B299/B308/B316/B324 failures remain visible. Round40 leaves `FORMAL_OBSERVATIONS=0`, `ADMITTED_PROVIDER_BYTES=0`, `MATURE_REAL_OUTCOMES=0`, `PREDICTIVE_VALUE=NOT_ESTABLISHED`, T46 `RECOVERY_BLOCKED`, R12 `NO_IMPORT_NO_EXECUTION`, and `9069 REFERENCE_ONLY`.
